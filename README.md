@@ -4,7 +4,7 @@ SPDX-FileCopyrightText: 2023 Deutsche Telekom AG
 SPDX-License-Identifier: CC0-1.0    
 -->
 
-# my-sample-project
+# Android App of CityKey
 | __Packages and Releases__ | ![]() |
 | :--- | :--- |
 | __Build Status__ |  |
