@@ -5,6 +5,11 @@ SPDX-License-Identifier: CC0-1.0
 -->
 
 # my-sample-project
+| __Packages and Releases__ | ![]() |
+| :--- | :--- |
+| __Build Status__ |  |
+| __Test Coverage__ | [![codecov]()]() |
+| __Other Information__ | [![Downloads]()]() [![REUSE status]()]()|
 
 ## About
 
