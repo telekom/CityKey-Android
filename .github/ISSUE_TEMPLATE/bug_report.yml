@@ -74,7 +74,7 @@ body:
   - type: dropdown
     id: citykey_android_app_version
     attributes:
-      label: LLMWare version
+      label: CityKey Android App version
       description: > 
         What version of the CityKey Android App are you running?
       options: 
