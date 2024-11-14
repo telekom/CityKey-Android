@@ -52,7 +52,7 @@ body:
         ```
       placeholder: |
         << your code here >>
-      render: python
+      render: kotlin
     validations:
       required: true
 
