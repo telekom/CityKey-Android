@@ -70,6 +70,21 @@ body:
     validations:
       required: true
 
+  - type: textarea
+    attributes:
+      label: Development Environment
+      description: |
+        Complete the following information about your **development environment**.
+      value: |
+        - Kotlin Version: Specify the Kotlin version used in the project [e.g., 1.9.10].
+        - Build Tools Version: Provide the Android build tools version [e.g., 34.0.0].
+        - Android Studio Version: Mention the version of Android Studio [e.g., Giraffe | 2023.3.1].
+        - Gradle Version: Include the Gradle version used for the project [e.g., 8.1].
+        - Operating System: Specify the OS used for development [e.g., macOS Ventura, Windows 11].
+      render: markdown
+    validations:
+      required: true
+
   - type: dropdown
     id: citykey_android_app_version
     attributes:
