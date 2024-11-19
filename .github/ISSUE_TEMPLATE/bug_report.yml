@@ -64,9 +64,8 @@ body:
         You can get the system environment from `import platform; print(platform.uname())`.
         And you can get the python version from `import sys; print(sys.version)`.
       value: |
-        - OS: [e.g. Windows]
-        - Version: [e.g. 22]
-        - Python version: [e.g. 3.8.8]
+        - Device Model: Specify the device name [e.g., Samsung Galaxy S21, Pixel 7].
+        - Android Version: Include the version of Android running on the device [e.g., Android 13].
       render: markdown
     validations:
       required: true
