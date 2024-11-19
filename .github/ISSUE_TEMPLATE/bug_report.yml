@@ -78,7 +78,7 @@ body:
       description: > 
         What version of the CityKey Android App are you running?
       options: 
-        - 0.2.0
+        - 1.3.15
     validations:
       required: true
 
