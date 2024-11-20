@@ -43,12 +43,12 @@ body:
         A minimal self-contained code example that reproduces the bug, e.g. the error message above.
         
         The minimal self-contained example should have the following structure.
-        ```
-        # All necessary imports at the beginning
-  
-        # A succinct reproducing example trimmed down to the essential parts
-        
-        # Note: the bug is here
+        ```kotlin
+          # All necessary imports at the beginning
+    
+          # A succinct reproducing example trimmed down to the essential parts
+          
+          # Note: the bug is here
         ```
       placeholder: |
         << your code here >>
