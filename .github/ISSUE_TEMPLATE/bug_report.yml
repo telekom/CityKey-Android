@@ -44,11 +44,11 @@ body:
         
         The minimal self-contained example should have the following structure.
         ```kotlin
-          # All necessary imports at the beginning
+          // All necessary imports at the beginning
     
-          # A succinct reproducing example trimmed down to the essential parts
+          // A succinct reproducing example trimmed down to the essential parts
           
-          # Note: the bug is here
+          // Note: the bug is here
         ```
       placeholder: |
         << your code here >>
