@@ -61,8 +61,22 @@ body:
       label: System Environment
       description: |
         Complete the following information about your system.
-        You can get the system environment from `import platform; print(platform.uname())`.
-        And you can get the python version from `import sys; print(sys.version)`.
+        You can get the system environment using the code snipped below.
+        ```kotlin
+          import android.os.Build
+          import android.util.Log
+          
+          fun logBugReportInfo() {
+              Log.i("BugReport", """
+                  --- Bug Report Info ---
+                  Device Model: ${Build.MODEL} (${Build.PRODUCT})
+                  Android Version: ${Build.VERSION.RELEASE} (API Level ${Build.VERSION.SDK_INT})
+                  Manufacturer: ${Build.MANUFACTURER}
+                  Device Architecture: ${Build.SUPPORTED_ABIS.joinToString(", ")}
+                  -----------------------
+              """.trimIndent())
+          }
+        ```
       value: |
         - Device Model: Specify the device name [e.g., Samsung Galaxy S21, Pixel 7].
         - Android Version: Include the version of Android running on the device [e.g., Android 13].
