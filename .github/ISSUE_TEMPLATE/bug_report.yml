@@ -1,0 +1,121 @@
+name: 'Bug report'
+description: |
+  Submit a bug report which includes a reproducible self-contained example. 
+  For security vulnerabilities, use the security issue.
+title: '[BUG] <Write a short and informative title after the [BUG] prefix>'
+labels: ['bug']
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to file a bug report. Before creating a new issue, please make 
+        sure to take a few minutes to check the issue tracker for existing issues about the bug.
+      
+  - type: textarea
+    attributes:
+      label: Describe the bug
+      placeholder: A clear and concise description of what the bug is.
+
+  - type: textarea
+    attributes:
+      label: Expected behavior
+      placeholder: A clear and concise description of what you expected to happen.
+
+  - type: textarea
+    attributes:
+      label: Screenshots
+      placeholder: If useful, add screenshots to help explain your problem. However, please do not use screenshots to show code and anything similar.
+
+  - type: textarea
+    attributes:
+      label: "Error message"
+      description: |
+        Please include full error message, if any.
+      placeholder: |
+        << Full traceback starting from `Traceback: ...` >>
+      render: shell
+
+  - type: textarea
+    attributes:
+      label: Code to reproduce the bug
+      description: |
+        A minimal self-contained code example that reproduces the bug, e.g. the error message above.
+        
+        The minimal self-contained example should have the following structure.
+        ```kotlin
+          // All necessary imports at the beginning
+    
+          // A succinct reproducing example trimmed down to the essential parts
+          
+          // Note: the bug is here
+        ```
+      placeholder: |
+        << your code here >>
+      render: kotlin
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: System Environment
+      description: |
+        Complete the following information about your system.
+        You can get the system environment using the code snipped below.
+        ```kotlin
+          import android.os.Build
+          import android.util.Log
+          
+          fun logBugReportInfo() {
+              Log.i("BugReport", """
+                  --- Bug Report Info ---
+                  Device Model: ${Build.MODEL} (${Build.PRODUCT})
+                  Android Version: ${Build.VERSION.RELEASE} (API Level ${Build.VERSION.SDK_INT})
+                  Manufacturer: ${Build.MANUFACTURER}
+                  Device Architecture: ${Build.SUPPORTED_ABIS.joinToString(", ")}
+                  -----------------------
+              """.trimIndent())
+          }
+        ```
+      value: |
+        - Device Model: Specify the device name [e.g., Samsung Galaxy S21, Pixel 7].
+        - Android Version: Include the version of Android running on the device [e.g., Android 13].
+        - Manufacturer: The device manufactorer.
+        - Device Architecture: The architecture of the device.
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Development Environment
+      description: |
+        Complete the following information about your **development environment**.
+      value: |
+        - Kotlin Version: Specify the Kotlin version used in the project [e.g., 1.9.10].
+        - Build Tools Version: Provide the Android build tools version [e.g., 34.0.0].
+        - Android Studio Version: Mention the version of Android Studio [e.g., Giraffe | 2023.3.1].
+        - Gradle Version: Include the Gradle version used for the project [e.g., 8.1].
+        - Operating System: Specify the OS used for development [e.g., macOS Ventura, Windows 11].
+      render: markdown
+    validations:
+      required: true
+
+  - type: dropdown
+    id: citykey_android_app_version
+    attributes:
+      label: CityKey Android App version
+      description: > 
+        What version of the CityKey Android App are you running?
+      options: 
+        - 1.3.15
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Additional context
+      description: >
+        Add any other information that is important to know.
+        For example, explain how this bug affects your work and why it is important to be addressed.
+      placeholder: Add any other context about the problem here.
