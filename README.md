@@ -9,7 +9,7 @@ SPDX-License-Identifier: CC0-1.0
 | :--- | :--- |
 | __Build Status__ |  |
 | __Test Coverage__ | [![codecov]()]() |
-| __Other Information__ | [![Downloads]()]() [![REUSE status]()]() [![Apache-2.0](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://opensource.org/license/apache-2-0)|
+| __Other Information__ | [![Downloads]()]() [![REUSE status]()]() [![Apache-2.0](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://opensource.org/license/apache-2-0) [![OpenSSF Scorecard Score](https://api.scorecard.dev/projects/github.com/telekom/citykey-android/badge)](https://scorecard.dev/viewer/?uri=github.com/telekom/citykey-android/badge)|
 
 ## About
 
