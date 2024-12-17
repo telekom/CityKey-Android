@@ -8,7 +8,7 @@ on: [push, pull_request]
 
 
 jobs:
-  test:
+  test-reuese-compliance:
     runs-on: ubuntu-latest
     
     steps:
