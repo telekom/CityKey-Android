@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textview.MaterialTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/citySelectionListHeaderTextView"
+    style="@style/RobotoBold"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="21dp"
+    android:paddingTop="18dp"
+    android:paddingEnd="21dp"
+    android:paddingBottom="18dp"
+    android:text="@string/c_002_city_selection_list_header"
+    android:textColor="@color/onSurfaceSecondary"
+    android:textSize="12sp" />

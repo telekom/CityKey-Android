@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="InvalidPackage">
+        <ignore path="**/org.simpleframework/simple-xml/**" />
+    </issue>
+    <issue id="SmallSp" severity="ignore"/>
+    <issue id="RtlSymmetry" severity="ignore"/>
+    <issue id="Autofill" severity="ignore"/>
+    <issue id="RelativeOverlap" severity="ignore"/>
+    <issue id="VectorPath" severity="ignore"/>
+</lint>

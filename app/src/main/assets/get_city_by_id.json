@@ -1,0 +1,44 @@
+{
+  "content": [
+    {
+      "cityId": 8,
+      "cityName": "Bonn",
+      "cityColor": "#1E88E5",
+      "country": "Germany",
+      "municipalCoat": "bonn-logo-24dp.png",
+      "postalCode": "53111",
+      "stateName": "Nordrhein-Westfalen",
+      "cityPicture": "bonn_ukraine.png",
+      "cityPreviewPicture": "Stadteauswahl-Bonn.jpg",
+      "cityNightPicture": "bonn_night_sticker.jpg",
+      "servicePicture": "bonn_service_screen_resized.jpg",
+      "serviceDesc": "Hier finden Sie alle Serviceangebote Ihrer Stadt.",
+      "latitude": 50.7374,
+      "longitude": 7.0982,
+      "imprintLink": "https://www.bonn.de/impressum.php",
+      "imprintDesc": "Jede von Ihnen ausgewählte Stadt besitzt ein eigenes Impressum.",
+      "imprintImage": "",
+      "cityConfig": {
+        "showCategories": false,
+        "showFavouriteServices": false,
+        "showHomeDiscounts": false,
+        "showHomeOffers": false,
+        "showHomeTips": false,
+        "showFavouriteMarketplaces": false,
+        "showNewServices": false,
+        "showNewMarketplaces": false,
+        "showMostUsedServices": false,
+        "showMostUsedMarketplaces": false,
+        "showBranches": false,
+        "showDiscounts": false,
+        "showOurMarketPlaces": false,
+        "showOurServices": true,
+        "stickyNewsCount": 4,
+        "yourEventsCount": 2,
+        "showMarketplacesOption": false,
+        "showServicesOption": true,
+        "eventsCount": 4
+      }
+    }
+  ]
+}

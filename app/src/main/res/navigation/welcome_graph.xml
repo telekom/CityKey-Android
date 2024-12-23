@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/welcome_graph"
+    app:startDestination="@id/welcomeGuide">
+
+    <fragment
+        android:id="@+id/welcomeGuide"
+        android:name="com.telekom.citykey.view.welcome.WelcomeGuide"
+        android:label="WelcomeGuide">
+        <action
+            android:id="@+id/action_welcomeGuide_to_welcome"
+            app:destination="@id/welcome"
+            app:enterAnim="@anim/fragment_level3_enter"
+            app:exitAnim="@anim/fragment_level3_exit"
+            app:popEnterAnim="@anim/fragment_level3_pop_enter"
+            app:popExitAnim="@anim/fragment_level3_pop_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcome"
+        android:name="com.telekom.citykey.view.welcome.Welcome"
+        android:label="Welcome" />
+</navigation>

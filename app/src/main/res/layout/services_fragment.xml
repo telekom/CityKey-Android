@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.telekom.citykey.custom.views.OnlyVerticalSwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.telekom.citykey.custom.views.OscaAppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/services_toolbar_height"
+            android:background="?attr/colorSurface"
+            android:fitsSystemWindows="true"
+            android:minHeight="?attr/actionBarSize"
+            android:windowDrawsSystemBarBackgrounds="true">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:minHeight="?attr/actionBarSize"
+                app:contentScrim="@color/background"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:statusBarScrim="@color/black5a"
+                app:toolbarId="@id/servicesToolbar">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/zoomableImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="matrix"
+                    app:layout_collapseMode="parallax"
+                    tools:src="@tools:sample/backgrounds/scenic" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black35a"
+                    android:fitsSystemWindows="true" />
+
+                <LinearLayout
+                    android:id="@+id/containerCityServicesHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/services_toolbar_infobox_margin_start"
+                    android:layout_marginTop="@dimen/services_toolbar_title_top_margin"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/labelCityServices"
+                        style="@style/RobotoBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/services_toolbar_title_padding_bottom"
+                        android:text="@string/s_001_services_title"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/services_toolbar_title_size" />
+
+                    <TextView
+                        android:id="@+id/labelFindServices"
+                        style="@style/RobotoLight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/services_toolbar_title_description_top_margin"
+                        android:hyphenationFrequency="full"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/services_toolbar_description_size" />
+                </LinearLayout>
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/servicesToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:fitsSystemWindows="false"
+                    android:focusable="true"
+                    app:layout_collapseMode="pin">
+
+                    <LinearLayout
+                        android:id="@+id/toolbarCityBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/toolbarCoat"
+                            android:layout_width="@dimen/toolbar_coa_size"
+                            android:layout_height="@dimen/toolbar_coa_size"
+                            android:layout_gravity="center_vertical" />
+
+                        <TextView
+                            android:id="@+id/toolbarTitle"
+                            style="@style/RobotoMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="16dp"
+                            android:textColor="@color/onSurface"
+                            android:textSize="@dimen/toolbar_title_size" />
+                    </LinearLayout>
+                </com.google.android.material.appbar.MaterialToolbar>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.telekom.citykey.custom.views.OscaAppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:listitem="@layout/service_ours_item" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</com.telekom.citykey.custom.views.OnlyVerticalSwipeRefreshLayout>

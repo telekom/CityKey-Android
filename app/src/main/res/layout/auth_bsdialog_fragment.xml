@@ -1,0 +1,1241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/auth_bottom_sheet_rounded"
+        android:fitsSystemWindows="true"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:fitsSystemWindows="true"
+            app:titleTextColor="@color/onSurface" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/accessRightsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="40dp">
+
+            <RelativeLayout
+                android:id="@+id/layoutContentImages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/topImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="96dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/address_top" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/topIcon"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_auth_card_icon" />
+            </RelativeLayout>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/RobotoRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginTop="@dimen/global_content_margins"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:text="@string/egov_info_provider_info"
+                android:textColor="@color/onSurface"
+                android:textSize="16sp" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/detailedCertificateBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border_light_grey2"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:orientation="vertical"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/providerLabel"
+                    style="@style/RobotoBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/global_content_margins"
+                    android:text="@string/egov_info_provider_label"
+                    android:textColor="@color/onSurface"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toTopOf="@id/provider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/provider"
+                    style="@style/RobotoRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/global_content_margins"
+                    android:layout_marginEnd="@dimen/global_content_margins"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/moreArrow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/providerLabel"
+                    tools:text="Deutsche Telekom AG" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/moreArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/global_content_margins"
+                    app:layout_constraintBottom_toBottomOf="@id/provider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/providerLabel"
+                    app:srcCompat="@drawable/ic_more_arrow_16dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/RobotoBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginTop="19dp"
+                android:text="@string/egov_info_read_data_label"
+                android:textColor="@color/onSurface"
+                android:textSize="17sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/accessRightsText"
+                style="@style/RobotoRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/onSurface"
+                android:textSize="16sp"
+                tools:text="Family Name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/RobotoRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginTop="23dp"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:text="@string/egov_info_read_data_info"
+                android:textColor="@color/onSurface"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/purposeLabel"
+                style="@style/RobotoBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginTop="18dp"
+                android:text="@string/egov_info_purpose_label"
+                android:textColor="@color/onSurface"
+                android:textSize="17sp"
+                android:visibility="gone" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/purpose"
+                style="@style/RobotoRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:visibility="gone"
+                tools:text="Nutzung des Online-Ausweises" />
+
+            <com.telekom.citykey.custom.views.ProgressButton
+                android:id="@+id/accessRightsBtn"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="@dimen/global_content_margins"
+                android:layout_marginEnd="21dp"
+                android:layout_marginBottom="21dp"
+                app:text="@string/egov_info_btn" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <RelativeLayout
+            android:id="@+id/loadingHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="96dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/address_top" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_auth_card_icon" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/loadingIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loadingHeader"
+            app:srcCompat="@drawable/ic_auth_loadin_icon" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingStart="@dimen/global_content_margins"
+            android:paddingEnd="@dimen/global_content_margins"
+            android:text="@string/egov_loading_info1"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/loadingIcon" />
+
+
+        <com.telekom.citykey.custom.views.OscaProgressBar
+            android:id="@+id/loadingView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/oscaColor"
+            android:paddingTop="40dp"
+            android:paddingBottom="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pinLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/inputIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/inputIconGuideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_auth_input_icon" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/inputIconGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pinMsg"
+            style="@style/RobotoRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/egov_pin_info1"
+            android:textAlignment="center"
+            android:textColor="@color/onSurface"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputIconGuideline" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/fiveDigitPinMsg"
+            style="@style/RobotoRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="4dp"
+            android:text="@string/egov_pin_5digits_pin_label"
+            android:textAlignment="center"
+            android:textColor="@color/oscaColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pinMsg" />
+
+        <com.telekom.citykey.custom.views.inputfields.PinInputLayout
+            android:id="@+id/pinInputView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="40dp"
+            android:clickable="false"
+            android:enabled="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            app:hideContent="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/fiveDigitPinMsg" />
+
+        <com.telekom.citykey.custom.views.inputfields.AuthInputPad
+            android:id="@+id/pinPad"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/pinHelpBtn"
+            app:layout_constraintTop_toBottomOf="@id/pinInputView" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pinHelpBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_auth_help_icon"
+            android:gravity="center"
+            android:text="@string/egov_help_link_btn"
+            android:textAlignment="center"
+            android:textColor="@color/oscaColor"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toTopOf="@id/submitPin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.telekom.citykey.custom.views.ProgressButton
+            android:id="@+id/submitPin"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:text="@string/egov_pin_submit_btn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/canLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/canInputIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/canInputIconGuideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_auth_input_icon" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/canInputIconGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/canMsg"
+            style="@style/RobotoRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/egov_can_info_label"
+            android:textAlignment="center"
+            android:textColor="@color/onSurface"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/canInputIconGuideline" />
+
+        <com.telekom.citykey.custom.views.inputfields.PinInputLayout
+            android:id="@+id/canInputView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:clickable="false"
+            android:enabled="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            app:hideContent="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/canMsg" />
+
+        <com.telekom.citykey.custom.views.inputfields.AuthInputPad
+            android:id="@+id/canPad"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/canHelpBtn"
+            app:layout_constraintTop_toBottomOf="@id/canInputView" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/canHelpBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_auth_help_icon"
+            android:gravity="center"
+            android:text="@string/egov_help_link_btn"
+            android:textAlignment="center"
+            android:textColor="@color/oscaColor"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toTopOf="@id/submitCan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.telekom.citykey.custom.views.ProgressButton
+            android:id="@+id/submitCan"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:text="@string/egov_pin_submit_btn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pukLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/pukInputIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/pukInputIconGuideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_auth_input_icon" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/pukInputIconGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pukMsg"
+            style="@style/RobotoRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/egov_puk_info1"
+            android:textAlignment="center"
+            android:textColor="@color/onSurface"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pukInputIconGuideline" />
+
+        <com.telekom.citykey.custom.views.inputfields.PinInputLayout
+            android:id="@+id/pukInputView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:clickable="false"
+            android:enabled="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            app:hideContent="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pukMsg"
+            app:pinSize="10" />
+
+        <com.telekom.citykey.custom.views.inputfields.AuthInputPad
+            android:id="@+id/pukPad"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/pukHelpBtn"
+            app:layout_constraintTop_toBottomOf="@id/pukInputView" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pukHelpBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_auth_help_icon"
+            android:gravity="center"
+            android:text="@string/egov_help_link_btn"
+            android:textAlignment="center"
+            android:textColor="@color/oscaColor"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toTopOf="@id/submitPuk"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.telekom.citykey.custom.views.ProgressButton
+            android:id="@+id/submitPuk"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:text="@string/egov_pin_submit_btn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/cardInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_auth_card_info" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/someMessage"
+            style="@style/RobotoRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:text="@string/egov_attach_card_info1"
+            android:textAlignment="center"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/RobotoRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:text="@string/egov_attach_card_info2"
+            android:textAlignment="center"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/cardHelpBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/ic_auth_help_icon"
+            android:gravity="center"
+            android:text="@string/egov_help_link_btn"
+            android:textAlignment="center"
+            android:textColor="@color/oscaColor"
+            android:textSize="14dp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/errorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/errorIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_auth_error_icon" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/errorLabel"
+            style="@style/RobotoBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:text="@string/egov_error_label"
+            android:textColor="@color/onSurface"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/errorIcon" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/errorMessage"
+            style="@style/RobotoRegular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:text="@string/egov_error_info"
+            android:textColor="@color/onSurface"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/errorLabel" />
+
+        <com.telekom.citykey.custom.views.ProgressButton
+            android:id="@+id/tryAgainButton"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:text="@string/egov_error_btn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/successLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/successIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_auth_success_icon" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/RobotoRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:gravity="center"
+            android:text="@string/egov_success_info"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/successIcon" />
+
+        <com.telekom.citykey.custom.views.OscaProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            android:indeterminateTint="@color/oscaColor"
+            android:paddingBottom="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/canInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/canInfoIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_auth_can_icon" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/canInfoLabel"
+            style="@style/RobotoBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="58dp"
+            android:text="@string/egov_caninfo_label"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/canInfoIcon" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/canInfoInfo"
+            style="@style/RobotoRegular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:text="@string/egov_caninfo_info1"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/canInfoLabel" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/canInfoInfo2"
+            style="@style/RobotoRegular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:text="@string/egov_caninfo_info2"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/canInfoInfo" />
+
+        <com.telekom.citykey.custom.views.ProgressButton
+            android:id="@+id/enterCanBtn"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:text="@string/egov_caninfo_btn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/certificateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/global_content_margins"
+            android:paddingEnd="@dimen/global_content_margins"
+            android:paddingBottom="30dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/RobotoBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="@string/egov_certificate_provider"
+                android:textSize="16sp" />
+
+            <com.telekom.citykey.custom.views.OscaWebView
+                android:id="@+id/subjectInfo"
+                style="@style/RobotoRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/RobotoBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:text="@string/egov_certificate_issuer"
+                android:textSize="16sp" />
+
+            <com.telekom.citykey.custom.views.OscaWebView
+                android:id="@+id/issuerInfo"
+                style="@style/RobotoRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/RobotoBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:text="@string/egov_certificate_providerinfo"
+                android:textSize="16sp" />
+
+            <com.telekom.citykey.custom.views.OscaWebView
+                android:id="@+id/providerDetailed"
+                style="@style/RobotoRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/RobotoBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:text="@string/egov_certificate_validity"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/providerValidity"
+                style="@style/RobotoRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pukInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/pukInfoIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/pukInfoIconGuideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_auth_error_icon" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/pukInfoIconGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pukInfoLabel"
+            style="@style/RobotoBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="40dp"
+            android:text="@string/egov_pukinfo_label"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pukInfoIconGuideline" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pukInfoInfo"
+            style="@style/RobotoRegular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:text="@string/egov_pukinfo_info1"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pukInfoLabel" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pukInfoInfo2"
+            style="@style/RobotoRegular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:text="@string/egov_pukinfo_info2"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pukInfoInfo" />
+
+        <com.telekom.citykey.custom.views.ProgressButton
+            android:id="@+id/enterPukBtn"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:text="@string/egov_pukinfo_btn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/helpLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <RelativeLayout
+            android:id="@+id/helpHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="96dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/address_top" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_auth_help_header_icon" />
+        </RelativeLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/RobotoBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:text="@string/egov_help_label1"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/RobotoRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:text="@string/egov_help_info1"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/toAusweissAppBtn"
+            style="@style/RobotoRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:text="@string/egov_help_ausweissapp_link"
+            android:textColor="@color/oscaColor"
+            android:textSize="16sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/RobotoBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:text="@string/egov_help_label2"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/RobotoRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:text="@string/egov_help_info2"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/RobotoBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:text="@string/egov_help_label3"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/RobotoRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:text="@string/egov_help_info3"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/toAusweissAppHelpBtn"
+            style="@style/RobotoRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:text="@string/egov_help_aussweissapp_help_link"
+            android:textColor="@color/oscaColor"
+            android:textSize="16sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardBlocked"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cardBlockedIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_auth_card_blocked" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/cardBlockedLabel"
+            style="@style/RobotoBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="50dp"
+            android:text="@string/egov_cardblocked_label"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardBlockedIcon" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/cardBlockedInfo"
+            style="@style/RobotoRegular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:text="@string/egov_cardblocked_info1"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardBlockedLabel" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/cardBlockedInfo2"
+            style="@style/RobotoRegular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:text="@string/egov_cardblocked_info2"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardBlockedInfo" />
+
+        <com.telekom.citykey.custom.views.ProgressButton
+            android:id="@+id/cardBlockedOkBtn"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:text="@android:string/ok" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/nfcLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+
+        <RelativeLayout
+            android:id="@+id/layoutNfcBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/nfcTopImage"
+                android:layout_width="match_parent"
+                android:layout_height="96dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/address_top" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/nfcTopIcon"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_auth_card_icon" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/nfcIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/nfcIconGuideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutNfcBanner"
+            app:srcCompat="@drawable/ic_auth_error_icon" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/nfcIconGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:text="@string/egov_nfc_not_enabled_but_available"
+            android:textColor="@color/onSurface"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="@id/nfcAvailableIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/nfcAvailableIcon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/nfcAvailableIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nfcIconGuideline"
+            app:srcCompat="@drawable/ic_auth_success" />
+
+        <View
+            android:id="@+id/statesSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:background="#c8c7cc"
+            app:layout_constraintTop_toBottomOf="@id/nfcAvailableIcon" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:text="@string/egov_nfc_not_enabled_status"
+            android:textColor="@color/onSurface"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="@id/nfcTurnedOffIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/nfcTurnedOffIcon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/nfcTurnedOffIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nfcAvailableIcon"
+            app:srcCompat="@drawable/ic_auth_error" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:background="#c8c7cc"
+            app:layout_constraintTop_toBottomOf="@id/nfcTurnedOffIcon" />
+
+        <com.telekom.citykey.custom.views.ProgressButton
+            android:id="@+id/turnOnNfcBtn"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:text="@string/egov_nfc_not_enabled_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

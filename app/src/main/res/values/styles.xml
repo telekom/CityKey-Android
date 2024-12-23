@@ -1,0 +1,241 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="statusBarBackground">@color/black5a</item>
+        <item name="tabStyle">@style/AppTabLayout</item>
+        <item name="android:datePickerDialogTheme">@style/ThemeOverlay.App.DatePicker</item>
+        <item name="android:alertDialogTheme">@style/AlertDialogMaterialTheme</item>
+
+        <!-- New MaterialComponents attributes. -->
+        <item name="colorSecondary">@color/onSurface</item>
+        <item name="scrimBackground">@color/background</item>
+        <item name="textAppearanceHeadline1">@style/TextAppearance.MaterialComponents.Headline1
+        </item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.MaterialComponents.Headline2
+        </item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.MaterialComponents.Headline3
+        </item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.MaterialComponents.Headline4
+        </item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.MaterialComponents.Headline5
+        </item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.MaterialComponents.Headline6
+        </item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.MaterialComponents.Subtitle1
+        </item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.MaterialComponents.Subtitle2
+        </item>
+        <item name="textAppearanceBody1">@style/TextAppearance.MaterialComponents.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.MaterialComponents.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.MaterialComponents.Caption</item>
+        <item name="textAppearanceButton">@style/TextAppearance.MaterialComponents.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.MaterialComponents.Overline</item>
+
+        <item name="chipStyle">@style/ChipStyle</item>
+        <item name="android:timePickerDialogTheme">@style/SKTimePickerStyle</item>
+        <item name="android:timePickerStyle">@style/SKTimePickerStyle</item>
+    </style>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@color/splash_background</item>
+    </style>
+
+    <style name="SKTimePickerStyle" parent="@style/ThemeOverlay.MaterialComponents.Dialog">
+        <item name="colorPrimary">@color/oscaColor</item>
+        <item name="android:numbersTextColor">@color/selector_time_picker_numbers</item>
+        <item name="android:numbersBackgroundColor">@color/backgroundSecondary</item>
+        <item name="android:numbersSelectorColor">#646464</item>
+        <item name="android:numbersInnerTextColor">@color/selector_time_picker_numbers</item>
+        <item name="android:headerBackground">@color/oscaColor20a</item>
+        <item name="android:timePickerMode">clock</item>
+        <item name="android:headerTimeTextAppearance">@color/selector_empty</item>
+    </style>
+
+    <style name="TimePickerTheme" parent="@style/ThemeOverlay.MaterialComponents.TimePicker">
+        <item name="colorPrimary">@color/oscaColor</item>
+        <item name="colorPrimaryDark">@color/oscaColor</item>
+        <item name="colorAccent">@color/oscaColor</item>
+    </style>
+
+    <style name="EgovSearchEditTextStyle" parent="@style/Widget.AppCompat.EditText">
+        <item name="colorAccent">@color/onSurface</item>
+        <item name="colorPrimary">@color/onSurface</item>
+        <item name="colorPrimaryDark">@color/onSurface</item>
+    </style>
+
+    <style name="PoiTabTextStyle" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="RobotoBold">
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="RobotoRegular">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="RobotoLight">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="RobotoMedium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="buttonStylesBlue" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/oscaColor</item>
+        <item name="android:textSize">18sp</item>
+        <item name="strokeColor">@color/oscaColor</item>
+        <item name="android:textAppearance">@style/RobotoRegular</item>
+        <item name="android:paddingStart">28dp</item>
+        <item name="android:paddingEnd">28dp</item>
+        <item name="android:height">42dp</item>
+    </style>
+
+    <style name="buttonBlueFilledStyle" parent="@style/Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/oscaColor</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAppearance">@style/RobotoRegular</item>
+        <item name="android:paddingStart">28dp</item>
+        <item name="android:paddingEnd">28dp</item>
+        <item name="android:minHeight">54dp</item>
+        <item name="android:minWidth">256dp</item>
+    </style>
+
+    <style name="AlertDialogMaterialTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="buttonBarButtonStyle">@style/MaterialDialogButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/MaterialDialogButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/MaterialDialogButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/MaterialDialogButtonStyle</item>
+    </style>
+
+    <style name="AuthDialogTheme" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="bottomSheetStyle">@style/AuthModalStyle</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AuthModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/auth_bottom_sheet_rounded</item>
+    </style>
+
+    <style name="MaterialDialogButtonStyle" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/oscaColor</item>
+    </style>
+
+    <style name="stateText" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="PinErrorText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">#ffff5f5f</item>
+    </style>
+
+    <style name="hintText" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/onSurface85a</item>
+        <item name="android:textAppearance">@style/RobotoBold</item>
+    </style>
+
+    <style name="AppTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/onSurface</item>
+        <item name="tabIndicatorHeight">4dp</item>
+        <item name="tabTextAppearance">@style/AppTabTextAppearance</item>
+    </style>
+
+    <style name="InfoboxTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/InfoboxTabTextStyle</item>
+    </style>
+
+    <style name="InfoboxTabTextStyle" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="AppTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAppearance">@style/RobotoMedium</item>
+        <item name="android:textColor">@color/onSurface</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="FadeInOutAnimation">
+        <item name="android:windowEnterAnimation">@anim/fade_in_linear</item>
+        <item name="android:windowExitAnimation">@anim/fade_out_linear</item>
+    </style>
+
+    <style name="BlackTransparentDialogStyle" parent="android:Theme.Translucent.NoTitleBar">
+        <item name="android:windowAnimationStyle">@style/FadeInOutAnimation</item>
+        <item name="android:background">@color/black40a</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="ChipStyle" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="checkedIconEnabled">false</item>
+        <item name="checkedIcon">@null</item>
+        <item name="android:checkable">true</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:textColor">@color/selector_chip_text</item>
+        <item name="chipCornerRadius">4dp</item>
+        <item name="chipEndPadding">18dp</item>
+        <item name="chipStartPadding">18dp</item>
+        <item name="chipBackgroundColor">@color/selector_chip_background</item>
+        <item name="rippleColor">@color/white</item>
+        <item name="android:textAppearance">@style/ChipTextAppearance</item>
+    </style>
+
+    <style name="ChipTextAppearance" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="SwitchStyle">
+        <item name="colorControlActivated">@color/oscaColor</item>
+    </style>
+
+    <style name="MaterialDatePickerButtonStyle" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/selector_date_picker_dialog_buttons</item>
+    </style>
+
+    <style name="ThemeOverlay.App.DatePicker" parent="@style/ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorPrimary">@color/oscaColor20a</item>
+        <item name="colorOnPrimary">@color/oscaColor</item>
+        <item name="textInputStyle">@style/Widget.Design.TextInputLayout</item>
+        <item name="buttonBarButtonStyle">@style/MaterialDatePickerButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/MaterialDatePickerButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/MaterialDatePickerButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/MaterialDatePickerButtonStyle</item>
+    </style>
+
+    <style name="Widget.Oscaandroidclient.AppWidget.Container" parent="android:Widget">
+        <item name="android:id">@android:id/background</item>
+        <item name="android:background">?android:attr/colorBackground</item>
+        <item name="android:padding">?attr/appWidgetPadding</item>
+    </style>
+
+    <style name="Widget.Oscaandroidclient.AppWidget.InnerView" parent="android:Widget">
+        <item name="android:background">?android:attr/colorBackground</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:padding">?attr/appWidgetPadding</item>
+    </style>
+
+    <style name="WasteCalendarWidgetInnerView" parent="android:Widget">
+        <item name="android:background">@drawable/bg_waste_calendar_widget_inner_view</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:padding">?attr/appWidgetPadding</item>
+    </style>
+
+    <style name="SmallWasteCalendarWidgetInnerView" parent="android:Widget">
+        <item name="android:background">@drawable/bg_small_waste_calendar_widget_inner_view</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+</resources>

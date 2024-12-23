@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/auth_bottom_sheet_rounded"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/onSurface"
+            tools:title="Main Category" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/serviceRequestId"
+        style="@style/RobotoBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="16dp"
+        android:hyphenationFrequency="full"
+        android:textColor="@color/onSurface"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        tools:text="#1234-5678" />
+
+    <com.telekom.citykey.custom.views.OscaWebView
+        android:id="@+id/descriptionWebView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/serviceRequestId" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/reportStatusText"
+        style="@style/RobotoMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="0dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:hyphenationFrequency="full"
+        android:maxLines="5"
+        android:minHeight="20dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintHeight_min="20dp"
+        app:layout_constraintTop_toBottomOf="@id/descriptionWebView"
+        tools:background="#ff8700"
+        tools:text="In Bearbeitung"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/moreInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="2dp"
+        android:background="?android:selectableItemBackground"
+        android:paddingVertical="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reportStatusText">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/moreInfoIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_appointments_more_info" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/moreInfoLabel"
+            style="@style/RobotoRegular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="20dp"
+            android:hyphenationFrequency="full"
+            android:text="@string/fa_006_more_information_label"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/moreInfoIcon"
+            app:layout_constraintStart_toEndOf="@id/moreInfoIcon"
+            app:layout_constraintTop_toTopOf="@id/moreInfoIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

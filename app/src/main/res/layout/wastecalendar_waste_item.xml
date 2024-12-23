@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/wasteCalendarWasteItemContainer"
+    android:layout_height="45dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/wasteIcon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="@dimen/global_content_margins"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_waste_trash_icon" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/moreArrow"
+        android:layout_width="12dp"
+        android:layout_height="15dp"
+        android:layout_marginEnd="@dimen/global_content_margins"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/onSurfaceSecondary"
+        app:srcCompat="@drawable/ic_more_arrow_16dp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/reminderIcon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="5dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:tint="@color/onSurface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/moreArrow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_waste_reminder" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/wasteName"
+        style="@style/RobotoRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/onSurface"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/reminderIcon"
+        app:layout_constraintStart_toEndOf="@id/wasteIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Arzttonne" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/global_content_margins"
+        android:background="@color/separator"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

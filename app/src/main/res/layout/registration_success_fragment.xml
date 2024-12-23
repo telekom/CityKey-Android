@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/contentParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgSuccess"
+            android:layout_width="122dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"
+            android:layout_marginTop="36dp"
+            android:src="@drawable/ic_success" />
+
+        <TextView
+            android:id="@+id/pinConfirmedInfo"
+            style="@style/RobotoRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:gravity="center_horizontal"
+            android:text="@string/r_005_registration_success_headline"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/pinConfirmedAdditionalInfo"
+            style="@style/RobotoRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="21dp"
+            android:gravity="center_horizontal"
+            android:text="@string/r_005_registration_success_details"
+            android:textSize="14sp" />
+
+        <com.telekom.citykey.custom.views.ProgressButton
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:text="@string/r_005_registration_success_login_btn" />
+    </LinearLayout>
+</ScrollView>

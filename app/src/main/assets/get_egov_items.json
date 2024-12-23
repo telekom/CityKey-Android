@@ -1,0 +1,1109 @@
+{
+  "content": [
+    {
+      "groupId": 24,
+      "groupName": "Construction",
+      "groupIcon": "file:///android_asset/egov_building.png",
+      "services": [
+        {
+          "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/703221/show",
+          "linkType": "eidform",
+          "linksInfo": [
+            {
+              "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/703221/show",
+              "title": "",
+              "linkType": "eidform"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Beitragsauskunft",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Erschließungsbeiträge, Straßenbaubeiträge und Kanalanschlussbeiträge finanzieren die Erschließung eines Grundstücks. Für die Erneuerung, Erweiterung und Verbesserung von Straßen, Wegen und Plätzen erhebt die Stadt Straßenbaubeiträge. Kanalbeiträge werden für die erstmalige Herstellung des Kanalnetzes sowie für dessen später notwendig werdende Vergrößerung oder Ausdehnung gezahlt. Vor dem Kauf oder Verkauf eines Grundstücks oder einer Eigentumswohnung ist es daher wichtig zu klären, ob für das betreffende Objekt die Beiträge bereits gezahlt wurden oder gegebenenfalls noch zu zahlen sind. Auf Anfrage erhalten Bürger*innen von der Stadt darüber eine Bescheinigung.",
+          "serviceDescription": "Erschließungsbeiträge, Straßenbaubeiträge und Kanalanschlussbeiträge finanzieren die Erschließung eines Grundstücks. Für die Erneuerung, Erweiterung und Verbesserung von Straßen, Wegen und Plätzen erhebt die Stadt Straßenbaubeiträge. Kanalbeiträge werden für die erstmalige Herstellung des Kanalnetzes sowie für dessen später notwendig werdende Vergrößerung oder Ausdehnung gezahlt. Vor dem Kauf oder Verkauf eines Grundstücks oder einer Eigentumswohnung ist es daher wichtig zu klären, ob für das betreffende Objekt die Beiträge bereits gezahlt wurden oder gegebenenfalls noch zu zahlen sind. Auf Anfrage erhalten Bürger*innen von der Stadt darüber eine Bescheinigung.",
+          "serviceId": 1090
+        }
+      ]
+    },
+    {
+      "groupId": 14,
+      "groupName": "Education",
+      "groupIcon": "file:///android_asset/egov_education.png",
+      "services": [
+        {
+          "link": "https://www.bonn.de/?sp:id=6478",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6478",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Ausbildungsförderung",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Den Antrag auf Schüler-Bafög können Sie auch online stellen.",
+          "serviceDescription": "Den Antrag auf Schüler-Bafög können Sie auch online stellen.",
+          "serviceId": 749
+        }
+      ]
+    },
+    {
+      "groupId": 19,
+      "groupName": "Engagement",
+      "groupIcon": "file:///android_asset/egov_engagement.png",
+      "services": [
+        {
+          "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/703316/show",
+          "linkType": "eidform",
+          "linksInfo": [
+            {
+              "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/703316/show",
+              "title": "",
+              "linkType": "eidform"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Ausfahrten anmelden",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Veranstaltungen, für die Straßen mehr als verkehrsüblich in Anspruch genommen werden, insbesondere Kraftfahrzeugrennen, bedürfen einer Erlaubnis. ",
+          "serviceDescription": "Veranstaltungen, für die Straßen mehr als verkehrsüblich in Anspruch genommen werden, insbesondere Kraftfahrzeugrennen, bedürfen einer Erlaubnis. ",
+          "serviceId": 711
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=19025",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=19025",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Bürgerantrag",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Mit einem sogenannten Bürgerantrag können Sie Anregungen und Beschwerden zu einem Anliegen, welches in den Zuständigkeitsbereich des Rates der Stadt Bonn oder einer der Bezirksvertretungen fällt, an den Rat herantragen.",
+          "serviceDescription": "Mit einem sogenannten Bürgerantrag können Sie Anregungen und Beschwerden zu einem Anliegen, welches in den Zuständigkeitsbereich des Rates der Stadt Bonn oder einer der Bezirksvertretungen fällt, an den Rat herantragen.",
+          "serviceId": 719
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=19026",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=19026",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Kontaktaufnahme mit der Oberbürgermeisterin",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Die Mitarbeitenden des Bürgerbüros sind Ansprechperson für Ihre vielfältigen Anfragen, Wünsche und Beschwerden.",
+          "serviceDescription": "Die Mitarbeitenden des Bürgerbüros sind Ansprechperson für Ihre vielfältigen Anfragen, Wünsche und Beschwerden.",
+          "serviceId": 720
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=6574",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6574",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Spielplatzpatenschaft",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Hier können Sie sich bewerben, wenn Sie Spielplatzpat*in werden möchten.",
+          "serviceDescription": "Hier können Sie sich bewerben, wenn Sie Spielplatzpat*in werden möchten.",
+          "serviceId": 738
+        },
+        {
+          "link": "https://www.bonn.de/service-bieten/wahlen/wahlhelfende.php",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/service-bieten/wahlen/wahlhelfende.php",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Wahlhelfende Anmeldung",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Bei der Wahl helfen kann, wer am Wahltag wahlberechtigt ist. Die Wahlvorstände treffen sich am Wahltag um 7.30 Uhr in dem Wahlraum, der ihnen in ihrer Einberufung mitgeteilt wurde.",
+          "serviceDescription": "Bei der Wahl helfen kann, wer am Wahltag wahlberechtigt ist. Die Wahlvorstände treffen sich am Wahltag um 7.30 Uhr in dem Wahlraum, der ihnen in ihrer Einberufung mitgeteilt wurde.",
+          "serviceId": 724
+        }
+      ]
+    },
+    {
+      "groupId": 18,
+      "groupName": "Environmental protection",
+      "groupIcon": "file:///android_asset/egov_enviromental_protection.png",
+      "services": [
+        {
+          "link": "https://www.bonn.de/?sp:id=6380",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6380",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Auskunft aus dem Altlastenkataster",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Die Stadt Bonn führt ein Kataster mit den altlastverdächtigen und altlastbehafteten Flächen.",
+          "serviceDescription": "Die Stadt Bonn führt ein Kataster mit den altlastverdächtigen und altlastbehafteten Flächen.",
+          "serviceId": 741
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=6385",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6385",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Gartenbrunnen errichten",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Die Errichtung und der Betrieb eines Brunnens bedürfen einer Erlaubnis zur Gewässerbenutzung.",
+          "serviceDescription": "Die Errichtung und der Betrieb eines Brunnens bedürfen einer Erlaubnis zur Gewässerbenutzung.",
+          "serviceId": 740
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=6082",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6082",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Gefahrenbaum melden",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Ein Baum stellt eine Gefahr für die öffentliche Sicherheit dar, wenn dessen Äste oder der Baum an sich auf öffentliche Verkehrsfläche fallen könnten und dadurch Personen oder Gegenstände gefährdet würden.",
+          "serviceDescription": "Ein Baum stellt eine Gefahr für die öffentliche Sicherheit dar, wenn dessen Äste oder der Baum an sich auf öffentliche Verkehrsfläche fallen könnten und dadurch Personen oder Gegenstände gefährdet würden.",
+          "serviceId": 731
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=6086",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6086",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Ratten auf öffentlicher Fläche melden",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Die Rattenbekämpfung wird auf öffentlicher Fläche von der Stadt Bonn übernommen.",
+          "serviceDescription": "Die Rattenbekämpfung wird auf öffentlicher Fläche von der Stadt Bonn übernommen.",
+          "serviceId": 725
+        }
+      ]
+    },
+    {
+      "groupId": 21,
+      "groupName": "Events",
+      "groupIcon": "file:///android_asset/egov_events.png",
+      "services": [
+        {
+          "link": "https://www.bonn.de/?sp:id=6326",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6326",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Dreharbeiten",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Sollten Sie genehmigungspflichtige Dreharbeiten in Bonn planen oder weitere Informationen benötigen, dann ist die Veranstaltungskoordination Ihr erster Ansprechpartner in der Bonner Stadtverwaltung.",
+          "serviceDescription": "Sollten Sie genehmigungspflichtige Dreharbeiten in Bonn planen oder weitere Informationen benötigen, dann ist die Veranstaltungskoordination Ihr erster Ansprechpartner in der Bonner Stadtverwaltung.",
+          "serviceId": 730
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=6050",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6050",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Karnevalsumzug",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Für die Durchführung von Karnevalsumzügen benötigen Sie eine Erlaubnis.",
+          "serviceDescription": "Für die Durchführung von Karnevalsumzügen benötigen Sie eine Erlaubnis.",
+          "serviceId": 729
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=6421",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6421",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Koordinieren von Veranstaltungen",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Sollten Sie eine Open-Air-Veranstaltung planen, steht Ihnen die Veranstaltungskoordination als erster Ansprechpartner zur Verfügung.",
+          "serviceDescription": "Sollten Sie eine Open-Air-Veranstaltung planen, steht Ihnen die Veranstaltungskoordination als erster Ansprechpartner zur Verfügung.",
+          "serviceId": 728
+        }
+      ]
+    },
+    {
+      "groupId": 4,
+      "groupName": "Housing",
+      "groupIcon": "file:///android_asset/egov_housing.png",
+      "services": [
+        {
+          "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/1004/show",
+          "linkType": "eidform",
+          "linksInfo": [
+            {
+              "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/1004/show",
+              "title": "",
+              "linkType": "eidform"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Abmeldung nach dem Meldegesetz",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Wer aus einer Wohnung auszieht und keine neue Wohnung im Inland bezieht, hat sich innerhalb von zwei Wochen nach Auszugsdatum abzumelden. Grundsätzlich erfolgt die Abmeldung zum Tag des Auszuges. Eine Abmeldung und die Aushändigung der Abmeldebestätigung ist frühestens eine Woche vor Auszug möglich. ",
+          "serviceDescription": "Wer aus einer Wohnung auszieht und keine neue Wohnung im Inland bezieht, hat sich innerhalb von zwei Wochen nach Auszugsdatum abzumelden. Grundsätzlich erfolgt die Abmeldung zum Tag des Auszuges. Eine Abmeldung und die Aushändigung der Abmeldebestätigung ist frühestens eine Woche vor Auszug möglich. ",
+          "serviceId": 703
+        },
+        {
+          "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/995/show",
+          "linkType": "eidform",
+          "linksInfo": [
+            {
+              "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/995/show",
+              "title": "",
+              "linkType": "eidform"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Hausauskunft",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Hauseigentümerinnen und Hauseigentümer können kostenlos Auskunft darüber bekommen, wer in ihrer Immobilie gemeldet ist, soweit dies ohne Beeinträchtigung von Rechten Dritter möglich ist.",
+          "serviceDescription": "Hauseigentümerinnen und Hauseigentümer können kostenlos Auskunft darüber bekommen, wer in ihrer Immobilie gemeldet ist, soweit dies ohne Beeinträchtigung von Rechten Dritter möglich ist.",
+          "serviceId": 706
+        },
+        {
+          "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/15700/show",
+          "linkType": "eidform",
+          "linksInfo": [
+            {
+              "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/15700/show",
+              "title": "",
+              "linkType": "eidform"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Ummeldung nach dem Meldegesetz",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Zieht eine Einzelperson oder eine ganze Familie innerhalb von Bonn um, kann das Meldeformular und die Wohnungsgeberbestätigung (WGB) online übermittelt werden. \n\n Mit dem neuen Personalausweis (nPA) mit freigeschalteter ID Funktion ist keine Unterschrift erforderlich. Das Meldeformular und die Wohnungsgeberbestätigung werden elektronisch übermittelt.",
+          "serviceDescription": "Zieht eine Einzelperson oder eine ganze Familie innerhalb von Bonn um, kann das Meldeformular und die Wohnungsgeberbestätigung (WGB) online übermittelt werden. \n\n Mit dem neuen Personalausweis (nPA) mit freigeschalteter ID Funktion ist keine Unterschrift erforderlich. Das Meldeformular und die Wohnungsgeberbestätigung werden elektronisch übermittelt.",
+          "serviceId": 708
+        }
+      ]
+    },
+    {
+      "groupId": 9,
+      "groupName": "Migration",
+      "groupIcon": "file:///android_asset/icon_egov_migration.png",
+      "services": [
+        {
+          "link": "https://www.bonn.de/?sp:id=6475",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6475",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Aufenthaltstitel beantragen",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Ausländerinnen und Ausländer benötigen grundsätzlich einen Aufenthaltstitel orientiert an ihrem Aufenthaltszweck.",
+          "serviceDescription": "Ausländerinnen und Ausländer benötigen grundsätzlich einen Aufenthaltstitel orientiert an ihrem Aufenthaltszweck.",
+          "serviceId": 733
+        }
+      ]
+    },
+    {
+      "groupId": 20,
+      "groupName": "Real estate",
+      "groupIcon": "file:///android_asset/egov_real_estate.png",
+      "services": [
+        {
+          "link": "https://www.bonn.de/?sp:id=6123",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6123",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Freimeldung geförderter Wohnungen",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Sobald absehbar ist, dass eine geförderte Wohnung bezugsfertig oder frei wird, hat der Verfügungsberechtigtedies der Stadt Bonn mitzuteilen.",
+          "serviceDescription": "Sobald absehbar ist, dass eine geförderte Wohnung bezugsfertig oder frei wird, hat der Verfügungsberechtigtedies der Stadt Bonn mitzuteilen.",
+          "serviceId": 737
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=20759",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=20759",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Gebrauchtabnahme bei fliegenden Bauten",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Fliegende Bauten sind bauliche Anlagen, die dazu bestimmt sind, an verschiedenen Orten wiederholt aufgestellt und zerlegt beziehungsweise abgebaut zu werden.",
+          "serviceDescription": "Fliegende Bauten sind bauliche Anlagen, die dazu bestimmt sind, an verschiedenen Orten wiederholt aufgestellt und zerlegt beziehungsweise abgebaut zu werden.",
+          "serviceId": 744
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=6561",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6561",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Gewerbliche Immobilie suchen",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Wir helfen Unternehmer*innen bei der Suche nach geeigneten Flächen und Bestandsimmobilien zum Kauf oder zur Miete.",
+          "serviceDescription": "Wir helfen Unternehmer*innen bei der Suche nach geeigneten Flächen und Bestandsimmobilien zum Kauf oder zur Miete.",
+          "serviceId": 721
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=17230",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=17230",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Kartenbestellung",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Hier können Sie den Amtlichen Stadtplan, die Deutsche Grundkarte, die farbige Luftbildkarte sowie thematische Karten bestellen.",
+          "serviceDescription": "Hier können Sie den Amtlichen Stadtplan, die Deutsche Grundkarte, die farbige Luftbildkarte sowie thematische Karten bestellen.",
+          "serviceId": 743
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=6179",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6179",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Meldebescheinigung",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Zum Nachweis, wo und gegebenenfalls seit wann eine Person gemeldet ist, ob sie noch lebt oder zum Nachweis bestimmter Daten, kann eine Meldebescheinigung erteilt werden.",
+          "serviceDescription": "Zum Nachweis, wo und gegebenenfalls seit wann eine Person gemeldet ist, ob sie noch lebt oder zum Nachweis bestimmter Daten, kann eine Meldebescheinigung erteilt werden.",
+          "serviceId": 747
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=6340",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6340",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Übermittlungssperre",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Jeder Einwohner hat gegenüber der Meldebehörde nach Maßgabe des Meldegesetztes Widerspruchsrechte gegen die Datenweitergabe.",
+          "serviceDescription": "Jeder Einwohner hat gegenüber der Meldebehörde nach Maßgabe des Meldegesetztes Widerspruchsrechte gegen die Datenweitergabe.",
+          "serviceId": 748
+        }
+      ]
+    },
+    {
+      "groupId": 8,
+      "groupName": "Recreation",
+      "groupIcon": "file:///android_asset/egov_leisure.png",
+      "services": [
+        {
+          "link": "https://www.bonn.de/themen-entdecken/bildung-lernen/publikationen-stadtarchiv.php",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/themen-entdecken/bildung-lernen/publikationen-stadtarchiv.php",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Buch des Stadtarchivs bestellen",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Sie können die Bücher des Stadtarchivs online bestellen.",
+          "serviceDescription": "Sie können die Bücher des Stadtarchivs online bestellen.",
+          "serviceId": 734
+        },
+        {
+          "link": "https://www.bonn.de/bonn-erleben/besichtigen-entdecken/museumsservice.php#publikationen",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/bonn-erleben/besichtigen-entdecken/museumsservice.php#publikationen",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Buch des Stadtmuseums bestellen",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Sie können die Bücher des Stadtarchivs online bestellen.",
+          "serviceDescription": "Sie können die Bücher des Stadtmuseums online bestellen.",
+          "serviceId": 735
+        },
+        {
+          "link": "https://www.bonn.de/vv/produkte/Fernleihe.php",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/vv/produkte/Fernleihe.php",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Fernleihe der Stadtbibliothek",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Sie benötigen einen Beitrag aus einer Fachzeitschrift, Zeitungsartikel, Report oder Buch, der nicht in der Stadtbibliothek bereitsteht? Die Fernleihe bietet die Möglichkeit, das Dokument zu bestellen.",
+          "serviceDescription": "Sie benötigen einen Beitrag aus einer Fachzeitschrift, Zeitungsartikel, Report oder Buch, der nicht in der Stadtbibliothek bereitsteht? Die Fernleihe bietet die Möglichkeit, das Dokument zu bestellen.",
+          "serviceId": 736
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=6171",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6171",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Reitplaketten",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Wer in Bonn in der freien Landschaft oder auf Reitwegen im Wald reiten will, muss am Pferd beidseitig ein gut sichtbares, gültiges Kennzeichen (Reitplakette) mitführen.",
+          "serviceDescription": "Wer in Bonn in der freien Landschaft oder auf Reitwegen im Wald reiten will, muss am Pferd beidseitig ein gut sichtbares, gültiges Kennzeichen (Reitplakette) mitführen.",
+          "serviceId": 739
+        },
+        {
+          "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/703310/show",
+          "linkType": "eidform",
+          "linksInfo": [
+            {
+              "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/703310/show",
+              "title": "",
+              "linkType": "eidform"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Straßenfeste anmelden",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Wer ein Straßenfest veranstalten möchte, benötigt dafür eine Erlaubnis der Straßenverkehrsbehörde.",
+          "serviceDescription": "Wer ein Straßenfest veranstalten möchte, benötigt dafür eine Erlaubnis der Straßenverkehrsbehörde.",
+          "serviceId": 715
+        }
+      ]
+    },
+    {
+      "groupId": 15,
+      "groupName": "Social benefits",
+      "groupIcon": "file:///android_asset/egov_social.png",
+      "services": [
+        {
+          "link": "https://www.bonn.de/?sp:id=6155",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6155",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Wohngeld",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Ihren Erstantrag auf Wohngeld können Sie auch online stellen.",
+          "serviceDescription": "Ihren Erstantrag auf Wohngeld können Sie auch online stellen.",
+          "serviceId": 750
+        }
+      ]
+    },
+    {
+      "groupId": 17,
+      "groupName": "Taxes",
+      "groupIcon": "file:///android_asset/egov_tax.png",
+      "services": [
+        {
+          "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/703284/show",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/703284/show",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Hund an-, um-, abmelden",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Jede persönlichen Zwecken dienende Hundehaltung im Stadtgebiet Bonn ist hundesteuerpflichtig.",
+          "serviceDescription": "Jede persönlichen Zwecken dienende Hundehaltung im Stadtgebiet Bonn ist hundesteuerpflichtig.",
+          "serviceId": 723
+        }
+      ]
+    },
+    {
+      "groupId": 13,
+      "groupName": "Travel",
+      "groupIcon": "file:///android_asset/egov_travel.png",
+      "services": [
+        {
+          "link": "https://www.bonn.de/bonn-erleben/besichtigen-entdecken/fuer-gruppen.php#MzgwNDc4NDIx",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/bonn-erleben/besichtigen-entdecken/fuer-gruppen.php#MzgwNDc4NDIx",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Standrundfahrten und Stadtrundgänge für Gruppen",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Der Gästeführerservice der Bonn-Information vermittelt Ihnen gerne versierte Gästeführerinnen und Gästeführer und berät Sie über „Ihre“ ganz individuelle Stadtführung.",
+          "serviceDescription": "Der Gästeführerservice der Bonn-Information vermittelt Ihnen gerne versierte Gästeführerinnen und Gästeführer und berät Sie über „Ihre“ ganz individuelle Stadtführung.",
+          "serviceId": 722
+        }
+      ]
+    },
+    {
+      "groupId": 5,
+      "groupName": "Vehicle",
+      "groupIcon": "file:///android_asset/egov_vehicles.png",
+      "services": [
+        {
+          "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/703225/show",
+          "linkType": "eidform",
+          "linksInfo": [
+            {
+              "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/703225/show",
+              "title": "",
+              "linkType": "eidform"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Ausnahmegenehmigung vom Sonntags- und Feiertagsfahrverbot sowie von der Ferienreiseverordnung",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Für LKW über 7,5 t zulässiges Gesamtgewicht und LKW mit Anhängern gilt an bestimmten Tagen ein Fahrverbot auf bestimmten Bundesautobahnen und Bundesstraßen. Von diesem Verbot können Ausnahmegenehmigungen beantragt werden.",
+          "serviceDescription": "Für LKW über 7,5 t zulässiges Gesamtgewicht und LKW mit Anhängern gilt an bestimmten Tagen ein Fahrverbot auf bestimmten Bundesautobahnen und Bundesstraßen. Von diesem Verbot können Ausnahmegenehmigungen beantragt werden.",
+          "serviceId": 712
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=6029",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6029",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Ausnahmegenehmigungen von Halt- und Parkverboten, private Umzüge",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Ausnahmegenehmigungen von Halt- und Parkverboten können gemäß §48 (1) der Straßenverkehrsordnung (StVO) Privatpersonen, Handwerksbetrieben und Möbelspeditionen erteilt werden.",
+          "serviceDescription": "Ausnahmegenehmigungen von Halt- und Parkverboten können gemäß §48 (1) der Straßenverkehrsordnung (StVO) Privatpersonen, Handwerksbetrieben und Möbelspeditionen erteilt werden.",
+          "serviceId": 726
+        },
+        {
+          "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/25273/show",
+          "linkType": "eidform",
+          "linksInfo": [
+            {
+              "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/25273/show",
+              "title": "",
+              "linkType": "eidform"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Bewohnerparkausweise",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Wer in einem Bewohnerparkgebiet mit Hauptwohnsitz gemeldet ist, dauernd ein auf sich als Halter oder Halterin zugelassenes Fahrzeug besitzt und keine Garage oder sonstige Abstellmöglichkeit hat, kann für die Bewohnerparkplätze einen Bewohnerparkausweis beantragen.",
+          "serviceDescription": "Wer in einem Bewohnerparkgebiet mit Hauptwohnsitz gemeldet ist, dauernd ein auf sich als Halter oder Halterin zugelassenes Fahrzeug besitzt und keine Garage oder sonstige Abstellmöglichkeit hat, kann für die Bewohnerparkplätze einen Bewohnerparkausweis beantragen.",
+          "serviceId": 704
+        },
+        {
+          "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/703228/show",
+          "linkType": "eidform",
+          "linksInfo": [
+            {
+              "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/703228/show",
+              "title": "",
+              "linkType": "eidform"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Feinstaubplakette",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "In ausgewiesenen Umweltzonen dürfen nur noch Fahrzeuge verkehren, die mit der entsprechenden Plakette an der Windschutzscheibe gekennzeichnet sind",
+          "serviceDescription": "In ausgewiesenen Umweltzonen dürfen nur noch Fahrzeuge verkehren, die mit der entsprechenden Plakette an der Windschutzscheibe gekennzeichnet sind",
+          "serviceId": 713
+        },
+        {
+          "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/1001/show",
+          "linkType": "eidform",
+          "linksInfo": [
+            {
+              "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/1001/show",
+              "title": "",
+              "linkType": "eidform"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Führerschein-Karteikartenabschrift",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Sie wohnen nicht mehr in Bonn und wollen bei der Straßenverkehrsbehörde Ihres jetzigen Wohnortes einen neuen Führerschein beantragen und benötigen hierzu eine Karteikartenabschrift.",
+          "serviceDescription": "Sie wohnen nicht mehr in Bonn und wollen bei der Straßenverkehrsbehörde Ihres jetzigen Wohnortes einen neuen Führerschein beantragen und benötigen hierzu eine Karteikartenabschrift.",
+          "serviceId": 705
+        },
+        {
+          "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/1286044/show",
+          "linkType": "eidform",
+          "linksInfo": [
+            {
+              "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/1286044/show",
+              "title": "",
+              "linkType": "eidform"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "KFZ anmelden, ummelden, abmelden (i-KFZ)",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Sie können die folgenden Geschäftsprozesse für Ihr Fahrzeug online beantragen bzw. durchführen:\n\n - Antrag auf Neuzulassungen eines Kfz \n - Antrag auf Wiederzulassungen von Kfz \n - Antrag auf Umschreibungen von Kfz mit Kennzeichenwechsel \n - Vollautomatisierte Umschreibungen von Kfz ohne Kennzeichenwechsel \n - Vollautomatisierte Außerbetriebsetzung eines Kfz \n - Vollautomatisierte Adressänderung des Halters eines Kfz",
+          "serviceDescription": "Sie können die folgenden Geschäftsprozesse für Ihr Fahrzeug online beantragen bzw. durchführen:\n\n - Antrag auf Neuzulassungen eines Kfz \n - Antrag auf Wiederzulassungen von Kfz \n - Antrag auf Umschreibungen von Kfz mit Kennzeichenwechsel \n - Vollautomatisierte Umschreibungen von Kfz ohne Kennzeichenwechsel \n - Vollautomatisierte Außerbetriebsetzung eines Kfz \n - Vollautomatisierte Adressänderung des Halters eines Kfz",
+          "serviceId": 718
+        },
+        {
+          "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/25460/show",
+          "linkType": "eidform",
+          "linksInfo": [
+            {
+              "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/25460/show",
+              "title": "",
+              "linkType": "eidform"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Kfz - Auskunft aus dem Fahrzeugregister",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Die Übermittlung von Halter- beziehungsweise Fahrzeugdaten an Privatpersonen ist in § 39 des Straßenverkehrsgesetzes geregelt. Der Antragsteller oder die Antragstellerin muss einen verkehrsbezogenen Anspruch an der Auskunft haben und die entsprechenden Gründe in einem Antrag darlegen.",
+          "serviceDescription": "Die Übermittlung von Halter- beziehungsweise Fahrzeugdaten an Privatpersonen ist in § 39 des Straßenverkehrsgesetzes geregelt. Der Antragsteller oder die Antragstellerin muss einen verkehrsbezogenen Anspruch an der Auskunft haben und die entsprechenden Gründe in einem Antrag darlegen.",
+          "serviceId": 707
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=6204",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6204",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Melderegisterauskunft",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Gegen Entrichtung einer Gebühr kann aus dem Melderegister über einzelne bestimmte Einwohner Auskunft erteilt werden.",
+          "serviceDescription": "Gegen Entrichtung einer Gebühr kann aus dem Melderegister über einzelne bestimmte Einwohner Auskunft erteilt werden.",
+          "serviceId": 746
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=6557",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6557",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Parkverstoß anzeigen",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Sollte Ihnen auffallen, dass sich ein Verkehrsteilnehmer ordnungswidrig verhält, besteht für Sie die Möglichkeit auch privat eine Anzeige zu erstatten.",
+          "serviceDescription": "Sollte Ihnen auffallen, dass sich ein Verkehrsteilnehmer ordnungswidrig verhält, besteht für Sie die Möglichkeit auch privat eine Anzeige zu erstatten.",
+          "serviceId": 716
+        },
+        {
+          "link": "https://www.bonn.de/themen-entdecken/verkehr-mobilitaet/radverkehr.php",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/themen-entdecken/verkehr-mobilitaet/radverkehr.php",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Radverkehr",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Hier können Sie Anregungen geben und Fragen zur Radverkehrsentwicklung stellen",
+          "serviceDescription": "Hier können Sie Anregungen geben und Fragen zur Radverkehrsentwicklung stellen",
+          "serviceId": 742
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=6054",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6054",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Schwerbehindertenparkausweis beantragen",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Schwerbehinderten mit außergewöhnlicher Gehbehinderung (aG) oder Blinden (BL) (die Merkzeichen 'aG' und 'Bl' befinden sich auf der Rückseite des Schwerbehindertenausweises) können Ausnahmegenehmigungen zur Bewilligung von Parkberechtigungen erteilt werden.",
+          "serviceDescription": "Schwerbehinderten mit außergewöhnlicher Gehbehinderung (aG) oder Blinden (BL) (die Merkzeichen 'aG' und 'Bl' befinden sich auf der Rückseite des Schwerbehindertenausweises) können Ausnahmegenehmigungen zur Bewilligung von Parkberechtigungen erteilt werden.",
+          "serviceId": 717
+        }
+      ]
+    },
+    {
+      "groupId": 2,
+      "groupName": "Work",
+      "groupIcon": "file:///android_asset/egov_work.png",
+      "services": [
+        {
+          "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/1419/show",
+          "linkType": "eidform",
+          "linksInfo": [
+            {
+              "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/1419/show",
+              "title": "",
+              "linkType": "eidform"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Feedback zum Serviceportal",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Um unsere Online-Dienstleistungen und das Serviceportal stetig zu verbessern, benötigen wir Ihr Feedback. Wir freuen uns über Ihre Hinweise, Anregungen oder Kritik.",
+          "serviceDescription": "Um unsere Online-Dienstleistungen und das Serviceportal stetig zu verbessern, benötigen wir Ihr Feedback. Wir freuen uns über Ihre Hinweise, Anregungen oder Kritik.",
+          "serviceId": 710
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=6063",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6063",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Führerschein - Fahrschulwechsel",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Ein Fahrschulwechsel muss beantragt werden.",
+          "serviceDescription": "Ein Fahrschulwechsel muss beantragt werden.",
+          "serviceId": 751
+        },
+        {
+          "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/703289/show",
+          "linkType": "eidform",
+          "linksInfo": [
+            {
+              "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/703289/show",
+              "title": "",
+              "linkType": "eidform"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Parkerleichterung für Ärzt*innen",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Ärzt*innen, die 100 Hausbesuche pro Quartal durchführen, können eine Parkerleichterung für Ärzte*innen beantragen.",
+          "serviceDescription": "Ärzt*innen, die 100 Hausbesuche pro Quartal durchführen, können eine Parkerleichterung für Ärzte*innen beantragen.",
+          "serviceId": 714
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=6287",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6287",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Sondernutzung öffentlicher Verkehrsflächen",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Jede Inanspruchnahme öffentlicher Straßen, Wege und Plätze, die über das Begehen und Befahren im Rahmen der straßenverkehrsrechtlichen Vorschriften (Gemeingebrauch) hinausgeht, bedarf als Sondernutzung der Erlaubnis.",
+          "serviceDescription": "Jede Inanspruchnahme öffentlicher Straßen, Wege und Plätze, die über das Begehen und Befahren im Rahmen der straßenverkehrsrechtlichen Vorschriften (Gemeingebrauch) hinausgeht, bedarf als Sondernutzung der Erlaubnis.",
+          "serviceId": 727
+        },
+        {
+          "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/998/show",
+          "linkType": "eidform",
+          "linksInfo": [
+            {
+              "link": "https://service.bonn.de/detail/-/vr-bis-detail/dienstleistung/998/show",
+              "title": "",
+              "linkType": "eidform"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Untersuchungsberechtigungsschein nach dem Jugendarbeitsschutzgesetz",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Nach dem Jugendarbeitsschutzgesetz ist vor Aufnahme einer Beschäftigung (Erstuntersuchung) und vor Ablauf des ersten Beschäftigungsjahres (Nachuntersuchung) einer oder eines Jugendlichen (unter 18 Jahren) dem Arbeitgeber eine ärztliche Bescheinigung vorzulegen. \n\nFür die dazu erforderliche ärztliche Untersuchung (Erst- und Nachuntersuchung) benötigt der oder die Jugendliche einen Untersuchungsberechtigungsschein. \n\nDer Untersuchungsberechtigungsschein muss vor der Untersuchung beantragt und der Ärztin beziehungsweise dem Arzt bei der Untersuchung ausgehändigt werden.",
+          "serviceDescription": "Nach dem Jugendarbeitsschutzgesetz ist vor Aufnahme einer Beschäftigung (Erstuntersuchung) und vor Ablauf des ersten Beschäftigungsjahres (Nachuntersuchung) einer oder eines Jugendlichen (unter 18 Jahren) dem Arbeitgeber eine ärztliche Bescheinigung vorzulegen. \n\nFür die dazu erforderliche ärztliche Untersuchung (Erst- und Nachuntersuchung) benötigt der oder die Jugendliche einen Untersuchungsberechtigungsschein. \n\nDer Untersuchungsberechtigungsschein muss vor der Untersuchung beantragt und der Ärztin beziehungsweise dem Arzt bei der Untersuchung ausgehändigt werden.",
+          "serviceId": 709
+        }
+      ]
+    },
+    {
+      "groupId": 22,
+      "groupName": "Other",
+      "groupIcon": "file:///android_asset/egov_other.png",
+      "services": [
+        {
+          "link": "https://www.bonn.de/?sp:id=6552",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6552",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Ordnungswidrigkeit anzeigen",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Sie können eine Ordnungswidrigkeit außerhalb des Straßenverkehrs anzeigen. Es können nur konkrete in der Vergangenheit bereits begangene Verstöße sanktioniert werden",
+          "serviceDescription": "Sie können eine Ordnungswidrigkeit außerhalb des Straßenverkehrs anzeigen. Es können nur konkrete in der Vergangenheit bereits begangene Verstöße sanktioniert werden",
+          "serviceId": 732
+        },
+        {
+          "link": "https://www.bonn.de/?sp:id=6419",
+          "linkType": "form",
+          "linksInfo": [
+            {
+              "link": "https://www.bonn.de/?sp:id=6419",
+              "title": "",
+              "linkType": "form"
+            }
+          ],
+          "searchKey": [],
+          "isFavorite": "false",
+          "serviceName": "Straßenschaden melden",
+          "subServices": [],
+          "serviceDetail": "",
+          "longDescription": "",
+          "shortDescription": "Straßenschäden können Sie über das folgende Formular melden.",
+          "serviceDescription": "Straßenschäden können Sie über das folgende Formular melden.",
+          "serviceId": 745
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="global_cardview_corner_radius">6dp</dimen>
+    <dimen name="global_cardview_elevation">3dp</dimen>
+    <dimen name="global_content_margins">21dp</dimen>
+    <dimen name="global_title_margin_top">30dp</dimen>
+    <dimen name="global_title_margin_bottom">18dp</dimen>
+
+    <dimen name="home_page_expanded_toolbar_height">600dp</dimen>
+
+    <dimen name="toolbar_message1_size">18sp</dimen>
+    <dimen name="toolbar_message2_size">45sp</dimen>
+    <dimen name="toolbar_message3_size">21sp</dimen>
+    <dimen name="toolbar_title_size">18sp</dimen>
+    <dimen name="toolbar_city_name_text_max_size">45sp</dimen>
+    <dimen name="toolbar_city_name_text_min_size">21sp</dimen>
+    <dimen name="toolbar_coa_size">30dp</dimen>
+
+    <dimen name="home_news_titlebox_height">56dp</dimen>
+    <dimen name="home_news_titlebox_showmore_size">14sp</dimen>
+    <dimen name="home_news_titlebox_title_size">18sp</dimen>
+    <dimen name="home_news_cardview_corner_radius">6dp</dimen>
+    <dimen name="home_news_cardview_horizontal_margins">13dp</dimen>
+    <dimen name="home_news_cardview_margin_bottom">28dp</dimen>
+    <dimen name="home_news_contentbox_margin_bottom">11dp</dimen>
+    <dimen name="home_news_item_title_size">12sp</dimen>
+    <dimen name="home_news_item_content_space">21dp</dimen>
+    <dimen name="home_news_item_image_size">82dp</dimen>
+
+    <dimen name="news_item_vertical_margin">28dp</dimen>
+    <dimen name="news_item_image_text_space">21dp</dimen>
+    <dimen name="news_item_timestamp_size">12sp</dimen>
+    <dimen name="news_item_image_size">82dp</dimen>
+    <dimen name="news_item_teaser_size">17sp</dimen>
+
+    <dimen name="news_widget_single_item_size">140dp</dimen>
+
+    <dimen name="article_max_img_height">300dp</dimen>
+    <dimen name="article_credits_size">12sp</dimen>
+    <dimen name="article_credits_padding">6dp</dimen>
+    <dimen name="article_credits_min_height">24dp</dimen>
+    <dimen name="article_header_detail_size">12sp</dimen>
+    <dimen name="article_header_more_information_size">14sp</dimen>
+    <dimen name="article_header_vertical_margin">18dp</dimen>
+    <dimen name="article_horizontal_margin">21dp</dimen>
+    <dimen name="article_title_margin_top">24dp</dimen>
+    <dimen name="article_title_size">18sp</dimen>
+    <dimen name="article_content_margin_top">24dp</dimen>
+    <dimen name="article_content_size">16sp</dimen>
+
+    <dimen name="events_credits_min_height">24dp</dimen>
+    <dimen name="events_header_padding_horizontal">24dp</dimen>
+    <dimen name="events_header_padding_inner">10dp</dimen>
+    <dimen name="events_header_text_size_categories">12sp</dimen>
+    <dimen name="events_header_text_size_title">24sp</dimen>
+    <dimen name="events_card_divider_height">10dp</dimen>
+    <dimen name="events_control_margin_top">18dp</dimen>
+    <dimen name="events_control_margin_bottom">12dp</dimen>
+
+    <dimen name="services_item_title_size">18sp</dimen>
+    <dimen name="services_recycler_margin_bottom">30dp</dimen>
+    <dimen name="services_toolbar_height">330dp</dimen>
+    <dimen name="services_toolbar_title_top_margin">200dp</dimen>
+    <dimen name="services_toolbar_title_description_top_margin">12dp</dimen>
+    <dimen name="services_toolbar_infobox_margin_start">18dp</dimen>
+    <dimen name="services_toolbar_title_size">32sp</dimen>
+    <dimen name="services_toolbar_title_padding_bottom">8dp</dimen>
+    <dimen name="services_toolbar_description_size">18sp</dimen>
+    <dimen name="services_newservices_item_margin_horizontal">5dp</dimen>
+    <dimen name="services_newservices_item_icon_title_space">12dp</dimen>
+
+
+    <dimen name="infobox_item_status_width">12dp</dimen>
+
+    <dimen name="ribbon_size">48dp</dimen>
+    <dimen name="ribbon_text_size">11sp</dimen>
+    <dimen name="ribbon_text_margin_start">6dp</dimen>
+    <dimen name="ribbon_text_margin_top">8dp</dimen>
+
+    <dimen name="widget_margin">0dp</dimen>
+    <dimen name="widget_layout_margin">5dp</dimen>
+    <dimen name="waste_calendar_widget_divider_height">1dp</dimen>
+    <dimen name="waste_calendar_widget_title_text_size">12sp</dimen>
+    <dimen name="waste_calendar_widget_pickups_unavailable_text_size">8sp</dimen>
+    <dimen name="waste_pickup_item_vertical_margin">1dp</dimen>
+    <dimen name="waste_pickup_item_text_size">12sp</dimen>
+    <dimen name="waste_small_widget_list_bottom_margin">16dp</dimen>
+    <dimen name="waste_medium_widget_list_bottom_margin">8dp</dimen>
+    <dimen name="waste_widget_pickup_icon_size">20dp</dimen>
+    <dimen name="waste_widget_pickup_icon_horizontal_start_margin">2dp</dimen>
+    <dimen name="waste_widget_pickup_icon_horizontal_end_margin">1dp</dimen>
+
+</resources>

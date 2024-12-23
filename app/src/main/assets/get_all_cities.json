@@ -1,0 +1,34 @@
+{
+  "content": [
+    {
+      "cityColor": "#1E88E5",
+      "cityId": 3,
+      "cityName": "Bonn",
+      "cityPicture": "bonn_ukraine.png",
+      "cityPreviewPicture": "Stadteauswahl_Bonn.jpg",
+      "country": "Germany",
+      "municipalCoat": "Stadtlogo-Bonn.jpg",
+      "postalCode": [
+        "53111",
+        "53113",
+        "53115",
+        "53117",
+        "53119",
+        "53121",
+        "53123",
+        "53125",
+        "53127",
+        "53129",
+        "53173",
+        "53175",
+        "53177",
+        "53179",
+        "53225",
+        "53227",
+        "53229"
+      ],
+      "servicePicture": "bonn_service_screen_resized.jpg",
+      "stateName": "North Rhine-Westphalia"
+    }
+  ]
+}

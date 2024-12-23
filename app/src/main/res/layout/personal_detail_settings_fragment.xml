@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutAccountSettingsPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/birthDateButton"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/simple_ripple"
+        android:paddingStart="@dimen/global_content_margins"
+        android:paddingTop="16dp"
+        android:paddingEnd="@dimen/global_content_margins"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:id="@+id/birthDateLabel"
+            style="@style/RobotoBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/p_002_profile_personal_settings_label_Dob"
+            android:textAllCaps="true"
+            android:textColor="@color/onSurfaceSecondary"
+            android:textSize="13sp"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/birthDateText"
+            style="@style/RobotoBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp"
+            tools:ignore="SmallSp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgMoreDob"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_more_arrow" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/separator" />
+
+    <RelativeLayout
+        android:id="@+id/residenceButton"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/simple_ripple"
+        android:paddingStart="@dimen/global_content_margins"
+        android:paddingTop="16dp"
+        android:paddingEnd="@dimen/global_content_margins"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:id="@+id/labelResidence"
+            style="@style/RobotoBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/p_002_profile_personal_settings_label_Residence"
+            android:textAllCaps="true"
+            android:textColor="@color/onSurfaceSecondary"
+            android:textSize="13sp"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/txtResidence"
+            style="@style/RobotoBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_toStartOf="@id/imgMoreResidence"
+            android:maxLines="1"
+            android:textColor="@color/onSurface"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgMoreResidence"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_more_arrow" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/separator" />
+</LinearLayout>

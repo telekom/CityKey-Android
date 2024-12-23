@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutHomeNews"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/home_news_cardview_horizontal_margins"
+    android:layout_marginEnd="@dimen/home_news_cardview_horizontal_margins"
+    android:layout_marginBottom="@dimen/home_news_cardview_margin_bottom"
+    app:cardBackgroundColor="@color/background"
+    app:cardCornerRadius="@dimen/home_news_cardview_corner_radius">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/newsFeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/home_news_contentbox_margin_bottom"
+        android:adjustViewBounds="true"
+        android:isScrollContainer="false"
+        android:nestedScrollingEnabled="false"
+        android:scaleType="fitXY"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+</androidx.cardview.widget.CardView>

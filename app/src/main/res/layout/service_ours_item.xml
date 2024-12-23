@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/imageBox"
+    android:layout_width="match_parent"
+    android:layout_height="147dp"
+    android:layout_marginTop="@dimen/services_newservices_item_margin_horizontal"
+    android:layout_marginBottom="8dp"
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/global_cardview_corner_radius"
+    app:cardElevation="@dimen/global_cardview_elevation"
+    app:cardUseCompatPadding="true">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black35a" />
+
+    <LinearLayout
+        android:id="@+id/containerTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icon"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:layout_gravity="center"
+            android:tint="@color/white"
+            tools:src="@drawable/ic_appointments_qr_code" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/RobotoBold"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingTop="@dimen/services_newservices_item_icon_title_space"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            tools:text="Service name" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/restrictionIndicator"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="end"
+        android:tint="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/badgeText"
+        style="@style/RobotoMedium"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="end"
+        android:layout_margin="10dp"
+        android:background="@drawable/ic_badge_circle"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        tools:text="1"
+        tools:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/ribbonBox"
+        android:layout_width="@dimen/ribbon_size"
+        android:layout_height="@dimen/ribbon_size"
+        android:layout_gravity="start|top">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ribbon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_ribbon_top_left" />
+
+        <TextView
+            android:id="@+id/labelNew"
+            style="@style/RobotoBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/ribbon_text_margin_start"
+            android:layout_marginTop="@dimen/ribbon_text_margin_top"
+            android:rotation="-45"
+            android:text="@string/s_001_002_003_004_ribbon_label_new_item"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ribbon_text_size" />
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

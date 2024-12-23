@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.telekom.citykey.custom.views.OnlyVerticalSwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.telekom.citykey.custom.views.OscaAppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_page_expanded_toolbar_height"
+            android:background="?attr/colorSurface"
+            android:fitsSystemWindows="true"
+            android:minHeight="?attr/actionBarSize"
+            android:windowDrawsSystemBarBackgrounds="true">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/containerToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:minHeight="?attr/actionBarSize"
+                app:contentScrim="@color/background"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:statusBarScrim="@color/black5a"
+                app:toolbarId="@id/homeToolbar">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/zoomableImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="matrix"
+                    app:layout_collapseMode="parallax" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black30a"
+                    android:fitsSystemWindows="true" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/containerCityHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginBottom="132dp"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cityHeaderLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="true">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/labelWelcome"
+                            style="@style/RobotoBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:importantForAccessibility="no"
+                            android:includeFontPadding="false"
+                            android:text="@string/h_001_home_title_part"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/toolbar_message1_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/headerCityName"
+                            style="@style/RobotoBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:layout_marginTop="5dp"
+                            android:ellipsize="end"
+                            android:gravity="start|center_vertical"
+                            android:hyphenationFrequency="full"
+                            android:importantForAccessibility="no"
+                            android:maxLines="2"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/toolbar_city_name_text_max_size"
+                            app:autoSizeMaxTextSize="@dimen/toolbar_city_name_text_max_size"
+                            app:autoSizeMinTextSize="@dimen/toolbar_city_name_text_min_size"
+                            app:autoSizeStepGranularity="1sp"
+                            app:autoSizeTextType="uniform"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/labelWelcome" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/headerCityInfo"
+                        style="@style/RobotoRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:includeFontPadding="false"
+                        android:nextFocusDown="@id/mainFeed"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/toolbar_message3_size" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/homeToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:fitsSystemWindows="false"
+                    android:focusable="true"
+                    app:layout_collapseMode="pin">
+
+                    <LinearLayout
+                        android:id="@+id/toolbarCityBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/toolbarCoat"
+                            android:layout_width="@dimen/toolbar_coa_size"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center_vertical" />
+
+                        <TextView
+                            android:id="@+id/toolbarTitle"
+                            style="@style/RobotoMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="16dp"
+                            android:textColor="@color/onSurface"
+                            android:textSize="@dimen/toolbar_title_size" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.appbar.MaterialToolbar>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.telekom.citykey.custom.views.OscaAppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mainFeed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            app:behavior_overlapTop="100dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</com.telekom.citykey.custom.views.OnlyVerticalSwipeRefreshLayout>

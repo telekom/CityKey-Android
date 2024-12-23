@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/contentParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/resendInfo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/background"
+            tools:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/topLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separatorLight"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/labelSentPasswordChangeMailInfo"
+                style="@style/RobotoRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/global_content_margins"
+                android:text="@string/r_004_registration_confirmation_info_sent_link"
+                android:textAlignment="center"
+                android:textColor="@color/infoGreen"
+                android:textSize="13sp"
+                app:layout_constraintTop_toBottomOf="@id/topLine" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separatorLight"
+                app:layout_constraintTop_toBottomOf="@id/labelSentPasswordChangeMailInfo" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pinConfirmedInfo"
+            style="@style/RobotoRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:gravity="center_horizontal"
+            android:text="@string/r_004_registration_confirmation_info_sent_mail"
+            android:textColor="@color/onSurface"
+            android:textSize="18sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/labelPINInfo"
+            style="@style/RobotoRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="21dp"
+            android:gravity="center_horizontal"
+            android:text="@string/r_004_registration_confirmation_info_enter_pin"
+            android:textColor="@color/onSurface"
+            android:textSize="14sp" />
+
+        <com.telekom.citykey.custom.views.inputfields.PinInputLayout
+            android:id="@+id/pinInputView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/labelInfoMailNotReceived"
+            style="@style/RobotoRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="21dp"
+            android:text="@string/r_004_registration_confirmation_info_not_received"
+            android:textColor="@color/onSurfaceSecondary"
+            android:textSize="14sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/resendButton"
+            style="@style/RobotoRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:text="@string/r_004_registration_confirmation_btn_resend"
+            android:textColor="@color/oscaColor"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_action_resend_email"
+            app:drawableTint="@color/oscaColor" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,8 @@
+{
+  "errors": [
+    {
+      "errorCode": "action.not.available.for.city",
+      "userMsg": "Unfortunately this service is not yet available for the current city."
+    }
+  ]
+}

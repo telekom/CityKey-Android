@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutPageChangeEmail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/contentParent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+            android:id="@+id/oldResidenceInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:layout_marginTop="35dp"
+            app:hint="@string/p_003_profile_current_postcode_label" />
+
+        <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+            android:id="@+id/newPostcodeInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:paddingStart="@dimen/global_content_margins"
+            android:paddingEnd="@dimen/global_content_margins"
+            app:hint="@string/p_003_profile_new_postcode_input_hint"
+            app:maxLength="5"
+            app:inputType="number"
+            app:removeErrorOnChange="true"
+            app:hintTextAppearance="@style/hintText"
+            app:prohibitEmptySpace="true"
+            app:validationIconType="validation"
+            app:validationTextAppearance="@style/stateText" />
+
+        <com.telekom.citykey.custom.views.ProgressButton
+            android:id="@+id/saveResidenceBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="21dp"
+            app:text="@string/p_003_profile_email_change_btn_save" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

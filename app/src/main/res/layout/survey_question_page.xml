@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/questionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/surveyTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="@dimen/global_content_margins"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:importantForAccessibility="yes"
+            android:textAppearance="@style/RobotoBold"
+            android:textColor="@color/onSurface"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Survey title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/question"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:importantForAccessibility="yes"
+            android:textAppearance="@style/RobotoRegular"
+            android:textColor="@color/onSurface"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/surveyTitle"
+            tools:text="Question"
+            tools:visibility="visible" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/questionHint"
+            style="@style/RobotoLight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="@dimen/global_content_margins"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:importantForAccessibility="yes"
+            android:textColor="@color/onSurface"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/question"
+            tools:text="Question hint"
+            tools:visibility="visible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/topicsList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/global_content_margins"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/questionHint"
+            app:reverseLayout="false"
+            tools:itemCount="4"
+            tools:listitem="@layout/survey_question_topics" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/pagerPrev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="22dp"
+            android:text="@string/cs_004_button_previous"
+            android:textSize="14sp"
+            app:backgroundTint="@color/background"
+            app:cornerRadius="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topicsList"
+            app:strokeWidth="1dp"
+            tools:strokeColor="@color/onSurfaceSecondary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/pagerNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="22dp"
+            android:text="@string/cs_004_button_next"
+            android:textSize="14sp"
+            app:backgroundTint="@color/background"
+            app:cornerRadius="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topicsList"
+            app:strokeWidth="1dp"
+            tools:strokeColor="@color/onSurfaceSecondary" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="21dp"
+            app:layout_constraintTop_toBottomOf="@id/pagerNext" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

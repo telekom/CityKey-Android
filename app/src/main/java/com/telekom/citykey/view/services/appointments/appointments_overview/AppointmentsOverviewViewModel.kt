@@ -1,0 +1,100 @@
+package com.telekom.citykey.view.services.appointments.appointments_overview
+
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.toLiveData
+import com.telekom.citykey.domain.global.GlobalData
+import com.telekom.citykey.domain.repository.exceptions.NoConnectionException
+import com.telekom.citykey.domain.services.appointments.AppointmentsInteractor
+import com.telekom.citykey.domain.services.appointments.AppointmentsState
+import com.telekom.citykey.domain.services.main.ServicesInteractor
+import com.telekom.citykey.domain.services.main.ServicesStates
+import com.telekom.citykey.domain.user.UserState
+import com.telekom.citykey.models.appointments.Appointment
+import com.telekom.citykey.utils.SingleLiveEvent
+import com.telekom.citykey.utils.extensions.retryOnError
+import com.telekom.citykey.view.NetworkingViewModel
+import com.telekom.citykey.view.services.ServicesFunctions
+import io.reactivex.BackpressureStrategy
+import io.reactivex.android.schedulers.AndroidSchedulers
+import timber.log.Timber
+
+class AppointmentsOverviewViewModel(
+    private val appointmentsInteractor: AppointmentsInteractor,
+    private val servicesInteractor: ServicesInteractor,
+    private val globalData: GlobalData
+) : NetworkingViewModel() {
+
+    val showErrorSnackbar: LiveData<Unit> get() = _showErrorSnackbar
+    val showNoInternetDialog: LiveData<Unit> get() = _showNoInternetDialog
+    val deletionSuccessful: LiveData<Boolean> get() = _deletionSuccessful
+    val state: LiveData<AppointmentsState> get() = appointmentsInteractor.appointmentsState
+    val appointmentsData: LiveData<List<Appointment>> get() = appointmentsInteractor.appointments
+    val stopRefreshSpinner: LiveData<Boolean> get() = _stopRefreshSpinner
+    val userLoggedOut: LiveData<Unit>
+        get() = globalData.user
+            .filter { it is UserState.Absent }
+            .map { Unit }
+            .toFlowable(BackpressureStrategy.LATEST)
+            .toLiveData()
+    val serviceIsAvailable: LiveData<Boolean>
+        get() = servicesInteractor.state
+            .filter { it !is ServicesStates.Loading }
+            .map { state ->
+                if (state is ServicesStates.Success) {
+                    state.data.services.find { it.function == ServicesFunctions.TERMINE } != null
+                } else false
+            }
+            .toLiveData()
+
+    private val _showErrorSnackbar: SingleLiveEvent<Unit> = SingleLiveEvent()
+    private val _showNoInternetDialog: SingleLiveEvent<Unit> = SingleLiveEvent()
+    private val _deletionSuccessful: SingleLiveEvent<Boolean> = SingleLiveEvent()
+    private val _stopRefreshSpinner: MutableLiveData<Boolean> = MutableLiveData()
+
+    init {
+        appointmentsInteractor.setAppointmentsRead()
+    }
+
+    fun onRefresh() {
+        launch {
+            appointmentsInteractor.refreshAppointments()
+                .retryOnError(this::onRefreshError, retryDispatcher, pendingRetries, "APPT_REFRESH")
+                .subscribe({}, this::onRefreshError)
+        }
+    }
+
+    private fun onRefreshError(throwable: Throwable) {
+        when (throwable) {
+            is NoConnectionException -> _showRetryDialog.postValue(null)
+            else -> _stopRefreshSpinner.postValue(true)
+        }
+    }
+
+    fun onUndoDeletion() {
+        launch {
+            appointmentsInteractor.restoreDeletedAppointments().observeOn(AndroidSchedulers.mainThread())
+                .subscribe({ Timber.i("Last appointment restored !") }, this::onSwipeGestureNetworkError)
+        }
+    }
+
+    fun onDelete(appointments: Appointment) {
+        launch {
+            appointmentsInteractor.deleteAppointments(appointments).observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                    {
+                        Timber.i("Appointment with UUID = ${appointments.apptId} deleted !")
+                        _deletionSuccessful.postValue(true)
+                    },
+                    this::onSwipeGestureNetworkError
+                )
+        }
+    }
+
+    private fun onSwipeGestureNetworkError(throwable: Throwable) {
+        when (throwable) {
+            is NoConnectionException -> _showNoInternetDialog.call()
+            else -> _showErrorSnackbar.call()
+        }
+    }
+}

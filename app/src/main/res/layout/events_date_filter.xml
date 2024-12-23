@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/dateFilterAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/auth_bottom_sheet_rounded"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarDateFilter"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:fitsSystemWindows="true"
+            app:title="@string/e_003_page_title"
+            app:titleTextColor="@color/onSurface" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="top"
+            android:background="@color/separator" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mondayTitle"
+                style="@style/RobotoRegular"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxLength="2"
+                android:textAllCaps="true"
+                android:textColor="@color/onSurface"
+                android:textSize="12sp"
+                tools:text="mo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tuesdayTitle"
+                style="@style/RobotoRegular"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxLength="2"
+                android:textAllCaps="true"
+                android:textColor="@color/onSurface"
+                android:textSize="12sp"
+                tools:text="Tu" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/wednesdayTitle"
+                style="@style/RobotoRegular"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxLength="2"
+                android:textAllCaps="true"
+                android:textColor="@color/onSurface"
+                android:textSize="12sp"
+                tools:text="mo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/thursdayTitle"
+                style="@style/RobotoRegular"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxLength="2"
+                android:textAllCaps="true"
+                android:textColor="@color/onSurface"
+                android:textSize="12sp"
+                tools:text="mo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fridayTitle"
+                style="@style/RobotoRegular"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxLength="2"
+                android:textAllCaps="true"
+                android:textColor="@color/onSurface"
+                android:textSize="12sp"
+                tools:text="mo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/saturdayTitle"
+                style="@style/RobotoRegular"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxLength="2"
+                android:textAllCaps="true"
+                android:textColor="@color/onSurface"
+                android:textSize="12sp"
+                tools:text="mo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sundayTitle"
+                style="@style/RobotoRegular"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxLength="2"
+                android:textAllCaps="true"
+                android:textColor="@color/onSurface"
+                android:textSize="12sp"
+                tools:text="mo" />
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.telekom.citykey.custom.views.calendar.CalendarView
+            android:id="@+id/calendar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toTopOf="@+id/footer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/month_item" />
+
+        <FrameLayout
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="top"
+                android:background="@color/separator" />
+
+            <com.telekom.citykey.custom.views.ProgressButton
+                android:id="@+id/progressBtnShowEvents"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="21dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:text="@string/e_003_show_events_button" />
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

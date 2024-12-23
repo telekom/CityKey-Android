@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="10dp">
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/separatorLight" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/linkButton"
+            style="@style/RobotoRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundSecondary"
+            android:drawablePadding="16dp"
+            android:foreground="@drawable/simple_ripple"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/global_content_margins"
+            android:paddingTop="12dp"
+            android:paddingEnd="@dimen/global_content_margins"
+            android:paddingBottom="12dp"
+            android:textSize="15sp"
+            tools:text="@tools:sample/lorem" />
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/separatorLight" />
+
+</LinearLayout>

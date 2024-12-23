@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home_graph"
+        android:icon="@drawable/selector_nav_home"
+        android:title="@string/h_001_navigation_bar_btn_home" />
+
+    <item
+        android:id="@+id/services_graph"
+        android:icon="@drawable/selector_nav_services"
+        android:title="@string/h_001_navigation_bar_btn_citizen_services" />
+
+    <item
+        android:id="@+id/infobox_graph"
+        android:icon="@drawable/selector_nav_infobox"
+        android:title="@string/h_001_navigation_bar_btn_infobox" />
+
+    <item
+        android:id="@+id/imprint_graph"
+        android:icon="@drawable/selector_nav_imprint"
+        android:title="@string/h_001_navigation_bar_btn_imprint" />
+
+</menu>

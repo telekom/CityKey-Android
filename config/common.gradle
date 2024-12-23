@@ -1,0 +1,57 @@
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
+def buildVersionSuffix(environment) {
+    if (runningOnGitlab) {
+        return "(${System.getenv('CI_PIPELINE_ID')?.trim()}-${environment})${buildLocalTimestamp()}"
+    }
+    return "_local_${environment}${buildLocalTimestamp()}"
+}
+
+def buildArchiveName(config) {
+    def base = "${config.versionName}-vc${config.versionCode}"
+    if (runningOnGitlab) return "${base}_build-${System.getenv('CI_PIPELINE_ID')?.trim()}"
+    return "${base}"
+}
+
+def buildLocalTimestamp() {
+    if (runningOnGitlab) return ''
+    return "_${new Date().format('yyyy-MM-dd:HH-mm-ss')}"
+}
+
+def renameLibraryVariantOutput(variant) {
+    variant.outputs.all { output ->
+        if (output.outputFileName != null && output.outputFileName.endsWith('.aar')) {
+            output.outputFileName = "${buildLibraryArchiveBaseName(variant)}.aar"
+        }
+    }
+}
+
+def buildLibraryArchiveBaseName(variant) {
+    return "${project.name}_${android.defaultConfig.versionName}_${buildVersionSuffix()}-${variant.baseName}"
+}
+
+def getCurrentVariant() {
+    Gradle gradle = getGradle()
+    String tskReqStr = gradle.getStartParameter().getTaskRequests().toString()
+
+    Pattern pattern = Pattern.compile("assemble(\\w+)(Release|Debug)")
+
+    Matcher matcher = pattern.matcher(tskReqStr)
+
+    if (matcher.find()) {
+        return matcher.group(1).toLowerCase()
+    } else {
+        println "NO MATCH FOUND"
+        return ""
+    }
+}
+
+ext {
+    buildVersionSuffix = this.&buildVersionSuffix
+    buildArchiveName = this.&buildArchiveName
+    buildFlavorVersionSuffix = this.&buildFlavorVersionSuffix
+    buildLocalTimestamp = this.&buildLocalTimestamp
+    renameLibraryVariantOutput = this.&renameLibraryVariantOutput
+    buildLibraryArchiveBaseName = this.&buildLibraryArchiveBaseName
+}

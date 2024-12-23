@@ -1,0 +1,459 @@
+{
+  "content": [
+    {
+      "cityServiceCategoryList": [
+        {
+          "categoryId": "18",
+          "category": "Helper",
+          "icon": "NA",
+          "image": "NA",
+          "description": "Helper",
+          "cityServiceList": [
+            {
+              "serviceId": 149,
+              "service": "* Information for Helpers/ Інформація для помічників *",
+              "description": "<html><body style=\"margin: 0; padding: 0\"><h3>Information for Helpers </h3><p>Here you will find all important information, contact points and news. You can also find everything at <a href=\"http://www.bonn.de/ukraine\">www.bonn.de/ukraine</a></p><p>For English-speaking users: Please refer to our <a href=\"https://www.bonn.de/?sp:id=1768\">English website.</a></p><p></p><a href = \"https://www.bonn.de/?sp:id=162130\">Information for Helpers</a></p><p></p><h3>Інформація для помічників</h3><p>Тут ви знайдете всю важливу інформацію, контакти та новини. Ви також можете знайти все на <a href=\"http://www.bonn.de/ukraine\">www.bonn.de/ukraine</a></p><p>Для англомовних користувачів: зверніться до нашого <a href = \"https://www.bonn.de/?sp:id=1768\">веб-сайту англійською мовою</a></p><p></p><p><a href = \"https://www.bonn.de/microsite/en/services/refugees/refugees-from-ukraine.php\">Інформація для помічників</a></p></body></html>",
+              "icon": "Help_Icon.png",
+              "image": "bonn_ukraine-tile.jpg",
+              "function": "General",
+              "serviceType": "* Informationen für Helfende *",
+              "isNew": false,
+              "new": false,
+              "residence": false,
+              "restricted": false,
+              "serviceParams": {},
+              "templateId": -1,
+              "serviceAction": []
+            }
+          ]
+        },
+        {
+          "categoryId": "17",
+          "category": "Refugees",
+          "icon": "NA",
+          "image": "NA",
+          "description": "Refugees",
+          "cityServiceList": [
+            {
+              "serviceId": 148,
+              "service": "* Information for Refugees/ Інформація для біженців *",
+              "description": "<html><body style=\"margin: 0; padding: 0\"><h3>Information for Refugees</h3><p>Here you will find all important information, contact points and news. You can also find everything at  <a href=\"http://www.bonn.de/ukraine\">www.bonn.de/ukraine</a></p><p>For English-speaking users: Please refer to our <a href=\"https://www.bonn.de/?sp:id=162130\">English website.</a></p><p></p><p><a href=\"https://www.bonn.de/?sp:id=160928\">Information for Refugees</p><p><a href=\"https://www.bonn.de/?sp:id=161875\">Benefits under the Asylum Seekers' Benefits Act</p><p><a href=\"https://www.bonn.de/?sp:id=4366\">News from Bonn</a></p><p></p><h3>Інформація для біженців</h3><p>Тут ви знайдете всю важливу інформацію, контакти та новини. Ви також можете знайти все на <a href=\"http://www.bonn.de/ukraine\">www.bonn.de/ukraine</a></p><p>Для англомовних користувачів: зверніться до нашого <a href = \"https://www.bonn.de/?sp:id=162130\">веб-сайту англійською мовою</a></p><p></p><p><a href=\"https://www.bonn.de/?sp:id=160928\">Інформація для біженців</p><p><a href=\"https://www.bonn.de/?sp:id=161875\">Пільги відповідно до Закону про пільги для шукачів притулку</p><p><a href=\"https://www.bonn.de/?sp:id=4366\">Новини з Бонна</p></body></html>",
+              "icon": "Help_Icon.png",
+              "image": "bonn_ukraine-tile.jpg",
+              "function": "General",
+              "serviceType": "* Informationen für Geflüchtete *",
+              "isNew": false,
+              "new": false,
+              "residence": false,
+              "restricted": false,
+              "serviceParams": {},
+              "templateId": -1,
+              "serviceAction": []
+            }
+          ]
+        },
+        {
+          "categoryId": "16",
+          "category": "Tourism",
+          "icon": "poi-tile-icon.png",
+          "image": "POI_Bonn.png",
+          "description": "Tourism",
+          "cityServiceList": [
+            {
+              "serviceId": 139,
+              "service": "Destinations",
+              "description": "<h2><strong>Where would you like to go?</strong></h2><p>On the following pages please find information about excursion destinations within Bonn and its surrounding area. This data comes from the <a style=\"color: rgb(30, 136, 229)\" href=\"https://datahub.touristiker-nrw.de/\">Data Hub NRW</a>.</p>",
+              "icon": "icon-category-insiders@3x.png",
+              "image": "bonn_destinations_resized.jpg",
+              "function": "Tourism",
+              "serviceType": "Ausflugsziele",
+              "isNew": false,
+              "new": false,
+              "residence": false,
+              "restricted": false,
+              "serviceParams": {},
+              "serviceAction": [
+                {
+                  "actionId": 34,
+                  "action": "1",
+                  "actionOrder": 1,
+                  "androidUri": "https://pages.et4.de/de/open-data-nrw-tourismus/default/search/POI/radius:20000/Lat:50.735851/Lng:7.10066/sort:distance",
+                  "buttonDesign": "1",
+                  "iosAppStoreUri": "https://pages.et4.de/de/open-data-nrw-tourismus/default/search/POI/radius:20000/Lat:50.735851/Lng:7.10066/sort:distance",
+                  "iosUri": "https://pages.et4.de/de/open-data-nrw-tourismus/default/search/POI/radius:20000/Lat:50.735851/Lng:7.10066/sort:distance",
+                  "visibleText": "Destinations",
+                  "actionType": "Ausflugsziele"
+                },
+                {
+                  "actionId": 35,
+                  "action": "1",
+                  "actionOrder": 2,
+                  "androidUri": "https://pages.et4.de/de/open-data-nrw-tourismus/default/search/Tour/radius:20000/Lat:50.735851/Lng:7.10066/sort:distance",
+                  "buttonDesign": "1",
+                  "iosAppStoreUri": "https://pages.et4.de/de/open-data-nrw-tourismus/default/search/Tour/radius:20000/Lat:50.735851/Lng:7.10066/sort:distance",
+                  "iosUri": "https://pages.et4.de/de/open-data-nrw-tourismus/default/search/Tour/radius:20000/Lat:50.735851/Lng:7.10066/sort:distance",
+                  "visibleText": "Tours & Trails",
+                  "actionType": "Touren & Wege"
+                },
+                {
+                  "actionId": 36,
+                  "action": "1",
+                  "actionOrder": 3,
+                  "androidUri": "https://pages.et4.de/de/open-data-nrw-tourismus/default/search/Gastro/radius:20000/Lat:50.735851/Lng:7.10066/sort:distance",
+                  "buttonDesign": "1",
+                  "iosAppStoreUri": "https://pages.et4.de/de/open-data-nrw-tourismus/default/search/Gastro/radius:20000/Lat:50.735851/Lng:7.10066/sort:distance",
+                  "iosUri": "https://pages.et4.de/de/open-data-nrw-tourismus/default/search/Gastro/radius:20000/Lat:50.735851/Lng:7.10066/sort:distance",
+                  "visibleText": "Food & Drink",
+                  "actionType": "Gastronomie"
+                },
+                {
+                  "actionId": 51,
+                  "action": "1",
+                  "actionOrder": 4,
+                  "androidUri": "https://pages.et4.de/de/open-data-nrw-tourismus/default/search/Hotel/radius:20000/Lat:50.735851/Lng:7.10066/sort:distance",
+                  "buttonDesign": "1",
+                  "iosAppStoreUri": "https://pages.et4.de/de/open-data-nrw-tourismus/default/search/Hotel/radius:20000/Lat:50.735851/Lng:7.10066/sort:distance",
+                  "iosUri": "https://pages.et4.de/de/open-data-nrw-tourismus/default/search/Hotel/radius:20000/Lat:50.735851/Lng:7.10066/sort:distance",
+                  "visibleText": "Accommodation",
+                  "actionType": "Gastgeber"
+                }
+              ],
+              "templateId": -1
+            }
+          ]
+        },
+        {
+          "categoryId": "14",
+          "category": "Digital Administration",
+          "icon": "Administration icon.png",
+          "image": "Adminisztration@2x.png\t",
+          "description": "Digital Administration",
+          "cityServiceList": [
+            {
+              "serviceId": 106,
+              "service": "Digital Administration",
+              "description": "<h2><strong>Online Service</strong></h2><p>Here you will find our online services. You can handle the majority of these services completely online.</p>",
+              "helpLinkTitle": "Help, Contact, Further Information",
+              "icon": "Administration icon.png",
+              "image": "bonn_egov_resized.jpg",
+              "function": "egov",
+              "serviceType": "Digitale Verwaltung",
+              "isNew": false,
+              "new": false,
+              "residence": false,
+              "restricted": false,
+              "serviceParams": {},
+              "serviceAction": [
+                {
+                  "actionId": 24,
+                  "action": "1",
+                  "actionOrder": 1,
+                  "androidUri": "NA",
+                  "buttonDesign": "1",
+                  "iosAppStoreUri": "NA",
+                  "iosUri": "NA",
+                  "visibleText": "To the Digital administration",
+                  "actionType": "Zu den Digitale Verwaltung"
+                }
+              ],
+              "templateId": -1
+            }
+          ]
+        },
+        {
+          "categoryId": "12",
+          "category": "Defect Reporter",
+          "icon": "NA",
+          "image": "NA",
+          "description": "Defect Reporter Service",
+          "cityServiceList": [
+            {
+              "serviceId": 303,
+              "service": "Feedback",
+              "description": "<html><body style=\"margin: 0; padding: 0\"><p>With our new service \"Feedback\" you can send us as the city administration your opinion on defined topics. Through your input, we can work more efficiently and act more precisely in the city area. You are welcome to optionally provide your first name, surname, e-mail address, so that we can send you a confirmation email, and contact you individually. </p><p></br>Thank you for your help</p> </body</html>",
+              "icon": "icons/Bonn_Fahrradparken_icon-2.png",
+              "image": "bonn-fahrradparken-img.jpg",
+              "function": "Fahrradparken",
+              "serviceType": "Feedback",
+              "isNew": false,
+              "new": false,
+              "residence": false,
+              "restricted": false,
+              "serviceParams": {
+                "dataPrivacyNoticeLink": "https://anliegen.bonn.de/datenschutzhinweise-und-regeln",
+                "rulesOfUseLink": "https://anliegen.bonn.de/datenschutzhinweise-und-regeln#id--LinkszuanderenWebsites",
+                "field_checkBoxTerms2": "NOT REQUIRED",
+                "field_yourConcern": "OPTIONAL",
+                "field_uploadImage": "OPTIONAL",
+                "field_firstName": "OPTIONAL",
+                "field_lastName": "OPTIONAL",
+                "field_email": "OPTIONAL",
+                "field_moreInformationBaseURL": "https://anregungen.bonn.de"
+              },
+              "serviceAction": [
+                {
+                  "actionId": 139,
+                  "action": "1",
+                  "actionOrder": 1,
+                  "androidUri": "NA",
+                  "buttonDesign": "1",
+                  "iosAppStoreUri": "NA",
+                  "iosUri": "NA",
+                  "visibleText": "Submitted suggestions",
+                  "actionType": "Eingereichte Vorschläge anschauen"
+                },
+                {
+                  "actionId": 140,
+                  "action": "1",
+                  "actionOrder": 2,
+                  "androidUri": "NA",
+                  "buttonDesign": "1",
+                  "iosAppStoreUri": "NA",
+                  "iosUri": "NA",
+                  "visibleText": "New suggestion",
+                  "actionType": "Neuen Vorschlag einreichen"
+                }
+              ],
+              "templateId": -1
+            }
+          ]
+        },
+        {
+          "categoryId": "19",
+          "category": "Appointment Light",
+          "icon": "NA",
+          "image": "NA",
+          "description": "Appointment Light",
+          "cityServiceList": [
+            {
+              "serviceId": 213,
+              "service": "Make an appointment",
+              "description": "Is your passport expired? Do you want to register a vehicle? For these and other concerns at the Service Center in the Municipal Building and the Citizens' Offices, you need an online appointment. Click here to go to the reservation options:",
+              "icon": "Termin-Icon.png",
+              "image": "Bonn_Appointment_image.jpg",
+              "function": "NA",
+              "serviceType": "Termine reservieren",
+              "isNew": false,
+              "new": false,
+              "residence": false,
+              "restricted": false,
+              "serviceParams": {},
+              "serviceAction": [
+                {
+                  "actionId": 96,
+                  "action": "1",
+                  "actionOrder": 1,
+                  "androidUri": "https://www.bonn.de/?sp:id=2246",
+                  "buttonDesign": "1",
+                  "iosAppStoreUri": "https://www.bonn.de/?sp:id=2246",
+                  "iosUri": "https://www.bonn.de/?sp:id=2246",
+                  "visibleText": "Make an appointment",
+                  "actionType": "Termin vereinbaren"
+                }
+              ],
+              "templateId": -1
+            }
+          ]
+        },
+        {
+          "categoryId": "10",
+          "category": "Citizen Survey",
+          "icon": "NA",
+          "image": "NA",
+          "description": "Citizen Survey",
+          "cityServiceList": [
+            {
+              "serviceId": 94,
+              "service": "Polls",
+              "description": "<html><body style=\"margin: 0; padding: 0\"><h3>Your opinion is important!</h3> <p>Take part in the surveys to provide your valuable opinion to help us to make our city better for you.</p> </body</html>",
+              "icon": "citizen-survey-tile-icon.png",
+              "image": "bonn_polls_resized.jpg",
+              "function": "bürgerumfragen",
+              "serviceType": "Kurzumfragen",
+              "isNew": false,
+              "new": false,
+              "residence": false,
+              "restricted": true,
+              "serviceParams": {},
+              "serviceAction": [
+                {
+                  "actionId": 12,
+                  "action": "1",
+                  "actionOrder": 1,
+                  "androidUri": "NA",
+                  "buttonDesign": "1",
+                  "iosAppStoreUri": "NA",
+                  "iosUri": "NA",
+                  "visibleText": "To the surveys",
+                  "actionType": "Zu den Umfragen"
+                }
+              ],
+              "templateId": -1
+            }
+          ]
+        },
+        {
+          "categoryId": "12",
+          "category": "Defect Reporter",
+          "icon": "NA",
+          "image": "NA",
+          "description": "Defect Reporter Service",
+          "cityServiceList": [
+            {
+              "serviceId": 102,
+              "service": "Report a defect",
+              "description": "<html><body style=\"margin: 0; padding: 0\"><h3>Tell us!</h3> <p>With the digital defect reporter, you can submit information about defects such as overgrowth of greenery, wild rubbish dumps, overfilled or defective wastebaskets and much more without a great deal of time and independently of the opening hours of the Bonn city administration. The expected processing times differ depending on the concern. You will therefore find more detailed information when you select the category.  In order to inform you about the current processing status of your concern, you will receive messages to your specified e-mail address.  Help us to make our city more beautiful.</p> </body</html>",
+              "icon": "mangelmelder-icon.png",
+              "image": "bonn_defect_reporter_resized.jpg",
+              "function": "mängelmelder",
+              "serviceType": "Mängelmelder",
+              "isNew": false,
+              "new": false,
+              "residence": false,
+              "restricted": false,
+              "serviceParams": {
+                "field_email": "REQUIRED",
+                "field_firstName": "OPTIONAL",
+                "field_lastName": "OPTIONAL",
+                "field_yourConcern": "OPTIONAL",
+                "field_uploadImage": "OPTIONAL",
+                "field_checkBoxTerms2": "NOT REQUIRED",
+                "field_wasteBinId": "OPTIONAL",
+                "dataPrivacyNoticeLink": "https://anliegen.bonn.de/datenschutzhinweise-und-regeln",
+                "rulesOfUseLink": "https://anliegen.bonn.de/datenschutzhinweise-und-regeln#id--LinkszuanderenWebsites"
+              },
+              "serviceAction": [
+                {
+                  "actionId": 20,
+                  "action": "1",
+                  "actionOrder": 1,
+                  "androidUri": "NA",
+                  "buttonDesign": "2",
+                  "iosAppStoreUri": "NA",
+                  "iosUri": "NA",
+                  "visibleText": "Report a defect",
+                  "actionType": "Anliegen erstellen"
+                }
+              ],
+              "templateId": -1
+            }
+          ]
+        },
+        {
+          "categoryId": "9",
+          "category": "Open collection calendar",
+          "icon": "waste-calendar-icon.png",
+          "image": "waste-calendar-tile.jpg",
+          "description": "Waste Calendar for city",
+          "cityServiceList": [
+            {
+              "serviceId": 59,
+              "service": "Waste Planner",
+              "description": "<html><body style=\"margin: 0; padding: 0\"><h3>Your personal waste planner by bonnorange</h3> <p>Here you can easily and conveniently find your current waste collection dates. For more information about waste management, city cleaning and winter services, visit <a style=\"color: rgb(30, 136, 229)\" href=\"https://www.bonnorange.de/\">www.bonnorange.de</a>.</p> </body</html>",
+              "icon": "waste-calendar-icon.png",
+              "image": "bonn_waste_planner_resized.jpg",
+              "function": "waste",
+              "serviceType": "Abfallplaner",
+              "isNew": false,
+              "new": false,
+              "residence": false,
+              "restricted": true,
+              "serviceParams": {},
+              "serviceAction": [
+                {
+                  "actionId": 5,
+                  "action": "1",
+                  "actionOrder": 1,
+                  "androidUri": "dummy",
+                  "buttonDesign": "1",
+                  "iosAppStoreUri": "dummy",
+                  "iosUri": "dummy",
+                  "visibleText": "Open waste planner",
+                  "actionType": "Abfallplaner öffnen"
+                }
+              ],
+              "templateId": -1
+            }
+          ]
+        },
+        {
+          "categoryId": "11",
+          "category": "Interesting Places",
+          "icon": "poi-tile-icon.png",
+          "image": "poi-tile-image.jpg",
+          "description": "Interesting Places",
+          "cityServiceList": [
+            {
+              "serviceId": 103,
+              "service": "Where to?",
+              "description": "Where to",
+              "icon": "poi-tile-icon.png",
+              "image": "bonn_poi_resized.jpg",
+              "function": "poi",
+              "serviceType": "Was ist wo?",
+              "isNew": false,
+              "new": false,
+              "residence": false,
+              "restricted": false,
+              "serviceParams": {},
+              "serviceAction": [
+                {
+                  "actionId": 21,
+                  "action": "1",
+                  "actionOrder": 1,
+                  "androidUri": "NA",
+                  "buttonDesign": "1",
+                  "iosAppStoreUri": "NA",
+                  "iosUri": "NA",
+                  "visibleText": "Coming soon!",
+                  "actionType": "Bald verfügbar!"
+                }
+              ],
+              "templateId": -1
+            }
+          ]
+        },
+        {
+          "categoryId": "13",
+          "category": "Citizen Survey",
+          "icon": "NA",
+          "image": "NA",
+          "description": "Citizen Survey",
+          "cityServiceList": [
+            {
+              "serviceId": 1657,
+              "service": "Survey 14-10",
+              "description": "<p>Survey 14-10 Desc</p>",
+              "helpLinkTitle": "Terms and condition survey",
+              "icon": "icon-communication-chat-02-selected_new.png",
+              "image": "uk4.jpg",
+              "header_image": "uk8.jpg",
+              "function": "bürgerumfragen",
+              "serviceType": "Survey 14-10",
+              "isNew": false,
+              "new": false,
+              "residence": false,
+              "restricted": true,
+              "serviceParams": {},
+              "serviceAction": [
+                {
+                  "actionId": 469,
+                  "action": "1",
+                  "actionOrder": 1,
+                  "androidUri": "NA",
+                  "buttonDesign": "1",
+                  "iosAppStoreUri": "NA",
+                  "iosUri": "NA",
+                  "visibleText": "All Survey",
+                  "actionType": "All Survey"
+                }
+              ],
+              "templateId": -1
+            }
+          ]
+        }
+      ],
+      "cityId": 3
+    }
+  ]
+}

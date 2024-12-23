@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/defectReportForm"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?attr/colorSurface"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/onSurface" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/reportFormContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/locationLabel"
+                    style="@style/RobotoBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="15dp"
+                    android:text="@string/dr_003_location_label"
+                    android:textColor="@color/onSurface"
+                    android:textSize="22sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/separator" />
+
+                <com.telekom.citykey.custom.views.OscaMapView
+                    android:id="@+id/mapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:importantForAccessibility="yes"
+                    app:backgroundColor="@color/mapTileLoader"
+                    tools:liteMode="true"
+                    tools:mapToolbarEnabled="true" />
+
+                <com.telekom.citykey.custom.views.ProgressButton
+                    android:id="@+id/changeLocationButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/global_content_margins"
+                    android:layout_marginBottom="@dimen/global_content_margins"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:text="@string/dr_003_change_lacation_button" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/yourNoteLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="@color/separatorSecondary" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/noteLabel"
+                        style="@style/RobotoBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="22dp"
+                        android:text="@string/dialog_title_note"
+                        android:textColor="@color/onSurface"
+                        android:textSize="22sp" />
+
+                    <com.telekom.citykey.custom.views.OscaWebView
+                        android:id="@+id/noteDescriptionWebView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/article_horizontal_margin" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/separatorSecondary" />
+
+                <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+                    android:id="@+id/yourConcern"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/global_content_margins"
+                    android:layout_marginTop="22dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="500"
+                    app:hintTextAppearance="@style/hintText"
+                    app:inputType="textMultiLine"
+                    app:maxLength="500"
+                    app:validationIconType="validation"
+                    app:validationTextAppearance="@style/stateText" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/uploadPhotoLabel"
+                    style="@style/RobotoBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="22dp"
+                    android:text="@string/dr_003_add_photo_label"
+                    android:textColor="@color/onSurface"
+                    android:textSize="16sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/photoTab"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginBottom="20dp">
+
+                    <RelativeLayout
+                        android:id="@+id/visibleImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/removeImage"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentEnd="true"
+                            android:contentDescription="@string/dr_003_delete_photo_description"
+                            android:src="@drawable/ic_cross_button" />
+                    </RelativeLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/photoUploadTab"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/dr_003_add_photo_description"
+                        app:cardBackgroundColor="@color/background"
+                        app:strokeWidth="1dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/uploadTab"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="@color/oscaColor"
+                            android:focusable="false"
+                            android:importantForAccessibility="no">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/centerGuide"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                app:layout_constraintGuide_percent="0.5" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/addIcon"
+                                android:layout_width="18sp"
+                                android:layout_height="18sp"
+                                app:layout_constraintBottom_toTopOf="@id/centerGuide"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:srcCompat="@drawable/ic_plus_icon" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/addLabel"
+                                style="@style/RobotoBold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/dr_003_add_label"
+                                android:textColor="@color/onSurfaceSecondary"
+                                android:textSize="14sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/centerGuide" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/contactDetailsSeparator"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/separatorSecondary" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/contactDetailsLabel"
+                    style="@style/RobotoBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="22dp"
+                    android:paddingTop="22dp"
+                    android:paddingBottom="22dp"
+                    android:text="@string/dr_003_your_details_label"
+                    android:textColor="@color/onSurface"
+                    android:textSize="20sp" />
+
+                <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+                    android:id="@+id/emailAddressInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/global_content_margins"
+                    android:layout_marginEnd="@dimen/global_content_margins"
+                    app:hintTextAppearance="@style/hintText"
+                    app:inputType="textEmailAddress"
+                    app:prohibitEmptySpace="true"
+                    app:validationIconType="validation"
+                    app:validationTextAppearance="@style/stateText" />
+
+                <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+                    android:id="@+id/firstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/global_content_margins"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="@dimen/global_content_margins"
+                    app:hintTextAppearance="@style/hintText"
+                    app:inputType="text" />
+
+                <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+                    android:id="@+id/lastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/global_content_margins"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="@dimen/global_content_margins"
+                    app:hintTextAppearance="@style/hintText"
+                    app:inputType="text" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/containerConfirmPrivacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="22dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/checkPrivacy"
+                        style="@style/RobotoMedium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="0dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@id/privacyErrorIcon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/privacyErrorIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="21dp"
+                        android:layout_marginEnd="4dp"
+                        android:src="@drawable/ic_icon_val_error"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/checkPrivacy"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/checkPrivacy"
+                        tools:visibility="visible" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/privacysErrorHint"
+                        style="@style/RobotoBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="5dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:text="@string/r_001_registration_label_consent_required"
+                        android:textColor="@color/red"
+                        android:textSize="11sp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/checkPrivacy"
+                        tools:visibility="visible" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/containerAcceptTerms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="22dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/checkTerms"
+                        style="@style/RobotoMedium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="2dp"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="0dp"
+                        android:text="@string/dr_003_terms_text1"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@id/termsErrorIcon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/termsErrorIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:src="@drawable/ic_icon_val_error"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/checkTerms"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/checkTerms"
+                        tools:visibility="visible" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/termsErrorHint"
+                        style="@style/RobotoBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="5dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:text="@string/r_001_registration_label_consent_required"
+                        android:textColor="@color/red"
+                        android:textSize="11sp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/checkTerms"
+                        tools:visibility="visible" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="@dimen/global_content_margins"
+                android:background="@color/separatorSecondary" />
+
+            <com.telekom.citykey.custom.views.ProgressButton
+                android:id="@+id/progressSendReportBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/global_content_margins"
+                android:layout_marginBottom="@dimen/global_content_margins"
+                android:clickable="true"
+                android:focusable="true"
+                app:text="@string/dr_003_send_report_label" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

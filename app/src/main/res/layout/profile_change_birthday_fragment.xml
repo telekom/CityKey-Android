@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutPageChangeBirthday"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/contentParent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+            android:id="@+id/oldBirthdayInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            app:hint="@string/p_003_change_dob_old_date" />
+
+        <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+            android:id="@+id/newBirthdayInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:paddingStart="@dimen/global_content_margins"
+            android:paddingEnd="@dimen/global_content_margins"
+            app:hint="@string/p_003_change_dob_new_date"
+            app:hintTextAppearance="@style/hintText"
+            app:isClickable="true"
+            app:removeErrorOnChange="true"
+            app:validationIconType="validation"
+            app:validationTextAppearance="@style/stateText" />
+
+        <com.telekom.citykey.custom.views.ProgressButton
+            android:id="@+id/removeBirthdayBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="48dp"
+            app:text="@string/p_003_change_dob_delete_dob_btn" />
+
+        <com.telekom.citykey.custom.views.ProgressButton
+            android:id="@+id/saveBirthdayBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="21dp"
+            android:layout_marginBottom="21dp"
+            app:text="@string/p_003_change_dob_save_btn" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

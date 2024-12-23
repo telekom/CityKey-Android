@@ -1,0 +1,111 @@
+package com.telekom.citykey.view.services.poi
+
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.toLiveData
+import com.google.android.gms.maps.model.LatLng
+import com.telekom.citykey.domain.global.GlobalData
+import com.telekom.citykey.domain.location.LocationInteractor
+import com.telekom.citykey.domain.repository.exceptions.NoConnectionException
+import com.telekom.citykey.domain.services.poi.POIInteractor
+import com.telekom.citykey.models.poi.PoiCategory
+import com.telekom.citykey.models.poi.PoiData
+import com.telekom.citykey.models.poi.PointOfInterest
+import com.telekom.citykey.utils.PreferencesHelper
+import com.telekom.citykey.utils.SingleLiveEvent
+import com.telekom.citykey.utils.extensions.retryOnError
+import com.telekom.citykey.view.NetworkingViewModel
+import io.reactivex.BackpressureStrategy
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
+import timber.log.Timber
+
+class PoiGuideViewModel(
+    private val poiInteractor: POIInteractor,
+    private val globalData: GlobalData,
+    private val locationInteractor: LocationInteractor,
+    private val prefs: PreferencesHelper
+) : NetworkingViewModel() {
+
+    val userLocation: LiveData<LatLng?> get() = _userLocation
+    val launchCategorySelection: LiveData<PoiCategory?> get() = _launchCategorySelection
+    val poiData: LiveData<PoiData> get() = _poiData
+
+    val activeCategory: LiveData<PoiCategory> get() = _activeCategory
+    val showDetails: LiveData<PointOfInterest> get() = _showDetails
+    val isFirstTime: LiveData<Boolean> get() = _isFirstTime
+    val poiState: LiveData<PoiState>
+        get() = poiInteractor.poiState
+            .toFlowable(BackpressureStrategy.LATEST)
+            .toLiveData()
+
+    private val _isFirstTime: MutableLiveData<Boolean> = MutableLiveData()
+    private val _poiData: MutableLiveData<PoiData> = MutableLiveData()
+    private val _activeCategory: MutableLiveData<PoiCategory> = MutableLiveData()
+    private val _userLocation: MutableLiveData<LatLng?> = MutableLiveData()
+    private val _launchCategorySelection: SingleLiveEvent<PoiCategory?> = SingleLiveEvent()
+    private val _showDetails: SingleLiveEvent<PointOfInterest> = SingleLiveEvent()
+
+    init {
+        launch {
+            poiInteractor.activeCategory
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(_activeCategory::postValue)
+        }
+
+        launch {
+            poiInteractor.poiData
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(_poiData::postValue)
+        }
+    }
+
+    fun onLocationPermissionAvailable() {
+        launch {
+            locationInteractor.getLocation()
+                .subscribe(_userLocation::postValue, Timber::e)
+        }
+    }
+
+    fun onMarkerClick(position: LatLng?) {
+        _poiData.value?.items?.find { it.latLang == position }
+            ?.let(_showDetails::setValue)
+    }
+
+    fun onRequestPermission() {
+        _isFirstTime.value = prefs.getPoiCategory(globalData.cityName) == null
+    }
+
+    fun onServiceReady(isRefreshRequired: Boolean = false) {
+        val poiCategory = prefs.getPoiCategory(globalData.cityName)
+        poiCategory?.let {
+            if (it != poiInteractor.selectedCategory || isRefreshRequired) {
+                _activeCategory.postValue(it)
+                launch {
+                    poiInteractor.getPois(it, true)
+                        .retryOnError(this::onError, retryDispatcher, pendingRetries, "POIs")
+                        .subscribe({ }, Timber::e)
+                }
+            }
+        } ?: _launchCategorySelection.postValue(poiCategory)
+    }
+
+    private fun onError(throwable: Throwable) {
+        when (throwable) {
+            is NoConnectionException -> _showRetryDialog.call()
+            else -> _technicalError.value = Unit
+        }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        locationInteractor.cancelLocation()
+    }
+
+    fun onCategorySelectionRequested() {
+        val poiCategory = prefs.getPoiCategory(globalData.cityName)
+        _launchCategorySelection.postValue(poiCategory)
+    }
+}

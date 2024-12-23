@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/eventItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/simple_ripple"
+    android:layoutAnimation="@anim/home_events_layout_animation"
+    android:orientation="horizontal">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/dateCard"
+        android:layout_width="54sp"
+        android:layout_height="35sp"
+        android:layout_marginEnd="10dp"
+        android:paddingTop="3dp"
+        android:paddingEnd="18dp"
+        android:paddingBottom="3dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="0dp"
+        tools:ignore="RtlSymmetry">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/dayOfWeek"
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="0dp"
+                    android:lineSpacingMultiplier="0.9"
+                    android:maxLength="3"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/day"
+                    style="@style/RobotoBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center_horizontal"
+                    android:lineSpacingExtra="0dp"
+                    android:lineSpacingMultiplier="0"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    tools:ignore="SmallSp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/month"
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="0dp"
+                    android:lineSpacingMultiplier="0.9"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp" />
+            </RelativeLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="-"
+                android:textColor="@color/white"
+                tools:ignore="HardcodedText" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/dayOfWeekEnd"
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="0dp"
+                    android:lineSpacingMultiplier="0.9"
+                    android:maxLength="3"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/dayEnd"
+                    style="@style/RobotoBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center_horizontal"
+                    android:lineSpacingExtra="0dp"
+                    android:lineSpacingMultiplier="0"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    tools:ignore="SmallSp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/monthEnd"
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="0dp"
+                    android:lineSpacingMultiplier="0.9"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/favSignM"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/eventStatus"
+            app:layout_constraintTop_toBottomOf="@id/locationM"
+            app:srcCompat="@drawable/ic_icon_favourite_active" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/locationM"
+            style="@style/RobotoRegular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxLines="1"
+            android:textColor="@color/onSurfaceSecondary"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/favSignM"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Event location" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/eventNameM"
+            style="@style/RobotoBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/onSurface"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/eventStatus"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/locationM"
+            tools:text="Event name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/eventStatus"
+            style="@style/RobotoBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/survey_beloved_label_background"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="2dp"
+            android:text="@string/e_007_cancelled_events"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/favSignM"
+            app:layout_constraintStart_toEndOf="@id/eventNameM"
+            app:layout_constraintTop_toBottomOf="@id/locationM" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

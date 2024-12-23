@@ -1,0 +1,56 @@
+package com.telekom.citykey.domain.ausweiss_app
+
+import com.telekom.citykey.R
+import com.telekom.citykey.domain.ausweiss_app.models.CertificateInfo
+import com.telekom.citykey.domain.ausweiss_app.models.CertificateValidity
+import com.telekom.citykey.domain.ausweiss_app.models.Result
+
+@Suppress("ClassName")
+sealed class IdentState {
+    object INSERT_PUK : IdentState()
+    object INSERT_CAN : IdentState()
+    object ATTACH_CARD : IdentState()
+    object LOADING : IdentState()
+    object CARD_BLOCKED : IdentState()
+
+    class InsertPin(val retries: Int) : IdentState()
+    class Error(val result: Result?) : IdentState()
+
+    class ShowInfo(
+        accessRights: List<String>,
+        val certificateInfo: CertificateInfo,
+        val certificateValidity: CertificateValidity
+    ) : IdentState() {
+
+        val mappedAccessRights: List<Int> = accessRights.map {
+            when (it) {
+                IdentConst.AR_ADDRESS -> R.string.egov_sdk_Address
+                IdentConst.AR_ADDRESS_VERIFICATION -> R.string.egov_sdk_AddressVerification
+                IdentConst.AR_AGE_VERIFICATION -> R.string.egov_sdk_AgeVerification
+                IdentConst.AR_ARTISTIC_NAME -> R.string.egov_sdk_ArtisticName
+                IdentConst.AR_BIRTH_NAME -> R.string.egov_sdk_BirthName
+                IdentConst.AR_CAN_ALLOWED -> R.string.egov_sdk_CanAllowed
+                IdentConst.AR_COMMUNITY_ID -> R.string.egov_sdk_CommunityID
+                IdentConst.AR_DATE_OF_BIRTH -> R.string.egov_sdk_DateOfBirth
+                IdentConst.AR_DOCTORAL_DEGREE -> R.string.egov_sdk_DoctoralDegree
+                IdentConst.AR_DOCUMENT_TYPE -> R.string.egov_sdk_DocumentType
+                IdentConst.AR_FAMILY_NAME -> R.string.egov_sdk_FamilyName
+                IdentConst.AR_GIVEN_NAMES -> R.string.egov_sdk_GivenNames
+                IdentConst.AR_ISSUING_COUNTRY -> R.string.egov_sdk_IssuingCountry
+                IdentConst.AR_NATIONALITY -> R.string.egov_sdk_Nationality
+                IdentConst.AR_PIN_MANAGEMENT -> R.string.egov_sdk_PinManagement
+                IdentConst.AR_PLACE_OF_BIRTH -> R.string.egov_sdk_PlaceOfBirth
+                IdentConst.AR_PSEUDONYM -> R.string.egov_sdk_Pseudonym
+                IdentConst.AR_RESIDENCE_PERMITI -> R.string.egov_sdk_ResidencePermitI
+                IdentConst.AR_RESIDENCE_PERMITII -> R.string.egov_sdk_ResidencePermitII
+                IdentConst.AR_VALID_UNTIL -> R.string.egov_sdk_ValidUntil
+                IdentConst.AR_WRITE_ADDRESS -> R.string.egov_sdk_Address
+                IdentConst.AR_WRITE_COMMUNITY_ID -> R.string.egov_sdk_CommunityID
+                IdentConst.AR_WRITE_RESIDENCE_PERMITI -> R.string.egov_sdk_ResidencePermitI
+                else -> R.string.egov_sdk_WriteResidencePermitII
+            }
+        }
+    }
+
+    class Success(val url: String) : IdentState()
+}

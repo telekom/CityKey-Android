@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroller"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+            android:id="@+id/emailInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            app:hint="@string/r_001_registration_hint_email"
+            app:hintTextAppearance="@style/hintText"
+            app:inputType="textEmailAddress"
+            app:prohibitEmptySpace="true"
+            app:validationIconType="validation"
+            app:validationTextAppearance="@style/stateText" />
+
+        <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+            android:id="@+id/passwordInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            app:hint="@string/r_001_registration_hint_password"
+            app:hintTextAppearance="@style/hintText"
+            app:inputType="textPassword"
+            app:maxLength="255"
+            app:prohibitEmptySpace="true"
+            app:removeErrorOnChange="false"
+            app:validationIconType="passwordValidation"
+            app:validationTextAppearance="@style/stateText" />
+
+        <com.telekom.citykey.custom.views.passwordstrength.PasswordStrengthView
+            android:id="@+id/passwordStrength"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/backgroundSecondary" />
+
+        <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+            android:id="@+id/repeatPasswordInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:alpha="0.3"
+            app:hint="@string/r_001_registration_hint_password_repeat"
+            app:hintTextAppearance="@style/hintText"
+            app:inputType="textPassword"
+            app:maxLength="255"
+            app:prohibitEmptySpace="true"
+            app:removeErrorOnChange="false"
+            app:validationIconType="passwordValidation"
+            app:validationTextAppearance="@style/stateText" />
+
+        <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+            android:id="@+id/birthdayInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:clickable="true"
+            android:focusable="true"
+            app:hint="@string/r_001_registration_hint_birthday"
+            app:hintTextAppearance="@style/hintText"
+            app:inputType="date"
+            app:isClickable="true"
+            app:validationIconType="validation"
+            app:validationTextAppearance="@style/stateText" />
+
+        <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+            android:id="@+id/postCodeInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            app:hint="@string/r_001_registration_hint_postcode"
+            app:hintTextAppearance="@style/hintText"
+            app:inputType="number"
+            app:maxLength="5"
+            app:prohibitSpecialChars="true"
+            app:validationIconType="validation"
+            app:validationTextAppearance="@style/stateText" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerAcceptPrivacy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="21dp">
+
+            <CheckBox
+                android:id="@+id/checkPrivacy"
+                style="@style/RobotoMedium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:paddingStart="12dp"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@id/privacyErrorIcon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/privacyErrorIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_icon_val_error"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/checkPrivacy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/checkPrivacy"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/privacyErrorHint"
+                style="@style/RobotoBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/r_001_registration_label_consent_required"
+                android:textColor="@color/red"
+                android:textSize="11sp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/checkPrivacy"
+                tools:visibility="visible" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.telekom.citykey.custom.views.ProgressButton
+            android:id="@+id/registerBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            android:layout_marginBottom="21dp"
+            app:text="@string/r_001_registration_btn_register" />
+
+    </LinearLayout>
+</ScrollView>

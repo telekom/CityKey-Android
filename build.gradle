@@ -1,0 +1,69 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.7.10'
+    repositories {
+        google()
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        mavenCentral()
+        gradlePluginPortal()
+        flatDir {
+            dirs 'libs'
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.6.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlin_version}"
+        classpath "org.jetbrains.kotlin:kotlin-android-extensions:${kotlin_version}"
+        classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.6.0'
+        classpath 'io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.19.0'
+        classpath 'com.google.gms:google-services:4.3.15'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+plugins {
+    id "org.sonarqube" version "3.3"
+}
+
+ext {
+    runningOnGitlab = System.getenv('CI_PIPELINE_ID') != null
+
+    compileSdkVersion = 35
+    buildToolsVersion = '34.0.0'
+    targetSdkVersion = 35
+
+    rxKotlinVersion = '2.3.0'
+    rxAndroidVersion = '2.1.0'
+    koinVersion = '3.1.2'
+    timberVersion = '5.0.1'
+    retrofitVersion = '2.9.0'
+    glideVersion = '4.14.2'
+}
+
+apply from: 'config/secrets.gradle'
+
+sonarqube {
+    def token = getSonarqubeToken
+    properties {
+        property "sonar.projectKey", "citykey.android"
+        property "sonar.host.url", "about:blank"
+        property "sonar.login", "$token"
+        property "sonar.projectName", "Android"
+        property "sonar.branch.name", "main"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        maven { url "https://jitpack.io" }
+        mavenCentral()
+    }
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.layout.buildDirectory
+}

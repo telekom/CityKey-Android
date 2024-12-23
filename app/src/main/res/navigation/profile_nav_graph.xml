@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:startDestination="@id/profile">
+
+    <fragment
+            android:id="@+id/profile"
+            android:name="com.telekom.citykey.view.user.profile.profile.Profile"
+            android:label="Profile">
+
+        <action
+                android:id="@+id/to_accountSettings"
+                app:destination="@id/accountSettings"
+                app:exitAnim="@anim/fragment_level2_exit"
+                app:enterAnim="@anim/fragment_level2_enter"
+                app:popEnterAnim="@anim/fragment_level2_pop_enter"
+                app:popExitAnim="@anim/fragment_level2_pop_exit"/>
+        <action
+            android:id="@+id/to_personalDetailSettings"
+            app:destination="@id/personalDetailSettings"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+    </fragment>
+    <fragment
+            android:id="@+id/accountSettings"
+            android:name="com.telekom.citykey.view.user.profile.settings.account_settings.AccountSettings"
+            android:label="AccountSettings">
+        <argument
+                android:name="email"
+                app:argType="string"/>
+        <action
+                android:id="@+id/action_accountSettings_to_changePassword"
+                app:destination="@id/changePassword"
+                app:exitAnim="@anim/fragment_level2_exit"
+                app:enterAnim="@anim/fragment_level2_enter"
+                app:popEnterAnim="@anim/fragment_level2_pop_enter"
+                app:popExitAnim="@anim/fragment_level2_pop_exit"/>
+        <action
+                android:id="@+id/action_accountSettings_to_changeEmail"
+                app:destination="@id/changeEmail"
+                app:exitAnim="@anim/fragment_level2_exit"
+                app:enterAnim="@anim/fragment_level2_enter"
+                app:popEnterAnim="@anim/fragment_level2_pop_enter"
+                app:popExitAnim="@anim/fragment_level2_pop_exit"/>
+        <action
+                android:id="@+id/action_accountSettings_to_deleteAccountInformation"
+                app:destination="@id/deleteAccountInformation"
+                app:exitAnim="@anim/fragment_level2_exit"
+                app:enterAnim="@anim/fragment_level2_enter"
+                app:popEnterAnim="@anim/fragment_level2_pop_enter"
+                app:popExitAnim="@anim/fragment_level2_pop_exit"/>
+    </fragment>
+    <fragment
+            android:id="@+id/changePassword"
+            android:name="com.telekom.citykey.view.user.profile.change_password.ChangePassword"
+            android:label="ChangePassword">
+        <action
+                android:id="@+id/action_changePassword_to_passwordChanged"
+                app:destination="@id/passwordChanged"
+                app:exitAnim="@anim/fragment_level2_exit"
+                app:enterAnim="@anim/fragment_level2_enter"
+                app:popEnterAnim="@anim/fragment_level2_pop_enter"
+                app:popExitAnim="@anim/fragment_level2_pop_exit"/>
+        <action
+                android:id="@+id/action_changePassword_to_forgotPassword"
+                app:destination="@id/forgotPassword"
+                app:exitAnim="@anim/fragment_level2_exit"
+                app:enterAnim="@anim/fragment_level2_enter"
+                app:popEnterAnim="@anim/fragment_level2_pop_enter"
+                app:popExitAnim="@anim/fragment_level2_pop_exit"/>
+    </fragment>
+    <fragment
+            android:id="@+id/passwordChanged"
+            android:name="com.telekom.citykey.view.user.profile.change_password.password_changed.PasswordChanged"
+            android:label="PasswordChanged"/>
+    <fragment
+            android:id="@+id/forgotPassword"
+            android:name="com.telekom.citykey.view.user.forgot_password.ForgotPassword"
+            android:label="ForgotPassword">
+        <action
+            android:id="@+id/action_forgotPassword_to_registration_confirmation_graph"
+            app:destination="@id/registration_confirmation_graph" />
+    </fragment>
+    <fragment
+            android:id="@+id/changeEmail"
+            android:name="com.telekom.citykey.view.user.profile.change_email.ChangeEmail"
+            android:label="ChangeEmail">
+
+        <action
+            android:id="@+id/action_changeEmail_to_forgotPassword"
+            app:destination="@id/forgotPassword"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit"/>
+        <action
+            android:id="@+id/action_changeEmail_to_registration_confirmation_graph2"
+            app:destination="@id/registration_confirmation_graph" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/deleteAccountInformation"
+            android:name="com.telekom.citykey.view.user.profile.delete_account.DeleteAccountInformation"
+            android:label="DeleteAccountInformation">
+
+        <action
+                android:id="@+id/action_deleteAccountInformation_to_deleteAccountValidation"
+                app:destination="@id/deleteAccountValidation"
+                app:exitAnim="@anim/fragment_level2_exit"
+                app:enterAnim="@anim/fragment_level2_enter"
+                app:popEnterAnim="@anim/fragment_level2_pop_enter"
+                app:popExitAnim="@anim/fragment_level2_pop_exit"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/deleteAccountValidation"
+            android:name="com.telekom.citykey.view.user.profile.delete_account.DeleteAccountValidation"
+            android:label="DeleteAccountValidation">
+
+        <action
+                android:id="@+id/action_deleteAccountValidation_to_deleteAccountConfirmation"
+                app:destination="@id/deleteAccountConfirmation"
+                app:exitAnim="@anim/fragment_level2_exit"
+                app:enterAnim="@anim/fragment_level2_enter"
+                app:popEnterAnim="@anim/fragment_level2_pop_enter"
+                app:popExitAnim="@anim/fragment_level2_pop_exit"/>
+        <action
+                android:id="@+id/action_deleteAccountValidation_to_forgotPassword"
+                app:destination="@id/forgotPassword"
+                app:exitAnim="@anim/fragment_level2_exit"
+                app:enterAnim="@anim/fragment_level2_enter"
+                app:popEnterAnim="@anim/fragment_level2_pop_enter"
+                app:popExitAnim="@anim/fragment_level2_pop_exit"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/deleteAccountConfirmation"
+            android:name="com.telekom.citykey.view.user.profile.delete_account.DeleteAccountConfirmation"
+            android:label="DeleteAccountConfirmation"/>
+    <include app:graph="@navigation/pin_confirmation_graph" />
+    <fragment
+        android:id="@+id/personalDetailSettings"
+        android:name="com.telekom.citykey.view.user.profile.settings.personal_settings.PersonalDetailSettings"
+        android:label="PersonalDetailSettings" >
+        <argument
+            android:name="birthDate"
+            app:argType="string" />
+        <argument
+            android:name="postalCode"
+            app:argType="string" />
+        <action
+            android:id="@+id/to_changeResidence"
+            app:destination="@id/changeResidence"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <action
+            android:id="@+id/to_changeBirthday"
+            app:destination="@id/changeBirthday"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeResidence"
+        android:name="com.telekom.citykey.view.user.profile.change_residence.ChangeResidence"
+        android:label="ChangeResidence" >
+        <argument
+            android:name="postalCode"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeBirthday"
+        android:name="com.telekom.citykey.view.user.profile.change_birthday.ChangeBirthday"
+        android:label="ChangeBirthday" >
+        <argument
+            android:name="currentBirthday"
+            app:argType="java.util.Date"
+            app:nullable="true"
+            />
+    </fragment>
+</navigation>

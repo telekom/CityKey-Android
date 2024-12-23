@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/widget_title"
+    android:initialKeyguardLayout="@layout/news_single_widget"
+    android:initialLayout="@layout/news_single_widget_initial_layout"
+    android:minWidth="140dp"
+    android:minHeight="140dp"
+    android:previewImage="@drawable/bg_news_single_widget_loader"
+    android:previewLayout="@layout/news_single_widget_initial_layout"
+    android:resizeMode="none"
+    android:targetCellWidth="2"
+    android:targetCellHeight="2"
+    android:updatePeriodMillis="10800000"
+    android:widgetCategory="home_screen" />

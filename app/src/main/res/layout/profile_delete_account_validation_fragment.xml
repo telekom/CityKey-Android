@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/global_content_margins"
+        android:paddingEnd="@dimen/global_content_margins">
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/RobotoRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/d_002_delete_account_validation_info"
+            android:textColor="@color/onSurface"
+            android:textSize="14sp" />
+
+        <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+            android:id="@+id/currentPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            app:validationTextAppearance="@style/stateText"
+            app:hint="@string/l_001_login_hint_password"
+            app:hintTextAppearance="@style/hintText"
+            app:inputType="textPassword"
+            app:prohibitEmptySpace="true"
+            app:removeErrorOnChange="true"
+            app:validationIconType="passwordValidation" />
+
+
+        <com.telekom.citykey.custom.views.ProgressButton
+            android:id="@+id/deleteAccountButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="@dimen/global_content_margins"
+            app:text="@string/d_002_delete_account_validation_button_text" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

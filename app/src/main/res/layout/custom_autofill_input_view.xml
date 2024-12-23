@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/autofillInputLayout"
+    style="@style/Widget.Design.TextInputLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:hint="Hint">
+
+    <com.telekom.citykey.custom.views.inputfields.AutoCompleteTextView
+        android:id="@+id/autofillEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionThreshold="1"
+        android:imeOptions="actionDone"
+        tools:drawableEnd="@drawable/ic_icon_val_ok"
+        tools:text="12345@@@" />
+
+</com.google.android.material.textfield.TextInputLayout>

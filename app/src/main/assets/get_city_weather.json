@@ -1,0 +1,23 @@
+{
+  "content": [
+    {
+      "id": 11,
+      "cityId": 8,
+      "cityKey": 2946447,
+      "cloudiness": 75,
+      "description": "light rain",
+      "humidity": 87,
+      "atmosphericPressure": 1002,
+      "rainVolume": null,
+      "sunrise": "2024-11-20 07:55:42",
+      "sunset": "2024-11-20 16:39:14",
+      "temperature": 3.5,
+      "maximumTemperature": 4.45,
+      "minimumTemperature": 2.97,
+      "visibility": 10000,
+      "windDirection": 260,
+      "windSpeed": 8.23,
+      "language": "en"
+    }
+  ]
+}

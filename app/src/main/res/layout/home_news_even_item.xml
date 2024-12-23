@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutItemHomeNewsEven"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/simple_ripple"
+    android:importantForAccessibility="yes"
+    android:padding="@dimen/global_content_margins">
+
+    <LinearLayout
+        android:id="@+id/containerContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/home_news_item_content_space"
+        android:layout_toStartOf="@id/evenImage"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/evenDescription"
+            style="@style/RobotoBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:hyphenationFrequency="full"
+            android:importantForAccessibility="no"
+            android:maxLines="3"
+            android:textColor="@color/onSurface"
+            android:textSize="17sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/evenTime"
+            style="@style/RobotoMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:importantForAccessibility="no"
+            android:textColor="@color/onSurfaceSecondary"
+            android:textSize="@dimen/home_news_item_title_size" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/evenImage"
+        android:layout_width="@dimen/home_news_item_image_size"
+        android:layout_height="@dimen/home_news_item_image_size"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop" />
+
+</RelativeLayout>

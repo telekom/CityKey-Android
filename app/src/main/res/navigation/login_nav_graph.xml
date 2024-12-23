@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/login">
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.telekom.citykey.view.user.login.login.Login"
+        android:label="Login">
+        <action
+            android:id="@+id/action_login_to_forgotPassword"
+            app:destination="@id/forgotPassword"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <action
+            android:id="@+id/action_login_to_temporaryBlocked"
+            app:destination="@id/temporaryBlocked" />
+        <action
+            android:id="@+id/action_login_to_registration_confirmation_graph"
+            app:destination="@id/registration_confirmation_graph"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/forgotPassword"
+        android:name="com.telekom.citykey.view.user.forgot_password.ForgotPassword"
+        android:label="ForgotPassword">
+        <argument
+            android:name="isAccountBlocked"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="email"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_forgotPassword_to_registration_confirmation_graph"
+            app:destination="@id/registration_confirmation_graph"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/temporaryBlocked"
+        android:name="com.telekom.citykey.view.user.forgot_password.TemporaryBlocked"
+        android:label="TemporaryBlocked">
+        <action
+            android:id="@+id/action_temporaryBlocked_to_forgotPassword2"
+            app:destination="@id/forgotPassword" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </fragment>
+    <include app:graph="@navigation/pin_confirmation_graph" />
+</navigation>

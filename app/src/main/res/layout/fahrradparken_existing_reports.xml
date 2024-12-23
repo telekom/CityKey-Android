@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?attr/colorSurface"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/onSurface"
+            tools:title="@string/dr_002_location_selection_toolbar_label" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.telekom.citykey.custom.views.OscaMapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:backgroundColor="@color/mapTileLoader"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/userCurrentLocationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="22dp"
+        android:contentDescription="@string/poi_001_tab_map_locate_me_button_decription"
+        android:scaleType="fitXY"
+        app:backgroundTint="@color/background"
+        app:layout_constraintBottom_toBottomOf="@id/mapView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_locateme"
+        app:tint="@null" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/refreshReportsButton"
+        style="@style/buttonStylesBlue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="24dp"
+        android:minWidth="160dp"
+        android:minHeight="32dp"
+        android:text="@string/fa_004_refresh_reports_label"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        app:layout_constraintWidth_min="160dp"
+        tools:visibility="visible" />
+
+    <com.telekom.citykey.custom.views.OscaProgressBar
+        android:id="@+id/refreshReportsLoader"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:elevation="100dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/refreshReportsButton"
+        app:layout_constraintEnd_toEndOf="@id/refreshReportsButton"
+        app:layout_constraintStart_toStartOf="@id/refreshReportsButton"
+        app:layout_constraintTop_toTopOf="@id/refreshReportsButton"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,73 @@
+<!-- Adjust event tokens for the PRODUCTION Environment -->
+<resources>
+    <string name="app_launched" translatable="false">89ebq9</string>
+
+    <string name="login_with_keep" translatable="false">hnya12</string>
+    <string name="login_without_keep" translatable="false">7rjuuk</string>
+
+    <string name="open_home" translatable="false">snnq5b</string>
+    <string name="open_service" translatable="false">470k6p</string>
+    <string name="open_infobox" translatable="false">ysub3m</string>
+
+    <string name="open_profile" translatable="false">ucaqs0</string>
+    <string name="open_news_list" translatable="false">qxuctg</string>
+    <string name="open_events_list" translatable="false">i5536j</string>
+
+    <string name="open_service_appointments" translatable="false">sp0ph8</string>
+    <string name="open_service_defect_reporter" translatable="false">nnxez3</string>
+    <string name="open_service_egov" translatable="false">d7xfdz</string>
+    <string name="open_service_poi_guide" translatable="false">jwj2no</string>
+    <string name="open_service_survey_detail" translatable="false">9tjpva</string>
+    <string name="open_service_survey_list" translatable="false">j0hgw2</string>
+    <string name="open_service_waste_calendar" translatable="false">pxys94</string>
+    <string name="open_waste_calendar" translatable="false">6r2bri</string>
+
+    <string name="appointment_created" translatable="false">vf83td</string>
+    <string name="defect_submitted" translatable="false">aaw70v</string>
+    <string name="event_favorite_marked" translatable="false">xf02bc</string>
+    <string name="UnexpectedLogout" translatable="false">n8ckyb</string>
+
+    <string name="eid_process_started" translatable="false">z7u14g</string>
+    <string name="eid_authentication_successful" translatable="false">8pt059</string>
+    <string name="eid_authentication_failed" translatable="false">jn0eez</string>
+    <string name="eid_authentication_failed_access_rights_error" translatable="false">2p7xdw</string>
+    <string name="eid_authentication_failed_bad_state_error" translatable="false">hb6avl</string>
+    <string name="eid_authentication_failed_major_error" translatable="false">ofqwtk</string>
+    <string name="eid_authentication_failed_message_error" translatable="false">7207ah</string>
+    <string name="eid_authentication_failed_payload_error" translatable="false">tep6pc</string>
+
+    <string name="switch_city" translatable="false">w01lm4</string>
+    <string name="open_service_destinations" translatable="false">d7spmu</string>
+    <string name="open_event_detail_page" translatable="false">h9eggh</string>
+    <string name="open_news_detail_page" translatable="false">1x20pz</string>
+    <string name="submit_poll" translatable="false">wkrmwo</string>
+    <string name="set_waste_reminder" translatable="false">qu7qzz</string>
+    <string name="change_poi_category" translatable="false">jr6b48</string>
+    <string name="open_egov_external_url" translatable="false">qfwhci</string>
+    <string name="send_feedback" translatable="false">a2bgp2</string>
+
+    <string name="remove_news_small_widget" translatable="false">a7eox6</string>
+    <string name="remove_news_medium_widget" translatable="false">hi3ih9</string>
+    <string name="news_widget_tapped" translatable="false">t7av3u</string>
+    <string name="news_small_widget" translatable="false">pdxe9b</string>
+    <string name="news_medium_widget" translatable="false">7xnfyc</string>
+
+    <string name="registration_complete" translatable="false">ctt0dt</string>
+    <string name="login_complete" translatable="false">hyelur</string>
+    <string name="event_engagement" translatable="false">q31hlq</string>
+    <string name="digital_adm_subcategories" translatable="false">tx15y3</string>
+
+    <string name="remove_waste_calendar_medium_widget" translatable="false">rbut76</string>
+    <string name="remove_waste_calendar_small_widget" translatable="false">fujodk</string>
+    <string name="waste_calendar_medium_widget" translatable="false">w2l5h0</string>
+    <string name="waste_calendar_small_widget" translatable="false">cjf1zk</string>
+    <string name="waste_widget_tapped" translatable="false">24qlav</string>
+
+    <string name="open_service_fahrradparken" translatable="false">s25bgh</string>
+    <string name="fahrradparken_submitted" translatable="false">p5jrjf</string>
+    <string name="open_fahrradparken_existing_defects" translatable="false">m7tali</string>
+
+    <string name="web_tile_tapped" translatable="false">74i1m5</string>
+    <string name="web_tile_button_tapped" translatable="false">3g8sa8</string>
+
+</resources>

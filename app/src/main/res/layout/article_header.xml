@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.telekom.citykey.custom.views.VerticallyCroppedImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="@dimen/article_max_img_height"
+            android:scaleType="matrix"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/credits"
+            style="@style/RobotoLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/credits_background"
+            android:minHeight="@dimen/article_credits_min_height"
+            android:padding="@dimen/article_credits_padding"
+            android:textColor="@color/white"
+            android:textSize="@dimen/article_credits_size"
+            tools:text="@tools:sample/full_names" />
+
+        <com.telekom.citykey.custom.views.OscaProgressBar
+            android:id="@+id/loading"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/onSurface" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/errorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/global_content_margins"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/errorText"
+                style="@style/RobotoRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/e_005_image_load_error"
+                android:textAlignment="center"
+                android:textColor="@color/onSurfaceSecondary"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/retryButton"
+                style="@style/RobotoRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="14dp"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:text="@string/e_002_page_load_retry"
+                android:textColor="@color/oscaColor"
+                android:textSize="14sp"
+                app:drawableStartCompat="@drawable/ic_action_resend_email"
+                app:drawableTint="@color/oscaColor" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/headDetail"
+            style="@style/RobotoBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/article_header_vertical_margin"
+            android:layout_marginStart="@dimen/article_horizontal_margin"
+            android:importantForAccessibility="yes"
+            android:textColor="@color/onSurfaceSecondary"
+            android:textSize="@dimen/article_header_detail_size"
+            app:layout_constraintBottom_toTopOf="@id/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Head detail (e.g. Date)" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/btnMore"
+            style="@style/RobotoRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/article_header_vertical_margin"
+            android:layout_marginEnd="@dimen/article_horizontal_margin"
+            android:text="@string/h_003_home_articles_btn_more"
+            android:textSize="@dimen/article_header_more_information_size"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@id/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:textColor="@color/blue" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/separator"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/title"
+        style="@style/RobotoBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/article_horizontal_margin"
+        android:layout_marginTop="@dimen/article_title_margin_top"
+        android:importantForAccessibility="yes"
+        android:textColor="@color/onSurface"
+        android:textSize="@dimen/article_title_size"
+        tools:maxLength="100"
+        tools:minLength="50"
+        tools:text="@tools:sample/lorem/random" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/subtitle"
+        style="@style/RobotoMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/article_horizontal_margin"
+        android:importantForAccessibility="yes"
+        android:textColor="@color/onSurface"
+        android:textSize="@dimen/article_content_size"
+        android:visibility="gone"
+        tools:text="subtitle" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

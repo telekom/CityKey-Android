@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/surveyItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:importantForAccessibility="yes"
+    android:paddingTop="11dp"
+    android:paddingEnd="@dimen/global_content_margins"
+    android:paddingBottom="11dp"
+    tools:ignore="RtlSymmetry">
+
+    <com.telekom.citykey.custom.views.surveys.DayCountdownView
+        android:id="@+id/daysProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:progressRadius="43dp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/daysProgress"
+        app:layout_constraintEnd_toEndOf="@id/daysProgress"
+        app:layout_constraintStart_toStartOf="@id/daysProgress"
+        app:layout_constraintTop_toTopOf="@id/daysProgress">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/daysLeftText"
+            style="@style/RobotoBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="bottom|center_horizontal"
+            android:includeFontPadding="true"
+            android:textColor="@color/onSurfaceSecondary"
+            android:textSize="24sp"
+            app:firstBaselineToTopHeight="0dp"
+            tools:text="14" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/daysLabel"
+            style="@style/RobotoRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/progress_days_description"
+            android:gravity="center_horizontal"
+            android:includeFontPadding="false"
+            android:text="@string/cs_002_days_label"
+            android:textColor="@color/onSurfaceSecondary"
+            android:textSize="14sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/surveyTitle"
+        style="@style/RobotoBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="5dp"
+        android:hyphenationFrequency="full"
+        android:importantForAccessibility="no"
+        android:inputType="textMultiLine"
+        android:textColor="@color/onSurface"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/popularLabel"
+        app:layout_constraintStart_toEndOf="@id/daysProgress"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Sport in Hennef" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/popularLabel"
+        style="@style/RobotoRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/survey_beloved_label_background"
+        android:paddingStart="6dp"
+        android:paddingTop="1dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="2dp"
+        android:text="@string/cs_002_favored_list_item_label"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/surveyTitle"
+        app:layout_constraintEnd_toStartOf="@id/stateIcon"
+        app:layout_constraintTop_toTopOf="@id/surveyTitle"
+        app:textAllCaps="true"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/stateIcon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/surveyTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/surveyTitle"
+        app:srcCompat="@drawable/ic_survey_icon_finished"
+        tools:visibility="visible" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/surveyDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:ellipsize="end"
+        android:hyphenationFrequency="full"
+        android:maxLines="3"
+        android:textColor="@color/onSurface"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/daysProgress"
+        app:layout_constraintTop_toBottomOf="@id/surveyTitle"
+        tools:text="@tools:sample/lorem/random" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

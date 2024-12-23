@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/auth_bottom_sheet_rounded"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/dialog_dpn_settings_title"
+            app:titleTextColor="@color/onSurface" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textHeader"
+                style="@style/RobotoBold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:autoLink="all"
+                android:importantForAccessibility="yes"
+                android:text="@string/dialog_dpn_settings_headline"
+                android:textAppearance="@style/RobotoRegular"
+                android:textColor="@color/onSurface"
+                android:textColorLink="@color/blue"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/Header" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="all"
+                android:hyphenationFrequency="full"
+                android:importantForAccessibility="yes"
+                android:paddingBottom="15dp"
+                android:text="@string/dialog_dpn_settings_description"
+                android:textAppearance="@style/RobotoRegular"
+                android:textColor="@color/onSurface"
+                android:textColorLink="@color/oscaColor"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/Header" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separator" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/requiredToolsBlock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/simple_ripple"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/requiredToolsIcon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_dpn_required_tools"
+                    app:tint="@color/onSurface" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/notificationToggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="@dimen/global_content_margins"
+                    android:accessibilityTraversalAfter="@id/requiredToolsShowMore"
+                    android:alpha="0.3"
+                    android:checked="true"
+                    android:clickable="false"
+                    android:theme="@style/SwitchStyle"
+                    app:layout_constraintBottom_toBottomOf="@id/requiredToolsIcon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/requiredToolsIcon" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/requiredToolsHeader"
+                    style="@style/RobotoBold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/global_content_margins"
+                    android:layout_marginEnd="20dp"
+                    android:importantForAccessibility="yes"
+                    android:labelFor="@id/notificationToggle"
+                    android:text="@string/dialog_dpn_settings_required_headline"
+                    android:textColor="@color/onSurface"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/notificationToggle"
+                    app:layout_constraintStart_toEndOf="@id/requiredToolsIcon"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.telekom.citykey.custom.views.ExpandableTextView
+                    android:id="@+id/requiredToolsDescription"
+                    style="@style/RobotoRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/global_content_margins"
+                    android:layout_marginEnd="20dp"
+                    android:ellipsize="end"
+                    android:hyphenationFrequency="full"
+                    android:importantForAccessibility="yes"
+                    android:text="@string/dialog_dpn_settings_required_description"
+                    android:textColor="@color/onSurface"
+                    android:textSize="14sp"
+                    app:collapsedLines="3"
+                    app:layout_constraintEnd_toStartOf="@+id/notificationToggle"
+                    app:layout_constraintStart_toEndOf="@id/requiredToolsIcon"
+                    app:layout_constraintTop_toBottomOf="@id/requiredToolsHeader" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/requiredToolsShowMore"
+                    style="@style/RobotoRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/global_content_margins"
+                    android:layout_marginEnd="40dp"
+                    android:accessibilityTraversalAfter="@id/requiredToolsDescription"
+                    android:importantForAccessibility="yes"
+                    android:paddingVertical="4dp"
+                    android:text="@string/dialog_dpn_settings_show_more_btn"
+                    android:textColor="@color/oscaColor"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/notificationToggle"
+                    app:layout_constraintStart_toEndOf="@id/requiredToolsIcon"
+                    app:layout_constraintTop_toBottomOf="@id/requiredToolsDescription" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separator" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/optionalToolsBlock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/simple_ripple"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/optionalToolsIcon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_dpn_optional_tools"
+                    app:tint="@color/onSurface" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/optionalToolsToggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="@dimen/global_content_margins"
+                    android:accessibilityTraversalAfter="@id/optionalToolsShowMore"
+                    android:labelFor="@id/optionalToolsHeader"
+                    android:theme="@style/SwitchStyle"
+                    app:layout_constraintBottom_toBottomOf="@id/optionalToolsIcon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/optionalToolsIcon" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/optionalToolsHeader"
+                    style="@style/RobotoBold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/global_content_margins"
+                    android:layout_marginEnd="20dp"
+                    android:importantForAccessibility="yes"
+                    android:labelFor="@id/optionalToolsToggle"
+                    android:text="@string/dialog_dpn_settings_optional_headline"
+                    android:textColor="@color/onSurface"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/optionalToolsToggle"
+                    app:layout_constraintStart_toEndOf="@id/optionalToolsIcon"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.telekom.citykey.custom.views.ExpandableTextView
+                    android:id="@+id/optionalToolsDescription"
+                    style="@style/RobotoRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/global_content_margins"
+                    android:layout_marginEnd="20dp"
+                    android:ellipsize="end"
+                    android:hyphenationFrequency="full"
+                    android:importantForAccessibility="yes"
+                    android:text="@string/dialog_dpn_settings_optional_description"
+                    android:textColor="@color/onSurface"
+                    android:textSize="14sp"
+                    app:collapsedLines="3"
+                    app:layout_constraintBottom_toTopOf="@+id/optionalToolsShowMore"
+                    app:layout_constraintEnd_toStartOf="@+id/optionalToolsToggle"
+                    app:layout_constraintStart_toEndOf="@id/optionalToolsIcon"
+                    app:layout_constraintTop_toBottomOf="@id/optionalToolsHeader" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/optionalToolsShowMore"
+                    style="@style/RobotoRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/global_content_margins"
+                    android:layout_marginEnd="40dp"
+                    android:accessibilityTraversalAfter="@id/optionalToolsDescription"
+                    android:importantForAccessibility="yes"
+                    android:paddingVertical="4dp"
+                    android:text="@string/dialog_dpn_settings_show_more_btn"
+                    android:textColor="@color/oscaColor"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/optionalToolsToggle"
+                    app:layout_constraintStart_toEndOf="@id/optionalToolsIcon"
+                    app:layout_constraintTop_toBottomOf="@id/optionalToolsDescription" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separator" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/dataSecurityNoticeLink"
+                style="@style/RobotoRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:text="@string/dialog_dpn_settings_data_security_link"
+                android:textColor="@color/oscaColor"
+                android:textSize="12sp" />
+
+            <com.telekom.citykey.custom.views.ProgressButton
+                android:id="@+id/btnChangeSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginEnd="21dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                app:text="@string/dialog_dpn_settings_confirm_selection_btn" />
+
+            <com.telekom.citykey.custom.views.ProgressButton
+                android:id="@+id/btnAcceptAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="21dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="21dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                app:text="@string/dialog_dpn_settings_accept_all_btn" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

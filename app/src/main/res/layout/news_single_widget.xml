@@ -1,0 +1,21 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/frame"
+    android:layout_width="@dimen/news_widget_single_item_size"
+    android:layout_height="@dimen/news_widget_single_item_size"
+    android:background="@drawable/news_single_widget_background">
+
+    <ImageView
+        android:id="@+id/loadingIndicatorImageView"
+        android:layout_width="@dimen/news_widget_single_item_size"
+        android:layout_height="@dimen/news_widget_single_item_size"
+        android:layout_gravity="center"
+        android:contentDescription="@null"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/newsSingleItemWidgetListView"
+        android:layout_width="@dimen/news_widget_single_item_size"
+        android:layout_height="@dimen/news_widget_single_item_size" />
+
+</FrameLayout>

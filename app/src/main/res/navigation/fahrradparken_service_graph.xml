@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fahrradparken_service_graph"
+    app:startDestination="@id/fahrradparkenServiceDetail">
+
+    <fragment
+        android:id="@+id/fahrradparkenServiceDetail"
+        android:name="com.telekom.citykey.view.services.fahrradparken.details.FahrradparkenServiceDetail"
+        android:label="FahrradparkenServiceDetail">
+
+        <argument
+            android:name="service"
+            app:argType="com.telekom.citykey.models.content.CitizenService" />
+
+        <action
+            android:id="@+id/toFahrradparkenCategorySelection"
+            app:destination="@id/fahrradparkenCategorySelection"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+
+        <action
+            android:id="@+id/action_fahrradparkenServiceDetail_to_fahrradparkenExistingReports"
+            app:destination="@id/serviceHelp" />
+
+        <action
+            android:id="@+id/action_fahrradparkenServiceDetail_to_fahrradparkenNewReport"
+            app:destination="@id/serviceHelp" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fahrradparkenCategorySelection"
+        android:name="com.telekom.citykey.view.services.fahrradparken.category_selection.FahrradparkenCategorySelection"
+        android:label="FahrradparkenCategorySelection">
+
+        <argument
+            android:name="service"
+            app:argType="com.telekom.citykey.models.content.CitizenService" />
+
+        <argument
+            android:name="isNewReport"
+            app:argType="boolean" />
+
+        <action
+            android:id="@+id/action_fahrradparkenCategorySelection_to_fahrradparkenSubcategorySelection"
+            app:destination="@id/fahrradparkenSubcategorySelection"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+
+        <action
+            android:id="@+id/to_ExistingReportsFragment"
+            app:destination="@id/fahrradparkenExistingReports"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+
+        <action
+            android:id="@+id/to_CreateReportForm"
+            app:destination="@id/fahrradparkenCreateReportForm"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fahrradparkenSubcategorySelection"
+        android:name="com.telekom.citykey.view.services.fahrradparken.subcategory_selection.FahrradparkenSubcategorySelection"
+        android:label="FahrradparkenSubcategorySelection">
+
+        <argument
+            android:name="service"
+            app:argType="com.telekom.citykey.models.content.CitizenService" />
+
+        <argument
+            android:name="isNewReport"
+            app:argType="boolean" />
+
+        <argument
+            android:name="selectedCategory"
+            app:argType="com.telekom.citykey.models.defect_reporter.DefectCategory" />
+
+        <action
+            android:id="@+id/to_ExistingReportsFragment"
+            app:destination="@id/fahrradparkenExistingReports"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+
+        <action
+            android:id="@+id/to_CreateReportForm"
+            app:destination="@id/fahrradparkenCreateReportForm"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fahrradparkenExistingReports"
+        android:name="com.telekom.citykey.view.services.fahrradparken.existing_reports.FahrradparkenExistingReports"
+        android:label="FahrradparkenExistingReports">
+
+        <argument
+            android:name="service"
+            app:argType="com.telekom.citykey.models.content.CitizenService" />
+
+        <argument
+            android:name="isNewReport"
+            app:argType="boolean" />
+
+        <argument
+            android:name="selectedCategory"
+            app:argType="com.telekom.citykey.models.defect_reporter.DefectCategory" />
+
+        <argument
+            android:name="selectedSubcategory"
+            app:argType="com.telekom.citykey.models.defect_reporter.DefectSubCategory"
+            app:nullable="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fahrradparkenCreateReportForm"
+        android:name="com.telekom.citykey.view.services.fahrradparken.report_form.FahrradparkenCreateReportForm"
+        android:label="FahrradparkenCreateReportForm">
+
+        <argument
+            android:name="service"
+            app:argType="com.telekom.citykey.models.content.CitizenService" />
+
+        <argument
+            android:name="isNewReport"
+            app:argType="boolean" />
+
+        <argument
+            android:name="location"
+            app:argType="com.google.android.gms.maps.model.LatLng" />
+
+        <argument
+            android:name="selectedCategory"
+            app:argType="com.telekom.citykey.models.defect_reporter.DefectCategory" />
+
+        <argument
+            android:name="selectedSubcategory"
+            app:argType="com.telekom.citykey.models.defect_reporter.DefectSubCategory"
+            app:nullable="true" />
+
+        <action
+            android:id="@+id/to_ReportCreated"
+            app:destination="@id/fahrradparkenReportCreated"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit"
+            app:popUpTo="@id/fahrradparkenServiceDetail"
+            app:popUpToInclusive="false" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fahrradparkenReportCreated"
+        android:name="com.telekom.citykey.view.services.fahrradparken.report_submission.FahrradparkenReportSubmitted"
+        android:label="FahrradparkenReportCreated">
+
+        <argument
+            android:name="uniqueId"
+            app:argType="string" />
+
+        <argument
+            android:name="defectCategory"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="cityName"
+            app:argType="string" />
+
+        <argument
+            android:name="email"
+            app:argType="string"
+            app:nullable="true" />
+
+    </fragment>
+
+</navigation>

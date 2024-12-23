@@ -1,0 +1,1480 @@
+{
+  "content": [
+    {
+      "uid": "12564438",
+      "description": "",
+      "endDate": "2024-11-20 23:59:00",
+      "eventId": "244018",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "",
+      "imageCredit": "",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/BPW-Bonn-Gruenderinnenprogramm-2024-2025.php",
+      "locationAddress": "",
+      "locationName": "",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 00:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event1.jpg",
+      "thumbnailCredit": "",
+      "title": "BPW Bonn: Gründerinnenprogramm 2024/2025",
+      "hasStartTime": false,
+      "cityEventCategories": [
+        {
+          "id": 165,
+          "categoryName": "barrierefreier Zugang"
+        },
+        {
+          "id": 263,
+          "categoryName": "Weitere Veranstaltungen"
+        },
+        {
+          "id": 272,
+          "categoryName": "Wissenschaft / Wirtschaft"
+        },
+        {
+          "id": 89,
+          "categoryName": "Fortbildungen"
+        },
+        {
+          "id": 275,
+          "categoryName": "Online-Veranstaltung"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 182,
+          "categoryName": "Junge Erwachsene"
+        },
+        {
+          "id": 165,
+          "categoryName": "barrierefreier Zugang"
+        },
+        {
+          "id": 263,
+          "categoryName": "Weitere Veranstaltungen"
+        },
+        {
+          "id": 272,
+          "categoryName": "Wissenschaft / Wirtschaft"
+        },
+        {
+          "id": 89,
+          "categoryName": "Fortbildungen"
+        },
+        {
+          "id": 275,
+          "categoryName": "Online-Veranstaltung"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 182,
+          "categoryName": "Junge Erwachsene"
+        },
+        {
+          "id": 165,
+          "categoryName": "barrierefreier Zugang"
+        },
+        {
+          "id": 263,
+          "categoryName": "Weitere Veranstaltungen"
+        },
+        {
+          "id": 272,
+          "categoryName": "Wissenschaft / Wirtschaft"
+        },
+        {
+          "id": 89,
+          "categoryName": "Fortbildungen"
+        },
+        {
+          "id": 275,
+          "categoryName": "Online-Veranstaltung"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 182,
+          "categoryName": "Junge Erwachsene"
+        },
+        {
+          "id": 165,
+          "categoryName": "barrierefreier Zugang"
+        },
+        {
+          "id": 263,
+          "categoryName": "Weitere Veranstaltungen"
+        },
+        {
+          "id": 272,
+          "categoryName": "Wissenschaft / Wirtschaft"
+        },
+        {
+          "id": 89,
+          "categoryName": "Fortbildungen"
+        },
+        {
+          "id": 275,
+          "categoryName": "Online-Veranstaltung"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 182,
+          "categoryName": "Junge Erwachsene"
+        },
+        {
+          "id": 165,
+          "categoryName": "barrierefreier Zugang"
+        },
+        {
+          "id": 263,
+          "categoryName": "Weitere Veranstaltungen"
+        },
+        {
+          "id": 272,
+          "categoryName": "Wissenschaft / Wirtschaft"
+        },
+        {
+          "id": 89,
+          "categoryName": "Fortbildungen"
+        },
+        {
+          "id": 275,
+          "categoryName": "Online-Veranstaltung"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 182,
+          "categoryName": "Junge Erwachsene"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "12855237",
+      "description": "",
+      "endDate": "2024-11-20 23:59:00",
+      "eventId": "240378",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "",
+      "imageCredit": "",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/Konfliktbewaeltigung-.php",
+      "locationAddress": "Estermannstr. 204, , Bonn",
+      "locationName": "IndiTO",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 00:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event2.jpg",
+      "thumbnailCredit": "",
+      "title": "Konfliktbewältigung",
+      "hasStartTime": false,
+      "cityEventCategories": [
+        {
+          "id": 264,
+          "categoryName": "Bonn"
+        },
+        {
+          "id": 265,
+          "categoryName": "Aktion/Workshop"
+        },
+        {
+          "id": 89,
+          "categoryName": "Fortbildungen"
+        },
+        {
+          "id": 93,
+          "categoryName": "Kurs"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 263,
+          "categoryName": "Weitere Veranstaltungen"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "12949020",
+      "description": "",
+      "endDate": "2024-11-20 23:59:00",
+      "eventId": "243810",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-extern-der-die-DADA.Unordnung-der-Geschlechter-161328.php.media-243811-240418_Elsa_nodate_CopyrLibrary-of-Congress-Prints-and-Photographs-Division-Washington_HIGHRES_retRK.jpg",
+      "imageCredit": "Elsa von Freytag-Loringhoven, um 1922, Unbekannter Fotograf, © Library of Congress, Prints & Photographs Division, Washington D.C.",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/der-die-DADA.Unordnung-der-Geschlechter-161328.php",
+      "locationAddress": "Hans-Arp-Allee 1, 53424, Remagen",
+      "locationName": "Arp Museum Bahnhof Rolandseck",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 00:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event3.jpg",
+      "thumbnailCredit": "Elsa von Freytag-Loringhoven, um 1922, Unbekannter Fotograf, © Library of Congress, Prints & Photographs Division, Washington D.C.",
+      "title": "der die DADA. Unordnung der Geschlechter",
+      "hasStartTime": false,
+      "cityEventCategories": [
+        {
+          "id": 165,
+          "categoryName": "barrierefreier Zugang"
+        },
+        {
+          "id": 279,
+          "categoryName": "inklusiv"
+        },
+        {
+          "id": 2,
+          "categoryName": "Ausstellungen"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 177,
+          "categoryName": "Familien"
+        },
+        {
+          "id": 180,
+          "categoryName": "Inklusiv konzipiert"
+        },
+        {
+          "id": 12,
+          "categoryName": "Jugendliche"
+        },
+        {
+          "id": 182,
+          "categoryName": "Junge Erwachsene"
+        },
+        {
+          "id": 184,
+          "categoryName": "Kinder (0 bis 5 Jahre)"
+        },
+        {
+          "id": 441,
+          "categoryName": "Kinder (5 bis 12 Jahre)"
+        },
+        {
+          "id": 191,
+          "categoryName": "Seniorinnen und Senioren"
+        },
+        {
+          "id": 186,
+          "categoryName": "Kultur"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "13016412",
+      "description": "",
+      "endDate": "2024-11-20 23:59:00",
+      "eventId": "256816",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "",
+      "imageCredit": "",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/Yoga-sanft-mit-Harmonium.php",
+      "locationAddress": "Lennéstraße 5, 53113, Bonn",
+      "locationName": "Katholische Familienbildungsstätte Bonn",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 00:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event4.jpg",
+      "thumbnailCredit": "",
+      "title": "Yoga sanft mit Harmonium",
+      "hasStartTime": false,
+      "cityEventCategories": [
+        {
+          "id": 165,
+          "categoryName": "barrierefreier Zugang"
+        },
+        {
+          "id": 264,
+          "categoryName": "Bonn"
+        },
+        {
+          "id": 263,
+          "categoryName": "Weitere Veranstaltungen"
+        },
+        {
+          "id": 93,
+          "categoryName": "Kurs"
+        },
+        {
+          "id": 95,
+          "categoryName": "Sport"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 182,
+          "categoryName": "Junge Erwachsene"
+        },
+        {
+          "id": 191,
+          "categoryName": "Seniorinnen und Senioren"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "13045432",
+      "description": "",
+      "endDate": "2024-11-20 23:59:00",
+      "eventId": "257067",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-extern-Tanz-Workshops-in-der-Bundeskunsthalle.php.media-257068-BKH-Termine.jpg",
+      "imageCredit": "Tanzhaus Bonn GmbH",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/Tanz-Workshops-in-der-Bundeskunsthalle.php",
+      "locationAddress": "Helmut-Kohl-Allee 4, 53113, Bonn",
+      "locationName": "Bundeskunsthalle",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 00:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event5.jpg",
+      "thumbnailCredit": "Tanzhaus Bonn GmbH",
+      "title": "Tanz-Workshops in der Bundeskunsthalle",
+      "hasStartTime": false,
+      "cityEventCategories": [
+        {
+          "id": 165,
+          "categoryName": "barrierefreier Zugang"
+        },
+        {
+          "id": 279,
+          "categoryName": "inklusiv"
+        },
+        {
+          "id": 264,
+          "categoryName": "Bonn"
+        },
+        {
+          "id": 186,
+          "categoryName": "Kultur"
+        },
+        {
+          "id": 263,
+          "categoryName": "Weitere Veranstaltungen"
+        },
+        {
+          "id": 265,
+          "categoryName": "Aktion/Workshop"
+        },
+        {
+          "id": 98,
+          "categoryName": "Tanz"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 177,
+          "categoryName": "Familien"
+        },
+        {
+          "id": 180,
+          "categoryName": "Inklusiv konzipiert"
+        },
+        {
+          "id": 12,
+          "categoryName": "Jugendliche"
+        },
+        {
+          "id": 182,
+          "categoryName": "Junge Erwachsene"
+        },
+        {
+          "id": 184,
+          "categoryName": "Kinder (0 bis 5 Jahre)"
+        },
+        {
+          "id": 441,
+          "categoryName": "Kinder (5 bis 12 Jahre)"
+        },
+        {
+          "id": 191,
+          "categoryName": "Seniorinnen und Senioren"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "13082442",
+      "description": "",
+      "endDate": "2024-11-20 23:59:00",
+      "eventId": "226503",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "",
+      "imageCredit": "",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/Babyzeichensprache-Zwergensprache-Kurs-fuer-Einsteiger.php",
+      "locationAddress": "Endenicher Straße 282, 53121, Bonn",
+      "locationName": "FAMILIENerLEBEN",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 00:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event6.jpg",
+      "thumbnailCredit": "",
+      "title": "Babyzeichensprache (Zwergensprache) - Kurs für Einsteiger",
+      "hasStartTime": false,
+      "cityEventCategories": [
+        {
+          "id": 279,
+          "categoryName": "inklusiv"
+        },
+        {
+          "id": 264,
+          "categoryName": "Bonn"
+        },
+        {
+          "id": 93,
+          "categoryName": "Kurs"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 177,
+          "categoryName": "Familien"
+        },
+        {
+          "id": 184,
+          "categoryName": "Kinder (0 bis 5 Jahre)"
+        },
+        {
+          "id": 263,
+          "categoryName": "Weitere Veranstaltungen"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "13160145",
+      "description": "100 Jahre illustriertes Buch",
+      "endDate": "2024-11-20 23:59:00",
+      "eventId": "250515",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "",
+      "imageCredit": "",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/stadtbibliothek/ausstellung-100-jahre-buechergilde-gutenberg.php",
+      "locationAddress": "Mülheimer Platz 1, 53111, Bonn",
+      "locationName": "Stadtbibliothek Bonn",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 00:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event7.jpg",
+      "thumbnailCredit": "",
+      "title": "Ausstellung: 100 Jahre Büchergilde Gutenberg",
+      "hasStartTime": false,
+      "cityEventCategories": [
+        {
+          "id": 264,
+          "categoryName": "Bonn"
+        },
+        {
+          "id": 290,
+          "categoryName": "Stadtbibliothek"
+        },
+        {
+          "id": 263,
+          "categoryName": "Weitere Veranstaltungen"
+        },
+        {
+          "id": 2,
+          "categoryName": "Ausstellungen"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "13338153",
+      "description": "Ausstellung der Malfrauen vom Familienzentrum Farbenfroh",
+      "endDate": "2024-11-20 23:59:00",
+      "eventId": "256839",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-stadtbibliothek-ausstellung-der-malfrauen-vom-familienzentrum-farbenfroh.php.media-258548-Tannenbusch_aussen.JPG",
+      "imageCredit": "Stadtbibliothek/Bundesstadt Bonn",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/stadtbibliothek/ausstellung-der-malfrauen-vom-familienzentrum-farbenfroh.php",
+      "locationAddress": "Oppelner Straße 128, 53119, Bonn",
+      "locationName": "Stadtbibliothek Bonn",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 00:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event8.jpg",
+      "thumbnailCredit": "Stadtbibliothek/Bundesstadt Bonn",
+      "title": "Ausstellung",
+      "hasStartTime": false,
+      "cityEventCategories": [
+        {
+          "id": 264,
+          "categoryName": "Bonn"
+        },
+        {
+          "id": 290,
+          "categoryName": "Stadtbibliothek"
+        },
+        {
+          "id": 263,
+          "categoryName": "Weitere Veranstaltungen"
+        },
+        {
+          "id": 2,
+          "categoryName": "Ausstellungen"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 177,
+          "categoryName": "Familien"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "13338197",
+      "description": "Bilder in Öl, Aquarell, Gouache, Tinte und Bleistift des Mal- und Zeichenkurses Hardtberg der evangelischen Kirchengemeinde Matthäi unter der Leitung von Valentina Siggelow",
+      "endDate": "2024-11-20 23:59:00",
+      "eventId": "253727",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-stadtbibliothek-ausstellung-querbeet.php.media-255510-Querbeet.PNG",
+      "imageCredit": "Regina Geipel",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/stadtbibliothek/ausstellung-querbeet.php",
+      "locationAddress": "Am Burggraben 18, 53121, Bonn",
+      "locationName": "Stadtbibliothek Bonn",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 00:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event9.jpg",
+      "thumbnailCredit": "Regina Geipel",
+      "title": "Ausstellung: Querbeet",
+      "hasStartTime": false,
+      "cityEventCategories": [
+        {
+          "id": 264,
+          "categoryName": "Bonn"
+        },
+        {
+          "id": 273,
+          "categoryName": "Hardtberg"
+        },
+        {
+          "id": 290,
+          "categoryName": "Stadtbibliothek"
+        },
+        {
+          "id": 263,
+          "categoryName": "Weitere Veranstaltungen"
+        },
+        {
+          "id": 2,
+          "categoryName": "Ausstellungen"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "13188303",
+      "description": "",
+      "endDate": "2024-11-20 16:00:00",
+      "eventId": "253204",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-eigene-veranstaltungen-75-Jahre-Grundgesetz-Startschuss-Gleichberechtigung.php.media-253205-hdfg_GG_Poster1_zuschnitt.jpg",
+      "imageCredit": "Haus der FrauenGeschichte e.V.",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/eigene-veranstaltungen/75-Jahre-Grundgesetz-Startschuss-Gleichberechtigung.php",
+      "locationAddress": "Adenauerallee 37, 53113, Bonn",
+      "locationName": "Haus der Evangelischen Kirche",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 07:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event10.jpg",
+      "thumbnailCredit": "Haus der FrauenGeschichte e.V.",
+      "title": "75 Jahre Grundgesetz – Startschuss für die Gleichberechtigung?",
+      "hasStartTime": true,
+      "cityEventCategories": [
+        {
+          "id": 264,
+          "categoryName": "Bonn"
+        },
+        {
+          "id": 285,
+          "categoryName": "Gleichstellung"
+        },
+        {
+          "id": 378,
+          "categoryName": "75 Jahre Demokratie"
+        },
+        {
+          "id": 374,
+          "categoryName": "Demokratie"
+        },
+        {
+          "id": 11,
+          "categoryName": "Internationales"
+        },
+        {
+          "id": 186,
+          "categoryName": "Kultur"
+        },
+        {
+          "id": 2,
+          "categoryName": "Ausstellungen"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 12,
+          "categoryName": "Jugendliche"
+        },
+        {
+          "id": 191,
+          "categoryName": "Seniorinnen und Senioren"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "13601937",
+      "description": "Bis 19. Dezember zeigt der gemeinnützige Verein Let´s Plant! im Stadthaus-Foyer die Ausstellung „Zwischen Verfall und Fruchtbarkeit: Die Wiederherstellung verlorener Landschaften“.",
+      "endDate": "2024-11-20 18:00:00",
+      "eventId": "260365",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-eigene-veranstaltungen-ausstellung-zwischen-verfall-und-fruchtbarkeit.php.media-260367-Fotoausstellung-Lets-plant.JPG",
+      "imageCredit": "Let´s plant",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/eigene-veranstaltungen/ausstellung-zwischen-verfall-und-fruchtbarkeit.php",
+      "locationAddress": "Berliner Platz 2, 53111, Bonn",
+      "locationName": "Stadthaus",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 08:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event11.jpg",
+      "thumbnailCredit": "Let´s plant",
+      "title": "Zwischen Verfall und Fruchtbarkeit",
+      "hasStartTime": true,
+      "cityEventCategories": [
+        {
+          "id": 264,
+          "categoryName": "Bonn"
+        },
+        {
+          "id": 195,
+          "categoryName": "Stadtverwaltung"
+        },
+        {
+          "id": 262,
+          "categoryName": "Startseite"
+        },
+        {
+          "id": 440,
+          "categoryName": "Klima"
+        },
+        {
+          "id": 189,
+          "categoryName": "Nachhaltigkeit"
+        },
+        {
+          "id": 2,
+          "categoryName": "Ausstellungen"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "12798433",
+      "description": "",
+      "endDate": "2024-11-20 10:30:00",
+      "eventId": "252472",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-extern-Online-Hormone-behutsam-ins-Gleichgewicht-bringen.php.media-252473-Hormone-ins-Gleichgewicht_BILDPixaBay.jpg",
+      "imageCredit": "PixaBay",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/Online-Hormone-behutsam-ins-Gleichgewicht-bringen.php",
+      "locationAddress": "",
+      "locationName": "",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 09:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event12.jpg",
+      "thumbnailCredit": "PixaBay",
+      "title": "Online: Hormone behutsam ins Gleichgewicht bringen",
+      "hasStartTime": true,
+      "cityEventCategories": [
+        {
+          "id": 279,
+          "categoryName": "inklusiv"
+        },
+        {
+          "id": 164,
+          "categoryName": "Bad Godesberg"
+        },
+        {
+          "id": 275,
+          "categoryName": "Online-Veranstaltung"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 9,
+          "categoryName": "Gesundheit"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "12884290",
+      "description": "",
+      "endDate": "2024-11-20 10:30:00",
+      "eventId": "247516",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-extern-Spiel-und-Kontaktgruppe.php.media-247517-Spiel-und-Kontaktgruppe.jpg",
+      "imageCredit": "HDF",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/Spiel-und-Kontaktgruppe.php",
+      "locationAddress": "Friesenstraße 6, 53175, Bonn",
+      "locationName": "Haus der Familie",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 09:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event13.jpg",
+      "thumbnailCredit": "HDF",
+      "title": "Spiel- und Kontaktgruppe",
+      "hasStartTime": true,
+      "cityEventCategories": [
+        {
+          "id": 165,
+          "categoryName": "barrierefreier Zugang"
+        },
+        {
+          "id": 279,
+          "categoryName": "inklusiv"
+        },
+        {
+          "id": 164,
+          "categoryName": "Bad Godesberg"
+        },
+        {
+          "id": 265,
+          "categoryName": "Aktion/Workshop"
+        },
+        {
+          "id": 177,
+          "categoryName": "Familien"
+        },
+        {
+          "id": 263,
+          "categoryName": "Weitere Veranstaltungen"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "13299781",
+      "description": "",
+      "endDate": "2024-11-20 13:00:00",
+      "eventId": "258501",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-extern-Viktoria-Salma-Unterm-Eis-ausstellung.php.media-258502-Feuerelche_Graphite-intaglio-ink_100x140_2024.jpg",
+      "imageCredit": "Viktoria Salma",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/Viktoria-Salma-Unterm-Eis-ausstellung.php",
+      "locationAddress": "Bonner Talweg 10, 53113, Bonn",
+      "locationName": "Theatergemeinde BONN",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 09:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event14.jpg",
+      "thumbnailCredit": "Viktoria Salma",
+      "title": "Viktoria Salma – „Unterm Eis“",
+      "hasStartTime": true,
+      "cityEventCategories": [
+        {
+          "id": 264,
+          "categoryName": "Bonn"
+        },
+        {
+          "id": 2,
+          "categoryName": "Ausstellungen"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 182,
+          "categoryName": "Junge Erwachsene"
+        },
+        {
+          "id": 191,
+          "categoryName": "Seniorinnen und Senioren"
+        },
+        {
+          "id": 186,
+          "categoryName": "Kultur"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "12642414",
+      "description": "",
+      "endDate": "2024-11-20 20:00:00",
+      "eventId": "247939",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-extern-Mediation-114356.php.media-247940-Mediation-BILDPixaBay.jpg",
+      "imageCredit": "PixaBay",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/Mediation-114356.php",
+      "locationAddress": "Friesenstraße 6, 53175, Bonn",
+      "locationName": "Haus der Familie",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 09:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event15.jpg",
+      "thumbnailCredit": "PixaBay",
+      "title": "Mediation",
+      "hasStartTime": true,
+      "cityEventCategories": [
+        {
+          "id": 165,
+          "categoryName": "barrierefreier Zugang"
+        },
+        {
+          "id": 279,
+          "categoryName": "inklusiv"
+        },
+        {
+          "id": 164,
+          "categoryName": "Bad Godesberg"
+        },
+        {
+          "id": 265,
+          "categoryName": "Aktion/Workshop"
+        },
+        {
+          "id": 177,
+          "categoryName": "Familien"
+        },
+        {
+          "id": 263,
+          "categoryName": "Weitere Veranstaltungen"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "12740524",
+      "description": "",
+      "endDate": "2024-11-20 20:00:00",
+      "eventId": "247931",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-extern-Einzel-Coaching-bei-Belastungen-113425.php.media-247932-Einzel_coachingBILDPixa.jpg",
+      "imageCredit": "PixaBay",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/Einzel-Coaching-bei-Belastungen-113425.php",
+      "locationAddress": "",
+      "locationName": "",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 09:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event16.jpg",
+      "thumbnailCredit": "PixaBay",
+      "title": "Einzel-Coaching bei Belastungen",
+      "hasStartTime": true,
+      "cityEventCategories": [
+        {
+          "id": 279,
+          "categoryName": "inklusiv"
+        },
+        {
+          "id": 164,
+          "categoryName": "Bad Godesberg"
+        },
+        {
+          "id": 275,
+          "categoryName": "Online-Veranstaltung"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 263,
+          "categoryName": "Weitere Veranstaltungen"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "12884366",
+      "description": "",
+      "endDate": "2024-11-20 20:00:00",
+      "eventId": "248364",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-extern-Sprechstunden-zur-Unterstuetzung-im-Umgang-mit-digitalen-Medien.php.media-248365-Umgang-mit-Digitale-Medien-BILDPixaBay.jpg",
+      "imageCredit": "PixaBay",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/Sprechstunden-zur-Unterstuetzung-im-Umgang-mit-digitalen-Medien.php",
+      "locationAddress": "Friesenstraße 6, 53175, Bonn",
+      "locationName": "Haus der Familie",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 09:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event17.jpg",
+      "thumbnailCredit": "PixaBay",
+      "title": "Sprechstunden zur Unterstützung im Umgang mit digitalen Medien",
+      "hasStartTime": true,
+      "cityEventCategories": [
+        {
+          "id": 165,
+          "categoryName": "barrierefreier Zugang"
+        },
+        {
+          "id": 279,
+          "categoryName": "inklusiv"
+        },
+        {
+          "id": 164,
+          "categoryName": "Bad Godesberg"
+        },
+        {
+          "id": 265,
+          "categoryName": "Aktion/Workshop"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 263,
+          "categoryName": "Weitere Veranstaltungen"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "12740486",
+      "description": "",
+      "endDate": "2024-11-20 10:45:00",
+      "eventId": "248346",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-extern-Deutsch-Mittelstufe-1-2-Konversation.php.media-248347-Deutsch-Mittelstufe-Konversation-BILDPixaBay.jpg",
+      "imageCredit": "PixaBay",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/Deutsch-Mittelstufe-1-2-Konversation.php",
+      "locationAddress": "Friesenstraße 6, 53175, Bonn",
+      "locationName": "Haus der Familie",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 09:15:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event18.jpg",
+      "thumbnailCredit": "PixaBay",
+      "title": "Deutsch Mittelstufe 1/2 Konversation",
+      "hasStartTime": true,
+      "cityEventCategories": [
+        {
+          "id": 279,
+          "categoryName": "inklusiv"
+        },
+        {
+          "id": 164,
+          "categoryName": "Bad Godesberg"
+        },
+        {
+          "id": 263,
+          "categoryName": "Weitere Veranstaltungen"
+        },
+        {
+          "id": 265,
+          "categoryName": "Aktion/Workshop"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "12884236",
+      "description": "",
+      "endDate": "2024-11-20 12:00:00",
+      "eventId": "248371",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-extern-So-lerne-ich-mein-Smartphone-kennen.php.media-248372-smartphone-kennlernen-BILDPixaBay.jpg",
+      "imageCredit": "PixaBay",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/So-lerne-ich-mein-Smartphone-kennen.php",
+      "locationAddress": "Friesenstraße 6, 53175, Bonn",
+      "locationName": "Haus der Familie",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 10:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event19.jpg",
+      "thumbnailCredit": "PixaBay",
+      "title": "So lerne ich mein Smartphone kennen",
+      "hasStartTime": true,
+      "cityEventCategories": [
+        {
+          "id": 165,
+          "categoryName": "barrierefreier Zugang"
+        },
+        {
+          "id": 279,
+          "categoryName": "inklusiv"
+        },
+        {
+          "id": 164,
+          "categoryName": "Bad Godesberg"
+        },
+        {
+          "id": 265,
+          "categoryName": "Aktion/Workshop"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 263,
+          "categoryName": "Weitere Veranstaltungen"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "13622619",
+      "description": "Ausstellung von Volker Herzog. Zeichnungen, Aquarelle und Texte zur besonderen Beziehung zwischen Vogel und Mensch.",
+      "endDate": "2024-11-20 17:00:00",
+      "eventId": "254240",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-haus-der-natur-Vogelbegegnungen-Ausstellung-von-Volker-Herzog.php.media-255206-241009_Ausstellung_Volker-Herzog_Vogelbegegnungen_Kleiber.jpg",
+      "imageCredit": "Volker Herzog",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/haus-der-natur/Vogelbegegnungen-Ausstellung-von-Volker-Herzog.php",
+      "locationAddress": "An der Waldau 48, 53127, Bonn",
+      "locationName": "Haus der Natur",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 10:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event20.jpg",
+      "thumbnailCredit": "Volker Herzog",
+      "title": "Vogelbegegnungen",
+      "hasStartTime": true,
+      "cityEventCategories": [
+        {
+          "id": 264,
+          "categoryName": "Bonn"
+        },
+        {
+          "id": 445,
+          "categoryName": "Familien/Kinder"
+        },
+        {
+          "id": 179,
+          "categoryName": "Haus der Natur"
+        },
+        {
+          "id": 440,
+          "categoryName": "Klima"
+        },
+        {
+          "id": 189,
+          "categoryName": "Nachhaltigkeit"
+        },
+        {
+          "id": 265,
+          "categoryName": "Aktion/Workshop"
+        },
+        {
+          "id": 2,
+          "categoryName": "Ausstellungen"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 177,
+          "categoryName": "Familien"
+        },
+        {
+          "id": 12,
+          "categoryName": "Jugendliche"
+        },
+        {
+          "id": 182,
+          "categoryName": "Junge Erwachsene"
+        },
+        {
+          "id": 441,
+          "categoryName": "Kinder (5 bis 12 Jahre)"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "12961514",
+      "description": "",
+      "endDate": "2024-11-20 18:00:00",
+      "eventId": "252270",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/Beethoven-und-Kant.php.media/255798/Beethoven-und-Kant.webp",
+      "imageCredit": "Beethoven-Haus Bonn",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/Beethoven-und-Kant.php",
+      "locationAddress": "Bonngasse 20, 53111, Bonn",
+      "locationName": "Beethoven-Haus Bonn",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 10:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event21.jpg",
+      "thumbnailCredit": "Beethoven-Haus Bonn",
+      "title": "Beethoven und Kant",
+      "hasStartTime": true,
+      "cityEventCategories": [
+        {
+          "id": 264,
+          "categoryName": "Bonn"
+        },
+        {
+          "id": 2,
+          "categoryName": "Ausstellungen"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 182,
+          "categoryName": "Junge Erwachsene"
+        },
+        {
+          "id": 191,
+          "categoryName": "Seniorinnen und Senioren"
+        },
+        {
+          "id": 166,
+          "categoryName": "Beethoven"
+        },
+        {
+          "id": 186,
+          "categoryName": "Kultur"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "13206522",
+      "description": "",
+      "endDate": "2024-11-20 18:00:00",
+      "eventId": "257996",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-extern-Vernissage-i-can-t-believe-how-beautiful-this-is-.php.media-257997-Klug_Lenz_I-can-t-believe-how-beautiful-this-is_2024.jpg",
+      "imageCredit": "Kristina Lenz und Alex Simon Klug",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/Vernissage-i-can-t-believe-how-beautiful-this-is-.php",
+      "locationAddress": "Poststraße 26, 53111, Bonn",
+      "locationName": "P26 - Paul Clemen Museum",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 10:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event22.jpg",
+      "thumbnailCredit": "Kristina Lenz und Alex Simon Klug",
+      "title": "Vernissage: \"i can't believe how beautiful this is\"",
+      "hasStartTime": true,
+      "cityEventCategories": [
+        {
+          "id": 165,
+          "categoryName": "barrierefreier Zugang"
+        },
+        {
+          "id": 264,
+          "categoryName": "Bonn"
+        },
+        {
+          "id": 2,
+          "categoryName": "Ausstellungen"
+        },
+        {
+          "id": 91,
+          "categoryName": "Führungen/Rundgänge/Touren"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 177,
+          "categoryName": "Familien"
+        },
+        {
+          "id": 12,
+          "categoryName": "Jugendliche"
+        },
+        {
+          "id": 182,
+          "categoryName": "Junge Erwachsene"
+        },
+        {
+          "id": 191,
+          "categoryName": "Seniorinnen und Senioren"
+        },
+        {
+          "id": 286,
+          "categoryName": "Bürgerschaftliches Engagement"
+        },
+        {
+          "id": 175,
+          "categoryName": "Digitales"
+        },
+        {
+          "id": 186,
+          "categoryName": "Kultur"
+        },
+        {
+          "id": 198,
+          "categoryName": "Wissenschaft"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "13342673",
+      "description": "",
+      "endDate": "2024-11-20 18:00:00",
+      "eventId": "256895",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-extern-Auf-Spurensuche-in-den-Museen-und-Sammlungen-der-Universitaet-Bonn.php.media-258547-Uni-vl-P26-270924-002.jpg",
+      "imageCredit": "Volker Lannert/Universität Bonn",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/Auf-Spurensuche-in-den-Museen-und-Sammlungen-der-Universitaet-Bonn.php",
+      "locationAddress": "Poststraße 26, 53111, Bonn",
+      "locationName": "P26",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 10:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event23.jpg",
+      "thumbnailCredit": "Volker Lannert/Universität Bonn",
+      "title": "Auf Spurensuche in den Museen und Sammlungen der Universität Bonn",
+      "hasStartTime": true,
+      "cityEventCategories": [
+        {
+          "id": 165,
+          "categoryName": "barrierefreier Zugang"
+        },
+        {
+          "id": 264,
+          "categoryName": "Bonn"
+        },
+        {
+          "id": 2,
+          "categoryName": "Ausstellungen"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 177,
+          "categoryName": "Familien"
+        },
+        {
+          "id": 12,
+          "categoryName": "Jugendliche"
+        },
+        {
+          "id": 182,
+          "categoryName": "Junge Erwachsene"
+        },
+        {
+          "id": 191,
+          "categoryName": "Seniorinnen und Senioren"
+        },
+        {
+          "id": 186,
+          "categoryName": "Kultur"
+        },
+        {
+          "id": 198,
+          "categoryName": "Wissenschaft"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "13530609",
+      "description": "",
+      "endDate": "2024-11-20 19:00:00",
+      "eventId": "258019",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-extern-Flower-Power.php.media-258020-Plakat_Loft_Aufzug_Blumen_Druck_A1_Sep_24.jpg",
+      "imageCredit": "Galerie Firla",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/Flower-Power.php",
+      "locationAddress": "Ennemoserstraße 6, 53119, Bonn",
+      "locationName": "Loft Designmöbel",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 10:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event24.jpg",
+      "thumbnailCredit": "Galerie Firla",
+      "title": "Flower Power",
+      "hasStartTime": true,
+      "cityEventCategories": [
+        {
+          "id": 165,
+          "categoryName": "barrierefreier Zugang"
+        },
+        {
+          "id": 264,
+          "categoryName": "Bonn"
+        },
+        {
+          "id": 2,
+          "categoryName": "Ausstellungen"
+        },
+        {
+          "id": 186,
+          "categoryName": "Kultur"
+        }
+      ],
+      "pdf": []
+    },
+    {
+      "uid": "12925077",
+      "description": "",
+      "endDate": "2024-11-20 21:00:00",
+      "eventId": "219448",
+      "hasEndTime": true,
+      "status": "AVAILABLE",
+      "image": "www.bonn.de-veranstaltungskalender-veranstaltungen-hauptkalender-extern-MARK-DION-DELIRIOUS-TOYS.php.media-254781-MDB-Webkachel_Titel.jpg",
+      "imageCredit": "Stiftung Stadtmuseum Berlin",
+      "latitude": 0.0,
+      "link": "https://www.bonn.de/veranstaltungskalender/veranstaltungen/hauptkalender/extern/MARK-DION-DELIRIOUS-TOYS.php",
+      "locationAddress": "Helmut-Kohl-Allee 4, 53113, Bonn",
+      "locationName": "Bundeskunsthalle",
+      "longitude": 0.0,
+      "startDate": "2024-11-20 10:00:00",
+      "subtitle": "",
+      "thumbnail": "file:///android_asset/event25.jpg",
+      "thumbnailCredit": "Stiftung Stadtmuseum Berlin",
+      "title": "Mark Dion: Delirious Toys",
+      "hasStartTime": true,
+      "cityEventCategories": [
+        {
+          "id": 165,
+          "categoryName": "barrierefreier Zugang"
+        },
+        {
+          "id": 279,
+          "categoryName": "inklusiv"
+        },
+        {
+          "id": 264,
+          "categoryName": "Bonn"
+        },
+        {
+          "id": 2,
+          "categoryName": "Ausstellungen"
+        },
+        {
+          "id": 176,
+          "categoryName": "Erwachsene"
+        },
+        {
+          "id": 177,
+          "categoryName": "Familien"
+        },
+        {
+          "id": 12,
+          "categoryName": "Jugendliche"
+        },
+        {
+          "id": 182,
+          "categoryName": "Junge Erwachsene"
+        },
+        {
+          "id": 184,
+          "categoryName": "Kinder (0 bis 5 Jahre)"
+        },
+        {
+          "id": 441,
+          "categoryName": "Kinder (5 bis 12 Jahre)"
+        },
+        {
+          "id": 191,
+          "categoryName": "Seniorinnen und Senioren"
+        },
+        {
+          "id": 186,
+          "categoryName": "Kultur"
+        }
+      ],
+      "pdf": []
+    }
+  ]
+}

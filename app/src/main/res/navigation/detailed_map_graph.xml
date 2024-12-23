@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/detailed_map_graph"
+    app:startDestination="@id/detailedMap">
+    <argument
+        android:name="locationName"
+        app:argType="string"
+        app:nullable="true"
+        />
+
+    <argument
+        android:name="title"
+        app:argType="string" />
+
+    <argument
+        android:name="streetName"
+        app:argType="string"
+        app:nullable="true" />
+
+    <argument
+        android:name="location"
+        app:argType="com.google.android.gms.maps.model.LatLng" />
+
+    <fragment
+        android:id="@+id/detailedMap"
+        android:name="com.telekom.citykey.view.detailed_map.DetailedMap"
+        android:label="DetailedMap">
+
+        <argument
+            android:name="locationName"
+            app:argType="string"
+            app:nullable="true"
+            />
+
+        <argument
+            android:name="title"
+            app:argType="string" />
+
+        <argument
+            android:name="streetName"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="location"
+            app:argType="com.google.android.gms.maps.model.LatLng" />
+
+    </fragment>
+</navigation>
