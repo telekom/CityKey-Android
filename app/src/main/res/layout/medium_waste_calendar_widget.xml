@@ -1,0 +1,215 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/wasteCalendarMediumWidgetContainer"
+    style="@style/Widget.Oscaandroidclient.AppWidget.Container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/waste_calendar_widget_background"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:padding="@dimen/widget_layout_margin"
+    android:theme="@style/AppTheme.AppWasteWidgetContainer"
+    android:weightSum="3">
+
+    <RelativeLayout
+        android:id="@+id/todayPickupContainer"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/widget_layout_margin"
+        android:layout_marginVertical="@dimen/widget_layout_margin"
+        android:layout_weight="1"
+        android:background="@drawable/bg_waste_calendar_widget_inner_view">
+
+        <TextView
+            android:id="@+id/tvTodayTitle"
+            style="@style/RobotoBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_waste_calendar_widget_title"
+            android:contentDescription="@string/date_format_today_name"
+            android:gravity="center"
+            android:padding="@dimen/widget_layout_margin"
+            android:text="@string/date_format_today_name"
+            android:textColor="@color/onSurface"
+            android:textSize="@dimen/waste_calendar_widget_title_text_size" />
+
+        <ListView
+            android:id="@+id/todayPickupList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTodayTitle"
+            android:layout_marginTop="@dimen/waste_pickup_item_vertical_margin"
+            android:overScrollMode="never"
+            android:paddingBottom="@dimen/waste_medium_widget_list_bottom_margin" />
+
+        <TextView
+            android:id="@+id/todayGradient"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/waste_medium_widget_list_bottom_margin"
+            android:background="@drawable/waste_calendar_widget_list_bottom_gradient"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/today5x1Gradient"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/waste_medium_widget_list_bottom_margin"
+            android:background="@drawable/waste_calendar_widget_list_bottom_gradient"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/emptyViewForTodayPickupsUnavailable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tvTodayTitle"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/widget_layout_margin"
+            android:autoSizeMaxTextSize="12sp"
+            android:autoSizeMinTextSize="8sp"
+            android:autoSizeStepGranularity="0.5sp"
+            android:autoSizeTextType="uniform"
+            android:contentDescription="@string/wc_generic_error"
+            android:gravity="center"
+            android:text="@string/wc_generic_error"
+            android:textColor="@color/onSurface"
+            android:textSize="@dimen/waste_calendar_widget_title_text_size"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/tomorrowPickupContainer"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/widget_layout_margin"
+        android:layout_marginVertical="@dimen/widget_layout_margin"
+        android:layout_weight="1"
+        android:background="@drawable/bg_waste_calendar_widget_inner_view">
+
+        <TextView
+            android:id="@+id/tomorrowLabelTextView"
+            style="@style/RobotoBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_waste_calendar_widget_title"
+            android:contentDescription="@string/date_format_tomorrow_name"
+            android:gravity="center"
+            android:padding="@dimen/widget_layout_margin"
+            android:text="@string/date_format_tomorrow_name"
+            android:textColor="@color/onSurface"
+            android:textSize="@dimen/waste_calendar_widget_title_text_size" />
+
+        <ListView
+            android:id="@+id/tomorrowPickupList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tomorrowLabelTextView"
+            android:layout_marginTop="@dimen/waste_pickup_item_vertical_margin"
+            android:overScrollMode="never"
+            android:paddingBottom="@dimen/waste_medium_widget_list_bottom_margin" />
+
+        <TextView
+            android:id="@+id/tomorrowGradient"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/waste_medium_widget_list_bottom_margin"
+            android:background="@drawable/waste_calendar_widget_list_bottom_gradient"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tomorrow5x1Gradient"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/waste_medium_widget_list_bottom_margin"
+            android:background="@drawable/waste_calendar_widget_list_bottom_gradient"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/emptyViewForTomorrowPickupsUnavailable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tomorrowLabelTextView"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/widget_layout_margin"
+            android:autoSizeMaxTextSize="12sp"
+            android:autoSizeMinTextSize="8sp"
+            android:autoSizeStepGranularity="0.5sp"
+            android:autoSizeTextType="uniform"
+            android:contentDescription="@string/wc_generic_error"
+            android:gravity="center"
+            android:text="@string/wc_generic_error"
+            android:textColor="@color/onSurface"
+            android:textSize="@dimen/waste_calendar_widget_title_text_size"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/dayAfterTomorrowPickupContainer"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/widget_layout_margin"
+        android:layout_marginVertical="@dimen/widget_layout_margin"
+        android:layout_weight="1"
+        android:background="@drawable/bg_waste_calendar_widget_inner_view">
+
+        <TextView
+            android:id="@+id/dayAfterTomorrowLabelTextView"
+            style="@style/RobotoBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_waste_calendar_widget_title"
+            android:gravity="center"
+            android:maxLines="1"
+            android:padding="@dimen/widget_layout_margin"
+            android:textColor="@color/onSurface"
+            android:textSize="@dimen/waste_calendar_widget_title_text_size" />
+
+        <ListView
+            android:id="@+id/dayAfterTomorrowPickupList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dayAfterTomorrowLabelTextView"
+            android:layout_marginTop="@dimen/waste_pickup_item_vertical_margin"
+            android:overScrollMode="never"
+            android:paddingBottom="@dimen/waste_medium_widget_list_bottom_margin" />
+
+        <TextView
+            android:id="@+id/dATGradient"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/waste_medium_widget_list_bottom_margin"
+            android:background="@drawable/waste_calendar_widget_list_bottom_gradient"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/dAT5x1Gradient"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/waste_medium_widget_list_bottom_margin"
+            android:background="@drawable/waste_calendar_widget_list_bottom_gradient"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/emptyViewForDATPickupsUnavailable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/dayAfterTomorrowLabelTextView"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/widget_layout_margin"
+            android:autoSizeMaxTextSize="12sp"
+            android:autoSizeMinTextSize="8sp"
+            android:autoSizeStepGranularity="0.5sp"
+            android:autoSizeTextType="uniform"
+            android:contentDescription="@string/wc_generic_error"
+            android:gravity="center"
+            android:text="@string/wc_generic_error"
+            android:textColor="@color/onSurface"
+            android:textSize="12sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/infobox_graph"
+    app:startDestination="@id/infoBox">
+
+    <fragment
+        android:id="@+id/infoBox"
+        android:name="com.telekom.citykey.view.infobox.InfoBox">
+
+        <deepLink app:uri="citykey://infobox?messageId={messageId}" />
+        <deepLink app:uri="citykey://infobox/.*" />
+
+        <action
+            android:id="@+id/action_infoBox_to_detailedInfoBox"
+            app:destination="@id/detailedInfoBox"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+
+        <argument
+            android:name="messageId"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_infoBox_to_citySelectionFragment"
+            app:destination="@id/citySelectionFragment"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailedInfoBox"
+        android:name="com.telekom.citykey.view.infobox.detailed_infobox.DetailedInfoBox">
+
+        <argument
+            android:name="content"
+            app:argType="com.telekom.citykey.models.user.InfoBoxContent" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/citySelectionFragment"
+        android:name="com.telekom.citykey.view.city_selection.CitySelectionFragment"
+        android:label="CitySelectionFragment" />
+
+</navigation>

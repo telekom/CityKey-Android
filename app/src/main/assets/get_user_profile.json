@@ -1,0 +1,12 @@
+{
+  "content": {
+    "accountId": 23701,
+    "dateOfBirth": "1997-11-26",
+    "email": "abc@tempemail.com",
+    "postalCode": "64283",
+    "homeCityId": 0,
+    "cityName": "",
+    "dpnAccepted": true,
+    "isCspUser": false
+  }
+}

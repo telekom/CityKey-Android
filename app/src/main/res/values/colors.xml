@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="onSurface">#262626</color>
+    <color name="onSurface85a">#D9262626</color>
+    <color name="onSurfaceSecondary">#646464</color>
+    <color name="background">#ffffff</color>
+    <color name="backgroundSecondary">#F9F9F9</color>
+    <color name="background80a">#CCFFFFFF</color>
+    <color name="separator">#A4AAB3</color>
+    <color name="separatorLight">#EDEDED</color>
+    <color name="separatorSecondary">#EDEDED</color>
+
+    <color name="black">#262626</color>
+    <color name="white">#ffffff</color>
+    <color name="infoGreen">#239d1d</color>
+
+    <color name="black5a">#33000000</color>
+    <color name="black30a">#4D000000</color>
+    <color name="black35a">#59000000</color>
+    <color name="black40a">#66000000</color>
+    <color name="black85a">#D9000000</color>
+
+    <color name="splash_background">#FFFFFF</color>
+    <color name="splash_icon">#1E73D2</color>
+    <color name="app_background">#FFFFFF</color>
+
+    <color name="red">#ff5f5f</color>
+    <color name="transactionsRed">#cd361c</color>
+    <color name="blue">#4e8ad9</color>
+
+    <color name="lima">#6bb324</color>
+    <color name="oscaColor">#1E73D2</color>
+    <color name="oscaColor20a">#331E73D2</color>
+
+    <color name="mapTileLoader">#EBE9E0</color>
+
+    <color name="postponedColor">#689C26</color>
+
+    <color name="wasteCalendarWidgetBackground">#0d1e73d2</color>
+    <color name="wasteCalendarWidgetTitleBackground">#471e73d2</color>
+    <color name="wasteCalendarWidgetGradientStart">#00000000</color>
+    <color name="wasteCalendarWidgetGradientEnd">#f4f8fd</color>
+
+    <color name="eclipseGrey">#575757</color>
+</resources>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/auth_bottom_sheet_rounded"
+    android:orientation="vertical">
+
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/RobotoMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="18dp"
+        android:text="@string/dialog_dpn_updated_title"
+        android:textAlignment="center"
+        android:textColor="@color/onSurface"
+        android:textSize="17sp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="47dp"
+        app:srcCompat="@drawable/ic_dpn_icon_big" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/description"
+        style="@style/RobotoRegular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/global_content_margins"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="@dimen/global_content_margins"
+        android:textAlignment="center"
+        android:textColor="@color/onSurface"
+        android:textSize="17sp"
+        tools:text="Description" />
+
+    <androidx.legacy.widget.Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <com.telekom.citykey.custom.views.ProgressButton
+        android:id="@+id/btnPrivacy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="21dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingBottom="18dp"
+        app:text="@string/dialog_dpn_updated_privacy_btn" />
+
+    <com.telekom.citykey.custom.views.ProgressButton
+        android:id="@+id/btnOk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="21dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingBottom="18dp"
+        app:text="@android:string/ok" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

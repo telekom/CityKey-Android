@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:foreground="@drawable/simple_ripple"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/global_content_margins"
+        android:layout_marginEnd="@dimen/global_content_margins"
+        android:background="#c8c7cc" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/history"
+        style="@style/RobotoRegular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/global_content_margins"
+        android:paddingTop="12dp"
+        android:paddingEnd="@dimen/global_content_margins"
+        android:paddingBottom="12dp"
+        android:textColor="@color/onSurface"
+        android:textSize="17sp"
+        tools:text="History" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

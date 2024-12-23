@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LayoutPageAppointmentService"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?attr/colorSurface">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarAppointmentServices"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/containerContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:scaleType="centerCrop"
+                tools:src="@tools:sample/avatars" />
+
+            <com.telekom.citykey.custom.views.OscaWebView
+                android:id="@+id/fullDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginTop="@dimen/global_content_margins"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:layout_marginBottom="24dp"
+                android:scrollbars="none" />
+
+            <LinearLayout
+                android:id="@+id/existingAppointments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_light_grey2"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/global_content_margins"
+                android:paddingEnd="@dimen/global_content_margins">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/myAppointmentsLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:text="@string/apnmt_001_my_appointments_button"
+                    android:textColor="@color/onSurface"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/badge_round_background"
+                    android:drawablePadding="40dp"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:visibility="invisible"
+                    tools:text="4"
+                    tools:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/moreArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_more_arrow_16dp"
+                    app:tint="@color/onSurfaceSecondary" />
+
+            </LinearLayout>
+
+            <com.telekom.citykey.custom.views.ProgressButton
+                android:id="@+id/makeAppointmentButton"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:layout_marginBottom="@dimen/global_content_margins"
+                app:text="@string/s_007_detailed_service_btn_set_appointment" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

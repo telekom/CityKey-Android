@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LayoutPageDetailedService"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?attr/colorSurface">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarPoiGuide"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/poi_001_title"
+            app:titleTextColor="@color/onSurface" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/poiCategoriesBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:background="@drawable/simple_ripple"
+                android:importantForAccessibility="yes"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="0dp"
+                app:contentPaddingBottom="3dp"
+                app:contentPaddingLeft="8dp"
+                app:contentPaddingRight="8dp"
+                app:contentPaddingTop="4dp"
+                app:strokeColor="@color/onSurfaceSecondary"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/filterIcon"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:importantForAccessibility="no"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_action_filter_default"
+                        app:tint="@color/onSurface" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/activeCategory"
+                        style="@style/RobotoMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="12dp"
+                        android:ellipsize="end"
+                        android:importantForAccessibility="no"
+                        android:includeFontPadding="false"
+                        android:lineSpacingExtra="0dp"
+                        android:lineSpacingMultiplier="0"
+                        android:maxLines="1"
+                        android:padding="0dp"
+                        android:textColor="@color/onSurface"
+                        android:textSize="16sp"
+                        app:autoSizeMaxTextSize="13sp"
+                        app:firstBaselineToTopHeight="0dp"
+                        app:lastBaselineToBottomHeight="0dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabSelectedTextColor="@color/onSurface"
+            app:tabTextAppearance="@style/PoiTabTextStyle"
+            app:tabTextColor="@color/onSurface85a">
+
+            <com.google.android.material.tabs.TabItem
+                style="@style/RobotoBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/poi_001_tab_map_label" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/poi_001_tab_list_label" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+
+    <com.telekom.citykey.custom.views.OscaProgressBar
+        android:id="@+id/loading"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/onSurface" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/errorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/global_content_margins"
+        android:layout_marginEnd="@dimen/global_content_margins"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/errorText"
+            style="@style/RobotoRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/poi_002_error_text"
+            android:textAlignment="center"
+            android:textColor="@color/onSurfaceSecondary"
+            android:textSize="14sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/retryButton"
+            style="@style/RobotoRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="@string/e_002_page_load_retry"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_action_resend_email" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,19 @@
+{
+  "content": [
+    {
+      "isDpAccepted": true,
+      "id": 106,
+      "name": "Sport Survey 101",
+      "description": "<p><span style=\"color: rgb(0, 0, 0); background-color: rgb(247, 247, 247);\">Sports survey questions play a crucial role for a coach, sports institution, and management agency in accessing the different qualities of sportspersons</span></p>",
+      "startDate": "2024-11-18 00:00:00",
+      "endDate": "2024-11-29 23:59:59",
+      "isPopular": false,
+      "status": "NOT_STARTED",
+      "dataProtectionText": "<p>Bei der folgenden Umfrage werden durch Citykey keine personenbezogenen oder personenbeziehbare Daten erhoben oder abgefragt. Für die Inhalte der Umfrage und die Auswertung der Ergebnisse ist Citykey verantwortlich.</p><p><b>Wichtig:</b> Bitte achten Sie darauf, keine personbezogenen oder personenbeziehbare Daten in Freitextfelder einzutragen.</p>",
+      "isClosed": false,
+      "totalQuestions": 5,
+      "attemptedQuestions": 5,
+      "daysLeft": 2
+    }
+  ]
+}

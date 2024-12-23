@@ -1,0 +1,492 @@
+{
+  "content": [
+    {
+      "id": 265,
+      "categoryName": "Aktion/Workshop"
+    },
+    {
+      "id": 2,
+      "categoryName": "Ausstellungen"
+    },
+    {
+      "id": 164,
+      "categoryName": "Bad Godesberg"
+    },
+    {
+      "id": 165,
+      "categoryName": "barrierefreier Zugang"
+    },
+    {
+      "id": 166,
+      "categoryName": "Beethoven"
+    },
+    {
+      "id": 264,
+      "categoryName": "Bonn"
+    },
+    {
+      "id": 286,
+      "categoryName": "Bürgerschaftliches Engagement"
+    },
+    {
+      "id": 172,
+      "categoryName": "Bürgersprechstunde"
+    },
+    {
+      "id": 173,
+      "categoryName": "Bürgersprechstunde OB Dörner"
+    },
+    {
+      "id": 174,
+      "categoryName": "Computer/Games"
+    },
+    {
+      "id": 368,
+      "categoryName": "Culture"
+    },
+    {
+      "id": 374,
+      "categoryName": "Demokratie"
+    },
+    {
+      "id": 175,
+      "categoryName": "Digitales"
+    },
+    {
+      "id": 85,
+      "categoryName": "English"
+    },
+    {
+      "id": 360,
+      "categoryName": "Erinnerungskultur"
+    },
+    {
+      "id": 348,
+      "categoryName": "Ernst-Moritz-Arndt-Haus"
+    },
+    {
+      "id": 176,
+      "categoryName": "Erwachsene"
+    },
+    {
+      "id": 281,
+      "categoryName": "Europa"
+    },
+    {
+      "id": 452,
+      "categoryName": "Events"
+    },
+    {
+      "id": 177,
+      "categoryName": "Familien"
+    },
+    {
+      "id": 445,
+      "categoryName": "Familien/Kinder"
+    },
+    {
+      "id": 86,
+      "categoryName": "Ferienaktion"
+    },
+    {
+      "id": 178,
+      "categoryName": "Ferienprogramm"
+    },
+    {
+      "id": 269,
+      "categoryName": "Fest/Festival"
+    },
+    {
+      "id": 88,
+      "categoryName": "Film/Medien"
+    },
+    {
+      "id": 481,
+      "categoryName": "Förderschule"
+    },
+    {
+      "id": 89,
+      "categoryName": "Fortbildungen"
+    },
+    {
+      "id": 91,
+      "categoryName": "Führungen/Rundgänge/Touren"
+    },
+    {
+      "id": 277,
+      "categoryName": "Für Einzelgäste an festen Terminen"
+    },
+    {
+      "id": 278,
+      "categoryName": "Für Einzelgäste und Gruppen mit eigener Gästeführung"
+    },
+    {
+      "id": 366,
+      "categoryName": "Gedenkstätte"
+    },
+    {
+      "id": 46,
+      "categoryName": "Gedenkveranstaltung"
+    },
+    {
+      "id": 385,
+      "categoryName": "Gesamtschule"
+    },
+    {
+      "id": 9,
+      "categoryName": "Gesundheit"
+    },
+    {
+      "id": 285,
+      "categoryName": "Gleichstellung"
+    },
+    {
+      "id": 392,
+      "categoryName": "Grundschule"
+    },
+    {
+      "id": 382,
+      "categoryName": "Gymnasium"
+    },
+    {
+      "id": 273,
+      "categoryName": "Hardtberg"
+    },
+    {
+      "id": 383,
+      "categoryName": "Hauptschule"
+    },
+    {
+      "id": 179,
+      "categoryName": "Haus der Natur"
+    },
+    {
+      "id": 287,
+      "categoryName": "Informations-Veranstaltung"
+    },
+    {
+      "id": 288,
+      "categoryName": "Inklusionsthemen"
+    },
+    {
+      "id": 279,
+      "categoryName": "inklusiv"
+    },
+    {
+      "id": 180,
+      "categoryName": "Inklusiv konzipiert"
+    },
+    {
+      "id": 181,
+      "categoryName": "Integration/Migration/Interkultur"
+    },
+    {
+      "id": 11,
+      "categoryName": "Internationales"
+    },
+    {
+      "id": 12,
+      "categoryName": "Jugendliche"
+    },
+    {
+      "id": 182,
+      "categoryName": "Junge Erwachsene"
+    },
+    {
+      "id": 92,
+      "categoryName": "Kabarett"
+    },
+    {
+      "id": 183,
+      "categoryName": "Käpt´n Book"
+    },
+    {
+      "id": 69,
+      "categoryName": "Karneval"
+    },
+    {
+      "id": 184,
+      "categoryName": "Kinder (0 bis 5 Jahre)"
+    },
+    {
+      "id": 270,
+      "categoryName": "Kinder (5 bis 11 Jahre)"
+    },
+    {
+      "id": 441,
+      "categoryName": "Kinder (5 bis 12 Jahre)"
+    },
+    {
+      "id": 185,
+      "categoryName": "Kinder (6 bis 12 Jahre)"
+    },
+    {
+      "id": 343,
+      "categoryName": "Kinder (ab 10 Jahre)"
+    },
+    {
+      "id": 440,
+      "categoryName": "Klima"
+    },
+    {
+      "id": 186,
+      "categoryName": "Kultur"
+    },
+    {
+      "id": 346,
+      "categoryName": "Kulturrucksack"
+    },
+    {
+      "id": 187,
+      "categoryName": "Kunstmuseum"
+    },
+    {
+      "id": 93,
+      "categoryName": "Kurs"
+    },
+    {
+      "id": 72,
+      "categoryName": "Lesung"
+    },
+    {
+      "id": 188,
+      "categoryName": "Ludwig-van-Beethoven-Musikschule Bonn"
+    },
+    {
+      "id": 94,
+      "categoryName": "Märkte/Messen"
+    },
+    {
+      "id": 393,
+      "categoryName": "Martinszug"
+    },
+    {
+      "id": 335,
+      "categoryName": "Medienzentrum"
+    },
+    {
+      "id": 453,
+      "categoryName": "Meeting/Conference"
+    },
+    {
+      "id": 367,
+      "categoryName": "Music"
+    },
+    {
+      "id": 33,
+      "categoryName": "Musik"
+    },
+    {
+      "id": 266,
+      "categoryName": "Musik/Konzert"
+    },
+    {
+      "id": 189,
+      "categoryName": "Nachhaltigkeit"
+    },
+    {
+      "id": 376,
+      "categoryName": "Nachhaltigkeits-Hub Region Bonn"
+    },
+    {
+      "id": 490,
+      "categoryName": "Next Stop Job"
+    },
+    {
+      "id": 350,
+      "categoryName": "Ökotermine"
+    },
+    {
+      "id": 275,
+      "categoryName": "Online-Veranstaltung"
+    },
+    {
+      "id": 375,
+      "categoryName": "Opernrasen"
+    },
+    {
+      "id": 190,
+      "categoryName": "OpernRasen"
+    },
+    {
+      "id": 283,
+      "categoryName": "Portal"
+    },
+    {
+      "id": 267,
+      "categoryName": "Quatsch keine Oper"
+    },
+    {
+      "id": 337,
+      "categoryName": "Radverkehr"
+    },
+    {
+      "id": 384,
+      "categoryName": "Realschule"
+    },
+    {
+      "id": 370,
+      "categoryName": "Schule/Bildung"
+    },
+    {
+      "id": 291,
+      "categoryName": "Schulpsychologie"
+    },
+    {
+      "id": 390,
+      "categoryName": "SDG-Tage"
+    },
+    {
+      "id": 191,
+      "categoryName": "Seniorinnen und Senioren"
+    },
+    {
+      "id": 73,
+      "categoryName": "Sitzung"
+    },
+    {
+      "id": 386,
+      "categoryName": "Sitzungstermine Ausschüsse"
+    },
+    {
+      "id": 192,
+      "categoryName": "Sitzungstermine Bezirksvertretung"
+    },
+    {
+      "id": 193,
+      "categoryName": "Sitzungstermine Rat"
+    },
+    {
+      "id": 363,
+      "categoryName": "Spendenaktion"
+    },
+    {
+      "id": 95,
+      "categoryName": "Sport"
+    },
+    {
+      "id": 96,
+      "categoryName": "Sprechstunde"
+    },
+    {
+      "id": 290,
+      "categoryName": "Stadtbibliothek"
+    },
+    {
+      "id": 381,
+      "categoryName": "Stadtgartenkonzerte"
+    },
+    {
+      "id": 194,
+      "categoryName": "Stadtmuseum"
+    },
+    {
+      "id": 282,
+      "categoryName": "Stadtmuseum Bonn"
+    },
+    {
+      "id": 341,
+      "categoryName": "Stadtplanung/Standentwicklung"
+    },
+    {
+      "id": 195,
+      "categoryName": "Stadtverwaltung"
+    },
+    {
+      "id": 262,
+      "categoryName": "Startseite"
+    },
+    {
+      "id": 464,
+      "categoryName": "Tage des Exils"
+    },
+    {
+      "id": 98,
+      "categoryName": "Tanz"
+    },
+    {
+      "id": 77,
+      "categoryName": "Theater"
+    },
+    {
+      "id": 284,
+      "categoryName": "Theater Bonn Oper"
+    },
+    {
+      "id": 280,
+      "categoryName": "Theater Bonn Schauspiel"
+    },
+    {
+      "id": 289,
+      "categoryName": "Theater Bonn Tanz"
+    },
+    {
+      "id": 433,
+      "categoryName": "Theater/Stage"
+    },
+    {
+      "id": 336,
+      "categoryName": "Ukraine"
+    },
+    {
+      "id": 310,
+      "categoryName": "Veranstalter"
+    },
+    {
+      "id": 197,
+      "categoryName": "Volkshochschule"
+    },
+    {
+      "id": 100,
+      "categoryName": "Vorträge/Lesungen/Diskussionen"
+    },
+    {
+      "id": 354,
+      "categoryName": "Vorverkaufsstellen"
+    },
+    {
+      "id": 482,
+      "categoryName": "Waldorfschule"
+    },
+    {
+      "id": 148,
+      "categoryName": "Weihnachten"
+    },
+    {
+      "id": 139,
+      "categoryName": "Weihnachtsmarkt"
+    },
+    {
+      "id": 395,
+      "categoryName": "Weiterbildungskolleg"
+    },
+    {
+      "id": 263,
+      "categoryName": "Weitere Veranstaltungen"
+    },
+    {
+      "id": 389,
+      "categoryName": "Weltkindertag/Kinderrechtewochen"
+    },
+    {
+      "id": 365,
+      "categoryName": "Wir machen Zukunft"
+    },
+    {
+      "id": 198,
+      "categoryName": "Wissenschaft"
+    },
+    {
+      "id": 272,
+      "categoryName": "Wissenschaft / Wirtschaft"
+    },
+    {
+      "id": 80,
+      "categoryName": "Workshop"
+    },
+    {
+      "id": 36,
+      "categoryName": "Unkategorisiert"
+    }
+  ]
+}

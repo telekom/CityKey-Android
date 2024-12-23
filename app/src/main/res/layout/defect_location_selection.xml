@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/auth_bottom_sheet_rounded"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarLocation"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/dr_002_location_selection_toolbar_label"
+            app:titleTextColor="@color/onSurface" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/locationLabel"
+        style="@style/RobotoRegular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appBarLayout"
+        android:layout_marginStart="22dp"
+        android:hyphenationFrequency="full"
+        android:paddingTop="20dp"
+        android:paddingBottom="30dp"
+        android:text="@string/dr_003_location_page_info1"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
+
+    <View
+        android:id="@+id/greyLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/separator"
+        app:layout_constraintTop_toBottomOf="@id/locationLabel" />
+
+
+    <com.telekom.citykey.custom.views.OscaMapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:backgroundColor="@color/mapTileLoader"
+        app:layout_constraintBottom_toTopOf="@id/progressBtnLocation"
+        app:layout_constraintTop_toBottomOf="@id/greyLine" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/markerImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/locateMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="22dp"
+        android:contentDescription="@string/poi_001_tab_map_locate_me_button_decription"
+        android:scaleType="fitXY"
+        app:backgroundTint="@color/background"
+        app:layout_constraintBottom_toBottomOf="@id/mapView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_locateme"
+        app:tint="@null" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/separator"
+        app:layout_constraintTop_toBottomOf="@id/mapView" />
+
+    <com.telekom.citykey.custom.views.ProgressButton
+        android:id="@+id/progressBtnLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="36dp"
+        android:paddingBottom="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:text="@string/dr_002_save_button_label" />
+</androidx.constraintlayout.widget.ConstraintLayout>

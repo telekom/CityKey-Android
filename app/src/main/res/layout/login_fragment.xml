@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroller"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/contentParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".view.user.login.LoginActivity">
+
+        <LinearLayout
+            android:id="@+id/loginHintContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/separatorLight" />
+
+            <TextView
+                android:id="@+id/loginHint"
+                style="@style/RobotoRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backgroundSecondary"
+                android:padding="@dimen/global_content_margins"
+                android:textColor="@color/onSurfaceSecondary"
+                android:textSize="13sp"
+                tools:text="@string/l_001_login_hint_technical_logout" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separatorLight" />
+        </LinearLayout>
+
+        <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+            android:id="@+id/loginEmailInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            app:hint="@string/l_001_login_hint_email"
+            app:hintTextAppearance="@style/hintText"
+            app:inputType="textEmailAddress"
+            app:prohibitEmptySpace="true"
+            app:validationIconType="validation"
+            app:validationTextAppearance="@style/stateText" />
+
+        <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+            android:id="@+id/loginPasswordInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            app:hint="@string/l_001_login_hint_password"
+            app:hintTextAppearance="@style/hintText"
+            app:inputType="textPassword"
+            app:maxLength="255"
+            app:prohibitEmptySpace="true"
+            app:validationIconType="passwordValidation"
+            app:validationTextAppearance="@style/stateText" />
+
+        <TextView
+            android:id="@+id/forgotPassword"
+            style="@style/RobotoMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="21dp"
+            android:padding="5dp"
+            android:text="@string/l_001_login_btn_forgot_password"
+            android:textColor="@color/blue"
+            android:textSize="12sp" />
+
+        <CheckBox
+            android:id="@+id/checkboxStayLoggedin"
+            style="@style/RobotoMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="7dp"
+            android:text="@string/l_001_login_checkbox_stay_loggedin"
+            android:textSize="12sp" />
+
+        <com.telekom.citykey.custom.views.ProgressButton
+            android:id="@+id/progressBtnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="21dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:paddingBottom="18dp"
+            app:text="@string/l_001_login_btn_login" />
+
+        <LinearLayout
+            android:id="@+id/containerRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/labelNotRegistered"
+                style="@style/RobotoMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="5dp"
+                android:paddingEnd="10dp"
+                android:text="@string/l_001_login_info_not_registered"
+                android:textColor="@color/onSurfaceSecondary"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/registerHereLink"
+                style="@style/RobotoMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="@string/l_001_login_btn_register"
+                android:textColor="@color/blue"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/separatorSecondary" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/helpContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/global_content_margins"
+            android:paddingTop="@dimen/global_content_margins"
+            android:paddingBottom="@dimen/global_content_margins">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/helpSectionHeaderLabel"
+                style="@style/RobotoBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/p_001_profile_help_section_header"
+                android:textColor="@color/onSurface"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/separator" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/helpLinkContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/simple_ripple"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/global_content_margins"
+            android:paddingTop="16dp"
+            android:paddingEnd="@dimen/global_content_margins"
+            android:paddingBottom="16dp"
+            android:text="@string/p_001_profile_help_link_label"
+            android:textColor="@color/onSurface"
+            app:drawableEndCompat="@drawable/ic_profile_more_arrow"
+            app:drawableStartCompat="@drawable/ic_profile_help"
+            app:drawableTint="@color/onSurface" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/separatorSecondary" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/imprintButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/simple_ripple"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/global_content_margins"
+            android:paddingTop="16dp"
+            android:paddingEnd="@dimen/global_content_margins"
+            android:paddingBottom="16dp"
+            android:text="@string/p_001_profile_btn_imprint"
+            android:textColor="@color/onSurface"
+            app:drawableEndCompat="@drawable/ic_profile_more_arrow"
+            app:drawableStartCompat="@drawable/ic_profile_imprint"
+            app:drawableTint="@color/onSurface" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/separator" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/privacyBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/simple_ripple"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/global_content_margins"
+            android:paddingTop="16dp"
+            android:paddingEnd="@dimen/global_content_margins"
+            android:paddingBottom="16dp"
+            android:text="@string/p_001_profile_label_data_security"
+            android:textColor="@color/onSurface"
+            app:drawableEndCompat="@drawable/ic_profile_more_arrow"
+            app:drawableStartCompat="@drawable/ic_profile_dp_notice"
+            app:drawableTint="@color/onSurface" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/separator" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/privacySettingsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/simple_ripple"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/global_content_margins"
+            android:paddingTop="16dp"
+            android:paddingEnd="@dimen/global_content_margins"
+            android:paddingBottom="16dp"
+            android:text="@string/p_001_profile_label_data_security_settings"
+            android:textColor="@color/onSurface"
+            app:drawableEndCompat="@drawable/ic_profile_more_arrow"
+            app:drawableStartCompat="@drawable/ic_profile_dp_settings"
+            app:drawableTint="@color/onSurface" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/separator" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/feedbackButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/simple_ripple"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/global_content_margins"
+            android:paddingTop="16dp"
+            android:paddingEnd="@dimen/global_content_margins"
+            android:paddingBottom="16dp"
+            android:text="@string/p_001_profile_feedback_label"
+            android:textColor="@color/onSurface"
+            app:drawableEndCompat="@drawable/ic_profile_more_arrow"
+            app:drawableStartCompat="@drawable/ic_feedback_icon"
+            app:drawableTint="@color/onSurface" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/separator" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/disclaimerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/simple_ripple"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/global_content_margins"
+            android:paddingTop="16dp"
+            android:paddingEnd="@dimen/global_content_margins"
+            android:paddingBottom="16dp"
+            android:text="@string/p_001_profile_accessibilty_disclaimer_label"
+            android:textColor="@color/onSurface"
+            app:drawableEndCompat="@drawable/ic_profile_more_arrow"
+            app:drawableStartCompat="@drawable/ic_profile_accessibility"
+            app:drawableTint="@color/onSurface" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/separator" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/softwareLicense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/simple_ripple"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/global_content_margins"
+            android:paddingTop="16dp"
+            android:paddingEnd="@dimen/global_content_margins"
+            android:paddingBottom="16dp"
+            android:text="@string/p_001_profile_software_license_label"
+            android:textColor="@color/onSurface"
+            app:drawableEndCompat="@drawable/ic_profile_more_arrow"
+            app:drawableStartCompat="@drawable/ic_software_license"
+            app:drawableTint="@color/onSurface" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/separator" />
+    </LinearLayout>
+</ScrollView>

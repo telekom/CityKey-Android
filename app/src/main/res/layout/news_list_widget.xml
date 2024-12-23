@@ -1,0 +1,23 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    style="@style/AppTheme.AppWidgetContainerParent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/news_list_widget_background">
+
+    <ImageView
+        android:id="@+id/loadingIndicatorImageView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/newsListView"
+        style="@style/AppTheme.AppWidgetContainerParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</FrameLayout>

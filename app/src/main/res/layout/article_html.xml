@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.telekom.citykey.custom.views.OscaWebView
+        android:id="@+id/contentWebView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/article_horizontal_margin"
+        android:layout_marginVertical="0dp"
+        android:importantForAccessibility="yes"
+        android:padding="0dp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

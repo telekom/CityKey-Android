@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_graph"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.telekom.citykey.view.home.Home"
+        tools:layout="@layout/home_fragment">
+
+        <deepLink app:uri="citykey://home/.*" />
+
+        <action
+            android:id="@+id/action_home_to_news"
+            app:destination="@id/news"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <action
+            android:id="@+id/action_home_to_article"
+            app:destination="@id/article"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <action
+            android:id="@+id/action_home_to_eventsList"
+            app:destination="@id/eventsList"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <action
+            android:id="@+id/action_home_to_eventDetails"
+            app:destination="@id/eventDetails"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/news"
+        android:name="com.telekom.citykey.view.home.news.News"
+        tools:layout="@layout/home_news">
+        <action
+            android:id="@+id/action_news_to_article"
+            app:destination="@id/article"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/article"
+        android:name="com.telekom.citykey.view.home.news.article.Article"
+        tools:layout="@layout/article_fragment">
+        <argument
+            android:name="newsItem"
+            app:argType="com.telekom.citykey.models.content.CityContent" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/eventsList"
+        android:name="com.telekom.citykey.view.home.events_list.EventsList"
+        tools:layout="@layout/events_list_fragment">
+        <action
+            android:id="@+id/action_eventsList_to_eventDetails"
+            app:destination="@id/eventDetails"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/eventDetails"
+        android:name="com.telekom.citykey.view.home.events_details.EventDetails"
+        tools:layout="@layout/event_details_fragment">
+
+        <deepLink app:uri="citykey://events/{eventId}/{cityId}/.*" />
+
+        <argument
+            android:name="event"
+            android:defaultValue="@null"
+            app:argType="com.telekom.citykey.models.content.Event"
+            app:nullable="true" />
+
+        <argument
+            android:name="eventId"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="cityId"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_eventDetails_to_detailedMapGraph"
+            app:destination="@id/detailed_map_graph"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+
+        <action
+            android:id="@+id/action_eventDetails_to_detailedImageDialog"
+            app:destination="@id/detailedImageDialog" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/detailedImageDialog"
+        android:name="com.telekom.citykey.view.dialogs.DetailedImageDialog"
+        android:label="DetailedImageDialog"
+        tools:layout="@layout/detailed_image_dialog">
+        <argument
+            android:name="imageUrl"
+            app:argType="string" />
+        <argument
+            android:name="imageCredit"
+            app:argType="string" />
+
+    </dialog>
+
+    <include app:graph="@navigation/detailed_map_graph" />
+
+</navigation>

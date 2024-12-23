@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mondayTitle"
+        style="@style/RobotoRegular"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:importantForAccessibility="no"
+        android:textColor="@color/onSurface"
+        android:textSize="12sp"
+        tools:text="Mon" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tuesdayTitle"
+        style="@style/RobotoRegular"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:importantForAccessibility="no"
+        android:textColor="@color/onSurface"
+        android:textSize="12sp"
+        tools:text="Tue" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/wednesdayTitle"
+        style="@style/RobotoRegular"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:importantForAccessibility="no"
+        android:textColor="@color/onSurface"
+        android:textSize="12sp"
+        tools:text="Wed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/thursdayTitle"
+        style="@style/RobotoRegular"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:importantForAccessibility="no"
+        android:textColor="@color/onSurface"
+        android:textSize="12sp"
+        tools:text="Thurs" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/fridayTitle"
+        style="@style/RobotoRegular"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:importantForAccessibility="no"
+        android:textColor="@color/onSurface"
+        android:textSize="12sp"
+        tools:text="Fri" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/saturdayTitle"
+        style="@style/RobotoRegular"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:importantForAccessibility="no"
+        android:textColor="@color/onSurface"
+        android:textSize="12sp"
+        tools:text="Sat" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sundayTitle"
+        style="@style/RobotoRegular"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:importantForAccessibility="no"
+        android:textColor="@color/onSurface"
+        android:textSize="12sp"
+        tools:text="Sun" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootValue"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.telekom.citykey.view.services.waste_calendar.filters.WasteFilters">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/auth_bottom_sheet_rounded"
+        android:fitsSystemWindows="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarCategoryFilter"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:fitsSystemWindows="true"
+            app:title="@string/wc_004_filter_category_title"
+            app:titleTextColor="@color/onSurface" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/itemsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/waste_calendar_pickups_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/categoriesContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingStart="@dimen/global_content_margins"
+            android:paddingTop="@dimen/global_content_margins"
+            android:paddingEnd="@dimen/global_content_margins"
+            app:chipSpacingHorizontal="9dp"
+            app:chipSpacingVertical="0dp"
+            app:itemSpacing="0dp"
+            app:layout_constraintBottom_toTopOf="@id/applyFilterBtn"
+            app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+            app:lineSpacing="0dp" />
+
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:id="@+id/waste_calendar_pickups_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/separator"
+        app:layout_constraintBottom_toTopOf="@id/selectToggleBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.telekom.citykey.custom.views.ProgressButton
+        android:id="@+id/selectToggleBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="12dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingHorizontal="16dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/applyFilterBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:text="@string/wc_004_filter_category_select_all"
+        tools:visibility="visible" />
+
+    <com.telekom.citykey.custom.views.ProgressButton
+        android:id="@+id/applyFilterBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="36dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingHorizontal="16dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/categoriesErrorHint"
+        style="@style/RobotoRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="88dp"
+        android:text="@string/e_004_events_filter_categories_error_text"
+        android:textAlignment="center"
+        android:textColor="@color/onSurface"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        tools:visibility="invisible" />
+
+    <com.telekom.citykey.custom.views.OscaProgressBar
+        android:id="@+id/progressCategories"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/onSurface"
+        android:progressTint="@color/onSurface"
+        app:layout_constraintBottom_toTopOf="@id/waste_calendar_pickups_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

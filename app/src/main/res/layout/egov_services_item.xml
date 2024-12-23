@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:foreground="@drawable/simple_ripple"
+    android:importantForAccessibility="no">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/separator"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/serviceTitle"
+        style="@style/RobotoBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/global_content_margins"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="@dimen/global_content_margins"
+        android:ellipsize="end"
+        android:hyphenationFrequency="full"
+        android:importantForAccessibility="yes"
+        android:maxLines="3"
+        android:textColor="@color/onSurface"
+        android:textSize="15sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Egov service name" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/serviceDescription"
+        style="@style/RobotoRegular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/global_content_margins"
+        android:layout_marginEnd="@dimen/global_content_margins"
+        android:hyphenationFrequency="full"
+        android:importantForAccessibility="yes"
+        android:textColor="@color/onSurface"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/serviceTitle"
+        tools:text="Egov service description" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/global_content_margins"
+        android:layout_marginTop="16dp"
+        android:background="@color/separatorLight"
+        app:layout_constraintTop_toBottomOf="@id/serviceDescription" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/actionBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/simple_ripple"
+        android:importantForAccessibility="yes"
+        android:paddingBottom="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/separator">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/serviceTypeIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="@dimen/global_content_margins"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/onSurface"
+            tools:src="@tools:sample/avatars" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/moreIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/global_content_margins"
+            app:layout_constraintBottom_toBottomOf="@id/serviceTypeIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/serviceTypeIcon"
+            app:srcCompat="@drawable/ic_more_arrow2"
+            app:tint="@color/onSurfaceSecondary" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/serviceTypeText"
+            style="@style/RobotoRegular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:textColor="@color/onSurface"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/serviceTypeIcon"
+            app:layout_constraintEnd_toStartOf="@id/moreIcon"
+            app:layout_constraintStart_toEndOf="@id/serviceTypeIcon"
+            app:layout_constraintTop_toTopOf="@id/serviceTypeIcon"
+            tools:text="Link type" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

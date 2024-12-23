@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/wasteCalendarSmallWidgetFrame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/waste_calendar_widget_background"
+    android:theme="@style/AppTheme.AppWasteWidgetContainer">
+
+    <FrameLayout
+        android:id="@+id/frame"
+        style="@style/SmallWasteCalendarWidgetInnerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tvTomorrowTitle"
+        style="@style/RobotoBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_small_waste_calendar_widget_title"
+        android:contentDescription="@string/date_format_tomorrow_name"
+        android:gravity="center"
+        android:padding="@dimen/widget_layout_margin"
+        android:text="@string/date_format_tomorrow_name"
+        android:textColor="@color/onSurface"
+        android:textSize="@dimen/waste_calendar_widget_title_text_size" />
+
+    <ListView
+        android:id="@+id/wasteList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvTomorrowTitle"
+        android:layout_alignBottom="@+id/frame"
+        android:layout_marginTop="@dimen/waste_pickup_item_vertical_margin"
+        android:gravity="center"
+        android:paddingBottom="@dimen/waste_small_widget_list_bottom_margin"
+        android:textSize="@dimen/waste_calendar_widget_title_text_size" />
+
+    <TextView
+        android:id="@+id/smallWidgetGradientView"
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/waste_small_widget_list_bottom_margin"
+        android:background="@drawable/waste_calendar_widget_list_bottom_gradient"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/widget2x1GradientView"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/waste_small_widget_list_bottom_margin"
+        android:background="@drawable/waste_calendar_widget_list_bottom_gradient"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/emptyViewForWasteCalendarPickupsUnavailable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvTomorrowTitle"
+        android:layout_alignBottom="@+id/frame"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/widget_layout_margin"
+        android:layout_marginEnd="@dimen/widget_layout_margin"
+        android:autoSizeMaxTextSize="12sp"
+        android:autoSizeMinTextSize="8sp"
+        android:autoSizeStepGranularity="0.5sp"
+        android:autoSizeTextType="uniform"
+        android:contentDescription="@string/wc_generic_error"
+        android:gravity="center"
+        android:text="@string/wc_generic_error"
+        android:textColor="@color/onSurface"
+        android:textSize="@dimen/waste_calendar_widget_title_text_size"
+        android:visibility="gone" />
+</RelativeLayout>

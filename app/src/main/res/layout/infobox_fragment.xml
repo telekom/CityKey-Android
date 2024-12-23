@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/infoBox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorSurface">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbarInfoBox"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="@string/b_001_infobox_title"
+                android:focusable="true"
+                app:titleTextColor="@color/onSurface" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="0dp"
+                app:contentPadding="2dp"
+                app:strokeColor="@color/onSurfaceSecondary"
+                app:strokeWidth="1dp">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayoutInfoBox"
+                    style="@style/InfoboxTabLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_below="@+id/toolbarCities"
+                    android:layout_gravity="center"
+                    android:background="?attr/colorPrimary"
+                    app:tabBackground="@color/background"
+                    app:tabGravity="fill"
+                    app:tabIndicator="@drawable/toast_background"
+                    app:tabIndicatorColor="@color/oscaColor"
+                    app:tabIndicatorHeight="28dp"
+                    app:tabMinWidth="100dp"
+                    app:tabMode="fixed"
+                    app:tabPadding="0dp"
+                    app:tabRippleColor="@android:color/transparent"
+                    app:tabSelectedTextColor="@color/white"
+                    app:tabTextColor="@color/onSurface" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.telekom.citykey.custom.views.OnlyVerticalSwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+
+                <com.telekom.citykey.custom.views.OscaProgressBar
+                    android:id="@+id/loading"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:indeterminateTint="@android:color/black" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/errorLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/global_content_margins"
+                    android:layout_marginTop="88dp"
+                    android:layout_marginEnd="@dimen/global_content_margins"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/RobotoRegular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/b_005_infobox_error_info_title"
+                        android:textAlignment="center"
+                        android:textColor="@color/onSurface"
+                        android:textSize="18sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/RobotoRegular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/b_005_infobox_error_info_subtitle"
+                        android:textAlignment="center"
+                        android:textColor="@color/onSurface"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/retryButton"
+                        style="@style/RobotoRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="24dp"
+                        android:drawablePadding="5dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/e_002_page_load_retry"
+                        android:textColor="@color/oscaColor"
+                        android:textSize="14sp"
+                        app:drawableStartCompat="@drawable/ic_action_resend_email"
+                        app:drawableTint="@color/oscaColor" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </FrameLayout>
+        </com.telekom.citykey.custom.views.OnlyVerticalSwipeRefreshLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <include
+        android:id="@+id/welcomeView"
+        layout="@layout/welcome_page_fragment" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

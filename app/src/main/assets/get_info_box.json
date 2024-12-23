@@ -1,0 +1,20 @@
+{
+  "content": [
+    {
+      "userInfoId": 44345,
+      "messageId": 23405,
+      "description": "Willkommen zur Citykey App! Schön, dass du da bist.",
+      "details": "<p>Willkommen zur Citykey App! Schön, dass du da bist. Wir halten dich in unserem »Postfach« über die wichtigen Dinge auf dem Laufenden.</p></br> <p>Ob du Terminbestätigungen von genutzten Bürgerservices erwartest oder über zukünftige Funktionen der Citykey App informiert werden möchtest: hier erfährst du es zuerst &#x1F60A;</p>",
+      "headline": "Herzlich willkommen in deiner Citykey App!",
+      "isRead": true,
+      "creationDate": "2024-11-20 18:08:37",
+      "category": {
+        "categoryIcon": "bonn-logo-24dp.png",
+        "categoryName": "CITYKEY APP"
+      },
+      "buttonText": null,
+      "attachments": [],
+      "buttonAction": null
+    }
+  ]
+}

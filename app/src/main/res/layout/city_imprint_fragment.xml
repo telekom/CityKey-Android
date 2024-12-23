@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.telekom.citykey.custom.views.OscaAppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/services_toolbar_height"
+        android:background="?attr/colorSurface"
+        android:fitsSystemWindows="true"
+        android:minHeight="?attr/actionBarSize"
+        android:windowDrawsSystemBarBackgrounds="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:minHeight="?attr/actionBarSize"
+            app:contentScrim="@color/background"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:statusBarScrim="@color/black5a"
+            app:toolbarId="@id/cityImprintToolbar">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/zoomableImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:fitsSystemWindows="true"
+                android:scaleType="matrix"
+                app:layout_collapseMode="parallax" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black35a"
+                android:fitsSystemWindows="true" />
+
+            <RelativeLayout
+                android:id="@+id/containerCityServicesHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/services_toolbar_infobox_margin_start"
+                android:layout_marginTop="@dimen/services_toolbar_title_top_margin">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/labelCityServices"
+                    style="@style/RobotoBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:paddingBottom="@dimen/services_toolbar_title_padding_bottom"
+                    android:text="@string/h_001_navigation_bar_btn_imprint"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/services_toolbar_title_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/cityIcon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/labelCityServices"
+                    tools:src="@tools:sample/avatars" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/cityLabel"
+                    style="@style/RobotoMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/labelCityServices"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/cityIcon"
+                    android:paddingBottom="@dimen/services_toolbar_title_padding_bottom"
+                    android:textColor="@color/white"
+                    android:textSize="24dp"
+                    tools:text="Hennef" />
+            </RelativeLayout>
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/cityImprintToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:fitsSystemWindows="false"
+                android:focusable="true"
+                app:layout_collapseMode="pin">
+
+                <LinearLayout
+                    android:id="@+id/toolbarCityBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start"
+                    android:focusable="true"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/toolbarCoat"
+                        android:layout_width="@dimen/toolbar_coa_size"
+                        android:layout_height="@dimen/toolbar_coa_size"
+                        android:layout_gravity="center_vertical" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/toolbarTitle"
+                        style="@style/RobotoMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="16dp"
+                        android:textColor="@color/onSurface"
+                        android:textSize="@dimen/toolbar_title_size" />
+                </LinearLayout>
+            </com.google.android.material.appbar.MaterialToolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.telekom.citykey.custom.views.OscaAppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/content"
+                style="@style/RobotoRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/article_horizontal_margin"
+                android:layout_marginTop="@dimen/article_content_margin_top"
+                android:layout_marginEnd="@dimen/article_horizontal_margin"
+                android:hyphenationFrequency="full"
+                android:paddingBottom="28dp"
+                android:textColor="@color/onSurface"
+                android:textSize="@dimen/article_content_size"
+                tools:maxLines="7"
+                tools:minLines="5" />
+
+            <com.telekom.citykey.custom.views.ProgressButton
+                android:id="@+id/openImprintButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="21dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingBottom="18dp"
+                app:text="@string/ci_001_button_text" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

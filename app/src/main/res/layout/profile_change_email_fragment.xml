@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutPageChangeEmail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/contentParent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+     <com.google.android.material.textview.MaterialTextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="22dp"
+         android:layout_marginTop="35dp"
+         style="@style/RobotoBold"
+         android:textColor="@color/onSurfaceSecondary"
+         android:text="@string/p_003_profile_email_change_hint_cur_email" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/currentEmailInput"
+            style="@style/RobotoBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:textColor="@color/onSurface" />
+
+        <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+            android:id="@+id/newEmailInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:paddingStart="@dimen/global_content_margins"
+            android:paddingEnd="@dimen/global_content_margins"
+            app:hint="@string/p_003_profile_email_change_hint_new_email"
+            app:hintTextAppearance="@style/hintText"
+            app:inputType="textEmailAddress"
+            app:prohibitEmptySpace="true"
+            app:validationIconType="validation"
+            app:validationTextAppearance="@style/stateText" />
+
+        <com.telekom.citykey.custom.views.ProgressButton
+            android:id="@+id/accessRightsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="21dp"
+            app:text="@string/p_003_profile_email_change_btn_save" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

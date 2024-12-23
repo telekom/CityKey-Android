@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/services_graph"
+    app:startDestination="@id/services">
+
+    <fragment
+        android:id="@+id/services"
+        android:name="com.telekom.citykey.view.services.Services">
+
+        <deepLink app:uri="citykey://services" />
+        <deepLink app:uri="citykey://services/polls/list" />
+        <deepLink app:uri="citykey://services/defectreporter" />
+        <deepLink app:uri="citykey://services/egov" />
+
+        <action
+            android:id="@+id/action_services_to_detailedService"
+            app:destination="@id/detailedService"
+            app:enterAnim="@anim/fragment_level3_enter"
+            app:exitAnim="@anim/fragment_level3_exit"
+            app:popEnterAnim="@anim/fragment_level3_pop_enter"
+            app:popExitAnim="@anim/fragment_level3_pop_exit" />
+        <action
+            android:id="@+id/action_services_to_appointmentService"
+            app:destination="@id/appointmentService"
+            app:enterAnim="@anim/fragment_level3_enter"
+            app:exitAnim="@anim/fragment_level3_exit"
+            app:popEnterAnim="@anim/fragment_level3_pop_enter"
+            app:popExitAnim="@anim/fragment_level3_pop_exit" />
+        <action
+            android:id="@+id/action_services_to_wasteCalendarDetails"
+            app:destination="@id/wasteCalendarDetails"
+            app:enterAnim="@anim/fragment_level3_enter"
+            app:exitAnim="@anim/fragment_level3_exit"
+            app:popEnterAnim="@anim/fragment_level3_pop_enter"
+            app:popExitAnim="@anim/fragment_level3_pop_exit" />
+        <action
+            android:id="@+id/to_poi_guide"
+            app:destination="@id/pointsOfInterest"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <action
+            android:id="@+id/to_EgovServiceDetails"
+            app:destination="@id/EgovServiceDetails"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <action
+            android:id="@+id/action_services_to_defectServiceDetail"
+            app:destination="@id/defectServiceDetail"
+            app:enterAnim="@anim/fragment_level3_enter"
+            app:exitAnim="@anim/fragment_level3_exit"
+            app:popEnterAnim="@anim/fragment_level3_pop_enter"
+            app:popExitAnim="@anim/fragment_level3_pop_exit" />
+
+        <action
+            android:id="@+id/action_services_to_fahrradparkenServiceGraph"
+            app:destination="@id/fahrradparken_service_graph"
+            app:enterAnim="@anim/fragment_level3_enter"
+            app:exitAnim="@anim/fragment_level3_exit"
+            app:popEnterAnim="@anim/fragment_level3_pop_enter"
+            app:popExitAnim="@anim/fragment_level3_pop_exit">
+
+            <argument
+                android:name="service"
+                app:argType="com.telekom.citykey.models.content.CitizenService" />
+
+        </action>
+
+    </fragment>
+
+    <include app:graph="@navigation/fahrradparken_service_graph" />
+
+    <fragment
+        android:id="@+id/detailedService"
+        android:name="com.telekom.citykey.view.services.detailed_service.DetailedService">
+        <argument
+            android:name="service"
+            app:argType="com.telekom.citykey.models.content.CitizenService" />
+        <action
+            android:id="@+id/action_detailedService_to_authWebView2"
+            app:destination="@id/authWebView2"
+            app:enterAnim="@anim/fragment_level3_enter"
+            app:exitAnim="@anim/fragment_level3_exit"
+            app:popEnterAnim="@anim/fragment_level3_pop_enter"
+            app:popExitAnim="@anim/fragment_level3_pop_exit" />
+        <action
+            android:id="@+id/action_detailedService_to_surveysOverview"
+            app:destination="@id/surveysOverview"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <action
+            android:id="@+id/action_detailedService_to_egovInfo"
+            app:destination="@id/serviceHelp" />
+        <action
+            android:id="@+id/action_detailedService_to_serviceHelp"
+            app:destination="@id/serviceHelp" />
+        <action
+            android:id="@+id/action_detailedService_to_webview"
+            app:destination="@id/webView"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/appointmentWeb"
+        android:name="com.telekom.citykey.view.services.appointments.web.AppointmentWeb"
+        android:label="appointment">
+        <argument
+            android:name="baseUrl"
+            app:argType="string" />
+        <argument
+            android:name="service"
+            app:argType="com.telekom.citykey.models.content.CitizenService" />
+    </fragment>
+    <fragment
+        android:id="@+id/appointmentService"
+        android:name="com.telekom.citykey.view.services.appointments.AppointmentService"
+        android:label="AppointmentService">
+        <argument
+            android:name="service"
+            app:argType="com.telekom.citykey.models.content.CitizenService" />
+        <action
+            android:id="@+id/action_appointmentService_to_appointmentWeb"
+            app:destination="@id/appointmentWeb"
+            app:enterAnim="@anim/fragment_level3_enter"
+            app:exitAnim="@anim/fragment_level3_exit"
+            app:popEnterAnim="@anim/fragment_level3_pop_enter"
+            app:popExitAnim="@anim/fragment_level3_pop_exit" />
+        <action
+            android:id="@+id/action_appointmentService_to_appointmentsOverview"
+            app:destination="@id/appointmentsOverview"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/appointmentsOverview"
+        android:name="com.telekom.citykey.view.services.appointments.appointments_overview.AppointmentsOverview"
+        android:label="AppointmentsOverview">
+        <deepLink app:uri="citykey://services/appointment/overview/.*" />
+        <action
+            android:id="@+id/action_appointmentsOverview_to_appointmentDetails"
+            app:destination="@id/appointmentDetails"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <action
+            android:id="@+id/action_appointmentsOverview_to_appointmentQR"
+            app:destination="@id/appointmentQR"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <action
+            android:id="@+id/action_appointmentsOverview_to_service"
+            app:destination="@id/services"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/appointmentDetails"
+        android:name="com.telekom.citykey.view.services.appointments.details.AppointmentDetails"
+        android:label="AppointmentDetails">
+        <argument
+            android:name="appointment"
+            app:argType="com.telekom.citykey.models.appointments.Appointment" />
+
+        <action
+            android:id="@+id/action_appointmentDetails_to_detailedMapGraph"
+            app:destination="@id/detailed_map_graph"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <action
+            android:id="@+id/action_appointmentDetails_to_appointmentQR"
+            app:destination="@id/appointmentQR"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+    </fragment>
+
+    <include app:graph="@navigation/detailed_map_graph" />
+
+    <fragment
+        android:id="@+id/appointmentQR"
+        android:name="com.telekom.citykey.view.services.appointments.qr.AppointmentQR"
+        android:label="AppointmentQR">
+        <argument
+            android:name="waitingNo"
+            app:argType="string" />
+        <argument
+            android:name="uuid"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/wasteCalendarDetails"
+        android:name="com.telekom.citykey.view.services.waste_calendar.service_details.WasteCalendarDetails"
+        android:label="WasteCalendarDetails">
+        <action
+            android:id="@+id/action_wasteCalendarDetails_to_wasteCalendar"
+            app:destination="@id/wasteCalendar"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+
+        <deepLink app:uri="citykey://services/waste/overview/.*" />
+        <deepLink app:uri="citykey://services/waste/overview/{shouldNavigateToNextMonth}/.*" />
+        <argument
+            android:name="shouldNavigateToNextMonth"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_wasteCalendarDetails_to_egovInfo"
+            app:destination="@id/serviceHelp" />
+        <action
+            android:id="@+id/action_wasteCalendarDetails_to_serviceHelp"
+            app:destination="@id/serviceHelp" />
+    </fragment>
+    <fragment
+        android:id="@+id/wasteCalendar"
+        android:name="com.telekom.citykey.view.services.waste_calendar.WasteCalendar"
+        android:label="WasteCalendar">
+        <action
+            android:id="@+id/action_wasteCalendar_to_wasteReminder"
+            app:destination="@id/wasteReminder"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <argument
+            android:name="service"
+            app:argType="string" />
+        <argument
+            android:name="hasPickupExist"
+            app:argType="boolean" />
+        <argument
+            android:name="shouldNavigateToNextMonth"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/wasteReminder"
+        android:name="com.telekom.citykey.view.services.waste_calendar.reminders.WasteReminder"
+        android:label="WasteReminder">
+        <argument
+            android:name="wasteTypeId"
+            app:argType="integer" />
+        <argument
+            android:name="wasteType"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/authWebView2"
+        android:name="com.telekom.citykey.view.auth_webview.AuthWebView"
+        android:label="AuthWebView">
+        <argument
+            android:name="link"
+            app:argType="string" />
+        <argument
+            android:name="service"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="hasSensitiveInfo"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/surveyQuestions"
+        android:name="com.telekom.citykey.view.services.citizen_surveys.survey.SurveyQuestions"
+        android:label="SurveyQuestions">
+        <argument
+            android:name="surveyId"
+            app:argType="integer" />
+        <argument
+            android:name="surveyName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/surveysOverview"
+        android:name="com.telekom.citykey.view.services.citizen_surveys.SurveysOverview"
+        android:label="SurveysOverview">
+        <action
+            android:id="@+id/action_surveysOverview_to_surveyDetails"
+            app:destination="@id/surveyDetails"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <argument
+            android:name="serviceImage"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/surveyDetails"
+        android:name="com.telekom.citykey.view.services.citizen_surveys.survey_details.SurveyDetails"
+        android:label="SurveyDetails">
+        <action
+            android:id="@+id/action_surveyDetails_to_surveyQuestions"
+            app:destination="@id/surveyQuestions"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <argument
+            android:name="survey"
+            app:argType="com.telekom.citykey.models.citizen_survey.Survey" />
+        <argument
+            android:name="serviceImage"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/pointsOfInterest"
+        android:name="com.telekom.citykey.view.services.poi.PoiGuide"
+        android:label="PointsOfInterest">
+        <action
+            android:id="@+id/action_pointsOfInterest_to_poiGuideDetails"
+            app:destination="@id/poiGuideDetails"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/poiGuideDetails"
+        android:name="com.telekom.citykey.view.services.poi.details.PoiGuideDetails"
+        android:label="fragment_poi_guide_details"
+        tools:layout="@layout/poi_guide_details_fragment">
+        <action
+            android:id="@+id/action_poiGuideDetails_to_detailed_map_graph"
+            app:destination="@id/detailed_map_graph"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <argument
+            android:name="poiData"
+            app:argType="com.telekom.citykey.models.poi.PointOfInterest" />
+        <argument
+            android:name="categoryName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/EgovServiceDetails"
+        android:name="com.telekom.citykey.view.services.egov.details.EgovServiceDetails"
+        android:label="EgovServiceDetails">
+        <action
+            android:id="@+id/to_EgovServices"
+            app:destination="@id/EgovServices"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <argument
+            android:name="service"
+            app:argType="com.telekom.citykey.models.content.CitizenService" />
+        <action
+            android:id="@+id/to_egovInfo"
+            app:destination="@id/serviceHelp"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <action
+            android:id="@+id/action_EgovServiceDetails_to_egovSearch"
+            app:destination="@id/egovSearch"
+            app:enterAnim="@anim/fade_in_linear"
+            app:exitAnim="@anim/fade_out_linear"
+            app:popEnterAnim="@anim/fade_in_linear"
+            app:popExitAnim="@anim/fade_out_linear" />
+        <action
+            android:id="@+id/action_EgovServiceDetails_to_serviceHelp"
+            app:destination="@id/serviceHelp" />
+    </fragment>
+    <fragment
+        android:id="@+id/EgovServices"
+        android:name="com.telekom.citykey.view.services.egov.services.EgovServices"
+        android:label="EgovServices">
+        <argument
+            android:name="groupId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/to_authWebView"
+            app:destination="@id/authWebView2"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <action
+            android:id="@+id/to_egovDescDetails"
+            app:destination="@id/egovDescDetails"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/defectCategorySelection"
+        android:name="com.telekom.citykey.view.services.defect_reporter.category_selection.DefectCategorySelection"
+        android:label="defect_category_selection_fragment"
+        tools:layout="@layout/defect_category_selection_fragment">
+        <argument
+            android:name="service"
+            app:argType="com.telekom.citykey.models.content.CitizenService" />
+        <action
+            android:id="@+id/to_defectReportForm2"
+            app:destination="@id/defectReportForm2"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <action
+            android:id="@+id/action_defectCategorySelection_to_defectSubcategorySelection"
+            app:destination="@id/defectSubcategorySelection"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/defectServiceDetail"
+        android:name="com.telekom.citykey.view.services.defect_reporter.details.DefectServiceDetail"
+        android:label="DefectServiceDetail">
+        <action
+            android:id="@+id/to_defectCategorySelection"
+            app:destination="@id/defectCategorySelection"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <argument
+            android:name="service"
+            app:argType="com.telekom.citykey.models.content.CitizenService" />
+        <action
+            android:id="@+id/action_defectServiceDetail_to_egovInfo"
+            app:destination="@id/serviceHelp" />
+        <action
+            android:id="@+id/action_defectServiceDetail_to_serviceHelp"
+            app:destination="@id/serviceHelp" />
+    </fragment>
+    <fragment
+        android:id="@+id/defectReportForm2"
+        android:name="com.telekom.citykey.view.services.defect_reporter.report_form.DefectReportForm"
+        android:label="DefectReportForm">
+        <argument
+            android:name="service"
+            app:argType="com.telekom.citykey.models.content.CitizenService" />
+
+        <argument
+            android:name="location"
+            app:argType="com.google.android.gms.maps.model.LatLng" />
+
+        <argument
+            android:name="serviceName"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="serviceCode"
+            app:argType="string" />
+
+        <argument
+            android:name="subServiceName"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="subServiceCode"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="subServiceDescription"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="hasAdditionalInfo"
+            app:argType="boolean" />
+
+        <action
+            android:id="@+id/to_defectSubmitted"
+            app:destination="@id/defectSubmitted"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit"
+            app:popUpTo="@id/defectServiceDetail"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/defectSubmitted"
+        android:name="com.telekom.citykey.view.services.defect_reporter.submission_success.DefectSubmitted"
+        android:label="defect_submitted_fragment"
+        tools:layout="@layout/defect_submitted_fragment">
+        <argument
+            android:name="uniqueId"
+            app:argType="string" />
+        <argument
+            android:name="defectCategory"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="cityName"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/serviceHelp"
+        android:name="com.telekom.citykey.view.services.service_detail_help.ServiceDetailHelp"
+        android:label="serviceHelp"
+        app:enterAnim="@anim/fragment_level2_enter"
+        app:exitAnim="@anim/fragment_level2_exit"
+        app:popEnterAnim="@anim/fragment_level2_pop_enter"
+        app:popExitAnim="@anim/fragment_level2_pop_exit">
+        <argument
+            android:name="service"
+            app:argType="com.telekom.citykey.models.content.CitizenService" />
+    </fragment>
+    <fragment
+        android:id="@+id/defectSubcategorySelection"
+        android:name="com.telekom.citykey.view.services.defect_reporter.category_selection.defectsubcategory.DefectSubcategorySelection"
+        android:label="defect_subcategory_selection_fragment"
+        tools:layout="@layout/defect_subcategory_selection_fragment">
+        <argument
+            android:name="service"
+            app:argType="com.telekom.citykey.models.content.CitizenService" />
+
+        <argument
+            android:name="defectCategory"
+            app:argType="com.telekom.citykey.models.defect_reporter.DefectCategory" />
+        <action
+            android:id="@+id/to_defectReportForm2"
+            app:destination="@id/defectReportForm2"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/egovSearch"
+        android:name="com.telekom.citykey.view.services.egov.search.EgovSearch"
+        android:label="EgovSearch">
+        <action
+            android:id="@+id/to_authWebView2"
+            app:destination="@id/authWebView2"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+        <action
+            android:id="@+id/to_egovDescDetails"
+            app:destination="@id/egovDescDetails"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/egovDescDetails"
+        android:name="com.telekom.citykey.view.services.egov.services.egovDesc.EgovDescDetail"
+        android:label="egov_desc_details"
+        tools:layout="@layout/egov_desc_detail">
+        <argument
+            android:name="egovData"
+            app:argType="com.telekom.citykey.models.egov.EgovService" />
+        <action
+            android:id="@+id/to_authWebView2"
+            app:destination="@id/authWebView2"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/webView"
+        android:name="com.telekom.citykey.view.auth_webview.WebView"
+        android:label="WebView">
+        <argument
+            android:name="link"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="username"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="password"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+</navigation>

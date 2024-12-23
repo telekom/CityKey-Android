@@ -1,0 +1,122 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/global_cardview_corner_radius"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/onSurfaceSecondary"
+    tools:strokeWidth="2">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioAns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textAppearance="@style/RobotoRegular"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/textInputDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkboxAns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textAppearance="@style/RobotoRegular"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/textInputDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Option text"
+            tools:visibility="gone" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textInputDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="22dp"
+            android:ellipsize="end"
+            android:focusable="true"
+            android:importantForAccessibility="yes"
+            android:text="@string/c_001_cities_title"
+            android:textColor="@color/onSurface"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/radioAns"
+            tools:visibility="visible" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="22dp"
+            android:textAlignment="viewStart"
+            android:visibility="gone"
+            app:boxStrokeColor="@drawable/text_input_layout_outlined_box_stroke"
+            app:boxStrokeErrorColor="@color/transactionsRed"
+            app:errorIconDrawable="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputDescription"
+            tools:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:gravity="top"
+                android:minHeight="100dp"
+                android:textColorHint="@color/transactionsRed" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutForOQ"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:minHeight="100dp"
+            android:textAlignment="viewStart"
+            android:visibility="gone"
+            app:boxStrokeColor="@drawable/text_input_layout_outlined_box_stroke"
+            app:boxStrokeErrorColor="@color/transactionsRed"
+            app:errorIconDrawable="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditTextForOQ"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:gravity="top"
+                android:minHeight="100dp"
+                android:padding="4dp"
+                android:textColorHint="@color/transactionsRed" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

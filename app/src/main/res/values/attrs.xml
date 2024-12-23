@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DayCountdownView">
+        <attr name="progressRadius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressButton">
+        <attr name="text" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="PinInputLayout">
+        <attr name="hideContent" format="boolean" />
+        <attr name="pinSize" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="OscaInputLayout">
+        <attr name="inputType">
+            <flag name="none" value="0x00000000" />
+            <flag name="text" value="0x00000001" />
+            <flag name="textCapCharacters" value="0x00001001" />
+            <flag name="textCapWords" value="0x00002001" />
+            <flag name="textCapSentences" value="0x00004001" />
+            <flag name="textAutoCorrect" value="0x00008001" />
+            <flag name="textAutoComplete" value="0x00010001" />
+            <flag name="textMultiLine" value="0x00020001" />
+            <flag name="textImeMultiLine" value="0x00040001" />
+            <flag name="textNoSuggestions" value="0x00080001" />
+            <flag name="textUri" value="0x00000011" />
+            <flag name="textEmailAddress" value="0x00000021" />
+            <flag name="textEmailSubject" value="0x00000031" />
+            <flag name="textShortMessage" value="0x00000041" />
+            <flag name="textLongMessage" value="0x00000051" />
+            <flag name="textPersonName" value="0x00000061" />
+            <flag name="textPostalAddress" value="0x00000071" />
+            <flag name="textPassword" value="0x00000081" />
+            <flag name="textVisiblePassword" value="0x00000091" />
+            <flag name="textWebEditText" value="0x000000a1" />
+            <flag name="textFilter" value="0x000000b1" />
+            <flag name="textPhonetic" value="0x000000c1" />
+            <flag name="textWebEmailAddress" value="0x000000d1" />
+            <flag name="textWebPassword" value="0x000000e1" />
+            <flag name="number" value="0x00000002" />
+            <flag name="numberSigned" value="0x00001002" />
+            <flag name="numberDecimal" value="0x00002002" />
+            <flag name="numberPassword" value="0x00000012" />
+            <flag name="phone" value="0x00000003" />
+            <flag name="datetime" value="0x00000004" />
+            <flag name="date" value="0x00000014" />
+            <flag name="time" value="0x00000024" />
+        </attr>
+        <attr name="validationIconType" format="enum">
+            <enum name="none" value="0" />
+            <enum name="validation" value="1" />
+            <enum name="passwordValidation" value="2" />
+        </attr>
+        <attr name="text" />
+        <attr name="hint" format="string" />
+        <attr name="validationTextAppearance" format="reference" />
+        <attr name="hintTextAppearance" format="reference" />
+        <attr name="maxLength" format="integer" />
+        <attr name="removeErrorOnChange" format="boolean" />
+        <attr name="isClickable" format="boolean" />
+        <attr name="prohibitSpecialChars" format="boolean" />
+        <attr name="prohibitEmptySpace" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MonthView">
+        <attr name="monthSize" format="dimension" />
+        <attr name="horizontalSpacing" format="dimension" />
+        <attr name="rowHeight" format="dimension" />
+        <attr name="dateTextSize" format="dimension" />
+        <attr name="spaceBetweenRows" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="ExpandableTextView">
+        <attr name="collapsedLines" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="AppWidgetAttrs">
+        <attr name="appWidgetPadding" format="dimension" />
+        <attr name="appWidgetInnerRadius" format="dimension" />
+        <attr name="appWidgetRadius" format="dimension" />
+    </declare-styleable>
+
+</resources>

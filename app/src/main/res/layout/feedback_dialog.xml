@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appointmentsOverViewPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/auth_bottom_sheet_rounded"
+        android:fitsSystemWindows="true"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/p_001_feedback_title"
+            app:titleTextColor="@color/onSurface" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/feedbackForm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/heading"
+                style="@style/RobotoBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="22dp"
+                android:text="@string/feedback_header"
+                android:textColor="@color/onSurface"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/description"
+                style="@style/RobotoRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="22dp"
+                android:text="@string/feedback_description"
+                android:textColor="@color/onSurface"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/heading" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/feedbackBoxTitle"
+                style="@style/RobotoBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="22dp"
+                android:text="@string/feedback_box_title"
+                android:textColor="@color/onSurface"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/feedbackBox"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="22dp"
+                android:layout_marginBottom="22dp"
+                android:textAlignment="viewStart"
+                app:boxStrokeColor="@drawable/text_input_layout_outlined_box_stroke"
+                app:boxStrokeErrorColor="@color/transactionsRed"
+                app:counterEnabled="true"
+                app:counterMaxLength="5000"
+                app:errorIconDrawable="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/feedbackBoxTitle"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/feedBackTextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:gravity="top"
+                    android:maxLength="5000"
+                    android:minHeight="80dp"
+                    android:paddingEnd="4dp"
+                    android:textColorHint="@color/transactionsRed" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/feedbackBoxTitle1"
+                style="@style/RobotoBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="22dp"
+                android:text="@string/feedback_box_title1"
+                android:textColor="@color/onSurface"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/feedbackBox" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/feedbackBox1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="22dp"
+                android:layout_marginBottom="22dp"
+                android:textAlignment="viewStart"
+                app:boxStrokeColor="@drawable/text_input_layout_outlined_box_stroke"
+                app:boxStrokeErrorColor="@color/transactionsRed"
+                app:counterEnabled="true"
+                app:counterMaxLength="5000"
+                app:errorIconDrawable="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/feedbackBoxTitle1"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/feedbackTextInput1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:gravity="top"
+                    android:maxLength="5000"
+                    android:minHeight="80dp"
+                    android:paddingEnd="4dp"
+                    android:textColorHint="@color/transactionsRed" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/connectYouTitle"
+                style="@style/RobotoBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="22dp"
+                android:text="@string/feedback_box_title2"
+                android:textColor="@color/onSurface"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/feedbackBox1" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/contactMeSwitchTitle"
+                style="@style/RobotoRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="22dp"
+                android:labelFor="@id/contactEmailSwitch"
+                android:text="@string/feedback_box_title3"
+                android:textColor="@color/onSurface"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/contactEmailSwitch"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/connectYouTitle" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/contactEmailSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:accessibilityTraversalAfter="@id/contactMeSwitchTitle"
+                android:theme="@style/SwitchStyle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/contactMeSwitchTitle"
+                app:layout_constraintTop_toBottomOf="@id/connectYouTitle" />
+
+            <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+                android:id="@+id/contactEmailInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:accessibilityTraversalAfter="@id/contactEmailSwitch"
+                android:enabled="false"
+                app:hint="@string/r_001_registration_hint_email"
+                app:hintTextAppearance="@style/hintText"
+                app:inputType="textEmailAddress"
+                app:layout_constraintTop_toBottomOf="@id/contactMeSwitchTitle"
+                app:prohibitEmptySpace="true"
+                app:text=""
+                app:validationIconType="validation"
+                app:validationTextAppearance="@style/stateText" />
+
+            <com.telekom.citykey.custom.views.ProgressButton
+                android:id="@+id/sendBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="22dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contactEmailInput"
+                app:text="@string/feedback_send_btn" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/feedbackSuccess"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
+        android:visibility="gone">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/heading1"
+            style="@style/RobotoBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="22dp"
+            android:gravity="center"
+            android:text="@string/feedback_successful_submission_heading"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/description1"
+            style="@style/RobotoRegular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="22dp"
+            android:gravity="center"
+            android:text="@string/feedback_successful_submission_description"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/heading1" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/bg_signin_04"
+            app:layout_constraintBottom_toTopOf="@id/okButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description1" />
+
+        <com.telekom.citykey.custom.views.ProgressButton
+            android:id="@+id/okButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="22dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:text="@string/dialog_dpn_ok_btn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

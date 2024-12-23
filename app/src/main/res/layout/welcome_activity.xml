@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/welcomeBox"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/skipBtn"
+        android:paddingTop="12dp"
+        android:paddingBottom="10dp"
+        android:paddingEnd="30dp"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/black"
+        android:text="@string/x_001_welcome_menu_btn_skip"
+        android:textSize="18dp" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/welcomeGraph"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/welcome_graph" />
+
+</LinearLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:importantForAccessibility="yes"
+    android:minHeight="68dp"
+    android:paddingHorizontal="16dp"
+    app:layout_constraintHeight_min="68dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/thumbnailRing"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_city_image_ring"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/thumbnailCity"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="@id/thumbnailRing"
+        app:layout_constraintEnd_toEndOf="@id/thumbnailRing"
+        app:layout_constraintStart_toStartOf="@id/thumbnailRing"
+        app:layout_constraintTop_toTopOf="@id/thumbnailRing"
+        tools:src="@drawable/ic_badge_circle" />
+
+    <com.telekom.citykey.custom.views.OscaProgressBar
+        android:id="@+id/loadCityProgress"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="4dp"
+        android:indeterminateTint="@color/onSurface"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/cityTextView"
+        style="@style/RobotoBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="4dp"
+        android:ellipsize="end"
+        android:hyphenationFrequency="full"
+        android:importantForAccessibility="no"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:textColor="@color/onSurface"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/loadCityProgress"
+        app:layout_constraintStart_toEndOf="@id/thumbnailCity"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Darmstadt" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/provinceTextView"
+        style="@style/RobotoRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:importantForAccessibility="no"
+        android:includeFontPadding="false"
+        android:textColor="@color/onSurfaceSecondary"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/cityTextView"
+        app:layout_constraintStart_toStartOf="@id/cityTextView"
+        app:layout_constraintTop_toBottomOf="@id/cityTextView"
+        tools:text="Hessen" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

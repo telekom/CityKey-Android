@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/imprint_graph"
+    app:startDestination="@id/cityImprint">
+
+    <fragment
+        android:id="@+id/cityImprint"
+        android:name="com.telekom.citykey.view.city_imprint.CityImprint"
+        android:label="CityImprint">
+        <action
+            android:id="@+id/action_cityImprint_to_citySelectionFragment2"
+            app:destination="@id/citySelectionFragment2"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/citySelectionFragment2"
+        android:name="com.telekom.citykey.view.city_selection.CitySelectionFragment"
+        android:label="CitySelectionFragment" />
+</navigation>

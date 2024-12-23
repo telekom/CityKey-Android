@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/registration_graph"
+    app:startDestination="@id/registration">
+
+    <fragment
+        android:id="@+id/registration"
+        android:name="com.telekom.citykey.view.user.registration.Registration"
+        android:label="Registration">
+        <action
+            android:id="@+id/action_registration_to_registration_confirmation_graph"
+            app:destination="@id/registration_confirmation_graph"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+    </fragment>
+    <include app:graph="@navigation/pin_confirmation_graph" />
+
+</navigation>

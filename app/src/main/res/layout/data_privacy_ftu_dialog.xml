@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/auth_bottom_sheet_rounded"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/dialog_dpn_settings_title"
+        app:titleTextColor="@color/onSurface" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:autoLink="all"
+                android:paddingTop="16dp"
+                android:textAppearance="@style/RobotoRegular"
+                android:textColor="@color/onSurface"
+                android:textColorLink="@color/blue"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/Header"
+                tools:text="@tools:sample/lorem/random" />
+
+            <com.telekom.citykey.custom.views.ProgressButton
+                android:id="@+id/btnChangeSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="21dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                app:text="@string/dialog_dpn_settings_change_btn" />
+
+            <com.telekom.citykey.custom.views.ProgressButton
+                android:id="@+id/btnAcceptAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="21dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                app:text="@string/dialog_dpn_settings_accept_all_btn" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

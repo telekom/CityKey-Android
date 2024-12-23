@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutSurveyDetails"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?attr/colorSurface">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarSurveyDetails"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/cs_003_page_title"
+            app:titleTextColor="@color/onSurface" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@+id/nestedScrollView"
+        app:layout_anchorGravity="center"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.telekom.citykey.custom.views.VerticallyCroppedImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="250dp"
+                android:scaleType="matrix"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/creationDate"
+                    style="@style/RobotoBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/global_content_margins"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="@dimen/global_content_margins"
+                    android:layout_marginBottom="@dimen/events_header_padding_inner"
+                    android:textColor="@color/onSurfaceSecondary"
+                    android:textSize="@dimen/events_header_text_size_categories"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Created on: 01.12.2021" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/surveyName"
+                    style="@style/RobotoBold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/global_content_margins"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/global_content_margins"
+                    android:layout_marginBottom="24dp"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/onSurface"
+                    android:textSize="@dimen/events_header_text_size_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/popularLabel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/creationDate"
+                    tools:text="Survey Name" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/popularLabel"
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/survey_beloved_label_background"
+                    android:paddingStart="6dp"
+                    android:paddingTop="1dp"
+                    android:paddingEnd="6dp"
+                    android:paddingBottom="2dp"
+                    android:text="@string/cs_002_favored_list_item_label"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/surveyName"
+                    app:layout_constraintEnd_toStartOf="@+id/stateIcon"
+                    app:layout_constraintTop_toTopOf="@id/surveyName"
+                    app:textAllCaps="true"
+                    tools:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/stateIcon"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="22dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/surveyName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/surveyName"
+                    app:srcCompat="@drawable/ic_survey_icon_finished"
+                    tools:visibility="visible" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/events_card_divider_height"
+                android:background="@color/separatorSecondary" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:paddingTop="8dp">
+
+                <com.telekom.citykey.custom.views.surveys.DayCountdownView
+                    android:id="@+id/daysCountDown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:progressRadius="40dp" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@id/daysCountDown"
+                    app:layout_constraintEnd_toEndOf="@id/daysCountDown"
+                    app:layout_constraintStart_toStartOf="@id/daysCountDown"
+                    app:layout_constraintTop_toTopOf="@id/daysCountDown">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/daysLeftText"
+                        style="@style/RobotoBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:focusable="false"
+                        android:gravity="bottom|center_horizontal"
+                        android:includeFontPadding="true"
+                        android:textColor="@color/onSurfaceSecondary"
+                        android:textSize="22sp"
+                        app:firstBaselineToTopHeight="0dp"
+                        tools:text="14" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/daysLabel"
+                        style="@style/RobotoRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:contentDescription="@string/progress_days_description"
+                        android:focusable="false"
+                        android:gravity="center_horizontal"
+                        android:includeFontPadding="false"
+                        android:text="@string/cs_002_days_label"
+                        android:textColor="@color/onSurfaceSecondary"
+                        android:textSize="14sp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@id/daysCountDown"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/daysCountDown">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/endTimeLabel"
+                        style="@style/RobotoBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:focusable="false"
+                        android:gravity="bottom|center_horizontal"
+                        android:includeFontPadding="true"
+                        android:text="@string/cs_003_end_date_label"
+                        android:textColor="@color/onSurface"
+                        android:textSize="24sp"
+                        app:firstBaselineToTopHeight="0dp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/endTimeDate"
+                        style="@style/RobotoRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:focusable="false"
+                        android:gravity="center_horizontal"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/onSurfaceSecondary"
+                        android:textSize="14sp"
+                        tools:text="16. August 2020" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:background="@color/separator" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/contentHeader"
+                style="@style/RobotoBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginTop="9dp"
+                android:textColor="@color/onSurface"
+                android:textSize="18sp"
+                tools:text="Survey Name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/contentText"
+                style="@style/RobotoRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginTop="9dp"
+                android:hyphenationFrequency="full"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:textColor="@color/onSurface"
+                android:textSize="16sp" />
+
+            <com.telekom.citykey.custom.views.ProgressButton
+                android:id="@+id/btnStartSurvey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="21dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingBottom="18dp"
+                app:text="@string/cs_003_button_text" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/surveyCompletedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="22dp"
+                android:gravity="center"
+                android:visibility="invisible"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:textColor="@color/onSurface"
+                android:textSize="16sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

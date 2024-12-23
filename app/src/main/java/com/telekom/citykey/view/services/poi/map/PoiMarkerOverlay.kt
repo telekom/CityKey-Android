@@ -1,0 +1,97 @@
+package com.telekom.citykey.view.services.poi.map
+
+import android.app.Dialog
+import android.content.res.Resources
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.FrameLayout
+import androidx.fragment.app.DialogFragment
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.telekom.citykey.R
+import com.telekom.citykey.databinding.PoiMarkerOverlayBinding
+import com.telekom.citykey.domain.city.CityInteractor
+import com.telekom.citykey.models.poi.PointOfInterest
+import com.telekom.citykey.utils.extensions.AccessibilityRole
+import com.telekom.citykey.utils.extensions.decodeHTML
+import com.telekom.citykey.utils.extensions.getColor
+import com.telekom.citykey.utils.extensions.loadFromDrawable
+import com.telekom.citykey.utils.extensions.openMapApp
+import com.telekom.citykey.utils.extensions.setAccessibilityRole
+import com.telekom.citykey.utils.extensions.setVisible
+import com.telekom.citykey.utils.extensions.viewBinding
+
+class PoiMarkerOverlay(
+    private val poiData: PointOfInterest,
+    private val categoryName: String,
+    private val resultListener: (Boolean) -> Unit
+) : BottomSheetDialogFragment() {
+    private val binding by viewBinding(PoiMarkerOverlayBinding::bind)
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.AuthDialogTheme)
+    }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
+        inflater.inflate(R.layout.poi_marker_overlay, container, false)
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val resultDialogFragment = super.onCreateDialog(savedInstanceState)
+        setFullHeight(resultDialogFragment)
+        return resultDialogFragment
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.toolbarPoiCategory.setNavigationIcon(R.drawable.ic_profile_close)
+        binding.toolbarPoiCategory.setNavigationIconTint(getColor(R.color.onSurface))
+        binding.toolbarPoiCategory.setNavigationContentDescription(R.string.accessibility_btn_close)
+        binding.toolbarPoiCategory.setNavigationOnClickListener {
+            dismiss()
+        }
+        binding.toolbarPoiCategory.title = categoryName
+        binding.addressLabel.setVisible(poiData.address.isNotEmpty())
+        binding.address.setVisible(poiData.address.isNotEmpty())
+        binding.locationNavigation.setVisible(poiData.address.isNotEmpty())
+        binding.locationNavigation.setAccessibilityRole(AccessibilityRole.Button)
+        binding.openingHours.setVisible(poiData.openHours.isNotEmpty())
+        binding.openingHours.setLinkTextColor(CityInteractor.cityColorInt)
+        binding.openingHoursLabel.setVisible(poiData.openHours.isNotEmpty())
+        binding.categoryTitle.text = poiData.title
+        binding.categorySubTitle.text = poiData.subtitle
+        binding.categorySubTitle.setVisible(poiData.subtitle.isNotBlank())
+        binding.openingHours.text = poiData.openHours.decodeHTML()
+        binding.address.text = poiData.address
+        binding.categoryGroupIcon.loadFromDrawable(poiData.categoryGroupIconId)
+        binding.categoryGroupIcon.setColorFilter(CityInteractor.cityColorInt)
+        binding.categoryContainer.apply {
+            setAccessibilityRole(AccessibilityRole.Button)
+            contentDescription = poiData.title + poiData.subtitle
+            setOnClickListener {
+                resultListener.invoke(true)
+                dismiss()
+            }
+        }
+        binding.locationNavigation.setTextColor(CityInteractor.cityColorInt)
+        binding.locationNavigation.setOnClickListener {
+            openMapApp(poiData.latitude, poiData.longitude)
+        }
+    }
+
+    private fun setFullHeight(dialogFragment: Dialog) {
+        dialogFragment.setOnShowListener { dialog ->
+            val params = binding.root.layoutParams as FrameLayout.LayoutParams
+            params.height = (Resources.getSystem().displayMetrics.heightPixels * 0.4).toInt()
+            binding.root.layoutParams = params
+
+            val bottomSheetDialog: BottomSheetDialog = dialog as BottomSheetDialog
+            val bottomSheetLayout: FrameLayout? =
+                bottomSheetDialog.findViewById(com.google.android.material.R.id.design_bottom_sheet)
+            BottomSheetBehavior.from(bottomSheetLayout!!).state = BottomSheetBehavior.STATE_EXPANDED
+        }
+    }
+}

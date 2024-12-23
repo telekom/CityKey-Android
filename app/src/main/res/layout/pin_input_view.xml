@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pinInputLayout"
+    style="@style/Widget.Design.TextInputLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="36dp"
+    app:endIconTint="@color/red"
+    app:hintAnimationEnabled="false"
+    app:hintEnabled="false"
+    app:errorEnabled="true"
+    app:validationTextAppearance="@style/stateText">
+
+    <com.telekom.citykey.custom.views.inputfields.PinInputEditText
+        android:id="@+id/pinInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:cursorVisible="false"
+        android:inputType="number"
+        android:maxLength="6"
+        android:paddingEnd="36dp"
+        android:textSize="24dp"
+        android:textColor="@color/onSurface"
+        tools:text="1234" />
+</com.google.android.material.textfield.TextInputLayout>

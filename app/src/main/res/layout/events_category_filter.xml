@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/auth_bottom_sheet_rounded"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarCategoryFilter"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:fitsSystemWindows="true"
+            app:title="@string/e_004_events_filter_categories_title"
+            app:titleTextColor="@color/onSurface" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnContainer"
+        android:layout_below="@+id/appBarLayout"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/global_content_margins">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/categoriesContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/global_content_margins"
+            android:paddingTop="@dimen/global_content_margins"
+            android:paddingEnd="@dimen/global_content_margins"
+            app:chipSpacingHorizontal="9dp"
+            app:chipSpacingVertical="0dp"
+            app:itemSpacing="0dp" />
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/btnContainer"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/onSurfaceSecondary" />
+
+        <com.telekom.citykey.custom.views.ProgressButton
+            android:id="@+id/applyFilterBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:focusable="true"
+            app:text="@string/e_003_show_events_button" />
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/categoriesErrorHint"
+        style="@style/RobotoRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="88dp"
+        android:gravity="center"
+        android:text="@string/e_004_events_filter_categories_error_text"
+        android:textAlignment="center"
+        android:textColor="@color/onSurface"
+        android:textSize="18sp"
+        android:visibility="invisible" />
+
+    <com.telekom.citykey.custom.views.OscaProgressBar
+        android:id="@+id/progressCategories"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/onSurface"
+        android:progressTint="@color/onSurface" />
+</RelativeLayout>

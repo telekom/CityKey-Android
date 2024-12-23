@@ -1,0 +1,115 @@
+{
+  "content": [
+    {
+      "service_code": "1",
+      "service_name": "Abfall",
+      "description": "",
+      "sub_categories": [
+        {
+          "service_code": "1.2",
+          "service_name": "Papierkorb überfüllt",
+          "description": "<p>Alle öffentlichen Papierkörbe werden regelmäßig entleert. Leider kommt es trotzdem immer wieder vor, dass aufgrund von unsachgemäßem Gebrauch oder stark erhöhtem Publikumsaufkommen Papierkörbe bereits kurz nach der Leerung wieder voll sind. Sofern Ihnen solche Zustände auffallen, melden Sie diese bitte möglichst mit Angabe der ID Nummer des Papierkorbes. Papierkörbe in der Fußgängerzone werden innerhalb eines Tages geleert. Papierkörbe in den Außenbezirken werden spätestens zum nächsten Werktag geleert.</p>\r\n",
+          "additional_info": true
+        },
+        {
+          "service_code": "1.1",
+          "service_name": "Papierkorb defekt",
+          "description": "<p>Leider kommt es immer wieder vor, dass öffentliche Papierkörbe Opfer von mutwilliger Zerstörung werden. Bitte unterstützen Sie unsere Arbeit für ein sauberes Stadtbild und melden Sie solche Beobachtungen mit möglichst genauer Angabe des Standortes. Ihr Anliegen ist fest beauftragt und wird durch die bonnorange AöR innerhalb von 2 bis 3 Werktagen bearbeitet.</p>\r\n",
+          "additional_info": true
+        },
+        {
+          "service_code": "1.3",
+          "service_name": "Sammelcontainer Altpapier voll",
+          "description": "<p>Ein Altpapier- oder Grünschnittsammelcontainer ist voll oder überfüllt. Die bonnorange AöR werden im Rahmen der Tourenplanung sich hierum kümmern. Die Bearbeitungsdauer kann daher variieren.</p>\r\n",
+          "additional_info": false
+        },
+        {
+          "service_code": "1.4",
+          "service_name": "Sammelcontainer Grünschnitt voll",
+          "description": "<p>Ein Altpapier- oder Grünschnittsammelcontainer ist voll oder überfüllt. Die bonnorange AöR werden im Rahmen der Tourenplanung sich hierum kümmern. Die Bearbeitungsdauer kann daher variieren.</p>\r\n",
+          "additional_info": false
+        },
+        {
+          "service_code": "1.5",
+          "service_name": "Wilde Müllkippe",
+          "description": "<p>Leider kommt es immer häufiger vor, dass Haus- und Sperrmüll und sogar gefährliche Abfälle (Schadstoffe) im Freiland, an Sammelstationen, im öffentlichen Straßenraum oder auf privaten Grundstücken unrechtmäßig abgestellt werden. Hierbei handelt es sich um eine Ordnungswidrigkeit, die mit einem Bußgeld bis zu einer Höhe von 5.100 Euro geahndet werden kann. Nach der Sperrmüllabfuhr sind Reste liegen geblieben? Bitte entsorgen Sie eigenen Sperrmüll bei den <a href=\"https://www.bonnorange.de/service/privatpersonen/was-kann-ich-wo-entsorgen/wertstoffhoefe\">Abfallsammelstellen</a>. Stammt der Sperrmüll allerdings nicht von Ihnen, melden Sie diese Fälle, damit der Stadtordnungsdienst die Verursacher ermitteln und der Abfall durch bonnorange AöR entfernt werden kann. Ihr Anliegen wird in der Regel innerhalb einer Woche erledigt.</p>\r\n",
+          "additional_info": false
+        }
+      ]
+    },
+    {
+      "service_code": "2",
+      "service_name": "Stadtbild und Grünschnitt",
+      "description": "",
+      "sub_categories": [
+        {
+          "service_code": "2.1",
+          "service_name": "Herrenlose Fahrräder, Fahrzeuge (Schrott)",
+          "description": "<p>Wenn Ihnen auf öffentlichen Flächen abgestellte Fahrräder, die offensichtlich seit längerer Zeit nicht mehr benutzt werden oder benutzt werden können, auffallen, melden Sie sich bitte. Dies gilt auch für abgemeldete (Schrott)Fahrzeuge ohne Nummernschilder, die auf öffentlichen Flächen abgestellt sind. Wir nehmen Ihr Anliegen direkt in die Bearbeitung des Stadtordnungsdienstes auf. Bitte berücksichtigen Sie, dass aufgrund von gesetzlich vorgegebenen Fristen wir den Eigentümern die Möglichkeit geben das Fahrrad bzw. das Fahrzeug selbst zu entfernen. Erst nach Ablauf der Frist darf die Stadt Bonn wieder vor Ort tätig werden. Wir bitten um Verständnis, dass die abschließende Bearbeitung aus diesem Grund mindestens fünf Wochen dauern kann. Ihr Anliegen ist aber fest beauftragt und wird vom Stadtordnungsdienst weiter bearbeitet.</p>\r\n",
+          "additional_info": false
+        },
+        {
+          "service_code": "2.2",
+          "service_name": "Grünpate werden",
+          "description": "<p>In Bonn gibt es bereits 630 Patenschaften von Bürgerinnen und Bürgern für Beete im öffentlichen Raum. Dabei handelt es sich um Baumbeete, Pflanzkübel und Grünflächen, die teilweise von Vereinen, Straßengemeinschaften oder Schulen angelegt, bepflanzt, gepflegt und unterhalten werden. Wir setzen uns mit Ihnen innerhalb von maximal einer Woche in Verbindung und beraten Sie zu der Patenschaft.</p>\r\n",
+          "additional_info": false
+        },
+        {
+          "service_code": "2.3",
+          "service_name": "Grünüberwuchs Verkehrsraum",
+          "description": "<p>Von öffentlichen Grünflächen wachsen Pflanzen auf Straßen oder Gehwege und führen zu eingeschränkter Sicht oder Nutzung. Das Amt für Stadtgrün kümmert sich hierum in einem Zeitraum von ungefähr sechs Wochen.</p>\r\n",
+          "additional_info": false
+        },
+        {
+          "service_code": "2.4",
+          "service_name": "Graffiti",
+          "description": "<p>Leider werden immer wieder städtische Gebäude oder Flächen beschmiert, wodurch der Eindruck der Verwahrlosung entstehen kann. Sollte Ihnen städtisches Eigentum auffallen, welches beschmiert wurde, melden Sie dies bitte, am besten mit Foto. Bitte haben Sie Verständnis dafür, dass je nach Ort und Größe der Schmiererei, verwendete Farbe und Art des beschmierten Untergrundes, die Entfernung zwischen einer und vier Wochen dauern kann. Ihr Anliegen ist fest beauftragt und wird durch das Städtische Gebäudemanagement bearbeitet.</p>\r\n",
+          "additional_info": false
+        }
+      ]
+    },
+    {
+      "service_code": "3",
+      "service_name": "Straßen und Verkehr",
+      "description": "",
+      "sub_categories": [
+        {
+          "service_code": "3.1",
+          "service_name": "Glassplitter",
+          "description": "<p>Glasscherben auf öffentlichen Flächen und Wegen können Verletzungen oder Reifenbeschädigungen verursachen. Dies wollen wir verhindern und beseitigen die Glasscherben in einem Zeitraum von maximal einer Woche. Sollte es sich um Glasscherben auf einem Spielplatz oder ähnlichem handeln, von welchen eine Gefahr für die Gesundheit ausgeht, bitten wir Sie uns über die Rufnummer 0228 - 77 33 33 direkt zu informieren.</p>\r\n",
+          "additional_info": false
+        },
+        {
+          "service_code": "3.2",
+          "service_name": "Gully/Bachablauf verstopft",
+          "description": "<p>Ein öffentlicher Straßengully ist verstopft oder ein Bach kann nicht richtig abfließen. Das Tiefbauamt wird nach Beitragseingang direkt fest beauftragt und sobald wie möglich vor Ort tätig werden.</p>\r\n",
+          "additional_info": false
+        },
+        {
+          "service_code": "3.3",
+          "service_name": "Straßenkanaldeckel defekt",
+          "description": "<p>Klappernde Straßenkanaldeckel repariert das Tiefbauamt. Die Beitragseingänge werden für die Tourenplanung zunächst gesammelt. Der Bearbeitungszeitpunkt kann daher variieren. Ihr Beitragseingang gilt als fest beauftragt und wird sobald wie möglich erledigt.</p>\r\n",
+          "additional_info": false
+        },
+        {
+          "service_code": "3.4",
+          "service_name": "Straßenschild defekt",
+          "description": "<p>Umgefahrene, defekte bzw. beschädigte Straßenschilder repariert das Tiefbauamt. Die Beitragseingänge werden für die Tourenplanung zunächst gesammelt. Der Zeitpunkt kann daher variieren. Ihr Beitragseingang gilt als fest beauftragt und wird sobald wie möglich erledigt. Wir bitten um Verständnis, dass wir Anfragen zu Markierungen, der Verkehrslenkung bzw. Änderungswünsche bei der Beschilderung über dieses Onlineangebot nicht beauskunften.</p>\r\n\r\n<p>Anliegen zu&nbsp;<strong>Laternen&nbsp;</strong>und&nbsp;<strong>Straßenbeleuchtung&nbsp;</strong>melden Sie bitte über die Seite der Stadtwerke Bonn:&nbsp;<br />\r\n<a href=\"https://www.stadtwerke-bonn.de/fuer-zuhause/kundenservice/stoerungsmeldung\">https://www.stadtwerke-bonn.de/fuer-zuhause/kundenservice/stoerungsmeldung</a></p>\r\n",
+          "additional_info": false
+        },
+        {
+          "service_code": "3.5",
+          "service_name": "Poller umgefahren",
+          "description": "<p>Ein umgefahrener Straßenpoller der Stadt Bonn wird durch das Tiefbauamt instandgesetzt. Die Beitragseingänge werden für die Tourenplanung zunächst gesammelt. Die Bearbeitungsdauer kann daher variieren.</p>\r\n",
+          "additional_info": false
+        },
+        {
+          "service_code": "3.6",
+          "service_name": "Ampel defekt",
+          "description": "<p>Eine einzelne Lampe ist defekt oder die Ampel „springt“ dauerhaft nicht um oder die Ampeltaste für Fußgänger funktioniert nicht und ist vermutlich defekt. Die Instandsetzung wird direkt fest beauftragt und in der Regel innerhalb von zwei Tagen durch einen Dienstleister durchgeführt.</p>\r\n\r\n<p>Anliegen zu <strong>Laternen </strong>und <strong>Straßenbeleuchtung </strong>melden Sie bitte über die Seite der Stadtwerke Bonn:&nbsp;<br />\r\n<a href=\"https://www.stadtwerke-bonn.de/fuer-zuhause/kundenservice/stoerungsmeldung\">https://www.stadtwerke-bonn.de/fuer-zuhause/kundenservice/stoerungsmeldung</a></p>\r\n",
+          "additional_info": false
+        }
+      ]
+    }
+  ]
+}

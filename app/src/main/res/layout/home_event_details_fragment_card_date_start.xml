@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dateCardS"
+    android:layout_width="64sp"
+    android:layout_height="42sp"
+    android:importantForAccessibility="yes"
+    android:visibility="gone"
+    app:cardCornerRadius="4sp"
+    app:cardElevation="0dp"
+    tools:visibility="visible">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        tools:background="@color/onSurface">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dateTextS"
+            style="@style/RobotoRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6sp"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="0dp"
+            android:lineSpacingMultiplier="0"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lineHeight="12sp"
+            tools:text="Sun, Oct" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dateNumberS"
+            style="@style/RobotoRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6sp"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="0dp"
+            android:lineSpacingMultiplier="0"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            app:firstBaselineToTopHeight="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dateTextS"
+            tools:text="11" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

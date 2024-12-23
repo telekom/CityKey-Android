@@ -1,0 +1,109 @@
+package com.telekom.citykey.view.user.profile.change_email
+
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import com.telekom.citykey.R
+import com.telekom.citykey.common.ErrorCodes.EMAIL_ALREADY_USED
+import com.telekom.citykey.common.ErrorCodes.EMAIL_EMPTY
+import com.telekom.citykey.common.ErrorCodes.EMAIL_EQUALS
+import com.telekom.citykey.common.ErrorCodes.EMAIL_INVALID
+import com.telekom.citykey.common.ErrorCodes.EMAIL_NO_EXIST
+import com.telekom.citykey.common.ErrorCodes.MULTIPLE_ERRORS
+import com.telekom.citykey.common.NetworkException
+import com.telekom.citykey.domain.global.GlobalData
+import com.telekom.citykey.domain.repository.UserRepository
+import com.telekom.citykey.domain.repository.exceptions.InvalidRefreshTokenException
+import com.telekom.citykey.domain.repository.exceptions.NoConnectionException
+import com.telekom.citykey.domain.user.UserState
+import com.telekom.citykey.models.OscaErrorResponse
+import com.telekom.citykey.models.api.requests.EmailChangeRequest
+import com.telekom.citykey.utils.SingleLiveEvent
+import com.telekom.citykey.utils.Validation
+import com.telekom.citykey.utils.extensions.retryOnError
+import com.telekom.citykey.view.NetworkingViewModel
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
+
+class ChangeEmailViewModel(
+    private val globalData: GlobalData,
+    private val userRepository: UserRepository
+) : NetworkingViewModel() {
+
+    companion object {
+        private const val CHANGE_EMAIL_API_TAG = "changeEmail"
+    }
+
+    val requestSent: LiveData<Boolean> get() = _requestSent
+    val generalErrors: LiveData<Int> get() = _generalErrors
+    val onlineErrors: LiveData<Pair<String?, String?>> get() = _onlineErrors
+    val currentEmail: LiveData<String> get() = _currentEmail
+    val logUserOut: LiveData<Unit> get() = _logUserOut
+    val inputValidation: SingleLiveEvent<Int?> get() = _inputValidation
+
+    private val _inputValidation: SingleLiveEvent<Int?> = SingleLiveEvent()
+    private val _requestSent: SingleLiveEvent<Boolean> = SingleLiveEvent()
+    private val _generalErrors: SingleLiveEvent<Int> = SingleLiveEvent()
+    private val _onlineErrors: SingleLiveEvent<Pair<String?, String?>> = SingleLiveEvent()
+    private val _currentEmail: MutableLiveData<String> = MutableLiveData()
+    private val _logUserOut: SingleLiveEvent<Unit> = SingleLiveEvent()
+
+    private var newEmail = ""
+
+    init {
+        launch {
+            globalData.user
+                .subscribeOn(Schedulers.io())
+                .filter { it is UserState.Present }
+                .map { (it as UserState.Present).profile.email }
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(_currentEmail::postValue)
+        }
+    }
+
+    fun onSaveClicked(newEmail: String) {
+        this.newEmail = newEmail
+
+        launch {
+            userRepository.changeEmail(EmailChangeRequest(newEmail.lowercase()))
+                .retryOnError(this::onError, retryDispatcher, pendingRetries, CHANGE_EMAIL_API_TAG)
+                .subscribe(
+                    {
+                        _requestSent.postValue(true)
+                    },
+                    this::onError
+                )
+        }
+    }
+
+    fun onError(throwable: Throwable) {
+        when (throwable) {
+            is InvalidRefreshTokenException -> {
+                globalData.logOutUser(throwable.reason)
+                _logUserOut.postValue(Unit)
+            }
+            is NoConnectionException -> {
+                _showRetryDialog.postValue(CHANGE_EMAIL_API_TAG)
+            }
+            is NetworkException -> {
+                (throwable.error as OscaErrorResponse).errors.forEach {
+                    when (it.errorCode) {
+                        MULTIPLE_ERRORS -> _generalErrors.postValue(R.string.p_003_profile_email_change_technical_error)
+                        EMAIL_ALREADY_USED, EMAIL_INVALID, EMAIL_EMPTY, EMAIL_EQUALS, EMAIL_NO_EXIST -> _onlineErrors.postValue(it.userMsg to null)
+                        else -> _technicalError.value = Unit
+                    }
+                }
+            }
+            else -> {
+                _technicalError.value = Unit
+            }
+        }
+    }
+
+    fun onEmailChange(email: String) {
+        if (!Validation.isEmailFormat(email)) {
+            _inputValidation.value = R.string.r_001_registration_error_incorrect_email
+        } else {
+            _inputValidation.value = null
+        }
+    }
+}

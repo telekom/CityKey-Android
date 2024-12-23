@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootValue"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/auth_bottom_sheet_rounded"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/wc_004_ftu_title"
+            app:titleTextColor="@color/onSurface" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        tools:background="#E20074">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/topIcon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_location_icon" />
+
+    </RelativeLayout>
+
+    <com.telekom.citykey.custom.views.inputfields.OscaAutofillInputLayout
+        android:id="@+id/streetName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/global_content_margins"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="@dimen/global_content_margins"
+        app:hint="@string/wc_004_ftu_street_name"
+        app:hintTextAppearance="@style/hintText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutContent"
+        app:removeErrorOnChange="true"
+        app:validationIconType="validation"
+        app:validationTextAppearance="@style/stateText" />
+
+    <com.telekom.citykey.custom.views.inputfields.OscaAutofillInputLayout
+        android:id="@+id/houseNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/global_content_margins"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="@dimen/global_content_margins"
+        android:visibility="gone"
+        app:hint="@string/wc_004_ftu_house_number"
+        app:hintTextAppearance="@style/hintText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/streetName"
+        app:removeErrorOnChange="false"
+        app:validationIconType="validation"
+        app:validationTextAppearance="@style/stateText"
+        tools:visibility="visible" />
+
+    <com.telekom.citykey.custom.views.inputfields.OscaInputLayout
+        android:id="@+id/cityName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/global_content_margins"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="@dimen/global_content_margins"
+        app:hint="@string/wc_004_ftu_city"
+        app:hintTextAppearance="@style/hintText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/houseNumber" />
+
+    <View
+        android:id="@+id/waste_calendar_details_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/separator"
+        app:layout_constraintBottom_toTopOf="@id/progressBtnAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.telekom.citykey.custom.views.ProgressButton
+        android:id="@+id/progressBtnAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingHorizontal="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:text="@string/wc_004_ftu_show_result_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

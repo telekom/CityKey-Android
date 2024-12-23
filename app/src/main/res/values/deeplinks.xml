@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Fixed Deeplinks -->
+    <string name="deeplink_home" translatable="false">"citykey://home/"</string>
+    <string name="deeplink_infobox" translatable="false">"citykey://infobox/"</string>
+    <string name="deeplink_services" translatable="false">"citykey://services"</string>
+    <string name="deeplink_polls_list" translatable="false">"citykey://services/polls/list"</string>
+    <string name="deeplink_defect_reporter" translatable="false">"citykey://services/defectreporter"</string>
+    <string name="deeplink_egov" translatable="false">"citykey://services/egov"</string>
+
+    <!-- Custom & Dynamic Deeplinks -->
+    <string name="deeplink_infobox_message" translatable="false">"citykey://infobox?messageId={messageId}"</string>
+
+</resources>

@@ -1,0 +1,194 @@
+{
+  "content": [
+    {
+      "categoryGroupId": "5",
+      "categoryGroupName": "Activities",
+      "categoryGroupIcon": "poi_activities_2x.png",
+      "categoryList": [
+        {
+          "categoryId": 163,
+          "categoryName": "Barbecue areas"
+        },
+        {
+          "categoryId": 129,
+          "categoryName": "Boat landing stages"
+        },
+        {
+          "categoryId": 120,
+          "categoryName": "Indoor swimming pools"
+        },
+        {
+          "categoryId": 162,
+          "categoryName": "Organic City Shopping Guide"
+        },
+        {
+          "categoryId": 115,
+          "categoryName": "Outdoor pools"
+        },
+        {
+          "categoryId": 26,
+          "categoryName": "Sports facilities"
+        },
+        {
+          "categoryId": 164,
+          "categoryName": "Weekly markets"
+        }
+      ]
+    },
+    {
+      "categoryGroupId": "7",
+      "categoryGroupName": "Culture",
+      "categoryGroupIcon": "poi_culture_2x.png",
+      "categoryList": [
+        {
+          "categoryId": 117,
+          "categoryName": "Cabaret & Variety"
+        },
+        {
+          "categoryId": 29,
+          "categoryName": "Drama, theater and opera"
+        },
+        {
+          "categoryId": 165,
+          "categoryName": "Locations of churches, chapels and monasteries"
+        },
+        {
+          "categoryId": 128,
+          "categoryName": "Municipal libraries"
+        },
+        {
+          "categoryId": 30,
+          "categoryName": "Museums"
+        }
+      ]
+    },
+    {
+      "categoryGroupId": "4",
+      "categoryGroupName": "Family",
+      "categoryGroupIcon": "poi_family_2x.png",
+      "categoryList": [
+        {
+          "categoryId": 23,
+          "categoryName": "Day care centers"
+        },
+        {
+          "categoryId": 33,
+          "categoryName": "Playgrounds & football fields"
+        },
+        {
+          "categoryId": 126,
+          "categoryName": "Schools"
+        }
+      ]
+    },
+    {
+      "categoryGroupId": "14",
+      "categoryGroupName": "Mobility",
+      "categoryGroupIcon": "icon-category-mobility-2@2x.png",
+      "categoryList": [
+        {
+          "categoryId": 114,
+          "categoryName": "Bicycle parking"
+        },
+        {
+          "categoryId": 121,
+          "categoryName": "Cab stands"
+        },
+        {
+          "categoryId": 168,
+          "categoryName": "Coach parking locations"
+        },
+        {
+          "categoryId": 125,
+          "categoryName": "Electric charging stations (SWB)"
+        },
+        {
+          "categoryId": 167,
+          "categoryName": "Locations of the bicycle measuring points"
+        },
+        {
+          "categoryId": 166,
+          "categoryName": "Motorcycle parking"
+        },
+        {
+          "categoryId": 118,
+          "categoryName": "Parking garages"
+        }
+      ]
+    },
+    {
+      "categoryGroupId": "6",
+      "categoryGroupName": "Nature",
+      "categoryGroupIcon": "poi_nature_2x.png",
+      "categoryList": [
+        {
+          "categoryId": 122,
+          "categoryName": "Cemeteries"
+        },
+        {
+          "categoryId": 124,
+          "categoryName": "Dog runs"
+        },
+        {
+          "categoryId": 171,
+          "categoryName": "Locations of public parks and gardens"
+        },
+        {
+          "categoryId": 170,
+          "categoryName": "Locations of recreational facilities"
+        },
+        {
+          "categoryId": 172,
+          "categoryName": "Locations of the geological trail"
+        },
+        {
+          "categoryId": 28,
+          "categoryName": "Recreation in nature"
+        }
+      ]
+    },
+    {
+      "categoryGroupId": "16",
+      "categoryGroupName": "Urban Cleanliness",
+      "categoryGroupIcon": "icon-category-recycling@2x.png",
+      "categoryList": [
+        {
+          "categoryId": 32,
+          "categoryName": "Battery collection containers"
+        },
+        {
+          "categoryId": 116,
+          "categoryName": "Green waste collection points"
+        },
+        {
+          "categoryId": 169,
+          "categoryName": "Public toilets"
+        },
+        {
+          "categoryId": 119,
+          "categoryName": "Recycling centers"
+        },
+        {
+          "categoryId": 22,
+          "categoryName": "Small electrical appliances/Red garbage cans"
+        },
+        {
+          "categoryId": 21,
+          "categoryName": "Used glass containers"
+        },
+        {
+          "categoryId": 113,
+          "categoryName": "Used textile containers"
+        },
+        {
+          "categoryId": 25,
+          "categoryName": "Waste bags/waste sacks(points of sale)"
+        },
+        {
+          "categoryId": 112,
+          "categoryName": "Waste paper containers"
+        }
+      ]
+    }
+  ]
+}

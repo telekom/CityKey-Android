@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- top=1px (yes, not dp) is the "hack" for the gap between the arrow and the shape itself. -->
+    <item
+        android:top="1px"
+        android:right="16dp">
+        <shape>
+            <corners android:radius="4dp" />
+            <solid android:color="@color/background80a" />
+        </shape>
+    </item>
+
+</layer-list>

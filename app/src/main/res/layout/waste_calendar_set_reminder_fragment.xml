@@ -1,0 +1,292 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutWasteReminders"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?attr/colorSurface">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarWasteReminders"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/onSurface" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/marginGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/global_content_margins" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/headerText"
+                style="@style/RobotoBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/global_content_margins"
+                android:text="@string/wc_005_header_label"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="@id/marginGuideline"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/headerDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="18dp"
+                android:background="@color/onSurface"
+                app:layout_constraintTop_toBottomOf="@id/headerText" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/settingsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha="0.3"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/headerDivider">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/timeBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/simple_ripple">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/timeLabel"
+                        style="@style/RobotoRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/global_content_margins"
+                        android:text="@string/wc_005_time_label"
+                        android:textColor="@color/onSurface"
+                        android:textSize="17sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/timeText"
+                        style="@style/RobotoRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="@dimen/global_content_margins"
+                        android:layout_marginBottom="12dp"
+                        android:text="07:00"
+                        android:textColor="@color/onSurface"
+                        android:textSize="17sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/timeDivider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/global_content_margins"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/separator"
+                        app:layout_constraintTop_toBottomOf="@id/timeLabel" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/sameDayBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/simple_ripple">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/sameDayLabel"
+                        style="@style/RobotoRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/global_content_margins"
+                        android:labelFor="@id/sameDaySwitch"
+                        android:text="@string/wc_005_same_day_label"
+                        android:textColor="@color/onSurface"
+                        android:textSize="17sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/sameDaySwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/global_content_margins"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/sameDayDivider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/global_content_margins"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/separator"
+                        app:layout_constraintTop_toBottomOf="@id/sameDayLabel" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/dayBeforeBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/simple_ripple">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/dayBeforeLabel"
+                        style="@style/RobotoRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/global_content_margins"
+                        android:labelFor="@id/dayBeforeSwitch"
+                        android:text="@string/wc_005_day_before_label"
+                        android:textColor="@color/onSurface"
+                        android:textSize="17sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/dayBeforeSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/global_content_margins"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/dayBeforeDivider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/global_content_margins"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/separator"
+                        app:layout_constraintTop_toBottomOf="@id/dayBeforeLabel" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/twoDaysBeforeBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/simple_ripple">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/twoDaysBeforeLabel"
+                        style="@style/RobotoRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/global_content_margins"
+                        android:labelFor="@id/twoDaysBeforeSwitch"
+                        android:text="@string/wc_005_two_days_before_label"
+                        android:textColor="@color/onSurface"
+                        android:textSize="17sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/twoDaysBeforeSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/global_content_margins"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/twoDaysBeforeDivider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/separator"
+                        app:layout_constraintTop_toBottomOf="@id/twoDaysBeforeLabel" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/notesLabel"
+                style="@style/RobotoBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/global_content_margins"
+                android:text="@string/dialog_title_note"
+                android:textColor="@color/onSurface"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@id/marginGuideline"
+                app:layout_constraintTop_toBottomOf="@id/settingsLayout" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/disclaimer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:text="@string/wc_005_push_notification_disclaimer"
+                android:textColor="@color/onSurfaceSecondary"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/marginGuideline"
+                app:layout_constraintTop_toBottomOf="@id/notesLabel" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/osNotificationsLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/marginGuideline"
+                app:layout_constraintTop_toBottomOf="@id/disclaimer">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/notificationsLabel"
+                    style="@style/RobotoBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/global_content_margins"
+                    android:text="@string/wc_005_push_notificaion_label"
+                    android:textColor="@color/onSurface"
+                    android:textSize="17sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/global_content_margins"
+                    android:text="@string/wc_005_push_notification_setting_info_label"
+                    android:textColor="@color/onSurfaceSecondary"
+                    android:textSize="15sp" />
+
+                <com.telekom.citykey.custom.views.ProgressButton
+                    android:id="@+id/buttonOSNotifications"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/global_content_margins"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:paddingBottom="18dp"
+                    app:text="@string/wc_005_push_notificaion_setting_btn" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

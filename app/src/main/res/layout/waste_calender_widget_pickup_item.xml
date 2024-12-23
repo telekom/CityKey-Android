@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/wasteCalendarPickupItemOuterContainer"
+    style="@style/AppTheme.AppWidgetContainerParent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/waste_calendar_widget_divider_height">
+
+    <RelativeLayout
+        android:id="@+id/wasteCalendarPickupItemContainer"
+        style="@style/AppTheme.AppWidgetContainerParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/pickupIcon"
+            android:layout_width="@dimen/waste_widget_pickup_icon_size"
+            android:layout_height="@dimen/waste_widget_pickup_icon_size"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginVertical="@dimen/waste_pickup_item_vertical_margin"
+            android:layout_marginStart="@dimen/waste_widget_pickup_icon_horizontal_start_margin"
+            android:layout_marginEnd="@dimen/waste_widget_pickup_icon_horizontal_end_margin"
+            app:srcCompat="@drawable/ic_waste_trash_icon" />
+
+        <TextView
+            android:id="@+id/pickupName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:layout_marginVertical="@dimen/waste_pickup_item_vertical_margin"
+            android:layout_marginEnd="@dimen/widget_layout_margin"
+            android:layout_toRightOf="@+id/pickupIcon"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:hyphenationFrequency="full"
+            android:maxLines="1"
+            android:textColor="@color/onSurface"
+            android:textSize="@dimen/waste_pickup_item_text_size"
+            tools:text="TeaserTeaserTeaserTeaserTeaserTeaserTeaserTeaserTeaserTeaserTeaserTeaserTeaserTeaserTeaser" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/lastItemPaddingView"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_below="@+id/wasteCalendarPickupItemContainer"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textview.MaterialTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/RobotoBold"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="57dp"
+    android:background="@color/background"
+    android:textSize="18sp"
+    android:gravity="center_vertical"
+    android:paddingStart="@dimen/global_content_margins"
+    android:paddingEnd="@dimen/global_content_margins"
+    android:textColor="@color/onSurface"
+    tools:text="Laufende Umfragen" />

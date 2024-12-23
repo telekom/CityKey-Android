@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutItemInfoBox"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="1dp"
+    android:transitionGroup="true">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toEndOf="@id/status"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/category"
+        style="@style/RobotoMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/onSurfaceSecondary"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/icon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@tools:sample/full_names" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/title"
+        style="@style/RobotoMedium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/onSurface"
+        android:textSize="15sp"
+        android:hyphenationFrequency="full"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/icon"
+        app:layout_constraintTop_toBottomOf="@id/category"
+        tools:text="@tools:sample/lorem/random" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/description"
+        style="@style/RobotoRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:paddingBottom="12dp"
+        android:textColor="@color/onSurfaceSecondary"
+        android:textSize="15sp"
+        android:hyphenationFrequency="full"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/icon"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:text="@tools:sample/lorem/random" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/date"
+        style="@style/RobotoRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:textColor="@color/onSurfaceSecondary"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@tools:sample/date/hhmm" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/attachments"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/date"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_file_download_small"
+        app:tint="@color/onSurface"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/status"
+        android:layout_width="@dimen/infobox_item_status_width"
+        android:layout_height="0dp"
+        android:background="@color/onSurface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

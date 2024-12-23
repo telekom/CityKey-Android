@@ -1,0 +1,36 @@
+{
+  "content": [
+    {
+      "id": 1,
+      "name": "Bioabfallbehälter"
+    },
+    {
+      "id": 3,
+      "name": "Gelbe Behälter"
+    },
+    {
+      "id": 4,
+      "name": "Gelbe Großbehälter"
+    },
+    {
+      "id": 7,
+      "name": "Graue Großbehälter"
+    },
+    {
+      "id": 2,
+      "name": "Papierbehälter"
+    },
+    {
+      "id": 9,
+      "name": "Restabfallbehälter"
+    },
+    {
+      "id": 6,
+      "name": "Sperrmüll"
+    },
+    {
+      "id": 5,
+      "name": "Weihnachtsbäume"
+    }
+  ]
+}

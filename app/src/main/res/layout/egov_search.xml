@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LayoutPageDetailedService"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?attr/colorSurface"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarEgovSearch"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/egov_search_hint"
+            app:titleTextColor="@color/onSurface" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/searchBar"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:paddingStart="@dimen/global_content_margins"
+            android:paddingTop="16dp"
+            android:paddingEnd="@dimen/global_content_margins"
+            android:paddingBottom="16dp"
+            android:transitionName="search_box"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/onSurface"
+            app:boxStrokeWidth="1dp"
+            app:endIconDrawable="@drawable/ic_egov_search_clear"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/onSurfaceSecondary"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false"
+            app:hintTextColor="@color/onSurface"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconDrawable="@drawable/ic_egov_search">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/egov_search_hint"
+                android:includeFontPadding="false"
+                android:padding="0dp"
+                android:textColor="@color/onSurface"
+                android:textSize="17sp"
+                android:theme="@style/EgovSearchEditTextStyle" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchResults"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:listitem="@layout/egov_services_item" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

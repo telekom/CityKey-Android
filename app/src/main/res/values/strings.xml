@@ -1,0 +1,1151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Placeholder and default values -->
+    <string name="a_empty">""</string>
+    <string name="a_zero_euro">"0€"</string>
+    <string name="a_placeholder_password">"••••••••••"</string>
+
+    <!-- General dialogs -->
+    <string name="dialog_title_note">"Note"</string>
+
+    <!-- General dialog: technical error -->
+    <string name="dialog_technical_error_title">"Oops…"</string>
+    <string name="dialog_technical_error_message">"Unfortunately, something went wrong. Please try again later."</string>
+
+    <!-- General dialog: update -->
+    <string name="dialog_update_app_message">"Update"</string>
+
+    <!-- General dialog: function not supported -->
+    <string name="dialog_message_unsupported">"This feature is currently not supported."</string>
+
+    <!-- General dialog: login required -->
+    <string name="dialog_login_required_title">"Please log in"</string>
+
+    <!-- General dialog: login required -->
+    <string name="dialog_login_required_btn_later">"Later"</string>
+    <string name="dialog_login_required_btn_login">"Login"</string>
+    <string name="dialog_login_required_message">"Please log in to use this feature."</string>
+
+    <!-- General dialog: access right management -->
+    <string name="dialog_permission_message">"You can change the app permissions in the settings at any time."</string>
+
+    <!-- Bottom NavigationBar -->
+    <string name="h_001_navigation_bar_btn_citizen_services">"Services"</string>
+    <string name="h_001_navigation_bar_btn_home">"Home"</string>
+    <string name="h_001_navigation_bar_btn_infobox">"Mailbox"</string>
+    <string name="h_001_navigation_bar_btn_market_place">"Marketplace"</string>
+
+    <!-- NFC -->
+    <string name="a_message_nfc_not_enabled">"NFC is not enabled. Please enable and try again."</string>
+    <string name="a_message_nfc_not_supported">"NFC is not supported by your device."</string>
+
+    <!-- p_ profile 
+ p_001 profile main -->
+    <string name="p_001_profile_title">"Profile"</string>
+    <string name="p_001_profile_btn_imprint">"Imprint"</string>
+
+    <!-- LOGOUT -->
+    <string name="p_001_profile_btn_logout">"Logout"</string>
+    <string name="p_001_profile_label_password">"Password"</string>
+    <string name="p_001_profile_label_account_settings">"User account"</string>
+    <string name="p_001_profile_label_birthday">"Date of birth"</string>
+    <string name="p_001_profile_label_data_security">"Data Privacy Notice"</string>
+    <string name="p_001_profile_label_email">"E-mail"</string>
+    <string name="p_001_profile_label_first_name">"First name"</string>
+    <string name="p_001_profile_label_last_name">"Last name"</string>
+    <string name="p_001_profile_label_personal_data">"Personal details"</string>
+    <string name="p_001_profile_label_residence">"Residence"</string>
+
+    <!-- p_002 account edits -->
+    <string name="p_002_profile_settings_label_email">"E-mail"</string>
+
+    <!-- PASSWORD -->
+    <string name="p_002_profile_settings_label_password">"Password"</string>
+
+    <!-- p_003 update email -->
+    <string name="p_003_profile_email_change_title">"Update e-mail"</string>
+
+    <!-- SAVE -->
+    <string name="p_003_profile_email_change_btn_save">"Save"</string>
+    <string name="p_003_profile_email_change_hint_cur_email">"Current e-mail"</string>
+    <string name="p_003_profile_email_change_hint_new_email">"New e-mail"</string>
+    <string name="p_003_profile_email_change_error_invalid_email">"E-mail address is invalid"</string>
+
+    <!-- p_004 update email confirmation -->
+    <string name="p_004_profile_email_changed_title">"Confirm your e-mail"</string>
+
+    <!-- try again -->
+    <string name="p_004_profile_email_changed_btn_resend">"Try again"</string>
+    <string name="p_004_profile_email_changed_info_not_received">"Didn\'t receive a confirmation link?"</string>
+    <string name="p_004_profile_email_changed_info_received">"You can now log into your account with your new login details."</string>
+    <string name="p_004_profile_email_changed_info_sent_mail">"You have successfully updated your e-mail address."</string>
+    <string name="p_004_profile_email_changed_info_sent_link">"We\'ve e-mailed you a new confirmation link."</string>
+
+    <!-- p_005 change password -->
+    <string name="p_005_profile_password_change_title">"Change Password"</string>
+    <string name="p_005_profile_password_change_btn_forgot_password">"Forgot your password?"</string>
+    <string name="p_005_profile_password_change_btn_save">"Save"</string>
+    <string name="p_005_profile_password_change_hint_cur_password">"Current password"</string>
+    <string name="p_005_profile_password_change_hint_new_password">"New password"</string>
+    <string name="p_005_profile_password_change_hint_repeat_password">"Confirm new password"</string>
+    <string name="p_005_profile_password_change_hint_strength">"Please use: %s"</string>
+    <string name="p_005_profile_password_change_info_strength_strong">"Strong password"</string>
+    <string name="p_005_profile_password_change_error_no_match">"Passwords do not match"</string>
+    <string name="p_005_profile_password_change_error_too_weak">"Password is too weak"</string>
+    <string name="p_005_profile_password_change_error_empty_field">"This field is required"</string>
+
+    <!-- p_006 change password confirmation -->
+    <string name="p_006_profile_password_changed_title">"Password changed"</string>
+    <string name="p_006_profile_password_changed_info_done">"You have successfully changed your password."</string>
+    <string name="p_006_profile_password_changed_info_next">"You can now log into your account with your new login details."</string>
+
+    <!-- l_ login
+ l_001 login_main -->
+    <string name="l_001_login_title">"Login"</string>
+    <string name="l_001_login_btn_forgot_password">"Did you forget your password?"</string>
+    <string name="l_001_login_btn_imprint">"Imprint"</string>
+    <string name="l_001_login_btn_login">"Login"</string>
+    <string name="l_001_login_btn_privacy_short">"Data Privacy Notice"</string>
+    <string name="l_001_login_btn_register">"Register now"</string>
+    <string name="l_001_login_checkbox_stay_loggedin">"Keep me logged in"</string>
+    <string name="l_001_login_hint_email">"E-mail"</string>
+    <string name="l_001_login_hint_password">"Password"</string>
+    <string name="l_001_login_info_not_registered">"Not registered yet?"</string>
+
+    <!-- unused -->
+    <string name="l_001_login_error_password_wrong">"The password is incorrect."</string>
+
+    <!-- l_002 account locked -->
+    <string name="l_002_login_locked_account_title">"Account locked."</string>
+    <string name="l_002_login_locked_account_info">"Your account is temporarily locked due to 4 failed login attempts."</string>
+
+    <!-- l_003 reset link sent/resent
+ l_004 confirm email first -->
+    <string name="l_004_login_confirm_email_title">"Confirm your e-mail"</string>
+    <string name="l_004_login_confirm_email_btn_resend">"Resend e-mail"</string>
+    <string name="l_004_login_confirm_email_info_sent_link">"We\'ve sent a new confirmation link to your e-mail address. Resending is only available once. "</string>
+    <string name="l_004_login_confirm_email_info_check_inbox">"The address %s has not been confirmed yet. Please check your inbox for the verification PIN."</string>
+    <string name="l_004_login_confirm_email_info_click_link">"Please click on the confirmation link to log in to your account."</string>
+    <string name="l_004_login_confirm_email_info_not_received">"Didn\'t receive a confirmation link?"</string>
+
+    <!-- r_ registration 
+ r_001 registration main -->
+    <string name="r_001_registration_title">"Registration"</string>
+
+    <!-- unused -->
+    <string name="r_001_registration_btn_register">"Register"</string>
+    <string name="r_001_registration_label_agreement_abstract">"I have read and agree to the %s"</string>
+    <string name="r_001_registration_label_agreement_privacy">"Data Privacy Notice"</string>
+    <string name="r_001_registration_label_agreement_terms">"Terms &amp; Conditions"</string>
+    <string name="r_001_registration_label_check_terms">"I have read and agree to the Terms &amp; Conditions"</string>
+    <string name="r_001_registration_label_consent_required">"Your consent is required."</string>
+    <string name="r_001_registration_label_read_security">"I have read and agree to the Data Security Information"</string>
+    <string name="r_001_registration_hint_password_strength">"Please use: %s"</string>
+    <string name="r_001_registration_hint_password_strong">"Strong password"</string>
+    <string name="r_001_registration_hint_birthday">"Date of birth (OPTIONAL)"</string>
+    <string name="r_001_registration_hint_email">"E-mail"</string>
+    <string name="r_001_registration_hint_first_name">"First name"</string>
+    <string name="r_001_registration_hint_last_name">"Last name"</string>
+    <string name="r_001_registration_hint_password">"Password"</string>
+    <string name="r_001_registration_hint_password_repeat">"Confirm password"</string>
+    <string name="r_001_registration_error_password_no_match">"Passwords do not match"</string>
+    <string name="r_001_registration_error_password_too_weak">"Too weak"</string>
+    <string name="r_001_registration_error_empty_field">"Required field"</string>
+    <string name="r_001_registration_p_005_profile_password_strength_label">"Password strength"</string>
+    <string name="r_001_registration_p_005_profile_password_strength_hint_min_8_chars">"minimum 8 characters"</string>
+    <string name="r_001_registration_p_005_profile_password_strength_error_min_1_symbol">"at least one symbol"</string>
+
+    <!-- unused 
+ r_002 registration terms and conditions drawer 
+ r_003 registration data security information drawer 
+ r_004 registration confirmation -->
+    <string name="r_004_registration_confirmation_title">"Confirm your e-mail"</string>
+    <string name="r_004_registration_confirmation_btn_resend">"Resend e-mail"</string>
+    <string name="r_004_registration_confirmation_info_click_link">"Please click on the confirmation link to log in to your account."</string>
+    <string name="r_004_registration_confirmation_info_not_received">"Didn\'t receive the PIN?"</string>
+    <string name="r_004_registration_confirmation_info_sent_link">"We e-mailed you a new confirmation PIN. Resending is only available once. "</string>
+    <string name="r_004_registration_confirmation_info_sent_mail">"We have sent a verification PIN to your address %s"</string>
+    <string name="r_004_registration_confirmation_dialog_failed_title">"Registration not possible"</string>
+    <string name="r_004_registration_confirmation_dialog_failed_content">"Unfortunately, something went wrong. Please try again."</string>
+
+    <!-- d_ delete account
+ d_001 delete account main
+ d_002 delete account confirmation
+ d_003 delete account success
+ f_ forgot password/password recovery
+ f_001 forgot password main form -->
+    <string name="f_001_forgot_password_title">"Reset password"</string>
+    <string name="f_001_forgot_password_btn_reset_password">"Reset password"</string>
+    <string name="f_001_forgot_password_btn_resend_mail">"Resend e-mail"</string>
+    <string name="f_001_forgot_password_label_not_confirmed">"This e-mail address has not been confirmed yet."</string>
+    <string name="f_001_forgot_password_hint_email">"E-mail"</string>
+    <string name="f_001_forgot_password_info_verify_mail">"We have sent a reset link to %s. Please check your e-mail."</string>
+    <string name="f_001_forgot_password_info_follow_instructions">"Follow the instructions to quickly gain access to your account."</string>
+    <string name="f_001_forgot_password_info_not_received">"Didn\'t receive a reset link?"</string>
+    <string name="f_001_forgot_password_info_click_link">"You can easily set up a new password. We will e-mail you a PIN to do that. "</string>
+    <string name="f_001_forgot_password_info_sent_link">"We e-mailed you a new reset link."</string>
+    <string name="f_001_forgot_password_info_locked_account">"You can unlock your account by setting up a new password."</string>
+    <string name="f_001_forgot_password_error_invalid_email">"Please enter a valid e-mail address."</string>
+
+    <!-- f_002 forgot password/email not confirmed
+ f_003 forgot password confirmation -->
+    <string name="f_003_forgot_password_confirmation_title">"Reset link sent"</string>
+
+    <!-- i_ imprint & data security
+ i_001 data security -->
+    <string name="i_002_privacy_title">"Data Privacy Notice"</string>
+    <string name="i_002_privacy_title_short">"Data Privacy"</string>
+
+    <!-- i_002 imprint -->
+    <string name="i_001_imprint_title">"Imprint"</string>
+
+    <!-- s_ city services & marketplace -->
+    <string name="s_001_002_003_004_ribbon_label_new_item">"New"</string>
+    <string name="s_001_services_002_marketplaces_btn_categories_show_all">"Show all"</string>
+    <string name="s_001_services_002_marketplaces_title_categories">"Categories"</string>
+    <string name="s_001_services_002_marketplaces_btn_favorites_edit">"Edit"</string>
+    <string name="s_001_services_002_marketplaces_title_favorites">"Favorites"</string>
+    <string name="s_001_services_002_marketplaces_title_most_used">"Most used"</string>
+    <string name="s_001_services_002_marketplaces_title_ours">"My services"</string>
+    <string name="s_001_services_002_marketplaces_btn_favorites_save">"Save"</string>
+
+    <!-- s_001 city services main -->
+    <string name="s_001_services_title">"Services"</string>
+    <string name="s_001_services_subtitle">"Here you can find all the services offered by your city."</string>
+    <string name="s_001_services_title_new">"New services"</string>
+
+    <!-- s_002 marketplace main -->
+    <string name="s_002_marketplaces_title">"Marketplace"</string>
+    <string name="s_002_marketplaces_subtitle">"Find the best marketplace deals in your city."</string>
+    <string name="s_002_marketplaces_title_branches">"Categories"</string>
+
+    <!-- Hi. Does this title refer to new marketplace categories or individual offers/deals in a certain category? -->
+    <string name="s_002_marketplaces_title_new">"New deals"</string>
+    <string name="s_002_marketplaces_title_ours">"Our marketplaces"</string>
+
+    <!-- s_003 filter categories -->
+    <string name="s_003_all_marketplaces_title">"All marketplaces"</string>
+    <string name="s_003_all_services_title">"All services"</string>
+
+    <!-- s_004 services second level -->
+    <string name="s_004_all_services_title">"All services"</string>
+
+    <!-- s_005 locked content modal 
+ s_006 limited city services modal 
+ s_007 detailed marketplace and service -->
+    <string name="s_007_detailed_service_title">"Services"</string>
+
+    <!-- s_005 locked content modal 
+ s_006 limited city services modal 
+ s_007 detailed marketplace and service -->
+    <string name="s_007_detailed_marketplace_title">"Marketplaces"</string>
+    <string name="s_007_detailed_service_btn_open_service">"Open service"</string>
+    <string name="s_007_detailed_service_btn_set_appointment">"Schedule an appointment"</string>
+    <string name="s_007_detailed_service_dialog_city_restricted_btn_change">"Change to %s"</string>
+    <string name="s_007_detailed_service_dialog_city_restricted_message">"You must be a resident to access all citizen services."</string>
+    <string name="s_007_detailed_service_dialog_city_restricted_title">"Limited access"</string>
+    <string name="s_007_detailed_service_dialog_city_restricted_btn_stay">"Remain in %s"</string>
+
+    <!-- h_ home & news
+ h_001 home screen -->
+    <string name="h_001_home_title_part">"Welcome to"</string>
+    <string name="h_001_home_btn_more_news">"Show all"</string>
+    <string name="h_001_home_title_discounts">"Current discounts"</string>
+    <string name="h_001_home_title_news">"News"</string>
+    <string name="h_001_home_title_offers">"Current deals"</string>
+    <string name="h_001_home_title_tips">"Tips of the day"</string>
+    <string name="h_001_home_notification_test_title">"Confirmation of change of registration"</string>
+    <string name="h_001_home_notification_test_content">"The confirmation of your change of registration is available in your document safe."</string>
+    <string name="h_001_home_s_001_services_002_marketplaces_home_menu_item_filter">"Filter"</string>
+    <string name="h_001_home_s_001_services_002_marketplaces_home_menu_item_profile">"Profile"</string>
+
+    <!-- h_002 news second level -->
+    <string name="h_002_home_news_title">"News"</string>
+
+    <!-- h_003 news third level -->
+    <string name="h_003_home_articles_btn_more">"More information"</string>
+    <string name="h_003_home_articles_info_discounts_headline">"Current discounts"</string>
+    <string name="h_003_home_articles_info_news_category">"NEWS"</string>
+    <string name="h_003_home_articles_info_news_headline">"News"</string>
+    <string name="h_003_home_articles_info_offers_category">"OFFER"</string>
+    <string name="h_003_home_articles_info_offers_headline">"Current offers"</string>
+    <string name="h_003_home_articles_info_tips_category">"TIP"</string>
+    <string name="h_003_home_articles_info_tips_headline">"Tips of the day"</string>
+    <string name="h_003_home_articles_menu_btn_share">"Share"</string>
+
+    <!-- c_ city selection
+ c_001 all cities list -->
+    <string name="c_001_cities_title">"Select city"</string>
+    <string name="c_001_cities_btn_get_gps">"Identify location"</string>
+    <string name="c_001_cities_menu_btn_favorites">"Favorites"</string>
+    <string name="c_001_cities_tab_label_all">"All"</string>
+    <string name="c_001_cities_tab_label_favorites">"Favorites"</string>
+    <string name="c_001_cities_dialog_gps_title">"Notification"</string>
+    <string name="c_001_cities_dialog_gps_btn_cancel">"Cancel"</string>
+    <string name="c_001_cities_dialog_gps_btn_ok">"Settings"</string>
+    <string name="c_001_cities_dialog_gps_message">"Location detection is deactivated."</string>
+    <string name="c_001_cities_dialog_invalid_location_message">"Your current location is not yet supported."</string>
+
+    <!-- c_002 favorites list
+ c_003 select favorites drawer
+ x_ sign in/ first time use
+ x_001 first time use screen -->
+    <string name="x_001_start_splash_btn_retry">"Retry"</string>
+    <string name="x_001_welcome_btn_imprint">"Imprint"</string>
+    <string name="x_001_welcome_btn_login">"Login"</string>
+    <string name="x_001_welcome_btn_privacy_short">"Data Privacy Notice"</string>
+    <string name="x_001_welcome_btn_register">"Register"</string>
+    <string name="x_001_welcome_info_00">"Register to be able to use all services of the Citykey App."</string>
+    <string name="x_001_welcome_info_01">"Submit applications or documents - quickly and conveniently via app."</string>
+    <string name="x_001_welcome_info_02">"What\'s going on in your city? What is important? You can also share all events and news directly with friends."</string>
+    <string name="x_001_welcome_info_03">"The Citykey app is your access to many cities. Simple and available at any time."</string>
+    <string name="x_001_welcome_label_login">"Login"</string>
+    <string name="x_001_welcome_menu_btn_skip">"Skip"</string>
+
+    <!-- b_ info box
+ b_001 info box empty -->
+    <string name="b_001_infobox_title">"Mailbox"</string>
+
+    <!-- b_002 info box list -->
+    <string name="b_002_infobox_snackbar_action_undo">"Undo"</string>
+    <string name="b_002_infobox_snackbar_content">"Item deleted."</string>
+    <string name="b_002_infobox_swiped_btn_delete">"Delete"</string>
+    <string name="b_002_infobox_swiped_btn_read">"Read"</string>
+    <string name="b_002_infobox_swiped_btn_unread">"Unread"</string>
+
+    <!-- b_003 info box details -->
+    <string name="b_003_infobox_detailed_title">"Mailbox"</string>
+    <string name="b_003_infobox_detailed_btn_open_service">"Open service"</string>
+    <string name="b_003_infobox_detailed_btn_set_appointment">"Schedule an appointment"</string>
+    <string name="b_003_infobox_detailed_btn_download">"Download"</string>
+    <string name="b_003_infobox_detailed_notification_birth_certificate_title">"Birth certificate"</string>
+    <string name="b_003_infobox_detailed_notification_birth_certificate_content">"Your birth certificate is ready!"</string>
+    <string name="app_name">"Citykey"</string>
+    <string name="p_003_profile_email_change_technical_error">"Unfortunately, something went wrong. Please try again later."</string>
+    <string name="navigation_bar_back">"Back"</string>
+    <string name="error_request_city_infos">"Information about the city could not be retrieved."</string>
+    <string name="error_request_set_favorites">"Favorites could not be set."</string>
+    <string name="error_request_set_read">"Read/Unread status could not be set."</string>
+    <string name="p_002_profile_settings_label_delete_account">"Delete account"</string>
+    <string name="d_001_delete_account_info_title">"Delete account
+"</string>
+    <string name="d_001_delete_account_info_info1">"What happens if I delete my account?"</string>
+    <string name="d_001_delete_account_info_info2">"Unfortunately you will not be able to use Citykey specific features anymore."</string>
+    <string name="d_001_delete_account_info_button_text">"Delete Account"</string>
+    <string name="d_002_delete_account_validation_title">"Confirm deletion"</string>
+    <string name="d_002_delete_account_validation_info">"Confirm account deletion by entering your password."</string>
+    <string name="d_002_delete_account_validation_button_text">"Confirm deletion"</string>
+    <string name="d_003_delete_account_confirmation_title">"Account deleted"</string>
+    <string name="d_003_delete_account_confirmation_info1">"You have successfully deleted your account."</string>
+    <string name="d_003_delete_account_confirmation_info2">"We\'re sorry to see you go. The good news is, you can continue using the guest features of the app."</string>
+    <string name="d_004_delete_account_error_info1">"Unfortunately, we were not able to delete your account at this time."</string>
+    <string name="d_004_delete_account_error_info2">"Please log in and try again."</string>
+    <string name="d_004_delete_account_error_title">"Deletion not possible"</string>
+    <string name="dialog_no_internet">"Please check your internet connection and retry."</string>
+    <string name="dialog_retry_title">"Connection not possible"</string>
+    <string name="dialog_retry_description">"Unfortunately, something went wrong. Please check your internet connection and try again."</string>
+    <string name="dialog_retry_retry_button">"Retry"</string>
+    <string name="r_001_registration_error_password_email_same">"Password and e-mail address may not be the same."</string>
+    <string name="l_002_login_temporarily_locked_account_info">"Your account is temporarily locked."</string>
+    <string name="p_001_profile_error_dialog_description">"Unfortunately, we cannot display your profile at this time. Please try again later."</string>
+    <string name="p_001_profile_error_dialog_title">"Unable to load profile. "</string>
+    <string name="l_004_login_confirm_email_info_sent_link_error">"Unable to send the confirmation link, please try again."</string>
+    <string name="date_picker_close_button">"Done"</string>
+    <string name="p_003_profile_email_change_error_same_email">"The new e-mail address matches the old one. Please use a different e-mail address."</string>
+    <string name="p_005_profile_password_change_error_same_passwords">"Your new and old password may not be the same."</string>
+    <string name="h_001_home_no_news">"There are no news."</string>
+    <string name="h_001_home_title_events">"Events"</string>
+    <string name="h_001_home_btn_all_events">"Show all"</string>
+    <string name="e_002_filter_categories_label">"Categories:"</string>
+    <string name="e_002_filter_date_label">"Dates:"</string>
+    <string name="e_002_filter_empty_label">"Show all"</string>
+    <string name="e_002_page_title">"Events"</string>
+    <string name="l_001_login_hint_technical_logout">"Unfortunately something went wrong and you were logged out. Please log in again."</string>
+    <string name="l_001_login_hint_active_logout">"You have logged out successfully. Log back in or continue using the guest features of the app."</string>
+
+    <!-- for iOS -->
+    <string name="dialog_authentication_error_message">"Unfortunately, something went wrong. Please try again later."</string>
+
+    <!-- iOS Ok Button -->
+    <string name="dialog_button_ok">"Close"</string>
+    <string name="h_001_events_load_error">"The events could not be loaded. Please try again."</string>
+    <string name="h_001_events_no_events_msg">"There are no current events."</string>
+    <string name="e_003_page_title">"Select dates"</string>
+    <string name="e_003_show_events_button">"Show events "</string>
+    <string name="e_004_events_filter_categories_title">"Filter events"</string>
+    <string name="e_004_events_filter_categories_show_events">"Show events (%d)"</string>
+    <string name="e_004_events_filter_categories_clear">"Clear all"</string>
+    <string name="share_store_header">"Shared via Citykey App\nhttps://citykey.app"</string>
+    <string name="e_003_clear_button">"Clear"</string>
+    <string name="e_004_events_filter_categories_error_text">"There are no categories. Please try again later."</string>
+    <string name="e_002_no_events_hint_msg">"Please try other dates or categories."</string>
+    <string name="e_002_no_events_msg">"There are no events matching your criteria."</string>
+    <string name="e_002_page_load_error">"Could not retrieve more events."</string>
+    <string name="e_002_page_load_retry">"retry"</string>
+    <string name="e_005_add_to_calendar">"Add to calendar"</string>
+    <string name="e_005_description_label">"Description"</string>
+    <string name="e_005_description_read_less">"read less"</string>
+    <string name="e_005_description_read_more">"read more"</string>
+    <string name="e_005_end_time_label">"Ends"</string>
+    <string name="e_005_favourite">"Favorite"</string>
+    <string name="e_005_link_label">"More information and complete program:"</string>
+    <string name="e_005_pdf_label">"Links to PDF download:"</string>
+    <string name="e_005_start_time_label">"Begins"</string>
+    <string name="e_006_event_get_directions">"Get directions"</string>
+
+    <!-- iOS Permissions -->
+    <string name="NSFaceIDUsageDescription">"Please use Face ID to access your account. You can manage the access rights of the app under the app\'s central settings at any time."</string>
+
+    <!-- iOS Permissions -->
+    <string name="NSLocationWhenInUseUsageDescription">"We need permission to access the location services to detect the city name. You can manage the access rights of the app under the app\'s central settings at any time."</string>
+
+    <!-- iOS Permissions -->
+    <string name="NSCalendarsUsageDescription">"We need the permission to add events to the calendar. You can manage the access rights of the app under the app\'s central settings at any time."</string>
+
+    <!-- iOS Permissions -->
+    <string name="dialog_location_permission_denied">"Location services are disabled. You can manage the access rights of the app under the app\'s central settings at any time."</string>
+
+    <!-- iOS Permissions -->
+    <string name="dialog_faceid_permission_denied">"Face ID access denied. You can manage the access rights of the app under the app\'s central settings at any time."</string>
+
+    <!-- iOS Permissions -->
+    <string name="dialog_calendar_permission_denied">"Calendar access denied. You can manage the access rights of the app under the app\'s central settings at any time."</string>
+    <string name="e_005_dialog_no_calendar_title">"Unfortunately something went wrong. Please try again later."</string>
+    <string name="e_005_dialog_no_calendar_message">"No calendar app was found. Please install and try again."</string>
+    <string name="a_message_event_favored_error">"Sorry we had a problem administrating your event favorites."</string>
+    <string name="a_message_favorites_load_error">"Sorry, we could not load your favorites."</string>
+    <string name="h_001_events_favorites_header">"Your favorites"</string>
+    <string name="h_001_events_header">"Coming up"</string>
+    <string name="e_002_list_load_error">"Could not retrieve events at this time. Please try again later."</string>
+    <string name="b_001_infobox_btn_filter_all">"All"</string>
+    <string name="b_001_infobox_btn_filter_unread">"Unread"</string>
+    <string name="b_006_snackbar_mark_read_failed">"Sorry, we couldn\'t mark the message as \'read\'.\nPlease try again later."</string>
+    <string name="b_006_snackbar_mark_unread_failed">"Sorry, we couldn\'t mark the message as \'unread\'.\nPlease try again later."</string>
+    <string name="b_006_snackbar_delete_failed">"Sorry but this message couldn\'t be deleted at this time.\nPlease try again later."</string>
+    <string name="b_001_infobox_no_messages">"No messages"</string>
+    <string name="b_005_infobox_error_info_title">"Sorry but your messages could not be downloaded at this time."</string>
+    <string name="b_005_infobox_error_info_subtitle">"Please try again later or reload page."</string>
+    <string name="b_005_infobox_error_btn_reload">"Reload"</string>
+    <string name="b_001_infobox_no_unread_messages">"No unread messages"</string>
+    <string name="b_006_snackbar_delete_success">"Message deleted"</string>
+    <string name="b_006_snackbar_delete_undo">"Undo"</string>
+    <string name="r_001_registration_p_005_profile_password_strength_error_min_1_digit">"at least one digit"</string>
+    <string name="b_003_infobox_detailed_links_label">"Links"</string>
+    <string name="b_003_infobox_detailed_btn_delete">"Delete"</string>
+    <string name="p_001_profile_confirm_email_change_btn">"OK"</string>
+    <string name="p_001_profile_btn_terms_and_conditions">"Terms &amp; Conditions"</string>
+    <string name="x_002_tracking_perm_detail_purpose">"Purpose"</string>
+    <string name="x_002_tracking_perm_moenage_detail_purpose_desc">"App notification &amp; demand-based design"</string>
+    <string name="x_002_tracking_perm_adjust_detail_purpose_desc">"Demand-based design"</string>
+    <string name="x_002_tracking_perm_moenage_detail_storage_desc">"24 months"</string>
+    <string name="x_002_tracking_perm_adjust_detail_storage_desc">"1 month"</string>
+    <string name="x_002_tracking_perm_detail_storage">"Storage period"</string>
+    <string name="x_002_tracking_perm_moenage_detail_involved_desc">"Contractor"</string>
+    <string name="x_002_tracking_perm_adjust_detail_involved_desc">"Contractor"</string>
+    <string name="x_002_tracking_perm_detail_involved">"Involved as"</string>
+    <string name="x_002_tracking_perm_top_text">"To optimize your app experience, we use several services from partners. Within the scope of legal regulations, we, or companies commissioned by us within the scope of data processing, create usage profiles. Direct back tracing to you is not possible."</string>
+    <string name="x_002_tracking_perm_bottom_text">"These services can also be switched on or off later in \"Profile&gt;Data Privacy Notice\"."</string>
+    <string name="x_002_tracking_perm_btn_title">"Save preferences"</string>
+    <string name="x_002_tracking_perm_headline_company">"Company"</string>
+    <string name="x_002_tracking_perm_headline_details">"Details"</string>
+    <string name="x_002_tracking_perm_title">"Collection of usage data"</string>
+    <string name="h_001_home_notifications_ask_title">"Citykey would like to send you notifications"</string>
+    <string name="h_001_home_permissions_ask_description">"Push notifications can include banners, lock notifications, tones and vibrations. These can be configured in the settings."</string>
+    <string name="h_001_home_permissions_ask_negative">"Don\'t allow"</string>
+    <string name="h_001_home_permissions_ask_positive">"Allow"</string>
+    <string name="f_001_temp_blocked_hint_label">"Please wait 5 minutes."</string>
+    <string name="f_001_temp_blocked_main_label">"Your account has been locked for 5 minutes. Please try again later or reset your password."</string>
+    <string name="f_001_temp_blocked_reset_btn">"Reset password"</string>
+    <string name="r_004_registration_confirmation_info_only_use_once">"Please note, resending the confirmation e-mail is only possible once."</string>
+    <string name="coming_soon_label">"Coming soon"</string>
+    <string name="f_001_confirmation_info_only_use_once">"Please note, resending the password-reset e-mail is only possible once. "</string>
+    <string name="h_001_home_news_error">"The news could not be loaded. Please try again."</string>
+    <string name="r_001_registration_error_incorrect_email">"E-mail format is not correct"</string>
+    <string name="h_001_home_tooltip_switch_location">"Change city"</string>
+    <string name="r_001_registration_error_incorrect_postcode">"Incorrect postcode"</string>
+    <string name="r_004_registration_confirmation_info_enter_pin">"Please enter the 6-digit PIN to complete registration. If you didn't receive the PIN, please check the spam folder."</string>
+    <string name="c_001_cities_footer_info">"New cities are added all the time. If your city is not yet included, just check back later."</string>
+    <string name="r_001_registration_hint_postcode">"Postcode"</string>
+    <string name="r_004_registration_confirmation_confirm_btn">"Confirm"</string>
+    <string name="r_005_registration_success_title">"Registration complete"</string>
+    <string name="r_005_registration_success_login_btn">"Login"</string>
+    <string name="r_005_registration_success_headline">"Congratulations, your account is now registered."</string>
+    <string name="r_005_registration_success_details">"You can now log into your account using your login details."</string>
+    <string name="c_002_city_selection_list_header">"Cities"</string>
+    <string name="c_002_cities_turn_on_location">"Click here to turn ON the Location Services."</string>
+    <string name="c_002_cities_location_header">"Close to you"</string>
+
+    <string name="c_003_contact_link_title_text">"Where's my city?"</string>
+    <string name="c_003_contact_link_sub_title_text">"Get in contact with us&#8230;"</string>
+    <string name="c_003_contact_link_message_text">"Feel free to contact us and we'll discuss how we can add your city to the app."</string>
+    <string name="c_003_aleart_get_in_contact_button">"Get in contact"</string>
+    <string name="c_003_aleart_cancel_button">"Cancel"</string>
+    <string name="c_003_email_option_chooser_title">"Choose option"</string>
+    <string name="c_003_mail_subject_text">"My city is not included!"</string>
+    <string name="c_003_mail_body_name_text">"My name:"</string>
+    <string name="c_003_mail_body_city_text">"My city:"</string>
+    <string name="c_003_mail_body_permission_one">"May the Citykey team contact me (yes/no)?:"</string>
+    <string name="c_003_mail_body_permission_two">"I would like to share the following with the team:"</string>
+
+    <string name="s_001_services_error_module_msg">"Services cannot be displayed at the moment. Please refresh or try again later."</string>
+    <string name="s_001_services_error_snackbar_msg">"Services could not be refreshed. Please try again later."</string>
+    <string name="c_001_cities_cannot_access_location_btn_poitive">"Go to settings"</string>
+    <string name="c_001_cities_cannot_access_location_btn_negative">"Cancel"</string>
+    <string name="c_001_cities_cannot_access_location_dialog_title">"Cannot access location"</string>
+    <string name="c_001_cities_cannot_access_location_dialog_message">"Please enable Location Services in your device settings."</string>
+    <string name="c_001_cities_gps_turned_off">"Please enable Location in your device settings."</string>
+    <string name="f_001_forgot_password_change_hint_new_password">"New password"</string>
+    <string name="f_001_forgot_password_change_hint_repeat_password">"Confirm new password"</string>
+    <string name="f_003_forgot_password_confirm_success_title">"Password reset"</string>
+    <string name="f_003_forgot_password_confirm_success_headline">"Your password has been updated."</string>
+    <string name="f_003_forgot_password_confirm_success_details">"You can now log in into your account using your new password."</string>
+    <string name="f_003_forgot_password_confirm_success_login_btn">"Login"</string>
+    <string name="f_002_forgot_pwd_confirmation_info_enter_pin">"Please enter the 6-digit PIN to log in with your new password. If you didn't receive the PIN, please check the spam folder."</string>
+    <string name="appointment_title">"Appointment"</string>
+    <string name="appointment_web_cancel_dialog_message">"Are you sure you want to close the appointment process?"</string>
+    <string name="appointment_web_cancel_dialog_btnCancel">"Cancel"</string>
+    <string name="appointment_web_cancel_dialog_btnClose">"Close"</string>
+    <string name="appointment_web_private_data_permission_title">"Information"</string>
+    <string name="appointment_web_private_data_permission_message">"Citykey can assist you with this service by pre-filling the following form with data from your profile: e-mail, date of birth, postal code"</string>
+    <string name="appointment_web_private_data_permission_btnPositive">"Allow"</string>
+    <string name="appointment_web_private_data_permission_btnNegative">"Do not allow"</string>
+    <string name="h_001_navigation_bar_btn_imprint">"Imprint"</string>
+    <string name="ci_001_header_info">"Here you will find the imprint for the selected city."</string>
+    <string name="ci_001_headline_format">"Imprint - %s"</string>
+    <string name="ci_001_description">"Each city you have selected has its own imprint and can be accessed below."</string>
+    <string name="ci_001_button_text">"Open imprint"</string>
+    <string name="c_001_cities_permission_dialog_title">"Location Services"</string>
+    <string name="c_001_cities_permission_dialog_content">"This permission allows Citykey to access, store and use your device\'s location with the purpose of showing you relevant content and services."</string>
+    <string name="c_001_cities_permission_dialog_btn_negative">"Not now"</string>
+    <string name="c_001_cities_permission_dialog_btn_positive">"OK"</string>
+    <string name="c_001_cities_location_loading_failed">"We were not able to identify your location."</string>
+    <string name="apnmt_001_my_appointments_button">"My appointments"</string>
+    <string name="apnmt_002_date_label">"Date"</string>
+    <string name="apnmt_002_more_info_button">"More Information"</string>
+    <string name="apnmt_002_show_qr_code_button">"Show QR-Code"</string>
+    <string name="apnmt_002_page_title">"My appointments"</string>
+    <string name="apnmt_002_error_info">"Sorry but your appointments could not be displayed at this time."</string>
+    <string name="apnmt_002_card_title">"Appointment"</string>
+    <string name="apnmt_002_item_state_pending">"This appointment has not been confirmed yet."</string>
+    <string name="apnmt_002_item_state_rejected">"This appointment was rejected."</string>
+    <string name="apnmt_003_page_title">"My appointment"</string>
+    <string name="apnmt_003_appointment_creation_format">"Appointment created on: %s"</string>
+    <string name="apnmt_003_concerns_label">"Request"</string>
+    <string name="apnmt_003_participants_label">"Participants"</string>
+    <string name="apnmt_003_bring_with_label">"Please don\'t forget"</string>
+    <string name="apnmt_003_responsible_label">"Responsible"</string>
+    <string name="apnmt_003_waiting_no_format">"Waiting number: %s"</string>
+    <string name="apnmt_003_cal_export_location_format">"Location: %s"</string>
+    <string name="apnmt_003_share_text_format">"Your Appointment \"%s\" will take place on %s at %s.%n%nYour requests:%n%s%n%nYour waiting number: %s%n%nAddress%nhttps://maps.google.com/?q=%s"</string>
+    <string name="apnmt_004_qrcode_title">"QR-Code"</string>
+    <string name="apnmt_004_qrcode_waiting_no_label">"Waiting number"</string>
+    <string name="apnmt_003_share_text_title">"Your Appointment \"%s\""</string>
+    <string name="apnmt_002_empty_state_label">"You currently have no appointments."</string>
+    <string name="wc_004_page_title">"Waste calendar"</string>
+    <string name="wc_004_address_filter_btn">"Address:"</string>
+    <string name="wc_004_pickups_filter_btn">"Pickups:"</string>
+    <string name="apnmt_005_share_title">"Your Appointment \"%s\" is scheduled for %s at %s."</string>
+    <string name="apnmt_005_share_address">"Address:"</string>
+    <string name="apnmt_005_share_concerns">"Your request:"</string>
+    <string name="apnmt_005_share_waiting_no_format">"Your Waiting number: %s"</string>
+    <string name="h_001_home_news_action_error">"Unfortunately we are currently not able to show news for the selected city."</string>
+    <string name="h_001_events_load_action_error">"Unfortunately we are currently not able to show events for the selected city."</string>
+    <string name="apnmt_002_error_description">"Please try again or reload the page."</string>
+    <string name="wc_004_filter_category_title">"Select pickups"</string>
+    <string name="wc_004_filter_category_show_result">"Save (%d)"</string>
+
+    <!-- It is used by FTU waste calendar screen  -->
+    <string name="wc_004_ftu_street_name">"Street name"</string>
+
+    <!-- It is used by FTU waste calendar screen  -->
+    <string name="wc_004_ftu_house_number">"House number"</string>
+
+    <!-- It is used by FTU waste calendar screen  -->
+    <string name="wc_004_ftu_city">"City"</string>
+
+    <!-- It is used by FTU waste Calendar screen  -->
+    <string name="wc_004_ftu_title">"Address"</string>
+    <string name="wc_001_pickups_info_btn">"Separating waste correctly"</string>
+    <string name="wc_001_open_calendar_btn">"Open waste calendar"</string>
+    <string name="wc_004_ftu_street_error">"Street not found"</string>
+    <string name="wc_004_ftu_house_error">"Incorrect house number"</string>
+    <string name="wc_004_ftu_show_result_btn">"Show dates"</string>
+    <string name="date_format_today_name">"Today"</string>
+    <string name="date_format_tomorrow_name">"Tomorrow"</string>
+    <string name="wc_004_list_item_date_format">"%s, %d %s"</string>
+
+    <!-- Inform user about historic appointment -->
+    <string name="apnmt_002_item_state_historic">"This appointment was in the past."</string>
+
+    <!-- Inform user about appointment additional information -->
+    <string name="apnmt_003_additional_label">"Additional information"</string>
+
+    <!-- Inform user about canceled appointment -->
+    <string name="apnmt_002_item_state_canceled">"This appointment was cancelled."</string>
+    <string name="wc_004_change_address_reset_reminder_title">"Your reminders"</string>
+    <string name="wc_004_change_address_reset_reminder_info">"If you change the address, your existing reminders will be deleted."</string>
+    <string name="wc_004_change_address_reset_reminder_ok">"Change address"</string>
+    <string name="wc_004_change_address_reset_reminder_cancel">"Cancel"</string>
+    <string name="wc_005_header_label">"Remind"</string>
+    <string name="wc_005_same_day_label">"Collection day"</string>
+    <string name="wc_005_day_before_label">"One day before"</string>
+    <string name="wc_005_two_days_before_label">"Two days before"</string>
+    <string name="wc_005_time_label">"Time"</string>
+    <string name="wc_005_error_toast_message">"The settings could not be applied. Please try again."</string>
+
+    <!-- Accessibility content description
+%1$d -> consider as dynamic value and numeric value for example 1 and 2 is count of argument -->
+    <plurals name="bottom_navigation_badge_description">
+        <item quantity="one">"You have %d update(s) in"</item>
+        <item quantity="other">"you have %d updates in"</item>
+    </plurals>
+
+    <!-- Accessibility content description
+%1$d -> consider as dynamic value and numeric value for example 1 and 2 is count of argument -->
+    <string name="bottom_navigation_description">"%1$s tab %2$d of %3$d %4$s"</string>
+
+    <!-- Accessibility content description
+%1$d -> consider as dynamic value and numeric value for example 1 and 2 is count of argument -->
+    <string name="event_card_dateM_description">"%1$s %2$s %3$s to %4$s %5$s %6$s"</string>
+
+    <!-- Inform user about moengage setting usage -->
+    <string name="wc_005_moengage_setting_info_label">"\nUnfortunately, the reminder function cannot be used because the required technology »MoEngage« has not been activated. \n\nDo you want to activate MoEngage?"</string>
+
+    <!-- Inform user about push notification setting usage -->
+    <string name="wc_005_push_notification_setting_info_label">"\nUnfortunately, the reminder function cannot be used because push notifications for Citykey are disabled.\n\nDo you want to enable push notifications?"</string>
+    <string name="wc_005_moengage_label">"MoEngage"</string>
+    <string name="wc_005_push_notificaion_label">"Notifications"</string>
+    <string name="wc_005_push_notificaion_setting_btn">"Activate notifications"</string>
+    <string name="wc_005_moengage_setting_btn">"Settings"</string>
+    <string name="apnmt_003_cancel_appointment_btn">"Cancel appointment"</string>
+    <string name="apnmt_003_cancel_apnmt_title">"Cancel appointment"</string>
+    <string name="apnmt_003_cancel_apnmt_info">"Are you sure you want to cancel the appointment?"</string>
+    <string name="apnmt_003_cancel_apnmt_cancel">"Cancel"</string>
+    <string name="apnmt_003_cancel_apnmt_ok">"Ok"</string>
+    <string name="apnmt_003_snackbar_cancelation_failed">"Oops, your appointment could not be cancelled."</string>
+    <string name="accessibility_btn_select_location">"Select city"</string>
+    <string name="accessibility_btn_open_profile">"Open profile"</string>
+    <string name="accessibility_label_date_until">"to"</string>
+    <string name="accessibility_btn_share_content">"Share content"</string>
+    <string name="accessibility_btn_close">"Navigate up"</string>
+    <string name="accessibility_btn_delete">"Delete"</string>
+    <string name="accessibility_btn_cancel">"Cancel"</string>
+    <string name="accessibility_btn_clear_all">"Clear all"</string>
+    <string name="accessibility_table_selected_cell">"Item %s of %s"</string>
+    <string name="accessibility_cell_dbl_click_hint">"Double tap to open"</string>
+    <string name="apnmt_003_apnmt_telefon_label">"Phone: %s"</string>
+    <string name="apnmt_003_snackbar_mark_read_failed">"Sorry but we couldn\'t mark the appointment as \'read\'.\nPlease try again later."</string>
+    <string name="apnmt_snackbar_successfully_delete">"Appointment deleted"</string>
+    <string name="apnmt_delete_error_snackbar">"The appointment couldn\'t be deleted at this time. Please try again later."</string>
+    <string name="apnmt_delete_not_allowed">"This appointment cannot be deleted. You can only delete cancelled, rejected or expired appointments."</string>
+    <string name="accessibility_loading_city">"Loading city"</string>
+    <string name="accessibility_location_cell_dbl_click_hint">"Double tap to select"</string>
+    <string name="survey_001_data_protection_btn">"Data Protection"</string>
+    <string name="cs_002_running_list_header">"Running surveys"</string>
+    <string name="cs_002_closed_list_header">"Closed surveys"</string>
+    <string name="cs_002_upcoming_list_header">"Upcoming surveys"</string>
+    <string name="cs_002_page_title">"Surveys"</string>
+    <string name="cs_003_page_title">"Survey"</string>
+    <string name="cs_002_favored_list_item_label">"Popular"</string>
+    <string name="cs_002_days_label">"Days"</string>
+    <string name="cs_002_00_days_label">"00"</string>
+    <string name="cs_003_creation_date_format">"Survey created on: %s"</string>
+    <string name="cs_003_end_date_label">"Survey ends"</string>
+    <string name="cs_003_button_text">"Participate"</string>
+    <string name="cs_002_day_label">"Day"</string>
+    <string name="cs_004_button_next">"Next"</string>
+    <string name="cs_004_button_previous">"Previous"</string>
+    <string name="cs_004_button_done">"Done"</string>
+    <string name="cs_002_error_no_running_surveys">"There are currently no ongoing surveys."</string>
+    <string name="cs_002_error_no_surveys">"Currently there are no surveys."</string>
+    <string name="cs_002_loading_error">"Sorry but we were unable to load the surveys."</string>
+    <string name="cs_002_preview_error_no_surveys">"Currently, there are no surveys to preview."</string>
+    <string name="accessibility_btn_share_news">"Share article"</string>
+
+    <!-- back button dialog description for survey questions -->
+    <string name="cs_004_back_button_dialog">"Do you want to leave the survey? Your data will not be stored."</string>
+    <string name="negative_button_dialog">"No"</string>
+    <string name="positive_button_dialog">"Yes"</string>
+
+    <!--  Dialog title for survey Submission -->
+    <string name="cs_004_survey_submission_dialog_title">"A big Thank You from %s!"</string>
+
+    <!--  Dialog message for survey Submission -->
+    <string name="cs_004_survey_submission_dialog_message">"You actively contribute to an improved quality of life in %s with your feedback. "</string>
+    <string name="data_privacy_survey_button_text">"Accept"</string>
+    <string name="data_privacy_survey_title">"Data privacy notice"</string>
+    <string name="d_001_delete_account_info">"You are about to start deleting your Citykey account."</string>
+    <string name="d_001_delete_account_info1">"This action is permanent and you will no longer be able to access the features that are exclusive to registered users."</string>
+    <string name="d_003_delete_account_confirmation_info3">"Please note, it may take up to 48 hours until all your data has been deleted."</string>
+    <string name="p_002_profile_personal_settings_label_Dob">"Date of birth"</string>
+    <string name="p_002_profile_personal_settings_label_Residence">"Residence"</string>
+    <string name="p_003_profile_new_postcode_title">"Change residence"</string>
+    <string name="p_003_profile_current_postcode_label">"Current postcode"</string>
+    <string name="p_003_profile_new_postcode_input_hint">"New postcode"</string>
+    <string name="p_005_profile_email_changed_pin_verification_message">"We have sent a verification PIN to your e-mail %s"</string>
+    <string name="poi_001_tab_list_label">"List"</string>
+    <string name="poi_001_tab_map_label">"Map"</string>
+    <string name="poi_001_title">"Interesting places"</string>
+    <string name="poi_001_category_selection_label">"Category"</string>
+    <string name="poi_001_mandatory_category_selection_title">"Warning!"</string>
+    <string name="poi_001_mandatory_category_selection_text">"This service can\'t function without selecting a category. Please select one."</string>
+    <string name="poi_003_title">"What are you interested in?"</string>
+    <string name="city_not_available_dialog_title">"City not available"</string>
+    <string name="city_not_available_dialog_body">"Unfortunately, the city you have chosen is not available anymore."</string>
+    <string name="egov_attach_card_title">"Connecting"</string>
+    <string name="egov_attach_card_info1">"Please hold your eID card behind* your smartphone."</string>
+    <string name="egov_attach_card_info2">"*The hatching serves as a guide."</string>
+    <string name="egov_pin_title">"PIN entry"</string>
+    <string name="egov_pin_info1">"Please enter your 6-digit PIN."</string>
+    <string name="egov_pin_submit_btn">"Submit"</string>
+    <string name="egov_pin_5digits_pin_label">"Do you have a 5-digit PIN?"</string>
+    <string name="egov_pin_help_label">"Do you need help?"</string>
+    <string name="egov_loading_info1">"Please wait …"</string>
+    <string name="egov_info_title">"Identify"</string>
+    <string name="egov_info_provider_info">"You are about to identify yourself with the following provider:"</string>
+    <string name="egov_info_provider_label">"Provider"</string>
+    <string name="egov_info_read_data_label">"The provider requires the following data"</string>
+    <string name="egov_info_read_data_info">"After you have entered your PIN, the data listed above will be read out and securely transmitted to the provider. Citykey has no access to the data at any time."</string>
+    <string name="egov_info_purpose_label">"Purpose"</string>
+    <string name="egov_info_btn">"Next"</string>
+    <string name="egov_error_label">"Unexpected error"</string>
+    <string name="egov_error_info">"Unfortunately something went wrong. Please try again."</string>
+    <string name="egov_error_btn">"Try again"</string>
+    <string name="egov_success_title">"Congratulations!"</string>
+    <string name="egov_success_info">"You have successfully identified yourself."</string>
+    <string name="poi_002_title">"What are you interested in?"</string>
+    <string name="poi_001_address_label">"Address"</string>
+    <string name="poi_001_tab_map_locate_me_button_decription">"Locate Me"</string>
+    <string name="poi_001_opening_hours_label">"Opening hours"</string>
+    <string name="poi_003_description_label">"Description"</string>
+    <string name="poi_003_website_label">"Website"</string>
+    <string name="poi_002_error_text">"Unfortunately something went wrong.\nPlease try again."</string>
+
+    <!-- Header Title for the Help/FAQ section on the profile page -->
+    <string name="p_001_profile_help_section_header">"Help"</string>
+
+    <!-- Help/FAQ Web link on the profile page -->
+    <string name="p_001_profile_help_link_label">"Open Citykey Help Website"</string>
+    <string name="egov_caninfo_label">"CAN entry"</string>
+    <string name="egov_caninfo_info1">"Your PIN entry was incorrect twice. In order to continue, please enter the CAN (Card Access Number)."</string>
+    <string name="egov_caninfo_btn">"Enter CAN"</string>
+    <string name="egov_can_title">"CAN entry"</string>
+    <string name="egov_caninfo_title">"Wrong PIN"</string>
+    <string name="egov_can_info_label">"Please enter your 6-digit CAN."</string>
+    <string name="egov_caninfo_info2">"The CAN can be found on the front of the card, in the lower right corner."</string>
+    <string name="egov_pukinfo_label">"PUK entry"</string>
+    <string name="egov_pukinfo_info1">"Your PIN entry was incorrect three times. Please enter the PUK now in order to continue."</string>
+    <string name="egov_pukinfo_info2">"The PUK can be found on the document you received with your PIN."</string>
+    <string name="egov_pukinfo_btn">"Enter PUK"</string>
+    <string name="egov_cardblocked_label">"Wrong PUK"</string>
+    <string name="egov_cardblocked_info1">"Unfortunately, you have entered the PUK incorrectly too many times. Your card is now blocked."</string>
+    <string name="egov_cardblocked_info2">"Please contact the authority responsible for issuing your ID document in order to have your card unblocked."</string>
+    <string name="egov_cardblocked_title">"Card blocked"</string>
+    <string name="egov_certificate_provider">"Provider"</string>
+    <string name="egov_certificate_issuer">"Issuer of the authorization certificate"</string>
+    <string name="egov_certificate_providerinfo">"Provider information"</string>
+    <string name="egov_certificate_validity">"Validity"</string>
+    <string name="egov_puk_info1">"Please enter your 10-digit PUK."</string>
+    <string name="egov_pin_error_two_retries">"Wrong PIN. You have two more attempts left."</string>
+    <string name="egov_pin_error_one_retry">"Wrong PIN. You have one more attempt left."</string>
+    <string name="egov_can_error">"Wrong CAN. Please try again."</string>
+    <string name="egov_puk_error">"Wrong PUK. Please try again."</string>
+    <string name="egov_help_label1">"Do you have a 5-digit PIN?"</string>
+    <string name="egov_help_info1">"You can have your 5-digit PIN converted to a 6-digit one. To do this, you need the »AusweisApp2«."</string>
+    <string name="egov_help_ausweissapp_link">"To AusweisApp2"</string>
+    <string name="egov_help_label2">"Is the connection to the card interrupted often?"</string>
+    <string name="egov_help_info2">"Try to keep the card and your smartphone as still as possible."</string>
+    <string name="egov_help_label3">"Do you still need help?"</string>
+    <string name="egov_help_info3">"We recommend checking the extensive help page of the AusweisApp2."</string>
+    <string name="egov_help_aussweissapp_help_link">"Go to the help page of the AusweisApp2"</string>
+    <string name="egov_help_link_btn">"Do you need help?"</string>
+
+    <!-- Title that appears on top bar for the help/FAQ details page -->
+    <string name="p_001_profile_help_webview_title">"Do you need help?"</string>
+
+    <!-- profile page  - Accessibility Statement link title  -->
+    <string name="p_001_profile_accessibility_stmt_link_label">"Accessibility Statement"</string>
+
+    <!-- Profile Page - accessibility statement detail view page title -->
+    <string name="p_001_profile_accessibility_stmt_webview_title">"Accessibility Statement"</string>
+
+    <!-- Error text when user enters a wrong CAN -->
+    <string name="egov_can_info_invalid_can_label">"Wrong CAN"</string>
+
+    <!-- Error text when user enters wrong PUK -->
+    <string name="egov_puk_info_invalid_puk_label">"Wrong PUK"</string>
+
+    <!-- Help -->
+    <string name="egov_help_screen_title">"Help"</string>
+
+    <!-- Title of a dialog that appears when user clicks on the cross icon on top at any time in the workflow . -->
+    <string name="egov_cancel_workflow_dialog_title">"Exit process?"</string>
+    <string name="egov_cancel_workflow_dialog_message">"Do you want to exit the authentication process?"</string>
+    <string name="egov_cancel_workflow_dialog_ok_button">"Exit"</string>
+    <string name="egov_cancel_workflow_dialog_cancel_button">"Continue"</string>
+    <string name="p_001_profile_accessibilty_disclaimer_label">"Accessibility Statement"</string>
+    <string name="p_001_user_account_settings_label_description">"Edit user account"</string>
+    <string name="p_001_personal_detail_settings_label_description">"Edit personal details"</string>
+    <string name="p_001_profile_residence_snackbar_message">"Date of birth cannot be edited."</string>
+    <string name="apnmt_snackbar_undo">"Appointment deleted"</string>
+    <string name="appnmt_delete_error_snackbar">"The appointment could not be deleted, please try again later."</string>
+    <string name="appnmt_delete_not_allowed">"This appointment cannot be deleted. You can only delete cancelled, rejected or expired appointments."</string>
+    <string name="apnmt_003_apnmt_email">"Email: %s"</string>
+    <string name="cs_002_survey_completed_message">"You have already participated in this survey."</string>
+    <string name="progress_days_description">"Days remaining"</string>
+    <string name="cs_004_mandatory_field_error">"This field is mandatory."</string>
+    <string name="egov_nfc_not_avaiable_title">"No NFC available"</string>
+    <string name="egov_nfc_not_enabled_but_available">"NFC functionality is available"</string>
+    <string name="egov_nfc_not_available_description">"This function requires an NFC-enabled smartphone."</string>
+    <string name="egov_nfc_not_enabled_status">"NFC is enabled"</string>
+    <string name="egov_nfc_not_enabled_button">"Turn on NFC"</string>
+    <string name="poi_002_close_button_content_description">"Close"</string>
+
+    <!-- Accessibility Text for the eye icon on Enter PIN screen  -->
+    <string name="egov_accessibility_text_eye_button">"Show Hide Entered Value"</string>
+
+    <!-- Accessibility text to be used for Clear button on the Enter PIN screen -->
+    <string name="egov_accessibility_text_clear_button">"Clear last entered digit"</string>
+
+    <!-- Accessibility Text for Close Workflow button on top bar -->
+    <string name="egov_accessibility_text_close_workflow_button">"Cancel Authentication"</string>
+    <string name="egov_sdk_Address">"Address"</string>
+    <string name="egov_sdk_BirthName">"Birth name"</string>
+    <string name="egov_sdk_FamilyName">"Family name"</string>
+    <string name="egov_sdk_GivenNames">"Given name(s)"</string>
+    <string name="egov_sdk_PlaceOfBirth">"Place of birth"</string>
+    <string name="egov_sdk_DateOfBirth">"Date of birth"</string>
+    <string name="egov_sdk_DoctoralDegree">"Title"</string>
+    <string name="egov_sdk_ArtisticName">"Religious or artistic name"</string>
+    <string name="egov_sdk_Pseudonym">"Pseudonym"</string>
+    <string name="egov_sdk_ValidUntil">"Valid until"</string>
+    <string name="egov_sdk_Nationality">"Nationality"</string>
+    <string name="egov_sdk_IssuingCountry">"Issuing country"</string>
+    <string name="egov_sdk_DocumentType">"Document type"</string>
+    <string name="egov_sdk_ResidencePermitI">"Ancillary provisions I (eAT only)"</string>
+    <string name="egov_sdk_ResidencePermitII">"Ancillary provisions II"</string>
+    <string name="egov_sdk_CommunityID">"Community ID"</string>
+    <string name="egov_sdk_AddressVerification">"Address verification"</string>
+    <string name="egov_sdk_AgeVerification">"Age verification"</string>
+    <string name="egov_sdk_WriteAddress">"Address (write access)"</string>
+    <string name="egov_sdk_WriteCommunityID">"Community ID (write access)"</string>
+    <string name="egov_sdk_WriteResidencePermitI">"Ancillary provisions I (write access)"</string>
+    <string name="egov_sdk_WriteResidencePermitII">"Ancillary provisions II (write access)"</string>
+    <string name="egov_sdk_CanAllowed">"CAN allowed"</string>
+    <string name="egov_sdk_PinManagement">"PIN management"</string>
+    <string name="accessibility_password_too_weak">"Too weak"</string>
+    <string name="accessibility_password_strong">"Strong"</string>
+    <string name="accessibility_btn_show_password">"Show password"</string>
+    <string name="accessibility_btn_hide_password">"Hide password"</string>
+    <string name="poi_001_retry_button_decription">"Retry"</string>
+    <string name="appointment_webview_title">"Create appointment"</string>
+
+    <!-- Back button on the webview toolbar for iOS -->
+    <string name="egov_web_toolbar_goback_button_accessibility_title">"Go back"</string>
+    <string name="egov_web_toolbar_goforward_button_accessibility_title">"Go forward"</string>
+    <string name="egov_web_toolbar_reload_button_accessibility_title">"Reload page"</string>
+    <string name="egov_web_toolbar_launchExternal_button_accessibility_title">"Open link in browser"</string>
+    <string name="d_001_defect_reporter_detail_button_label">"Report a defect"</string>
+    <string name="defect_location_toolbar_label"></string>
+    <string name="dr_002_location_selection_toolbar_label">"Location"</string>
+    <string name="dr_002_locate_me_button_label">"Locate me"</string>
+    <string name="dr_002_street_name_hint">"STREET NAME"</string>
+    <string name="dr_002_house_number_hint">"HOUSE NUMBER"</string>
+    <string name="dr_002_save_button_label">"Save"</string>
+    <string name="dr_003_location_label">"Location"</string>
+    <string name="dr_003_describe_issue_label">"Description"</string>
+    <string name="dr_003_your_concern_hint">"Your concern %s"</string>
+    <string name="dr_003_your_concern_disclaimer">"IMPORTANT: For privacy reasons, please do not enter any names or personal data of yourself or other persons."</string>
+    <string name="dr_003_add_photo_label">"ADD PHOTO %s"</string>
+    <string name="dr_003_add_label">"ADD"</string>
+    <string name="dr_003_your_details_label">"Contact details"</string>
+    <string name="dr_003_email_address_hint">"E-Mail %s"</string>
+    <string name="dr_003_first_name_hint">"First name %s"</string>
+    <string name="dr_003_last_name_hint">"Last name %s"</string>
+    <string name="dr_003_terms_text">"Please confirm that you have read and acknowledged our %s %s."</string>
+    <string name="dr_003_terms_end_text">"Data privacy notice"</string>
+    <string name="dr_003_terms_text1">"I agree to be contacted by the city via E-Mail"</string>
+    <string name="dr_003_send_report_label">"Send"</string>
+    <string name="dr_001_choose_category_label">"Category"</string>
+    <string name="dr_004_thank_you_msg">"Thank you!"</string>
+    <string name="dr_004_thank_you_msg1">"With your submission you help us to improve the quality of life in %s."</string>
+    <string name="dr_004_category_label">"Category"</string>
+    <string name="dr_004_unique_id_label">"ID of your report"</string>
+    <string name="d_004_reported_on_label">"Date"</string>
+    <string name="d_004_submit_info_msg">"You will receive an E-Mail when there are updates on your request."</string>
+    <string name="p_003_change_dob_title">"Change date of birth"</string>
+    <string name="p_003_change_dob_old_date">"CURRENT DATE OF BIRTH"</string>
+    <string name="p_003_change_dob_new_date">"NEW DATE OF BIRTH"</string>
+    <string name="p_003_change_dob_save_btn">"Save"</string>
+    <string name="dr_003_location_page_info1">"Move the Map to the location of the defect. The defect is marked by the pin."</string>
+    <string name="dr_003_location_page_info2">"Please enter the street name and house number by hand below."</string>
+    <string name="p_003_change_dob_future_date_error">"Birthday can not be in future"</string>
+    <string name="p_001_profile_no_date_of_birth_added">"No date of birth added"</string>
+    <string name="p_003_add_date_of_birth_title">"Add date of birth"</string>
+
+    <!-- Fuzzy -->
+    <string name="egovs_001_details_categories_headline">"Categories"</string>
+
+    <!-- Fuzzy -->
+    <string name="egovs_001_details_info_btn">"Help, Contact, Further Information"</string>
+    <string name="egovs_002_services_type_web">"More information"</string>
+
+    <!-- Fuzzy -->
+    <string name="egovs_002_services_type_pdf">"Document"</string>
+
+    <!-- Fuzzy -->
+    <string name="egovs_002_services_type_form">"Online form"</string>
+    <string name="egovs_003_close_dialog_cancel_btn">"Abbrechen"</string>
+    <string name="egovs_003_close_dialog_close_btn">"Schließen"</string>
+    <string name="egovs_003_close_dialog_description">"Möchten Sie das Fenster schließen?"</string>
+    <string name="egovs_003_close_dialog_title">"Fenster schließen?"</string>
+    <string name="egovs_004_info_title">"Digitale Verwaltung"</string>
+    <string name="dr_003_change_lacation_button">"Change Location"</string>
+
+    <!-- Fuzzy -->
+    <string name="egovs_002_services_type_form_eid">"Online form (eID)"</string>
+    <string name="apnmt_003_cancel_error_apnmt_info">"Unfortunately, you cannot cancel the appointment via Citykey yet. Please use the link you received in the confirmation email."</string>
+    <string name="dr_003_optional_field_label">"(OPTIONAL)"</string>
+    <string name="d_001_defect_reporter_more_info_button">"More information"</string>
+    <string name="p_003_change_dob_add_date">"DATE OF BIRTH"</string>
+    <string name="dr_005_rules_of_use_title">"Rules of use"</string>
+    <string name="dr_003_rules_of_use_link">"and rules of use"</string>
+    <string name="dr_003_defect_submission_error">"The report could not be sent at this time. please try again later."</string>
+    <string name="dr_003_defect_submission_error_title">"Defect reporter"</string>
+    <string name="dr_003_defect_image_option_title">"Choose option"</string>
+    <string name="dr_003_defect_image_option_take_photo">"Take photo"</string>
+    <string name="dr_003_defect_image_option_camera_roll">"Camera roll"</string>
+    <string name="dr_003_defect_image_option_photo_library">"Photo library"</string>
+    <string name="dr_003_defect_image_option_cancel">"Cancel"</string>
+    <string name="dr_003_delete_photo_label">"DELETE PHOTO"</string>
+    <string name="dr_003_delete_photo_description">"Delete photo"</string>
+    <string name="dr_003_add_photo_description">"Add photo"</string>
+    <string name="dialog_dpn_updated_title">"Privacy policy updated"</string>
+    <string name="dialog_dpn_updated_privacy_btn">"Privacy policy"</string>
+    <string name="dialog_dpn_ok_btn">"OK"</string>
+    <string name="city_not_available_dialog_ok_button">"OK"</string>
+    <string name="dr_003_dialog_button_ok">"OK"</string>
+    <string name="dr_003_terms_title">"Data Privacy Notice"</string>
+    <string name="dr_004_ok_button">"OK"</string>
+    <string name="p_004_profile_email_success_title">"E-Mail updated"</string>
+    <string name="NSCameraUsageDescription">"If we are allowed to use your camera, you can report the defect more easily."</string>
+    <string name="NSPhotoLibraryUsageDescription">"If we are allowed to use your photos, you can report the defect more easily.
+"</string>
+    <string name="x_003_welcome_info_title">"Citykey"</string>
+    <string name="x_003_welcome_info">"Citizen service via smartphone"</string>
+    <string name="x_001_welcome_info_title_01">"Paperless"</string>
+    <string name="x_001_welcome_info_title_02">"News &amp; Events"</string>
+    <string name="x_001_welcome_info_title_03">"All cities in your hand"</string>
+    <string name="x_001_lets_go_btn_text">"Let\'s go!"</string>
+    <string name="x_001_next_btn_text">"Next"</string>
+    <string name="dr_camera_permission_denied_error_dialog_title">"Camera permission denied"</string>
+    <string name="dr_camera_permission_denied_error_dialog_message">"In order to allow Citykey to capture photos of the defect, please go to settings and allow the camera access permission. "</string>
+    <string name="dr_photos_permission_denied_error_dialog_title">"Photos permission denied"</string>
+    <string name="dr_photos_permission_denied_error_dialog_message">"In order to allow Citykey to capture photos of the defect, please go to settings and allow the photos access permission.
+"</string>
+    <string name="NFCReaderUsageDescription">"Citykey needs NFC to access the eID feature of your ID card in order to authenticate to eGov services."</string>
+    <string name="p_001_profile_label_data_security_settings">"Data Privacy Settings"</string>
+    <string name="dialog_dpn_settings_title">"Privacy Settings"</string>
+    <string name="dialog_dpn_settings_change_btn">"Change settings"</string>
+    <string name="dialog_dpn_settings_accept_all_btn">"Accept all"</string>
+    <string name="dialog_dpn_settings_accept_chosen_btn">"Confirm selection"</string>
+    <string name="dialog_dpn_settings_data_security_link">"Data security notice"</string>
+    <string name="dialog_dpn_notice_settings_btn">"Data Privacy Settings"</string>
+    <string name="dialog_dpn_settings_headline">"Manage your privacy settings"</string>
+    <string name="dialog_dpn_settings_description">"In order to provide you with an optimal app experience, we use various tools. This includes tools for the operation and optimization of the app and services, such as text and video chats, as well as tools for advertising oriented to your online usage behavior. These tools can, for example, tell us if you use our app repeatedly from the same device. We would like to give you the choice, which tools you allow:"</string>
+    <string name="dialog_dpn_settings_required_headline">"Strictly necessary tools"</string>
+    <string name="dialog_dpn_settings_required_description">"These tools are strictly necessary to enable you to navigate the pages and use essential functions. They enable basic functions, such as sending of push notifications related to features of the app, and access to secured areas of the app. They also serve the purpose of performing an anonymous analysis of user patterns, which we use to continuously develop and improve our app for you."</string>
+    <string name="dialog_dpn_settings_optional_headline">"Analysis Tools"</string>
+    <string name="dialog_dpn_settings_optional_description">"These tools help us to improve our understanding of how our apps are used. Analysis tools allow for the collection of usage and identification data by the original provider or third party providers and their compilation into pseudonymous usage profiles. We use analysis tools, e.g., to determine the number of individual users of an app, to collect technical data if the app has crashed, and to analyze the app’s usage patterns and user interactions on the basis of anonymous and pseudonymous information. This information cannot be traced back to a person."</string>
+    <string name="dialog_dpn_settings_show_more_btn">"Find out more"</string>
+    <string name="dialog_dpn_settings_show_less_btn">"Show less"</string>
+    <string name="dialog_dpn_ftu_text_format">"This app uses tools, for example in the form of SDKs (Software Developer Kit). They can store and read information on your device. By clicking on \"Accept All\", you accept the processing of your data according to our %s. Further information, including information on data processing by third parties, can be found in the settings as well as in our privacy information. %s you can continue only with the necessary tools."</string>
+    <string name="dialog_dpn_ftu_dpn_link">"privacy information"</string>
+    <string name="dialog_dpn_ftu_continue_link">"Here"</string>
+    <string name="dialog_dpn_settings_confirm_selection_btn">"Confirm selection"</string>
+    <string name="dialog_dpn_notice_title">"Data Privacy Notice"</string>
+    <string name="dr_003_defect_image_file_too_large">"The image is too big. Please choose a different image."</string>
+    <string name="e_005_image_load_error">"Failed to load image. Please try again"</string>
+    <string name="dialog_confirm_logout_title">"Logout"</string>
+    <string name="dialog_confirm_logout_message">"Are you sure you want to log out?"</string>
+    <string name="dialog_confirm_logout_btn_yes">"Yes"</string>
+    <string name="dialog_confirm_logout_btn_cancel">"Cancel"</string>
+    <string name="p_001_feedback_title">"Feedback"</string>
+    <string name="p_001_profile_feedback_label">"Feedback"</string>
+    <string name="feedback_header">"Tell us what you think."</string>
+    <string name="feedback_description">"Would you like to help us improve our offer? Just give us a short feedback. If you wish to remain anonymous, please be careful not to enter any personal information. Your email address will only be shared with us if you agree to it below."</string>
+    <string name="feedback_box_title">"What do you like?"</string>
+    <string name="feedback_box_title1">"What can we do better?"</string>
+    <string name="feedback_box_title2">"Can we contact you?"</string>
+    <string name="feedback_box_title3">"Contact me via Email"</string>
+    <string name="feedback_mail_address">"E-mail Address"</string>
+    <string name="feedback_ok_button">"OK"</string>
+    <string name="feedback_send_btn">"Send"</string>
+    <string name="feedback_successful_submission_heading">"Thank you for your submission!"</string>
+    <string name="feedback_successful_submission_description">"Your feedback will help us to improve our app. Thank you again :)"</string>
+
+    <!-- Security Alert -->
+    <string name="security_alert">"Security Alert"</string>
+    <string name="jailbreak_desc">" Citykey has detected a jailbreak on your device. Therefore, the execution cannot be supported."</string>
+    <string name="l_001_login_kmli_dialog_title">"Staying logged in"</string>
+    <string name="l_001_login_kmli_dialog_message">"Do you want to stay logged in, so that you don\'t need to log in next time you use the app?"</string>
+    <string name="l_001_login_hint_kmli_not_checked">"You have been logged out due to inactivity. To stay logged in, just check the \"keep me logged in\" checkbox."</string>
+    <string name="l_001_login_hint_unexpected_logout">"Unfortunately something went wrong and you were logged out. Please log in again."</string>
+    <string name="egov_search_hint">"Find"</string>
+    <string name="egov_search_last_searches_label">"Last searches"</string>
+    <string name="egov_search_results_label">"Search results"</string>
+    <string name="egov_search_ftu_msg">"Please enter a search term."</string>
+    <string name="egov_search_no_results_format">"Unfortunately, we could not find anything related to »%s«."</string>
+    <string name="apnmt_002_item_state_changing">"Your appointment has been updated..."</string>
+    <string name="wc_004_filter_category_select_all">"Select all"</string>
+    <string name="wc_004_filter_category_deselect_all">"Deselect all"</string>
+    <string name="wc_004_filter_category_nothing_selected">"Nothing selected"</string>
+    <string name="wc_004_filter_category_All_selected">"All selected"</string>
+    <string name="wc_004_filter_category_selected_count">"%d selected"</string>
+    <string name="wc_004_filter_category_empty">"Please select a pickup from the button above."</string>
+    <string name="p_003_change_dob_delete_dob_btn">"Delete date of birth"</string>
+    <plurals name="wc_004_filter_category_empty_data">
+        <item quantity="one">"There are no dates for the selected pickup and month."</item>
+        <item quantity="other">"There are no dates for the selected pickups and month."</item>
+    </plurals>
+    <string name="wc_004_filter_multiple_category_empty_data">"There are no dates for the selected pickups and month."</string>
+    <string name="wc_005_push_notification_disclaimer">"If a notification is not sent or sent at the wrong time, there is unfortunately no entitlement to an emptying at a later point in time."</string>
+    <string name="p_001_profile_software_license_title">"License"</string>
+    <string name="p_001_profile_software_license_label">"License"</string>
+    <string name="wc_006_choose_existing_calendar">"Choose an existing calendar"</string>
+    <string name="wc_006_add_events">"Add events"</string>
+    <string name="wc_006_add_to_calendar">"Add"</string>
+    <string name="wc_006_create_a_new_calendar">"Create a new calendar"</string>
+    <string name="wc_006_my_waste_calendar">"My waste calendar"</string>
+    <string name="wc_006_red_color">"Red"</string>
+    <string name="wc_006_orange_color">"Orange"</string>
+    <string name="wc_006_yellow_color">"Yellow"</string>
+    <string name="wc_006_green_color">"Green"</string>
+    <string name="wc_006_blue_color">"Blue"</string>
+    <string name="wc_006_purple_color">"Purple"</string>
+    <string name="wc_006_brown_color">"Brown"</string>
+    <string name="wc_006_successfully_exported">"Events successfully added"</string>
+    <string name="wc_006_alert_message_successfull">"The events for selected pickups have been successfully added to your calendar."</string>
+    <string name="wc_006_calendar_colour">"Calendar colour"</string>
+    <string name="wc_006_colour">"COLOUR"</string>
+    <string name="wc_006_calendar_name">"Calendar name"</string>
+    <string name="dr_003_waste_bin_id_hint">"Waste Bin ID %s"</string>
+    <string name="wc_006_export_dialog_choose_label">"Choose a calendar"</string>
+    <string name="wc_006_export_dialog_options_Title">"Calendars"</string>
+    <string name="wc_006_no_calendar_available_for_export_title">"No calendars found"</string>
+    <string name="wc_006_no_calendar_available_for_export_message">"We did not find any calendars on your device. In order to add events, please create a calendar first."</string>
+    <string name="h_001_update_app">"Update"</string>
+    <string name="h_001_update_required">"Update required"</string>
+    <string name="h_001_update_detail_text">"To continue using Citykey, please download the latest version"</string>
+    <string name="wc_006_events_not_added">"Events cannot be exported due to a technical problem."</string>
+    <string name="e_007_cancelled_events">"Cancelled"</string>
+    <string name="e_007_event_cancelled_desc">"This event was cancelled"</string>
+    <string name="e_005_description_read_more_information">"More information"</string>
+    <string name="z_001_error">"Error"</string>
+    <string name="e_006_event_route">"Get directions"</string>
+    <string name="e_006_event_tap_on_map_hint">"Tap on the map to see more details"</string>
+    <string name="e_006_event_routing_options">"Routing Options"</string>
+    <string name="e_006_event_routing_options_msg_text">"Please Select App For Routing"</string>
+    <string name="e_006_event_apple_maps">"Apple Maps"</string>
+    <string name="e_006_event_google_maps">"Google Maps"</string>
+    <string name="e_006_event_no_map_found_text">"No maps app was found"</string>
+    <string name="e_006_event_btn_cancel">"Cancel"</string>
+    <string name="e_006_event_switch_city_info">"The city has been switched to %1$s"</string>
+
+    <!-- wc_005_error_message_selectpickups -->
+    <string name="wc_005_error_message_select_pickups">"Some of the previously selected waste types are no longer available. Please select an alternative waste type instead."</string>
+    <string name="wc_005_dialog_options_Title">"Updates"</string>
+
+    <!-- Fuzzy -->
+    <string name="p_001_profile_label_mode">"Mode"</string>
+
+    <!-- Fuzzy -->
+    <string name="p_001_profile_label_mode_live">"Production"</string>
+
+    <!-- Fuzzy -->
+    <string name="p_001_profile_label_mode_preview">"Preview"</string>
+
+    <!-- Fuzzy -->
+    <string name="h_001_home_app_preview_banner_text">"You are on the preview mode"</string>
+    <string name="wc_004_export_events_btn">"Export events"</string>
+    <string name="dialog_rooted_msg">"Citykey has detected that you have rooted your device. Therefore, the execution cannot be supported."</string>
+    <string name="apnmt_002_item_state_updated">"Your appointment has been updated.."</string>
+    <string name="poi_share_text_footer">"Shared via Citykey\nhttps://citykey.app"</string>
+
+    <!-- Fuzzy -->
+    <string name="e_007_events_new_date_label">"New date"</string>
+    <string name="e_007_events_new_date_desc">"The date of this event has been updated"</string>
+    <string name="e_007_events_sold_out_label">"Sold out"</string>
+    <string name="e_007_events_sold_out_desc">"This event is sold out"</string>
+
+    <!--Not In PO Editor -->
+    <string name="egovs_002_more_info_button">Mehr Informationen</string>
+
+    <!-- Widget Strings -->
+    <!-- TODO: Fix the names of Widget relevant strings here and in POEditor as well -->
+    <string name="widget_title">"News</string>
+    <string name="app_waste_widget_description">"Waste Calendar"</string>
+    <string name="wc_no_pickups">"No pickups available at this time."</string>
+    <string name="waste_calendar_widget_error">"Unfortunately we are currently not able to show waste calendar information for selected city."</string>
+    <string name="wc_generic_error">"No information available."</string>
+
+    <!-- what's new dialog -->
+    <string name="wn_001_what_is_new_title">"What is new?"</string>
+    <string name="wn_002_news_widget_title">"Widgets for news &amp; waste calendar"</string>
+    <string name="wn_003_news_widget_update_description">"It is now possible to display the news and appointments of the waste calendar outside the Citykey app in a widget."</string>
+    <string name="wn_004_continue_title">"Continue…"</string>
+
+    <!-- Waste Calender Accessibility -->
+    <string name="wc_accessibility_nextmonth_button_title">Next month</string>
+    <string name="wc_accessibility_prevmonth_button_title">Previous month</string>
+
+    <!-- Fahrradparken -->
+    <string name="fa_001_existing_reports_button_label">"Existing Reports"</string>
+    <string name="fa_002_create_new_report_button_label">"Create New Report"</string>
+    <string name="fa_003_describe_issue_label">"Description / Justification %s"</string>
+    <string name="fa_004_refresh_reports_label">"Refresh"</string>
+    <string name="fa_005_description_label">"Description"</string>
+    <string name="fa_006_more_information_label">"More Information"</string>
+    <string name="fa_007_location_page_info">"Move the map to the position where you would like to submit the suggestion. The suggestion is marked by the pin."</string>
+    <string name="fa_009_unique_id_label">"ID of your report"</string>
+    <string name="fa_010_submit_info_msg">"You will receive an E-Mail when there are updates on your request."</string>
+    <string name="fa_011_thank_you_msg1">"Thank you for contributing to the improvement of bicycle traffic and helping to shape the mobility transition in Bonn. The processing of your proposal will take some time. Therefore, we ask for your patience and understanding if your proposal is not feasible from a technical or planning point of view. You can check the status of your proposal at any time via the map (under \"View existing issues\")."</string>
+    <string name="fa_012_unknow_error_title">"Unfortunately something went wrong. If this happens repeatedly, please let us know."</string>
+
+    <!--    Accessibility String-->
+    <string name="a11y_list_item_position">"Item %1$d of %2$d "</string>
+    <string name="accessibility_label_pickup_read_state_selected">"%s is selected"</string>
+    <string name="accessibility_label_pickup_read_state_not_selected">"%s is not selected"</string>
+    <string name="accessibility_label_pickup_change_state_select">"%s has been selected"</string>
+    <string name="accessibility_label_pickup_change_state_deselect">"%s has been deselected"</string>
+    <string name="accessibility_btn_export_calendar">"Export waste pickups to your calendar"</string>
+    <string name="accessibility_btn_tap_hint">"Double tap to"</string>
+    <string name="active_city_voice_over_text">"is selected"</string>
+    <string name="accessibility_radio_btn_tap_hint">"Double tap to"</string>
+    <string name="accessibility_double_tap_select_hint">"Double tap to select"</string>
+    <string name="accessibility_double_tap_deselect_hint">"Double tap to deselect"</string>
+    <string name="accessibility_textview_input_hint">"Please enter your response here"</string>
+    <string name="accessibility_change_category">"Double tap to select Category"</string>
+    <string name="accessibility_filter_categories">"select waste pickups"</string>
+    <string name="accessibility_change_address">"Change address"</string>
+    <string name="accessibility_event_date_filter_hint">"Filter events based on date"</string>
+    <string name="accessibility_event_category_filter_hint">"Filter events based on categories"</string>
+    <string name="accessibility_hint_state_selected">"selected"</string>
+    <string name="accessibility_hint_state_selected_with_text_area">"selected and a text area has appeared."</string>
+    <string name="accessibility_checkbox_state_checked">"Checked"</string>
+    <string name="accessibility_checkbox_state_unchecked">"Unchecked"</string>
+    <string name="accessibility_deselect">"Deselect"</string>
+    <string name="accessibility_select">"Select"</string>
+    <string name="accessibility_privacy_settings_hint">"Double tap to toggle settings on or off"</string>
+    <string name="accessibility_value_deselected">"Deselected"</string>
+    <string name="accessibility_value_not_selected">"Not selected"</string>
+    <string name="accessibility_hint_disabled">"Disabled"</string>
+    <string name="accessibility_select_calendar_hint">"Double tap to select calendar"</string>
+    <string name="accessibility_change_calendar_color_hint">"Double tap to select the calendar color"</string>
+    <string name="accessiblity_calendar_nameview_hint">"Input waste calendar name"</string>
+    <string name="accessiblity_progress_status">"Step %s of %s"</string>
+    <string name="accessiblity_survey_completed">"Survey is completed"</string>
+    <string name="accessibility_heading_level_2">"Heading 2"</string>
+    <string name="accessibility_heading_level_3">"Heading 3"</string>
+</resources>

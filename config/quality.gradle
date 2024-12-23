@@ -1,0 +1,64 @@
+apply plugin: 'io.gitlab.arturbosch.detekt'
+
+configurations {
+    detekt
+    ktlint
+}
+
+dependencies {
+    ktlint 'com.pinterest:ktlint:0.43.1'
+}
+
+def variants = android.hasProperty('libraryVariants') ? android.libraryVariants : android.applicationVariants
+
+variants.all { variant ->
+    task("check${variant.name.capitalize()}", dependsOn: [
+            "lint${variant.name.capitalize()}",
+            "detektC${variant.name.capitalize()}",
+            "ktlint${variant.name.capitalize()}"
+    ]) { group = "Verification" }
+}
+
+variants.all { variant ->
+    task("detektC${variant.name.capitalize()}", type: JavaExec) {
+        group = "Verification"
+        main = "io.gitlab.arturbosch.detekt.cli.Main"
+        classpath = configurations.detekt
+
+        def input = projectDir
+        def output = "${buildDir}/reports/detekt/"
+        def outputName = "${variant.name}.xml"
+        def report = "xml:$output$outputName"
+        def exclude = ".*/build/.*,.*/resources/.*"
+        def config = "${project.rootDir}/config/quality/detekt/default-config.yml"
+
+        args(['-i', input, '-r', report, '-c', config, '-ex', exclude, '--fail-fast'])
+    }
+}
+
+variants.all { variant ->
+    task("ktlint${variant.name.capitalize()}", type: JavaExec) {
+        group = "Verification"
+        main = "com.pinterest.ktlint.Main"
+        classpath = configurations.ktlint
+        ignoreExitValue = true
+
+        def input = getSourceDirs(variant).collect { "\"$it/**/*.kt\"" }
+        def output = "${buildDir}/reports/ktlint/${variant.name}.xml"
+
+        args(['--android', "--reporter=plain?group_by_file", "--reporter=checkstyle,output=${output}"] + input)
+    }
+}
+
+task ktlintFormat(type: JavaExec, group: "formatting") {
+    description = "Fix Kotlin code style deviations."
+    classpath = configurations.ktlint
+    main = "com.pinterest.ktlint.Main"
+    args "-F", "src/**/*.kt"
+    ignoreExitValue = true
+}
+
+
+static def getSourceDirs(variant) {
+    return variant.sourceSets*.name.collect { "src/$it/java" }
+}

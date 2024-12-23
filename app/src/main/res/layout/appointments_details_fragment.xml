@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutAppointmentsDetails"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?attr/colorSurface">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarAppointmentsDetail"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:menu="@menu/infobox_detailed_menu"
+            app:title="@string/apnmt_002_page_title"
+            app:titleTextColor="@color/onSurface" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.telekom.citykey.custom.views.VerticallyCroppedImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="250dp"
+                android:scaleType="matrix"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/events_header_padding_horizontal"
+                android:paddingBottom="@dimen/events_header_padding_horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/appointmentCreationInfo"
+                    style="@style/RobotoBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/events_header_padding_inner"
+                    android:textColor="@color/onSurfaceSecondary"
+                    android:textSize="@dimen/events_header_text_size_categories"
+                    tools:text="@string/apnmt_003_appointment_creation_format" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/appointmentName"
+                    style="@style/RobotoBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/onSurface"
+                    android:textSize="@dimen/events_header_text_size_title"
+                    tools:text="Appointment Name" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/events_card_divider_height"
+                android:background="@color/separatorSecondary" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/events_control_margin_top"
+                android:paddingBottom="@dimen/events_control_margin_bottom">
+
+                <include
+                    android:id="@+id/dateView"
+                    layout="@layout/home_event_details_fragment_card_date_start"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/dateBarrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="end"
+                    app:constraint_referenced_ids="dateView" />
+
+                <LinearLayout
+                    android:id="@+id/layoutStartTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@id/slashTimeSeparator"
+                    app:layout_constraintEnd_toStartOf="@id/slashTimeSeparator"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/labelStartTime"
+                        style="@style/RobotoMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e_005_start_time_label"
+                        android:textColor="@color/onSurface"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/startTime"
+                        style="@style/RobotoRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--:--"
+                        android:textColor="@color/onSurfaceSecondary"
+                        android:textSize="16sp"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/slashTimeSeparator"
+                    android:layout_width="42sp"
+                    android:layout_height="42sp"
+                    android:layout_marginStart="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/dateBarrier"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_slash_separator"
+                    app:tint="@color/onSurfaceSecondary" />
+
+                <LinearLayout
+                    android:id="@+id/layoutEndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:gravity="end"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@id/slashTimeSeparator"
+                    app:layout_constraintStart_toEndOf="@id/slashTimeSeparator"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/labelEndTime"
+                        style="@style/RobotoMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e_005_end_time_label"
+                        android:textColor="@color/onSurface"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/endTime"
+                        style="@style/RobotoRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--:--"
+                        android:textColor="@color/onSurfaceSecondary"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="@id/labelEndTime"
+                        app:layout_constraintStart_toEndOf="@id/slashTimeSeparator"
+                        app:layout_constraintTop_toBottomOf="@id/labelEndTime"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/dateTimeBarrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="dateView,layoutStartTime,slashTimeSeparator,layoutEndTime"
+                    tools:ignore="NotSibling" />
+
+                <View
+                    android:id="@+id/timeDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@color/separator"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dateTimeBarrier" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/addToCalendarBtn"
+                    style="@style/RobotoRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/simple_ripple"
+                    android:text="@string/e_005_add_to_calendar"
+                    android:textAlignment="center"
+                    android:textColor="@color/onSurfaceSecondary"
+                    android:textSize="13sp"
+                    app:drawableTint="@color/onSurfaceSecondary"
+                    app:drawableTopCompat="@drawable/ic_add_to_calendar"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/showQrCodeBtn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/timeDivider" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/showQrCodeBtn"
+                    style="@style/RobotoRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/simple_ripple"
+                    android:text="@string/apnmt_002_show_qr_code_button"
+                    android:textAlignment="center"
+                    android:textColor="@color/onSurfaceSecondary"
+                    android:textSize="13sp"
+                    app:drawableTint="@color/onSurfaceSecondary"
+                    app:drawableTopCompat="@drawable/ic_apnmt_details_qr_code"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/addToCalendarBtn"
+                    app:layout_constraintTop_toBottomOf="@id/timeDivider" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/separatorSecondary" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/global_content_margins">
+
+                <TextView
+                    android:id="@+id/concernsLabel"
+                    style="@style/RobotoBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/apnmt_003_concerns_label"
+                    android:textColor="@color/onSurface"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/waitingNumber"
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/onSurfaceSecondary"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@id/concernsLabel"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/apnmt_003_waiting_no_format" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/requestsList"
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/onSurface"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/concernsLabel"
+                    tools:text="@tools:sample/lorem" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/participantsLabel"
+                    style="@style/RobotoBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/apnmt_003_participants_label"
+                    android:textColor="@color/onSurface"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/requestsList" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/participantsList"
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/onSurface"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/participantsLabel"
+                    tools:text="@tools:sample/lorem" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dontForgetLabel"
+                    style="@style/RobotoBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/apnmt_003_bring_with_label"
+                    android:textColor="@color/onSurface"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/participantsList" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dontForgetList"
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/onSurface"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dontForgetLabel"
+                    tools:text="@tools:sample/lorem" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/responsibleInstanceLabel"
+                    style="@style/RobotoBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/apnmt_003_responsible_label"
+                    android:textColor="@color/onSurface"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dontForgetList" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/responsibleInstanceList"
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/onSurface"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/responsibleInstanceLabel"
+                    tools:text="@tools:sample/lorem" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/additionalInfoLabel"
+                    style="@style/RobotoBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/apnmt_003_additional_label"
+                    android:textColor="@color/onSurface"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/responsibleInstanceList" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/additionalInfo"
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/onSurface"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/additionalInfoLabel"
+                    tools:text="@tools:sample/lorem" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/separatorSecondary" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/locationContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/simple_ripple"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/addressContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/global_content_margins"
+                    android:layout_marginEnd="@dimen/global_content_margins"
+                    android:orientation="horizontal"
+                    android:paddingTop="18dp"
+                    android:paddingBottom="18dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        app:srcCompat="@drawable/ic_action_location"
+                        app:tint="@color/onSurface" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/locationAddress"
+                        style="@style/RobotoRegular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:labelFor="@id/locationNavigation"
+                        android:textColor="@color/onSurface"
+                        android:textIsSelectable="true"
+                        android:textSize="14sp"
+                        tools:text="T-Online Alee 1" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/locationNavigation"
+                        style="@style/RobotoRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:hyphenationFrequency="full"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="2dp"
+                        android:text="@string/e_006_event_route"
+                        android:textColor="@color/onSurface"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/locationAddress"
+                        app:layout_constraintTop_toBottomOf="@id/locationName" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/separator" />
+
+                <com.telekom.citykey.custom.views.OscaMapView
+                    android:id="@+id/mapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="128dp"
+                    app:backgroundColor="@color/mapTileLoader"
+                    tools:liteMode="true"
+                    tools:mapToolbarEnabled="true" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/separator" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/e_006_event_tap_on_map_hint"
+                    android:textColor="@color/eclipseGrey"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/placeName"
+                    style="@style/RobotoMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/global_content_margins"
+                    android:layout_marginTop="17dp"
+                    android:textColor="@color/onSurface"
+                    android:textSize="14sp"
+                    tools:text="Burgeramt" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/placeAddress"
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/global_content_margins"
+                    android:textColor="@color/onSurfaceSecondary"
+                    android:textSize="14sp"
+                    tools:text="T-Online 1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/placeTown"
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/global_content_margins"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="@color/onSurfaceSecondary"
+                    android:textSize="14sp"
+                    tools:text="94293 Darmstadt" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/cancelButtonContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/simple_ripple"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/separator" />
+
+                <com.telekom.citykey.custom.views.ProgressButton
+                    android:id="@+id/cancelButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
+                    app:text="@string/apnmt_003_cancel_appointment_btn" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

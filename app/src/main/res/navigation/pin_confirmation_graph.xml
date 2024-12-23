@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/registration_confirmation_graph"
+    app:startDestination="@id/registrationConfirmation">
+
+    <argument
+        android:name="dob"
+        app:argType="string" />
+
+    <argument
+        android:name="zipcode"
+        app:argType="string" />
+
+    <argument
+        android:name="email"
+        app:argType="string" />
+
+    <argument
+        android:name="actionType"
+        app:argType="integer" />
+
+    <argument
+        android:name="resendAction"
+        app:argType="string" />
+
+    <argument
+        android:name="validationAction"
+        app:argType="string" />
+
+    <argument
+        android:name="title"
+        app:argType="reference" />
+
+    <argument
+        android:name="helperText"
+        app:argType="reference" />
+
+    <argument
+        android:name="headlineTextFormat"
+        app:argType="reference" />
+
+    <argument
+        android:name="errorText"
+        app:argType="string"
+        app:nullable="true" />
+
+    <action
+        android:id="@+id/RegistrationConfirmation"
+        app:destination="@id/registrationConfirmation"
+        app:enterAnim="@anim/fragment_level2_enter"
+        app:exitAnim="@anim/fragment_level2_exit"
+        app:popEnterAnim="@anim/fragment_level2_pop_enter"
+        app:popExitAnim="@anim/fragment_level2_pop_exit" />
+
+    <fragment
+        android:id="@+id/registrationConfirmation"
+        android:name="com.telekom.citykey.view.user.pin_verification.PINVerification"
+        android:label="RegistrationConfirmation">
+
+        <argument
+            android:name="dob"
+            app:argType="string" />
+
+        <argument
+            android:name="zipcode"
+            app:argType="string" />
+
+        <argument
+            android:name="email"
+            app:argType="string" />
+
+        <argument
+            android:name="actionType"
+            app:argType="integer" />
+
+        <argument
+            android:name="resendAction"
+            app:argType="string" />
+
+        <argument
+            android:name="validationAction"
+            app:argType="string" />
+
+        <argument
+            android:name="title"
+            app:argType="reference" />
+
+        <argument
+            android:name="helperText"
+            app:argType="reference" />
+
+        <argument
+            android:name="headlineTextFormat"
+            app:argType="reference" />
+
+        <argument
+            android:name="errorText"
+            app:argType="string"
+            app:nullable="true" />
+
+        <action
+            android:id="@+id/action_registrationConfirmation_to_registrationSuccess"
+            app:destination="@id/registrationSuccess"
+            app:enterAnim="@anim/fragment_level2_enter"
+            app:exitAnim="@anim/fragment_level2_exit"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/fragment_level2_pop_enter"
+            app:popExitAnim="@anim/fragment_level2_pop_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registrationSuccess"
+        android:name="com.telekom.citykey.view.user.pin_verification.success.VerificationSuccess"
+        android:label="RegistrationSuccess">
+
+        <argument
+            android:name="dob"
+            app:argType="string" />
+
+        <argument
+            android:name="zipcode"
+            app:argType="string" />
+
+        <argument
+            android:name="resultType"
+            app:argType="integer" />
+
+    </fragment>
+
+</navigation>

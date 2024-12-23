@@ -1,0 +1,120 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appointmentsOverViewPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?attr/colorSurface">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarAppointments"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/apnmt_002_page_title"
+            app:titleTextColor="@color/onSurface" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.telekom.citykey.custom.views.OnlyVerticalSwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:id="@+id/containerAppointmentsOverview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/appointmentsList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:scrollbarSize="4dp"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbarThumbVertical="@color/separatorLight"
+                android:scrollbarTrackVertical="@color/backgroundSecondary"
+                android:scrollbars="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/appointments_overview_list_item" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textEmptyState"
+                style="@style/RobotoRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginTop="88dp"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:text="@string/apnmt_002_empty_state_label"
+                android:textAlignment="center"
+                android:textColor="@color/onSurface"
+                android:textSize="18sp"
+                android:visibility="gone" />
+
+            <com.telekom.citykey.custom.views.OscaProgressBar
+                android:id="@+id/loading"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="88dp"
+                android:indeterminateTint="@color/onSurface"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/errorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginTop="88dp"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/RobotoRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/apnmt_002_error_info"
+                    android:textAlignment="center"
+                    android:textColor="@color/onSurface"
+                    android:textSize="18sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/RobotoRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/apnmt_002_error_description"
+                    android:textAlignment="center"
+                    android:textColor="@color/onSurface"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/retryButton"
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/b_005_infobox_error_btn_reload"
+                    android:textColor="@color/oscaColor"
+                    android:textSize="14sp"
+                    app:drawableStartCompat="@drawable/ic_action_resend_email"
+                    app:drawableTint="@color/oscaColor" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
+
+    </com.telekom.citykey.custom.views.OnlyVerticalSwipeRefreshLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

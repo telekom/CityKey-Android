@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission"
+        tools:node="remove" />
+
+    <!--  opengl -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <queries>
+        <!-- Browser -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="http" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+
+        <!-- Camera -->
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+
+        <!-- Gallery -->
+        <intent>
+            <action android:name="android.intent.action.PICK" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.GET_CONTENT" />
+        </intent>
+
+        <!-- Share  -->
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="text/plain" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="image/*" />
+        </intent>
+
+    </queries>
+
+    <application
+        android:name="com.telekom.citykey.SmartApplication"
+        android:allowBackup="false"
+        android:fullBackupContent="@xml/backup_descriptor"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/application_name"
+        android:networkSecurityConfig="@xml/network_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:taskAffinity=""
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+
+        <activity
+            android:name="com.telekom.citykey.view.main.MainActivity"
+            android:configChanges="screenSize|orientation"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullUser"
+            android:theme="@style/SplashTheme">
+            <nav-graph android:value="@navigation/services_graph" />
+            <nav-graph android:value="@navigation/infobox_graph" />
+            <nav-graph android:value="@navigation/main_nav_graph" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name="com.telekom.citykey.view.user.registration.RegistrationActivity"
+            android:configChanges="screenSize|orientation"
+            android:exported="false"
+            android:screenOrientation="fullUser"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name="com.telekom.citykey.view.user.login.LoginActivity"
+            android:configChanges="screenSize|orientation"
+            android:exported="false"
+            android:label="@string/l_001_login_title"
+            android:screenOrientation="fullUser"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name="com.telekom.citykey.view.welcome.WelcomeActivity"
+            android:configChanges="screenSize|orientation"
+            android:exported="false"
+            android:screenOrientation="fullUser" />
+
+        <activity
+            android:name="com.telekom.citykey.view.user.profile.ProfileActivity"
+            android:configChanges="layoutDirection|locale"
+            android:exported="false"
+            android:label="@string/p_001_profile_title"
+            android:screenOrientation="fullUser"
+            android:windowSoftInputMode="adjustResize" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_list" />
+        </provider>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+        <!-- Used for push notifications  from MoEngage-->
+        <service
+            android:name=".domain.notifications.OscaPushService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+
+        </service>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_citykey_notification_icon_small" />
+
+        <receiver
+            android:name="com.adjust.sdk.AdjustReferrerReceiver"
+            android:exported="true"
+            android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.telekom.citykey.view.widget.news.news_list.NewsListWidget"
+            android:exported="true"
+            android:label="@string/widget_title">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/news_list_widget_provider" />
+        </receiver>
+
+        <service
+            android:name=".view.widget.news.news_list.NewsListWidgetRemoteViewService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <receiver
+            android:name="com.telekom.citykey.view.widget.news.news_single_item.NewsSingleItemWidget"
+            android:exported="true"
+            android:label="@string/widget_title">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/news_single_widget_provider" />
+        </receiver>
+
+        <service
+            android:name=".view.widget.news.news_single_item.NewsSingleItemWidgetRemoteViewService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <receiver
+            android:name="com.telekom.citykey.view.widget.waste_calendar.small_widget.SmallWasteCalendarWidget"
+            android:exported="true"
+            android:label="@string/app_waste_widget_description">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_ENABLED" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="com.telekom.citykey.SCHEDULED_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/small_waste_calendar_widget_provider" />
+        </receiver>
+
+        <service
+            android:name=".view.widget.waste_calendar.small_widget.SmallWasteCalendarWidgetRemoteViewService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <receiver
+            android:name="com.telekom.citykey.view.widget.waste_calendar.medium_widget.MediumWasteCalendarWidget"
+            android:exported="true"
+            android:label="@string/app_waste_widget_description">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_ENABLED" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="com.telekom.citykey.SCHEDULED_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/medium_waste_calendar_widget_provider" />
+        </receiver>
+
+        <receiver
+            android:name="com.telekom.citykey.view.widget.waste_calendar.widget_5x1.WasteCalendarWidget5x1"
+            android:exported="true"
+            android:label="@string/app_waste_widget_description">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_ENABLED" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="com.telekom.citykey.SCHEDULED_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/waste_calendar_widget_5x1_provider" />
+        </receiver>
+
+        <receiver
+            android:name="com.telekom.citykey.view.widget.waste_calendar.widget_2x1.WasteCalendarWidget2x1"
+            android:exported="true"
+            android:label="@string/app_waste_widget_description">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_ENABLED" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="com.telekom.citykey.SCHEDULED_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/waste_calendar_widget_2x1_provider" />
+        </receiver>
+
+        <service
+            android:name="com.telekom.citykey.view.widget.waste_calendar.medium_widget.TodayPickupsRemoteViewService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <service
+            android:name="com.telekom.citykey.view.widget.waste_calendar.medium_widget.TomorrowPickupsRemoteViewService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <service
+            android:name="com.telekom.citykey.view.widget.waste_calendar.medium_widget.DATPickupsRemoteViewService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+    </application>
+
+</manifest>

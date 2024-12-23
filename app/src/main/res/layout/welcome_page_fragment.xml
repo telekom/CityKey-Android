@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/welcomeBox"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/welcomeImage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@id/container"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bg_signin_04" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/descHeading"
+                style="@style/RobotoBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:focusable="true"
+                android:text="@string/x_003_welcome_info_title"
+                android:textColor="@color/black"
+                android:textSize="34sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/desc"
+                style="@style/RobotoRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/x_003_welcome_info"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/loginLink"
+                style="@style/RobotoMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="22dp"
+                android:background="@drawable/simple_ripple"
+                android:text="@string/x_001_welcome_btn_login"
+                android:textColor="@color/oscaColor"
+                android:textSize="18sp" />
+
+            <com.telekom.citykey.custom.views.ProgressButton
+                android:id="@+id/registerBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="22dp"
+                app:text="@string/x_001_welcome_btn_register" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

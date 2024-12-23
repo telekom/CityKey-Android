@@ -1,0 +1,151 @@
+{
+  "content": {
+    "calendar": [
+      {
+        "date": "2024-11-04 00:00:00",
+        "wasteTypeList": [
+          {
+            "wasteTypeId": 2,
+            "wasteType": "Papierbehälter",
+            "color": "#106BA9"
+          },
+          {
+            "wasteTypeId": 3,
+            "wasteType": "Gelbe Behälter",
+            "color": "#F0C300"
+          },
+          {
+            "wasteTypeId": 9,
+            "wasteType": "Restabfallbehälter",
+            "color": "#58595A"
+          }
+        ]
+      },
+      {
+        "date": "2024-11-12 00:00:00",
+        "wasteTypeList": [
+          {
+            "wasteTypeId": 1,
+            "wasteType": "Bioabfallbehälter",
+            "color": "#3C9C2F"
+          }
+        ]
+      },
+      {
+        "date": "2024-11-18 00:00:00",
+        "wasteTypeList": [
+          {
+            "wasteTypeId": 9,
+            "wasteType": "Restabfallbehälter",
+            "color": "#58595A"
+          }
+        ]
+      },
+      {
+        "date": "2024-11-20 00:00:00",
+        "wasteTypeList": [
+          {
+            "wasteTypeId": 4,
+            "wasteType": "Gelbe Großbehälter",
+            "color": "#F0C300"
+          }
+        ]
+      },
+      {
+        "date": "2024-11-26 00:00:00",
+        "wasteTypeList": [
+          {
+            "wasteTypeId": 1,
+            "wasteType": "Bioabfallbehälter",
+            "color": "#3C9C2F"
+          }
+        ]
+      },
+      {
+        "date": "2024-12-02 00:00:00",
+        "wasteTypeList": [
+          {
+            "wasteTypeId": 2,
+            "wasteType": "Papierbehälter",
+            "color": "#106BA9"
+          },
+          {
+            "wasteTypeId": 3,
+            "wasteType": "Gelbe Behälter",
+            "color": "#F0C300"
+          },
+          {
+            "wasteTypeId": 9,
+            "wasteType": "Restabfallbehälter",
+            "color": "#58595A"
+          }
+        ]
+      },
+      {
+        "date": "2024-12-10 00:00:00",
+        "wasteTypeList": [
+          {
+            "wasteTypeId": 1,
+            "wasteType": "Bioabfallbehälter",
+            "color": "#3C9C2F"
+          }
+        ]
+      },
+      {
+        "date": "2024-12-13 00:00:00",
+        "wasteTypeList": [
+          {
+            "wasteTypeId": 6,
+            "wasteType": "Sperrmüll",
+            "color": "#915710"
+          }
+        ]
+      },
+      {
+        "date": "2024-12-16 00:00:00",
+        "wasteTypeList": [
+          {
+            "wasteTypeId": 9,
+            "wasteType": "Restabfallbehälter",
+            "color": "#58595A"
+          }
+        ]
+      },
+      {
+        "date": "2024-12-18 00:00:00",
+        "wasteTypeList": [
+          {
+            "wasteTypeId": 4,
+            "wasteType": "Gelbe Großbehälter",
+            "color": "#F0C300"
+          }
+        ]
+      },
+      {
+        "date": "2024-12-20 00:00:00",
+        "wasteTypeList": [
+          {
+            "wasteTypeId": 1,
+            "wasteType": "Bioabfallbehälter",
+            "color": "#3C9C2F"
+          }
+        ]
+      },
+      {
+        "date": "2024-12-30 00:00:00",
+        "wasteTypeList": [
+          {
+            "wasteTypeId": 9,
+            "wasteType": "Restabfallbehälter",
+            "color": "#58595A"
+          }
+        ]
+      }
+    ],
+    "address": {
+      "streetName": "Abtstr.",
+      "houseNumber": "1"
+    },
+    "reminders": []
+  }
+}

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/global_content_margins"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="@dimen/global_content_margins"
+    android:layout_marginBottom="10dp"
+    app:cardBackgroundColor="@color/background"
+    app:cardCornerRadius="@dimen/global_cardview_corner_radius"
+    app:cardElevation="@dimen/global_cardview_elevation">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/appointmentCardContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/appoinmentCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cardTitle"
+                style="@style/RobotoBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="@dimen/global_content_margins"
+                android:text="@string/apnmt_002_card_title"
+                android:textColor="@color/onSurface"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginTop="17dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/middleGuideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardTitle">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/placeName"
+                    style="@style/RobotoMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/onSurface"
+                    android:textSize="14sp"
+                    tools:text="Burgeramt" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/placeAddress"
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:textColor="@color/onSurfaceSecondary"
+                    android:textSize="14sp"
+                    tools:text="T-Online 1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/placeTown"
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/onSurfaceSecondary"
+                    android:textSize="14sp"
+                    tools:text="94293 Darmstadt" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/middleGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/middleGuideline"
+                app:layout_constraintTop_toBottomOf="@id/cardTitle">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dateTitle"
+                    style="@style/RobotoMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/apnmt_002_date_label"
+                    android:textColor="@color/onSurface"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dateTime"
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/onSurfaceSecondary"
+                    android:textSize="14sp"
+                    tools:text="29th November" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dateHours"
+                    style="@style/RobotoRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/onSurfaceSecondary"
+                    android:textSize="14sp"
+                    tools:text="12:00 - 13:00" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/appoinmentCard">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appointmentStateText"
+                style="@style/RobotoRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:background="@color/red"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@tools:sample/lorem" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/middleGuidelineBelow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/moreInfoBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:drawablePadding="5dp"
+                android:paddingTop="17dp"
+                android:paddingBottom="17dp"
+                android:text="@string/apnmt_002_more_info_button"
+                android:textColor="@color/onSurface"
+                android:textSize="16sp"
+                app:drawableStartCompat="@drawable/ic_appointments_more_info"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/middleGuidelineBelow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appointmentStateText" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/qrCodeBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_content_margins"
+                android:drawablePadding="5dp"
+                android:paddingTop="17dp"
+                android:paddingBottom="17dp"
+                android:text="@string/apnmt_002_show_qr_code_button"
+                android:textColor="@color/onSurface"
+                android:textSize="16sp"
+                app:drawableStartCompat="@drawable/ic_appointments_qr_code"
+                app:drawableTint="@color/onSurface"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/middleGuidelineBelow"
+                app:layout_constraintTop_toBottomOf="@id/appointmentStateText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
