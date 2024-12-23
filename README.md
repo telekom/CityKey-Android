@@ -6,7 +6,7 @@ SPDX-License-Identifier: CC0-1.0
 
 ![Citykey App's Overview](./images/cover.png)
 
-# Android App of CityKey [![Apache-2.0](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://opensource.org/license/apache-2-0) [![OpenSSF Scorecard Score](https://api.scorecard.dev/projects/github.com/telekom/citykey-android/badge)](https://scorecard.dev/viewer/?uri=github.com/telekom/citykey-android/badge)
+# Android App of Citykey [![Apache-2.0](https://img.shields.io/badge/license-Apache%202.0-blue)](https://opensource.org/license/apache-2-0) [![OpenSSF Scorecard Score](https://api.scorecard.dev/projects/github.com/telekom/citykey-android/badge)](https://scorecard.dev/viewer/?uri=github.com/telekom/citykey-android/badge)
 
 ## Overview
 
@@ -89,9 +89,9 @@ follows.
 Code contributions are welcome!
 
 You should fork the repo as described
-here: https://help.github.com/en/github/getting-started-with-github/fork-a-repo
+here: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo
 
-See the Issues list for bug
+See the issues list for bug
 reports: https://github.com/telekom/CityKey-Android/issues
 
 Before adding new features, please create an issue, or contact
@@ -106,6 +106,4 @@ By participating in this project, you agree to abide by its [Code of Conduct](CO
 
 ## Licensing
 
-This project follows the [REUSE standard for software licensing](https://reuse.software/).    
-Each file contains copyright and license information, and license texts can be found in the [./LICENSES](./LICENSES) folder. For more information visit https://reuse.software/.    
-You can find a guide for developers at https://telekom.github.io/reuse-template/.
+This project follows the [REUSE standard for software licensing](https://reuse.software). Each file contains copyright and license information, and license texts can be found in the [LICENSES](./LICENSES) folder. For more information visit https://reuse.software.
