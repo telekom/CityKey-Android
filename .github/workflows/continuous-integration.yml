@@ -52,6 +52,7 @@ jobs:
 
     build-debug:
       runs-on: ubuntu-24.04
+      needs: unit-tests
       permissions:
         contents: write
 
