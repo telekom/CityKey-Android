@@ -1,5 +1,5 @@
 # Global code owners for the repository.
-* @telekom/CityKey/CityKey-Android
+* @telekom/teams/CityKey-Android
 
 # Code owners for the application code.
 /app/ @dhanesh-tsin @ShashilPohankar
