@@ -5,7 +5,7 @@ Contributions are very welcome and encouraged. Here, we focus on contributions m
 ## Creating Issues
 
 Before creating a new issue, please have a look at the list
-of [existing issues](https://gitlab.devops.telekom.de/osca/osca_develop/osca-android-client/-/issues)
+of [existing issues](https://github.com/telekom/CityKey-Android/issues)
 to see if it already has been reported. An issue will be closed once it has been fixed
 in the source code. This fix however might not have its way to the version of Citykey you are using,
 so please don't forget to also check the closed issues.
