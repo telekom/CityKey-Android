@@ -48,9 +48,6 @@ The original devcontainer.json was taken from
 		}
 	},
 
-	// Use 'onCreateCommand' to run pre-build commands inside the codespace
-	"onCreateCommand": "${containerWorkspaceFolder}/.devcontainer/scripts/onCreateCommand.sh android",
-
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "${containerWorkspaceFolder}/.devcontainer/scripts/postCreateCommand.sh android",
 
