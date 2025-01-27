@@ -49,7 +49,7 @@ The original devcontainer.json was taken from
 	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "${containerWorkspaceFolder}/.devcontainer/scripts/postCreateCommand.sh android",
+	"postCreateCommand": "${containerWorkspaceFolder}/.devcontainer/postCreateCommand.sh android",
 
     "postStartCommand": "${containerWorkspaceFolder}/.devcontainer/android/postStartCommand.sh",
 
