@@ -42,7 +42,7 @@ ENV HOST_OS=linux
 ENV HOST_OS_SHORT=linux
 ENV ANDROID_NDK_ROOT=/android/android-ndk-${NDK_VER}
 ENV ANDROID_SDK_ROOT=/android/android-sdk
-ENV EMULATOR_NAME_X64=dotnet-android-emulator
+ENV EMULATOR_NAME_X64=citykey-android-emulator
 
 # Download Android NDK and SDK
 RUN curl -sSL --tlsv1.2 https://dl.google.com/android/repository/android-ndk-${NDK_VER}-${HOST_OS}.zip -L --output /tmp/andk.zip && \
