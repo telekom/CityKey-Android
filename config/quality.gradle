@@ -2,11 +2,11 @@ apply plugin: 'io.gitlab.arturbosch.detekt'
 
 configurations {
     detekt
-    ktlint
+    ktlintCityKeyAndroid
 }
 
 dependencies {
-    ktlint 'com.pinterest:ktlint:0.43.1'
+    ktlintCityKeyAndroid 'com.pinterest:ktlint:0.43.1'
 }
 
 def variants = android.hasProperty('libraryVariants') ? android.libraryVariants : android.applicationVariants
@@ -40,7 +40,7 @@ variants.all { variant ->
     task("ktlint${variant.name.capitalize()}", type: JavaExec) {
         group = "Verification"
         main = "com.pinterest.ktlint.Main"
-        classpath = configurations.ktlint
+        classpath = configurations.ktlintCityKeyAndroid
         ignoreExitValue = true
 
         def input = getSourceDirs(variant).collect { "\"$it/**/*.kt\"" }
@@ -50,9 +50,9 @@ variants.all { variant ->
     }
 }
 
-task ktlintFormat(type: JavaExec, group: "formatting") {
+task ktlintFormatCityKeyAndroid(type: JavaExec, group: "formatting") {
     description = "Fix Kotlin code style deviations."
-    classpath = configurations.ktlint
+    classpath = configurations.ktlintCityKeyAndroid
     main = "com.pinterest.ktlint.Main"
     args "-F", "src/**/*.kt"
     ignoreExitValue = true

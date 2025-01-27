@@ -93,6 +93,19 @@ android {
     namespace 'com.telekom.citykey'
 }
 
+ktlint {
+    debug = true
+    verbose = true
+    android = true
+    reporters {
+        reporter "checkstyle"
+        reporter "plain"
+        reporter "plain_group_by_file"
+        reporter "sarif"
+        reporter "json"
+    }
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
     // NOTE: This dependency is required for resolution of the error regarding `kotlin-stdlib`
