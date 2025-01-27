@@ -103,4 +103,8 @@ By participating in this project, you agree to abide by its [Code of Conduct](CO
 
 ## Licensing
 
+### Source Code
 This project follows the [REUSE standard for software licensing](https://reuse.software). Each file contains copyright and license information, and license texts can be found in the [LICENSES](./LICENSES) folder. For more information visit https://reuse.software.
+
+### Deutsche Telekom Brand
+Although the code for the app is free and available under the Apache 2.0 license, Deutsche Telekom fully reserves all rights to the Telekom brand. To prevent users from getting confused about the source of a digital product or experience, there are strict restrictions on using the Telekom brand and design, even when built into code that we provide. For any customization other than explicitly for the Telekom, you must replace the Deutsche Telekom default theme.
