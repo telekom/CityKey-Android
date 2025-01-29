@@ -104,5 +104,12 @@ This project has adopted the [Contributor Covenant](https://www.contributor-cove
 By participating in this project, you agree to abide by its [Code of Conduct](CODE_OF_CONDUCT.md) at all times.
 
 ## Licensing
+Copyright (c) 2025 Deutsche Telekom AG
+
+Licensed under the **Apache-2.0 (SPDX short identifier: Apache-2.0)** (the "License"); you may not use this file except in compliance with the License.
+
+You may obtain a copy of the License by reviewing the file [LICENSE](./LICENSES/Apache-2.0.txt) in the repository.
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the [LICENSE](./LICENSES/Apache-2.0.txt) for the specific language governing permissions and limitations under the License.
 
 This project follows the [REUSE standard for software licensing](https://reuse.software). Each file contains copyright and license information, and license texts can be found in the [LICENSES](./LICENSES) folder. For more information visit https://reuse.software.
