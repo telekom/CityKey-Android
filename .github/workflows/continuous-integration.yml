@@ -18,6 +18,33 @@ on:
 
 
 jobs:
+  
+    ktlint:
+      runs-on: ubuntu-24.04
+      steps:
+        - name: "Checkout repository"
+          uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      
+        - name: "Set up JDK 17"
+          uses: actions/setup-java@7a6d8a8234af8eb26422e24e3006232cccaa061b # v4.6.0
+          with:
+            distribution: "temurin"
+            java-version: 17
+        
+        - name: "Setup Gradle"
+          uses: gradle/actions/setup-gradle@0bdd871935719febd78681f197cd39af5b6e16a6 # v4.2.2
+        
+        - name: "Run Kotlin linter ktlint"
+          run: ./gradlew ktlintCheck
+
+        - name: "Upload ktlint reports"
+          uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
+          with:
+            name: ktlint-reports
+            path: /workspaces/CityKey-Android/app/build/reports/ktlint/
+            retention-days: 5
+            compression-level: 9
+
     unit-tests:
         runs-on: ubuntu-24.04
         steps:
