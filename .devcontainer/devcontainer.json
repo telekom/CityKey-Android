@@ -35,7 +35,7 @@ The original devcontainer.json was taken from
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"ms-dotnettools.csharp"
+				"fwcd.kotlin"
 			]
 		}
 	},
