@@ -8,27 +8,27 @@ FROM mcr.microsoft.com/devcontainers/dotnet:${VARIANT}
 # Set up machine requirements to build the repo
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
+        build-essential \
         clang \
         cmake \
         cpio \
-        build-essential \
-        python3 \
         curl \
+        gettext \
         git \
         lldb \
         llvm \
         liblldb-dev \
         libunwind8 \
         libunwind8-dev \
-        gettext \
         libicu-dev \
         liblttng-ust-dev \
         libssl-dev \
         libkrb5-dev \
         ninja-build \
-        zlib1g-dev \
         openjdk-17-jdk \
-        pulseaudio
+        python3 \
+        pulseaudio \
+        zlib1g-dev 
 
 SHELL ["/bin/bash", "-c"]
 
