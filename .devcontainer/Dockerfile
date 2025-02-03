@@ -25,10 +25,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         liblttng-ust-dev \
         libssl-dev \
         libkrb5-dev \
-        zlib1g-dev \
         ninja-build \
         zlib1g-dev \
-        ninja-build \
         openjdk-17-jdk \
         pulseaudio
 
