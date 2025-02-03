@@ -34,7 +34,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 
 SHELL ["/bin/bash", "-c"]
 
-ENV NDK_VER=r23c
+ENV NDK_VER=r26c
 ENV SDK_VER=9123335_latest
 ENV SDK_API_LEVEL=33
 ENV SDK_BUILD_TOOLS=34.0.0
