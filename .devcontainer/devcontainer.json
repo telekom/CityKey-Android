@@ -36,7 +36,8 @@ The original devcontainer.json was taken from
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"fwcd.kotlin",
-				"vscjava.vscode-gradle"
+				"vscjava.vscode-gradle",
+				"DiemasMichiels.emulate"
 			]
 		}
 	},
