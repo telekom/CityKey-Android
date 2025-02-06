@@ -1,0 +1,3 @@
+Deutsche Telekom Brand
+
+Although the code for the app is free and available under the Apache 2.0 license, Deutsche Telekom fully reserves all rights to the Telekom brand. To prevent users from getting confused about the source of a digital product or experience, there are strict restrictions on using the Telekom brand and design, even when built into code that we provide. For any customization other than explicitly for the Telekom, you must replace the Deutsche Telekom default theme.
