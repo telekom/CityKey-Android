@@ -1,6 +1,6 @@
 # How to contribute
 
-Contributions are very welcome and encouraged. Here, we focus on contributions made via GitLab.
+Contributions are very welcome and encouraged. Here, we focus on contributions made via Github.
 
 ## Creating Issues
 
