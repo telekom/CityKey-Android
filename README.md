@@ -74,7 +74,6 @@ The next step is to clone the source code repository.
     $ git clone https://github.com/telekom/CityKey-Android.git
 
 Then, in the file `secrets.properties` present in the root folder, put your own Google Maps API key.
-This file is not checked into Git as it contains the sensitive credentials.
 
 Use `debug` build variant to run the application for debugging purpose.
 
@@ -88,15 +87,20 @@ follows.
 Code contributions are welcome!
 
 You should fork the repo as described
-here: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo
+[here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
 
 See the issues list for bug
-reports: https://github.com/telekom/CityKey-Android/issues
+reports: [Citykey-Android issues](https://github.com/telekom/CityKey-Android/issues).
 
-Before adding new features, please create an issue, or contact
-us: https://public.telekom.de/digitalisierungsloesungen/smart-city#Kontaktaufnahme
+Before adding new features, please create an issue, or [contact
+us](https://public.telekom.de/digitalisierungsloesungen/smart-city#Kontaktaufnahme).
 
 See the [CONTRIBUTING](CONTRIBUTING.md) file for more details.
+
+## Documentation
+
+All the relevant documentation for this project is kept under [documentation](./documentation) directory. Here you will find:
+1. [Guide to add new Services (APIs)](https://github.com/telekom/CityKey-Android/blob/main/documentation/API_INTEGRATION.md).
 
 ## Code of Conduct
 
@@ -113,9 +117,9 @@ You may obtain a copy of the License by reviewing the file [LICENSE](./LICENSES/
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the [LICENSE](./LICENSES/Apache-2.0.txt) for the specific language governing permissions and limitations under the License.
 
 In accordance with Sections 4 and 6 of the License, the following exclusions apply:
-1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
-2. Design Rights – Visual identities, UI/UX designs, and other graphical elements remain the property of their respective owners and are not licensed under the Apache License 2.0.
-3. Non-Coded Copyrights – Documentation, images, videos, and other non-software materials require separate authorization for use, modification, or distribution.
+1. **Trademarks & Logos** – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
+2. **Design Rights** – Visual identities, UI/UX designs, and other graphical elements remain the property of their respective owners and are not licensed under the Apache License 2.0.
+3. **Non-Coded Copyrights** – Documentation, images, videos, and other non-software materials require separate authorization for use, modification, or distribution.
 
 These elements are not considered part of the licensed Work or Derivative Works unless explicitly agreed otherwise. All elements must be altered, removed, or replaced before use or distribution. All rights to these materials are reserved, and Contributor accepts no liability for any infringing use. By using this repository, you agree to indemnify and hold harmless Contributor against any claims, costs, or damages arising from your use of the excluded elements.
 
