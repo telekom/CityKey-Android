@@ -6,7 +6,6 @@
 [![REUSE status](https://api.reuse.software/badge/github.com/telekom/CityKey-android)](https://api.reuse.software/info/github.com/telekom/CityKey-android)
 [![ktlint](https://img.shields.io/badge/ktlint%20code--style-%E2%9D%A4-FF4081)](https://pinterest.github.io/ktlint/)
 
-
 ## Overview
 
 Citykey is an urban living companion developed by [Deutsche Telekom AG](https://www.telekom.com/de),
@@ -15,6 +14,14 @@ access to local services, events, and transportation information, making it a mu
 navigating urban environments. It is the digital way to access the citizen services.
 
 Please [visit the website](https://citykey.app) for more information!
+
+## Want to try out?
+
+Citykey app is free for downloading available on the PlayStore
+
+<a href="https://play.google.com/store/apps/details?id=com.telekom.citykey" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px;">
+    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="border-radius: 13px; width: 250px;">
+</a>
 
 ## Features
 
@@ -58,10 +65,6 @@ Please [visit the website](https://citykey.app) for more information!
   A deep pothole in the road, a crooked guard rail or a defective street light caught your eye?
     - Report damaged or defective infrastructure to the city
     - Detail your request, simply by sending a photo with a location marker
-
-## Want to try out?
-
-Play Store deployed: https://play.google.com/store/apps/details?id=com.telekom.citykey
 
 ## Building From Source
 
