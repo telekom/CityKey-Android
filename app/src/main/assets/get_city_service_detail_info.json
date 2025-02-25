@@ -1,8 +1,8 @@
 {
-  "content": [
-    {
-      "textId": 654,
-      "helpText": "<p>Terms and condition help text</p>"
-    }
-  ]
+    "content": [
+        {
+            "textId": 654,
+            "helpText": "<p>Terms and condition help text</p>"
+        }
+    ]
 }

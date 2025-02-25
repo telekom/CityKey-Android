@@ -1,8 +1,168 @@
 {
-  "errors": [
-    {
-      "errorCode": "action.not.available.for.city",
-      "userMsg": "Unfortunately this service is not yet available for the current city."
-    }
-  ]
+    "content": [
+        {
+            "apptId": 11006,
+            "cityId": 13,
+            "externalUserId": 4009,
+            "tvoId": "edb7c46a-aa7d-46c8-95bf-92f862ed0051",
+            "uuid": "217972254-1359-450d-86ca-c65c3c9f8772",
+            "title": "Anliegen in Paderborn",
+            "apptStatus": "Bestätigung",
+            "createdTime": "2025-02-06 11:20:00",
+            "startTime": "2025-02-06 13:30:00",
+            "endTime": "2025-02-06 13:45:00",
+            "isRead": true,
+            "reasons": [
+                {
+                    "sNumber": "1",
+                    "description": "Anliegen in Paderborn"
+                }
+            ],
+            "contacts": {
+                "contactDesc": "Telekom",
+                "email": "",
+                "contactNotes": "",
+                "telefon": ""
+            },
+            "attendee": [
+                {
+                    "firstName": "Wolfgang",
+                    "lastName": "Müller"
+                }
+            ],
+            "location": {
+                "addressDesc": "Paderborn Rathaus",
+                "street": "Rathausplatz",
+                "houseNumber": "1",
+                "postalCode": "33098",
+                "place": "Paderborn"
+            },
+            "waitingNo": "",
+            "documents": [],
+            "notes": ""
+        },
+        {
+            "apptId": 11007,
+            "cityId": 13,
+            "externalUserId": 4009,
+            "tvoId": "1a7f3656-68e1-4e07-b266-45f0299b446c",
+            "uuid": "2a8f85ecf-0060-4caf-9f39-8387be70d69d",
+            "title": "Anliegen in Paderborn",
+            "apptStatus": "Stornierung",
+            "createdTime": "2025-02-12 12:33:00",
+            "startTime": "2025-02-12 14:45:00",
+            "endTime": "2025-02-12 15:00:00",
+            "isRead": true,
+            "reasons": [
+                {
+                    "sNumber": "1",
+                    "description": "Anliegen in Paderborn"
+                }
+            ],
+            "contacts": {
+                "contactDesc": "Telekom",
+                "email": "",
+                "contactNotes": "",
+                "telefon": ""
+            },
+            "attendee": [
+                {
+                    "firstName": "Wolfgang",
+                    "lastName": "Müller"
+                }
+            ],
+            "location": {
+                "addressDesc": "Paderborn Rathaus",
+                "street": "Rathausplatz",
+                "houseNumber": "1",
+                "postalCode": "33098",
+                "place": "Paderborn"
+            },
+            "waitingNo": "",
+            "documents": [],
+            "notes": ""
+        },
+        {
+            "apptId": 11008,
+            "cityId": 13,
+            "externalUserId": 4009,
+            "tvoId": "f422731e-7464-4dba-81f6-b9f25e2a7a6d",
+            "uuid": "27404a965-decb-490f-b0b5-223867e21292",
+            "title": "Anliegen in Paderborn",
+            "apptStatus": "Stornierung",
+            "createdTime": "2025-02-12 12:36:00",
+            "startTime": "2025-02-12 15:00:00",
+            "endTime": "2025-02-12 15:15:00",
+            "isRead": true,
+            "reasons": [
+                {
+                    "sNumber": "1",
+                    "description": "Anliegen in Paderborn"
+                }
+            ],
+            "contacts": {
+                "contactDesc": "Telekom",
+                "email": "",
+                "contactNotes": "",
+                "telefon": ""
+            },
+            "attendee": [
+                {
+                    "firstName": "Wolfgang",
+                    "lastName": "Müller"
+                }
+            ],
+            "location": {
+                "addressDesc": "Paderborn Rathaus",
+                "street": "Rathausplatz",
+                "houseNumber": "1",
+                "postalCode": "33098",
+                "place": "Paderborn"
+            },
+            "waitingNo": "",
+            "documents": [],
+            "notes": ""
+        },
+        {
+            "apptId": 11009,
+            "cityId": 13,
+            "externalUserId": 4009,
+            "tvoId": "892a0098-93c2-4115-a933-7dbd8b4a07db",
+            "uuid": "2ec75d1ee-12b2-4728-9cfe-7e34493656aa",
+            "title": "Anliegen in Paderborn",
+            "apptStatus": "Bestätigung",
+            "createdTime": "2025-02-25 10:18:00",
+            "startTime": "2025-02-26 13:30:00",
+            "endTime": "2025-02-26 13:45:00",
+            "isRead": true,
+            "reasons": [
+                {
+                    "sNumber": "1",
+                    "description": "Anliegen in Paderborn"
+                }
+            ],
+            "contacts": {
+                "contactDesc": "Telekom",
+                "email": "",
+                "contactNotes": "",
+                "telefon": ""
+            },
+            "attendee": [
+                {
+                    "firstName": "Wolfgang",
+                    "lastName": "Müller"
+                }
+            ],
+            "location": {
+                "addressDesc": "Paderborn Rathaus",
+                "street": "Rathausplatz",
+                "houseNumber": "1",
+                "postalCode": "33098",
+                "place": "Paderborn"
+            },
+            "waitingNo": "",
+            "documents": [],
+            "notes": ""
+        }
+    ]
 }
