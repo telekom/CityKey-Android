@@ -107,14 +107,6 @@ ktlint {
     }
 }
 
-kover {
-    reports {
-        total {
-            // configuring report tasks
-        }
-    }
-}
-
 dependencies {
     implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
     // NOTE: This dependency is required for resolution of the error regarding `kotlin-stdlib`
