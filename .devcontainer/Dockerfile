@@ -47,7 +47,8 @@ RUN curl -sSL --tlsv1.2 https://dl.google.com/android/repository/android-ndk-${N
     curl -sSL --tlsv1.2 https://dl.google.com/android/repository/commandlinetools-${HOST_OS_SHORT}-${SDK_VER}.zip -L --output /tmp/asdk.zip
 
 # Check hashes of downloads
-RUN (echo "6ce94604b77d28113ecd588d425363624a5228d9662450c48d2e4053f8039242 /tmp/andk.zip"; echo "0bebf59339eaa534f4217f8aa0972d14dc49e7207be225511073c661ae01da0a /tmp/asdk.zip") | cat | sha256sum -c
+RUN echo "7faebe2ebd3590518f326c82992603170f07c96e /tmp/andk.zip" | cat | sha1sum -c
+RUN echo "0bebf59339eaa534f4217f8aa0972d14dc49e7207be225511073c661ae01da0a /tmp/asdk.zip" | cat | sha256sum -c
 
 # Unpack the NDK and SDK
 RUN mkdir -p ${ANDROID_NDK_ROOT} && unzip /tmp/andk.zip -d $(dirname ${ANDROID_NDK_ROOT}) && rm -f /tmp/andk.zip && \
