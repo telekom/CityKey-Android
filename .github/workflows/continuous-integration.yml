@@ -62,6 +62,9 @@ jobs:
            
             - name: "Run unit tests with coverage"
               run: ./gradlew test
+
+            - name: "Run Kover to generate Coverage Reports"
+              run: ./gradlew app:koverXMLReport app:koverHtmlReport
             
             - name: "Upload coverage to codecov"
               uses: codecov/codecov-action@1e68e06f1dbfde0e4cefc87efeba9e4643565303 # v5.1.2
