@@ -8,6 +8,7 @@ apply plugin: 'kotlin-parcelize'
 apply from: '../config/common.gradle'
 apply from: '../config/secrets.gradle'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'org.jetbrains.kotlinx.kover'
 
 android {
     compileSdkVersion = rootProject.compileSdkVersion
