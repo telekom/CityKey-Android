@@ -30,7 +30,6 @@ package com.telekom.citykey
 
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.platform.app.InstrumentationRegistry
-import com.telekom.citykey.BuildConfig
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
