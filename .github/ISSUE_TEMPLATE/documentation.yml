@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+#
+# SPDX-License-Identifier: CC0-1.0
+
 name: Documentation
 description: 'Submit a documentation issue related to a docstring or the docs to improve our documentation.'
 title : '[DOCUMENTATION] <Please write a short and informative title after the [DOCUMENTATION] prefix>'
