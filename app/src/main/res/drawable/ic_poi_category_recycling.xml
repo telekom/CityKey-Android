@@ -1,4 +1,24 @@
 <vector android:autoMirrored="true" android:height="24dp"
+<!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+    https://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+ 
+In accordance with Sections 4 and 6 of the License, the following exclusions apply:
+    1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
+    2. Design Rights – Visual identities, UI/UX designs, and other graphical elements remain the property of their respective owners and are not licensed under the Apache License 2.0.
+    3: Non-Coded Copyrights – Documentation, images, videos, and other non-software materials require separate authorization for use, modification, or distribution.
+These elements are not considered part of the licensed Work or Derivative Works unless explicitly agreed otherwise. All elements must be altered, removed, or replaced before use or distribution. All rights to these materials are reserved, and Contributor accepts no liability for any infringing use. By using this repository, you agree to indemnify and hold harmless Contributor against any claims, costs, or damages arising from your use of the excluded elements.
+SPDX-FileCopyrightText: 2025 Deutsche Telekom AG
+SPDX-License-Identifier: Apache-2.0 AND LicenseRef-Deutsche-Telekom-Brand
+License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-Brand.txt
+-->
     android:viewportHeight="24" android:viewportWidth="24"
     android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
     <path android:fillColor="#262626" android:fillType="nonZero" android:pathData="m19.563,4.5 l-0.601,17.25c0,0.412 -0.338,0.75 -0.75,0.75L5.724,22.5a0.752,0.752 0,0 1,-0.75 -0.75L4.388,4.5h15.175zM14.667,13.51c-0.098,0.52 -0.344,0.98 -0.732,1.369a2.64,2.64 0,0 1,-1.878 0.778,2.638 2.638,0 0,1 -1.481,-0.451l0.8,-0.8h-2.5v2.5l0.805,-0.806a3.876,3.876 0,0 0,2.376 0.806,3.881 3.881,0 0,0 2.762,-1.144c0.561,-0.56 0.933,-1.26 1.076,-2.021a0.625,0.625 0,0 0,-1.228 -0.231zM15.125,9.094 L14.314,9.905a3.875,3.875 0,0 0,-2.377 -0.807,3.881 3.881,0 0,0 -2.762,1.144 3.89,3.89 0,0 0,-1.07 2.002,0.625 0.625,0 0,0 1.227,0.242c0.102,-0.516 0.353,-0.986 0.727,-1.36a2.64,2.64 0,0 1,1.878 -0.778c0.536,0 1.048,0.158 1.482,0.452l-0.794,0.794h2.5v-2.5zM13.864,1.125a0.77,0.77 0,0 1,0.768 0.767v0.355h5.43a0.565,0.565 0,0 1,0 1.128L3.938,3.375a0.564,0.564 0,0 1,0 -1.128h5.436v-0.355c0,-0.422 0.344,-0.767 0.766,-0.767z"/>
