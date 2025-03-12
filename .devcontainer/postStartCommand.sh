@@ -3,6 +3,8 @@
 # The original postStartCommand.sh was taken from
 #   https://github.com/dotnet/runtime/blob/2ac0591de5e95f6e98b28b7525b712ed09c73c39/.devcontainer/android/postStartCommand.sh
 #
+# SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+# SPDX-License-Identifier: CC0-1.0
 
 set -e
 
