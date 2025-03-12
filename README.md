@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 ![Citykey App's Overview](./images/cover.png)
 
 # Android App of Citykey 
