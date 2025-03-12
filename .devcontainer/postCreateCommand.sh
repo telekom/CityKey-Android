@@ -3,6 +3,8 @@
 # The original postStartCommand.sh was taken from
 #   https://github.com/dotnet/runtime/blob/b135297d08f8ee87c12272e68686e831af34d70b/.devcontainer/scripts/postCreateCommand.sh
 #
+# SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+# SPDX-License-Identifier: CC0-1.0
 
 set -e
 
