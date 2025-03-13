@@ -1,4 +1,11 @@
+<!--
+SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 # How to contribute
+
 
 Contributions are very welcome and encouraged. Here, we focus on contributions made via Github.
 

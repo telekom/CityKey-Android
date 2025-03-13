@@ -6,6 +6,10 @@
         - https://github.com/MacOS/github-issue-templates/blob/master/checklist/PULL_REQUEST_TEMPLATE.md
         - https://dev.to/nicolasmontielf/writing-a-good-pull-request-with-template-46pm
         - https://axolo.co/blog/p/part-3-github-pull-request-template
+
+SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+
+SPDX-License-Identifier: CC0-1.0
 -->
 
 ## What type of PR is this? (only one)
