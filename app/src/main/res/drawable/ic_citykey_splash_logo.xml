@@ -1,4 +1,9 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+SPDX-FileCopyrightText: 2025 Deutsche Telekom AG
+SPDX-License-Identifier: LicenseRef-all-rights-reserved
+License-Filename: LICENSES/LicenseRef-all-rights-reserved.txt
+-->
     android:width="220dp"
     android:height="220dp"
     android:viewportWidth="220"
