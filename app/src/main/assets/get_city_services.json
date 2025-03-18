@@ -31,7 +31,7 @@
                     "categoryId": "16",
                     "category": "Tourism",
                     "icon": "ic_poi.png",
-                    "image": "poi.jpg",
+                    "image": "default.jpg",
                     "description": "Tourism",
                     "cityServiceList": [
                         {
@@ -39,7 +39,7 @@
                             "service": "Destinations",
                             "description": "<h2><strong>Where would you like to go?</strong></h2><p>On the following pages please find information about excursion destinations within Bonn and its surrounding area. This data comes from the <a style=\"color: rgb(30, 136, 229)\" href=\"https://datahub.touristiker-nrw.de/\">Data Hub NRW</a>.</p>",
                             "icon": "ic_poi.png",
-                            "image": "poi.jpg",
+                            "image": "default.jpg",
                             "function": "Tourism",
                             "serviceType": "Ausflugsziele",
                             "isNew": false,
@@ -396,7 +396,7 @@
                     "categoryId": "11",
                     "category": "Interesting Places",
                     "icon": "ic_poi.png",
-                    "image": "poi.jpg",
+                    "image": "default.jpg",
                     "description": "Interesting Places",
                     "cityServiceList": [
                         {
@@ -404,7 +404,7 @@
                             "service": "Where to?",
                             "description": "Where to",
                             "icon": "ic_poi.png",
-                            "image": "poi.jpg",
+                            "image": "default.jpg",
                             "function": "poi",
                             "serviceType": "Was ist wo?",
                             "isNew": false,
