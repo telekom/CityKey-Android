@@ -7,66 +7,117 @@ SPDX-FileCopyrightText = "2024 Deutsche Telekom AG"
 SPDX-License-Identifier = "Apache-2.0"
 
 [[annotations]]
-path = ["**/drawable/*.webp"]
+path = [
+    "app/src/main/res/drawable/address_top.webp",
+    "app/src/main/res/drawable/cities_contact_link_icon.webp",
+    "app/src/main/res/drawable/ic_whats_new_in_app.webp"
+]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
-path = ["**/drawable-hdpi/*.webp"]
+path = [
+    "app/src/main/res/drawable-hdpi/bg_signin_01.webp",
+    "app/src/main/res/drawable-hdpi/bg_signin_02.webp",
+    "app/src/main/res/drawable-hdpi/bg_signin_03.webp",
+    "app/src/main/res/drawable-hdpi/bg_signin_04.webp"
+]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
-path = ["**/drawable-ldpi/*.webp"]
+path = [
+    "app/src/main/res/drawable-ldpi/bg_signin_01.webp",
+    "app/src/main/res/drawable-ldpi/bg_signin_02.webp",
+    "app/src/main/res/drawable-ldpi/bg_signin_03.webp",
+    "app/src/main/res/drawable-ldpi/bg_signin_04.webp"
+]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
-path = ["**/drawable-mdpi/*.webp"]
+path = [
+    "app/src/main/res/drawable-mdpi/bg_signin_01.webp",
+    "app/src/main/res/drawable-mdpi/bg_signin_02.webp",
+    "app/src/main/res/drawable-mdpi/bg_signin_03.webp",
+    "app/src/main/res/drawable-mdpi/bg_signin_04.webp"
+]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
-path = ["**/drawable-xdpi/*.webp"]
+path = [
+    "app/src/main/res/drawable-xhdpi/bg_signin_01.webp",
+    "app/src/main/res/drawable-xhdpi/bg_signin_02.webp",
+    "app/src/main/res/drawable-xhdpi/bg_signin_03.webp",
+    "app/src/main/res/drawable-xhdpi/bg_signin_04.webp"
+]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
-path = ["**/drawable-xxdpi/*.webp"]
+path = [
+    "app/src/main/res/drawable-xxhdpi/bg_signin_01.webp",
+    "app/src/main/res/drawable-xxhdpi/bg_signin_02.webp",
+    "app/src/main/res/drawable-xxhdpi/bg_signin_03.webp",
+    "app/src/main/res/drawable-xxhdpi/bg_signin_04.webp"
+]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
-path = ["**/drawable-xxxdpi/*.webp"]
+path = [
+    "app/src/main/res/drawable-xxxhdpi/bg_signin_01.webp",
+    "app/src/main/res/drawable-xxxhdpi/bg_signin_02.webp",
+    "app/src/main/res/drawable-xxxhdpi/bg_signin_03.webp",
+    "app/src/main/res/drawable-xxxhdpi/bg_signin_04.webp"
+]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
-path = ["**/mipmap-hdpi/*.png"]
+path = [
+    "app/src/main/res/mipmap-hdpi/ic_launcher.png",
+    "app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "LicenseRef-all-rights-reserved"
 
 [[annotations]]
-path = ["**/mipmap-mdpi/*.png"]
+path = [
+    "app/src/main/res/mipmap-mdpi/ic_launcher.png",
+    "app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "LicenseRef-all-rights-reserved"
 
 [[annotations]]
-path = ["**/mipmap-xdpi/*.png"]
+path = [
+    "app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+    "app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "LicenseRef-all-rights-reserved"
 
 [[annotations]]
-path = ["**/mipmap-xxdpi/*.png"]
+path = [
+    "app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+    "app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "LicenseRef-all-rights-reserved"
 
 [[annotations]]
-path = ["**/mipmap-xxxdpi/*.png"]
+path = [
+    "app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+    "app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "LicenseRef-all-rights-reserved"
 
 [[annotations]]
-path = ["**/drawable/imprint_top_image.webp"]
+path = [
+    "app/src/main/res/drawable/imprint_top_image.webp"
+]
 SPDX-FileCopyrightText = "2018 Photo by ron dyar on Unsplash"
 SPDX-License-Identifier = "LicenseRef-unsplash"
