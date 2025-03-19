@@ -5,3 +5,68 @@ version = 1
 path = ["**/*.json"]
 SPDX-FileCopyrightText = "2024 Deutsche Telekom AG"
 SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
+path = ["**/drawable/*.webp"]
+SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["**/drawable-hdpi/*.webp"]
+SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["**/drawable-ldpi/*.webp"]
+SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["**/drawable-mdpi/*.webp"]
+SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["**/drawable-xdpi/*.webp"]
+SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["**/drawable-xxdpi/*.webp"]
+SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["**/drawable-xxxdpi/*.webp"]
+SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["**/mipmap-hdpi/*.png"]
+SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
+SPDX-License-Identifier = "LicenseRef-all-rights-reserved"
+
+[[annotations]]
+path = ["**/mipmap-mdpi/*.png"]
+SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
+SPDX-License-Identifier = "LicenseRef-all-rights-reserved"
+
+[[annotations]]
+path = ["**/mipmap-xdpi/*.png"]
+SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
+SPDX-License-Identifier = "LicenseRef-all-rights-reserved"
+
+[[annotations]]
+path = ["**/mipmap-xxdpi/*.png"]
+SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
+SPDX-License-Identifier = "LicenseRef-all-rights-reserved"
+
+[[annotations]]
+path = ["**/mipmap-xxxdpi/*.png"]
+SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
+SPDX-License-Identifier = "LicenseRef-all-rights-reserved"
+
+[[annotations]]
+path = ["**/drawable/imprint_top_image.webp"]
+SPDX-FileCopyrightText = "2018 Photo by ron dyar on Unsplash"
+SPDX-License-Identifier = "LicenseRef-unsplash"
