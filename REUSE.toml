@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2025 Deutsche Telekom AG
+# SPDX-License-Identifier: CC0-1.0
+
 # See https://reuse.software/spec-3.3/#reusetoml for specification
 version = 1
 
@@ -121,3 +124,10 @@ path = [
 ]
 SPDX-FileCopyrightText = "2018 Photo by ron dyar on Unsplash"
 SPDX-License-Identifier = "LicenseRef-unsplash"
+
+[[annotations]]
+path = [
+    "NOTICE.txt"
+]
+SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
+SPDX-License-Identifier = "CC-BY-4.0 AND LicenseRef-Deutsche-Telekom-Brand"
