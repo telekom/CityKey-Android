@@ -1,4 +1,4 @@
-<vector android:height="24dp" android:viewportHeight="26"
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ SPDX-FileCopyrightText: 2025 Deutsche Telekom AG
 SPDX-License-Identifier: Apache-2.0 AND LicenseRef-Deutsche-Telekom-Brand
 License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-Brand.txt
 -->
+<vector android:height="24dp" android:viewportHeight="26"
     android:viewportWidth="26" android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
     <path android:fillAlpha="0" android:fillColor="#FFFFFF"
         android:fillType="nonZero" android:pathData="M0,0h26v26h-26z"
