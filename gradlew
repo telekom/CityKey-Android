@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+# SPDX-FileCopyrightText: 2024 Gradle, Inc. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+# License-Filename: LICENSES/Apache-2.0.txt
+
 ##############################################################################
 ##
 ##  Gradle start up script for UN*X

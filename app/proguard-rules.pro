@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Deutsche Telekom AG
+# SPDX-License-Identifier: Apache-2.0 AND LicenseRef-Deutsche-Telekom-Brand
+# License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-Brand.txt
+
 # Add project specific ProGuard rules here.
 # You can control the set of applied configuration files using the
 # proguardFiles setting in build.gradle.
