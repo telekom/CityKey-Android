@@ -8,7 +8,7 @@ SPDX-License-Identifier: CC0-1.0
 
 # Android App of Citykey 
 [![Apache-2.0](https://img.shields.io/badge/license-Apache%202.0-blue)](https://opensource.org/license/apache-2-0) 
-[![OpenSSF Scorecard Score](https://api.scorecard.dev/projects/github.com/telekom/citykey-android/badge)](https://scorecard.dev/viewer/?uri=github.com/telekom/citykey-android/badge) 
+[![OpenSSF Scorecard Score](https://api.scorecard.dev/projects/github.com/telekom/CityKey-Android/badge)](https://scorecard.dev/viewer/?uri=github.com/telekom/CityKey-Android/badge) 
 [![REUSE status](https://api.reuse.software/badge/github.com/telekom/CityKey-android)](https://api.reuse.software/info/github.com/telekom/CityKey-android)
 [![ktlint](https://img.shields.io/badge/ktlint%20code--style-%E2%9D%A4-FF4081)](https://pinterest.github.io/ktlint/)
 
