@@ -21,6 +21,10 @@ on:
       - './LICENSES'
 
 
+permissions:
+  contents: read
+
+  
 jobs:
   
     ktlint:
