@@ -7,6 +7,10 @@ name: REUSE Compliance Check
 on: [push, pull_request]
 
 
+permissions:
+  contents: read
+
+
 jobs:
   test-reuse-compliance:
     runs-on: ubuntu-22.04
