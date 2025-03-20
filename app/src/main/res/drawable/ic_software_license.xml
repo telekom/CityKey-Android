@@ -1,4 +1,4 @@
-<vector android:autoMirrored="true" android:height="22dp"
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ SPDX-FileCopyrightText: 2025 Deutsche Telekom AG
 SPDX-License-Identifier: Apache-2.0 AND LicenseRef-Deutsche-Telekom-Brand
 License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-Brand.txt
 -->
+<vector android:autoMirrored="true" android:height="22dp"
     android:viewportHeight="22" android:viewportWidth="20"
     android:width="20dp" xmlns:android="http://schemas.android.com/apk/res/android">
     <path android:fillColor="#262626" android:fillType="nonZero" android:pathData="M12.5,1.252L3.438,1.252a0.626,0.626 0,0 0,-0.625 0.625v16.248c0,0.345 0.28,0.625 0.625,0.625h13.125c0.345,0 0.625,-0.28 0.625,-0.625L17.188,5.937L12.5,1.253zM15.861,5.937h-3.049a0.312,0.312 0,0 1,-0.312 -0.312L12.5,2.577l3.361,3.36zM9.02,17.813L3.75,17.813L3.75,2.188h8.125v3.438c0,0.517 0.42,0.938 0.937,0.938h3.438v11.25L14.643,17.814"/>
