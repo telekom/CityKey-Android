@@ -16,6 +16,10 @@ on:
         # On the first day of each month at 1:30AM.
         - cron:  '30 1 1 * *'
 
+        
+permissions:
+  contents: read
+
 
 jobs:
     oss-review-toolkit:
