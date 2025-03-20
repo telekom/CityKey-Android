@@ -127,7 +127,7 @@ SPDX-License-Identifier = "LicenseRef-unsplash"
 
 [[annotations]]
 path = [
-    "./NOTICE.txt"
+    "NOTICE.txt"
 ]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
-SPDX-License-Identifier = "CC-BY-4.0 AND AND LicenseRef-Deutsche-Telekom-Brand"
+SPDX-License-Identifier = "CC-BY-4.0 AND LicenseRef-Deutsche-Telekom-Brand"
