@@ -80,7 +80,7 @@ and [set up a development environment](https://developer.android.com/sdk/index.h
 
 The next step is to clone the source code repository.
 
-    $ git clone https://github.com/telekom/CityKey-Android.git
+    git clone https://github.com/telekom/CityKey-Android.git
 
 Then, in the file `secrets.properties` present in the root folder, put your own Google Maps API key.
 
@@ -89,7 +89,7 @@ Use `debug` build variant to run the application for debugging purpose.
 If you don't want to use an IDE like Android Studio, you can build Citykey on the command line as
 follows.
 
-    $ ./gradlew assembleRelease
+    ./gradlew assembleRelease
 
 ## Contribute
 
