@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -40,10 +40,15 @@ import android.location.LocationManager
 import android.os.Bundle
 import android.provider.Settings
 import android.view.View
+import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.DrawableRes
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.location.LocationManagerCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
+import androidx.core.view.updatePadding
 import androidx.navigation.fragment.navArgs
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -57,7 +62,7 @@ import com.telekom.citykey.R
 import com.telekom.citykey.databinding.FahrradparkenExistingReportsBinding
 import com.telekom.citykey.domain.city.CityInteractor
 import com.telekom.citykey.domain.track.AdjustManager
-import com.telekom.citykey.models.fahrradparken.FahrradparkenReport
+import com.telekom.citykey.networkinterface.models.fahrradparken.FahrradparkenReport
 import com.telekom.citykey.utils.DialogUtil
 import com.telekom.citykey.utils.extensions.dpToPixel
 import com.telekom.citykey.utils.extensions.getDrawable
@@ -144,6 +149,7 @@ class FahrradparkenExistingReports : MainFragment(R.layout.fahrradparken_existin
         }
         initMapView()
         initOtherViews()
+        handleWindowInsets()
         initSubscribers()
     }
 
@@ -191,6 +197,24 @@ class FahrradparkenExistingReports : MainFragment(R.layout.fahrradparken_existin
                 }
             }
         }
+    }
+
+    override fun handleWindowInsets() = ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+
+        val safeInsetType = WindowInsetsCompat.Type.displayCutout() + WindowInsetsCompat.Type.systemBars()
+        val systemInsets = insets.getInsets(safeInsetType)
+
+        binding.userCurrentLocationButton.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+            leftMargin = systemInsets.left + 22.dpToPixel(context)
+            rightMargin = systemInsets.right + 22.dpToPixel(context)
+        }
+
+        binding.appBarLayout.updatePadding(
+            left = systemInsets.left,
+            right = systemInsets.right
+        )
+
+        insets
     }
 
     private fun initSubscribers() {

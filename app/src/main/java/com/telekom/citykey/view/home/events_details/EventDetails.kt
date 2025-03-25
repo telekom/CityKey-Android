@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -45,6 +45,9 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.annotation.ColorInt
 import androidx.annotation.DrawableRes
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.core.widget.TextViewCompat
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -62,13 +65,19 @@ import com.telekom.citykey.databinding.EventDetailsFragmentBinding
 import com.telekom.citykey.domain.city.CityInteractor
 import com.telekom.citykey.domain.city.events.EventEngagementOption
 import com.telekom.citykey.domain.track.AdjustManager
-import com.telekom.citykey.models.content.Event
+import com.telekom.citykey.networkinterface.models.content.Event
+import com.telekom.citykey.network.extensions.isCancelled
+import com.telekom.citykey.network.extensions.isPostponed
+import com.telekom.citykey.network.extensions.isSingleDay
+import com.telekom.citykey.network.extensions.isSoldOut
 import com.telekom.citykey.utils.BitmapUtil
 import com.telekom.citykey.utils.DialogUtil
 import com.telekom.citykey.utils.NetworkConnection
 import com.telekom.citykey.utils.ShareUtils
 import com.telekom.citykey.utils.extensions.AccessibilityRole
 import com.telekom.citykey.utils.extensions.attemptOpeningWebViewUri
+import com.telekom.citykey.utils.extensions.dispatchInsetsToChildViews
+import com.telekom.citykey.utils.extensions.dpToPixel
 import com.telekom.citykey.utils.extensions.getColor
 import com.telekom.citykey.utils.extensions.getDrawable
 import com.telekom.citykey.utils.extensions.getHoursAndMins
@@ -76,7 +85,7 @@ import com.telekom.citykey.utils.extensions.getLongWeekDay
 import com.telekom.citykey.utils.extensions.getShortMonthName
 import com.telekom.citykey.utils.extensions.getShortWeekDay
 import com.telekom.citykey.utils.extensions.linkifyAndLoadNonHtmlTaggedData
-import com.telekom.citykey.utils.extensions.loadFromURLwithProgress
+import com.telekom.citykey.pictures.loadFromURLwithProgress
 import com.telekom.citykey.utils.extensions.longMonthName
 import com.telekom.citykey.utils.extensions.openLink
 import com.telekom.citykey.utils.extensions.openMapApp
@@ -120,6 +129,7 @@ class EventDetails : MainFragment(R.layout.event_details_fragment), OnMapReadyCa
         binding.layoutEventDetails.layoutTransition.enableTransitionType(LayoutTransition.APPEARING)
         initMap()
         setAccessibilityRoles()
+        handleWindowInsets()
         subscribeUi()
 
         if (args.event == null) {
@@ -131,6 +141,38 @@ class EventDetails : MainFragment(R.layout.event_details_fragment), OnMapReadyCa
             viewModel.onViewCreated(event)
         }
         adjustManager.trackEvent(R.string.open_event_detail_page)
+    }
+
+    override fun handleWindowInsets() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+
+            val safeInsetType = WindowInsetsCompat.Type.displayCutout() + WindowInsetsCompat.Type.systemBars()
+            val systemInsets = insets.getInsets(safeInsetType)
+
+            binding.eventDetailsABL.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right
+            )
+
+            insets
+        }
+        binding.scrollView.dispatchInsetsToChildViews(
+            binding.loading,
+            binding.errorLayout,
+            binding.categories,
+            binding.eventName,
+            binding.eventStatusDesc,
+            binding.clDateTimeInfo,
+            binding.locationContainer,
+            binding.descriptionContainer,
+            binding.buttonLayout,
+            binding.pdfLayout,
+        ) { displayCutoutInsets ->
+            binding.eventCredits.updatePadding(
+                left = displayCutoutInsets.left + 6.dpToPixel(context),
+                right = displayCutoutInsets.right
+            )
+        }
     }
 
     private fun setupView(event: Event) {
@@ -325,7 +367,7 @@ class EventDetails : MainFragment(R.layout.event_details_fragment), OnMapReadyCa
                     trackAdjustEngagement(event.uid.toString(), EventEngagementOption.MORE_INFORMATION)
                     trackAdjustEngagement(event.uid.toString(), EventEngagementOption.WEBSITE)
                 }
-                openLink(event.link)
+                openLink(event.link.orEmpty())
             }
         }
 

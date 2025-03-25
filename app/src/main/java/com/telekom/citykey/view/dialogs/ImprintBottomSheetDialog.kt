@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -36,6 +36,7 @@ import android.webkit.WebViewClient
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.ImprintDataDialogBinding
 import com.telekom.citykey.domain.legal_data.LegalDataManager
+import com.telekom.citykey.utils.extensions.applySafeAllInsetsWithSides
 import com.telekom.citykey.utils.extensions.getColor
 import com.telekom.citykey.utils.extensions.setAccessibilityRoleForToolbarTitle
 import com.telekom.citykey.utils.extensions.viewBinding
@@ -43,24 +44,36 @@ import com.telekom.citykey.view.FullScreenBottomSheetDialogFragment
 import org.koin.android.ext.android.inject
 
 class ImprintBottomSheetDialog : FullScreenBottomSheetDialogFragment(R.layout.imprint_data_dialog) {
+
     private val legalData: LegalDataManager by inject()
+
     private val binding by viewBinding(ImprintDataDialogBinding::bind)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViews()
+        handleWindowInsets()
+        subscribeUi()
+    }
+
+    private fun initViews() {
+        binding.toolbar.setNavigationIcon(R.drawable.ic_profile_close)
+        binding.toolbar.setNavigationIconTint(getColor(R.color.onSurface))
+        binding.toolbar.setNavigationContentDescription(R.string.accessibility_btn_close)
+        binding.toolbar.setNavigationOnClickListener { dismiss() }
+        setAccessibilityRoleForToolbarTitle(binding.toolbar)
+
         binding.webViewImprint.webViewClient = object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
                 request?.url?.toString()?.let { view?.loadUrl(it.trim()) }
                 return false
             }
         }
+    }
 
-        binding.toolbar.setNavigationIcon(R.drawable.ic_profile_close)
-        binding.toolbar.setNavigationIconTint(getColor(R.color.onSurface))
-        binding.toolbar.setNavigationContentDescription(R.string.accessibility_btn_close)
-        binding.toolbar.setNavigationOnClickListener { dismiss() }
-        setAccessibilityRoleForToolbarTitle(binding.toolbar)
-        subscribeUi()
+    private fun handleWindowInsets() {
+        binding.appBarLayout.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.nsvWebViewImprintData.applySafeAllInsetsWithSides(left = true, right = true, bottom = true)
     }
 
     private fun subscribeUi() {

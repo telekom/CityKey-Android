@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -51,10 +51,21 @@ import com.telekom.citykey.R
 import com.telekom.citykey.databinding.WastecalendarCategoryFilterFragmentBinding
 import com.telekom.citykey.domain.city.CityInteractor
 import com.telekom.citykey.utils.DialogUtil
-import com.telekom.citykey.utils.extensions.*
+import com.telekom.citykey.utils.KoverIgnore
+import com.telekom.citykey.utils.extensions.applySafeAllInsetsWithSides
+import com.telekom.citykey.utils.extensions.dpToPixel
+import com.telekom.citykey.utils.extensions.getColor
+import com.telekom.citykey.utils.extensions.isInLandscapeOrientation
+import com.telekom.citykey.utils.extensions.safeRun
+import com.telekom.citykey.utils.extensions.setAccessibilityBasedOnViewStateSelection
+import com.telekom.citykey.utils.extensions.setAccessibilityRoleForToolbarTitle
+import com.telekom.citykey.utils.extensions.setVisible
+import com.telekom.citykey.utils.extensions.updateWasteCalendarWidget
+import com.telekom.citykey.utils.extensions.viewBinding
 import com.telekom.citykey.view.FullScreenBottomSheetDialogFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
+@KoverIgnore
 class WasteFilters(
     val resultListener: (Boolean) -> Unit
 ) : FullScreenBottomSheetDialogFragment(R.layout.wastecalendar_category_filter_fragment) {
@@ -74,8 +85,18 @@ class WasteFilters(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
+        handleWindowInsets()
         subscribeUi()
         adjustLayoutByOrientation()
+    }
+
+    private fun handleWindowInsets() {
+        binding.appBarLayout.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.categoriesErrorHint.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.progressCategories.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.itemsContainer.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.selectToggleBtn.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.applyFilterBtn.applySafeAllInsetsWithSides(left = true, right = true, bottom = true)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {

@@ -19,62 +19,32 @@ SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
-path = [
-    "app/src/main/res/drawable-hdpi/bg_signin_01.webp",
-    "app/src/main/res/drawable-hdpi/bg_signin_02.webp",
-    "app/src/main/res/drawable-hdpi/bg_signin_03.webp",
-    "app/src/main/res/drawable-hdpi/bg_signin_04.webp"
-]
+path = ["app/src/main/res/drawable-hdpi/bg_signin_04.webp"]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
-path = [
-    "app/src/main/res/drawable-ldpi/bg_signin_01.webp",
-    "app/src/main/res/drawable-ldpi/bg_signin_02.webp",
-    "app/src/main/res/drawable-ldpi/bg_signin_03.webp",
-    "app/src/main/res/drawable-ldpi/bg_signin_04.webp"
-]
+path = ["app/src/main/res/drawable-ldpi/bg_signin_04.webp"]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
-path = [
-    "app/src/main/res/drawable-mdpi/bg_signin_01.webp",
-    "app/src/main/res/drawable-mdpi/bg_signin_02.webp",
-    "app/src/main/res/drawable-mdpi/bg_signin_03.webp",
-    "app/src/main/res/drawable-mdpi/bg_signin_04.webp"
-]
+path = ["app/src/main/res/drawable-mdpi/bg_signin_04.webp"]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
-path = [
-    "app/src/main/res/drawable-xhdpi/bg_signin_01.webp",
-    "app/src/main/res/drawable-xhdpi/bg_signin_02.webp",
-    "app/src/main/res/drawable-xhdpi/bg_signin_03.webp",
-    "app/src/main/res/drawable-xhdpi/bg_signin_04.webp"
-]
+path = ["app/src/main/res/drawable-xhdpi/bg_signin_04.webp"]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
-path = [
-    "app/src/main/res/drawable-xxhdpi/bg_signin_01.webp",
-    "app/src/main/res/drawable-xxhdpi/bg_signin_02.webp",
-    "app/src/main/res/drawable-xxhdpi/bg_signin_03.webp",
-    "app/src/main/res/drawable-xxhdpi/bg_signin_04.webp"
-]
+path = ["app/src/main/res/drawable-xxhdpi/bg_signin_04.webp"]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
-path = [
-    "app/src/main/res/drawable-xxxhdpi/bg_signin_01.webp",
-    "app/src/main/res/drawable-xxxhdpi/bg_signin_02.webp",
-    "app/src/main/res/drawable-xxxhdpi/bg_signin_03.webp",
-    "app/src/main/res/drawable-xxxhdpi/bg_signin_04.webp"
-]
+path = ["app/src/main/res/drawable-xxxhdpi/bg_signin_04.webp"]
 SPDX-FileCopyrightText = "2025 Deutsche Telekom AG"
 SPDX-License-Identifier = "CC-BY-4.0"
 

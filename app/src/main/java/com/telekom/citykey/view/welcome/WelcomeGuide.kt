@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -36,6 +36,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.WelcomeGuideBinding
+import com.telekom.citykey.utils.KoverIgnore
 import com.telekom.citykey.utils.extensions.AccessibilityRole
 import com.telekom.citykey.utils.extensions.setAccessibilityRole
 import com.telekom.citykey.utils.extensions.viewBinding
@@ -45,25 +46,31 @@ class WelcomeGuide : Fragment(R.layout.welcome_guide) {
     private val binding by viewBinding(WelcomeGuideBinding::bind)
     private var welcomeAdapter: WelcomePagerAdapter? = null
 
+    private val viewPagerPageChangeCallback: ViewPager2.OnPageChangeCallback =
+        object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) = updateButtonText(position)
+        }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initView()
+        setupPager()
+        setupNextButton()
     }
 
-    private fun initView() {
+    override fun onStart() {
+        super.onStart()
+        binding.pager.registerOnPageChangeCallback(viewPagerPageChangeCallback)
+    }
+
+    @KoverIgnore
+    private fun setupPager() {
         welcomeAdapter = WelcomePagerAdapter()
-        binding.pager.apply {
-            adapter = welcomeAdapter
-            TabLayoutMediator(binding.pageIndicator, binding.pager) { _, _ -> }.attach()
-            registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-                override fun onPageSelected(position: Int) {
-                    if (position < welcomeAdapter!!.itemCount - 1)
-                        binding.pagerNextBtn.setText(R.string.x_001_next_btn_text)
-                    else
-                        binding.pagerNextBtn.setText(R.string.x_001_lets_go_btn_text)
-                }
-            })
-        }
+        binding.pager.adapter = welcomeAdapter
+        TabLayoutMediator(binding.pageIndicator, binding.pager) { _, _ -> }.attach()
+    }
+
+    @KoverIgnore
+    private fun setupNextButton() {
         binding.pagerNextBtn.setOnClickListener {
             val position = binding.pager.currentItem
             if (position < welcomeAdapter!!.itemCount - 1) {
@@ -73,6 +80,23 @@ class WelcomeGuide : Fragment(R.layout.welcome_guide) {
             }
         }
         binding.pagerNextBtn.setAccessibilityRole(AccessibilityRole.Button)
+    }
+
+    @KoverIgnore
+    private fun updateButtonText(currentPosition: Int) {
+        binding.pagerNextBtn.run {
+            text = if (currentPosition < welcomeAdapter!!.itemCount - 1) {
+                getString(R.string.x_001_next_btn_text)
+            } else {
+                getString(R.string.x_001_lets_go_btn_text)
+            }
+            post { requestLayout() }
+        }
+    }
+
+    override fun onStop() {
+        binding.pager.unregisterOnPageChangeCallback(viewPagerPageChangeCallback)
+        super.onStop()
     }
 
     override fun onDestroy() {

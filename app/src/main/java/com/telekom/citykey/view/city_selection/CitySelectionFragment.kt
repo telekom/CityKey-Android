@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -44,7 +44,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.location.LocationManagerCompat
 import androidx.core.view.children
-import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -92,7 +91,7 @@ class CitySelectionFragment : BottomSheetDialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(DialogFragment.STYLE_NORMAL, R.style.AuthDialogTheme)
+        setStyle(STYLE_NORMAL, R.style.AuthDialogTheme)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
@@ -100,28 +99,40 @@ class CitySelectionFragment : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.toolbarCitySelection.setNavigationIcon(R.drawable.ic_profile_close)
-        binding.toolbarCitySelection.setNavigationIconTint(getColor(R.color.onSurface))
-        binding.toolbarCitySelection.setNavigationOnClickListener { dismiss() }
         initViews()
         setAccessibilityRoles()
+        handleWindowInsets()
         subscribeUI()
-    }
-
-    private fun initViews() {
-        citySelectionAdapter =
-            CitySelectionAdapter(::onFindNearestCityClicked, ::showContactLinkConsentDialog, viewModel::selectCity)
-        binding.citiesRecyclerView.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
-        binding.citiesRecyclerView.adapter = citySelectionAdapter
-
         loadLocationBasedCitiesIfPossible()
     }
 
-    private fun setAccessibilityRoles() {
+    private fun initViews() {
+        // Toolbar
+        binding.toolbarCitySelection.setNavigationIcon(R.drawable.ic_profile_close)
+        binding.toolbarCitySelection.setNavigationIconTint(getColor(R.color.onSurface))
+        binding.toolbarCitySelection.setNavigationOnClickListener { dismiss() }
         setAccessibilityRoleForToolbarTitle(binding.toolbarCitySelection)
+
+        // List
+        citySelectionAdapter = CitySelectionAdapter(
+            onFindNearestCityClicked = ::onFindNearestCityClicked,
+            onContactLinkClicked = ::showContactLinkConsentDialog,
+            onItemClicked = viewModel::selectCity
+        )
+        binding.citiesRecyclerView.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
+        binding.citiesRecyclerView.adapter = citySelectionAdapter
+    }
+
+    private fun setAccessibilityRoles() {
         val icon = binding.toolbarCitySelection.children.firstOrNull { view -> view is ImageButton }
         icon?.setAccessibilityRole(AccessibilityRole.Button)
         icon?.contentDescription = context?.getString(R.string.dialog_button_ok)
+    }
+
+    private fun handleWindowInsets() {
+        binding.citySelectionAppBar.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.citiesRecyclerView.applySafeAllInsetsWithSides(left = true, right = true, bottom = true)
+        binding.llNoCityMatch.applySafeAllInsetsWithSides(left = true, right = true, bottom = true)
     }
 
     private fun subscribeUI() {
@@ -194,8 +205,7 @@ class CitySelectionFragment : BottomSheetDialogFragment() {
             )
             selector = Intent(Intent.ACTION_SENDTO).apply { data = emailIntentUri }
         }
-        val chooser =
-            Intent.createChooser(intent, getString(R.string.c_003_email_option_chooser_title))
+        val chooser = Intent.createChooser(intent, getString(R.string.c_003_email_option_chooser_title))
         startActivity(chooser)
     }
 
@@ -206,17 +216,16 @@ class CitySelectionFragment : BottomSheetDialogFragment() {
             message = R.string.c_003_contact_link_message_text,
             positiveBtnLabel = R.string.c_003_aleart_get_in_contact_button,
             negativeBtnLabel = R.string.c_003_aleart_cancel_button,
-            positiveClickListener = {
-                showEmailClientChooser()
-            }
+            positiveClickListener = ::showEmailClientChooser
         )
     }
 
     private fun loadLocationBasedCitiesIfPossible() {
-        if (hasLocationPermissions() && isLocationEnabled())
+        if (hasLocationPermissions() && isLocationEnabled()) {
             getCurrentLocation()
-        else
+        } else {
             viewModel.onPermissionsMissing()
+        }
     }
 
     private fun getCurrentLocation() {
@@ -239,10 +248,11 @@ class CitySelectionFragment : BottomSheetDialogFragment() {
         LocationManagerCompat.isLocationEnabled(requireActivity().getSystemService(Context.LOCATION_SERVICE) as LocationManager)
 
     private fun onFindNearestCityClicked() {
-        if (hasLocationPermissions())
+        if (hasLocationPermissions()) {
             getCurrentLocation()
-        else
+        } else {
             showAskForLocationPermissionsDialog()
+        }
     }
 
     private fun showEnableLocationInSettingsDialog(message: Int, actionName: String) {
@@ -273,8 +283,8 @@ class CitySelectionFragment : BottomSheetDialogFragment() {
         )
     }
 
-    private fun showAskForLocationPermissionsDialog() {
-        DialogUtil.showDialogLocationPermissionRequest(requireContext()) {
+    private fun showAskForLocationPermissionsDialog() = context?.let {
+        DialogUtil.showDialogLocationPermissionRequest(it) {
             requestPermissionLauncher.launch(
                 arrayOf(
                     Manifest.permission.ACCESS_FINE_LOCATION,

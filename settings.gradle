@@ -26,4 +26,14 @@
  * License-Filename: LICENSES/Apache-2.0
  */
 
+rootProject.name = "citykey"
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 include ':app'
+
+include ':networkinterface'
+include ':network'
+
+include ':pictures'
+

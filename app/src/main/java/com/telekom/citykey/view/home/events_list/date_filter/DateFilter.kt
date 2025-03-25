@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -28,6 +28,7 @@
 
 package com.telekom.citykey.view.home.events_list.date_filter
 
+import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.os.Bundle
 import android.text.SpannableString
@@ -37,6 +38,7 @@ import android.view.View
 import com.telekom.citykey.R
 import com.telekom.citykey.custom.views.calendar.DateSelection
 import com.telekom.citykey.databinding.EventsDateFilterBinding
+import com.telekom.citykey.utils.extensions.applySafeAllInsetsWithSides
 import com.telekom.citykey.utils.extensions.getColor
 import com.telekom.citykey.utils.extensions.setAccessibilityRoleForToolbarTitle
 import com.telekom.citykey.utils.extensions.viewBinding
@@ -45,6 +47,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.text.DateFormatSymbols
 
 class DateFilter : FullScreenBottomSheetDialogFragment(R.layout.events_date_filter) {
+
     private val viewModel: DateFilterViewModel by viewModel()
     private val binding by viewBinding(EventsDateFilterBinding::bind)
 
@@ -95,9 +98,19 @@ class DateFilter : FullScreenBottomSheetDialogFragment(R.layout.events_date_filt
             dismiss()
         }
 
+        handleWindowInsets()
+
         observeUi()
     }
 
+    private fun handleWindowInsets() {
+        binding.toolbarDateFilter.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.llWeekDays.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.calendar.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.progressBtnShowEvents.applySafeAllInsetsWithSides(left = true, right = true, bottom = true)
+    }
+
+    @SuppressLint("DefaultLocale")
     private fun observeUi() {
         viewModel.color.observe(viewLifecycleOwner) {
             binding.calendar.setPrimaryColor(it)
@@ -108,8 +121,11 @@ class DateFilter : FullScreenBottomSheetDialogFragment(R.layout.events_date_filt
         }
 
         viewModel.eventsCount.observe(viewLifecycleOwner) {
-            val buttonText = if (it == null) getString(R.string.e_003_show_events_button)
-            else String.format("%s (%d)", getString(R.string.e_003_show_events_button), it)
+            val buttonText = if (it == null) {
+                getString(R.string.e_003_show_events_button)
+            } else {
+                String.format("%s (%d)", getString(R.string.e_003_show_events_button), it)
+            }
             binding.progressBtnShowEvents.text = buttonText
         }
 

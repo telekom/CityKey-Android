@@ -9,7 +9,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
- 
+
 In accordance with Sections 4 and 6 of the License, the following exclusions apply:
     1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
     2. Design Rights – Visual identities, UI/UX designs, and other graphical elements remain the property of their respective owners and are not licensed under the Apache License 2.0.
@@ -24,23 +24,34 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.telekom.citykey.view.services.fahrradparken.details.FahrradparkenServiceDetail">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/fahrradParkenDetailsABL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="?attr/colorSurface">
+        android:background="?attr/colorSurface"
+        android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbarDefectReporter"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:titleTextColor="@color/onSurface" />
+            app:titleTextColor="@color/onSurface"
+            tools:title="Fahrradparken" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsvFahrradParken"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:fitsSystemWindows="true"
+        android:paddingBottom="30dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -56,14 +67,21 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
                 android:scaleType="centerCrop"
                 tools:src="@tools:sample/avatars" />
 
-            <com.telekom.citykey.custom.views.OscaWebView
-                android:id="@+id/detailsWebView"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcDefectReporterWebView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginHorizontal="@dimen/global_content_margins"
                 android:layout_marginTop="@dimen/global_content_margins"
-                android:layout_marginEnd="@dimen/global_content_margins"
-                android:scrollbars="none" />
+                android:orientation="vertical">
+
+                <com.telekom.citykey.custom.views.OscaWebView
+                    android:id="@+id/detailsWebView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

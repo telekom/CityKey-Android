@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -33,6 +33,7 @@ import android.view.View
 import android.webkit.WebViewClient
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.HelpSectionDialogBinding
+import com.telekom.citykey.utils.extensions.applySafeAllInsetsWithSides
 import com.telekom.citykey.utils.extensions.getColor
 import com.telekom.citykey.utils.extensions.setAccessibilityRoleForToolbarTitle
 import com.telekom.citykey.utils.extensions.viewBinding
@@ -40,6 +41,7 @@ import com.telekom.citykey.view.FullScreenBottomSheetDialogFragment
 import java.util.*
 
 class HelpSectionDialog : FullScreenBottomSheetDialogFragment(R.layout.help_section_dialog) {
+
     private val binding by viewBinding(HelpSectionDialogBinding::bind)
 
     companion object {
@@ -49,6 +51,7 @@ class HelpSectionDialog : FullScreenBottomSheetDialogFragment(R.layout.help_sect
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
+        handleWindowInsets()
     }
 
     private fun initViews() {
@@ -58,10 +61,17 @@ class HelpSectionDialog : FullScreenBottomSheetDialogFragment(R.layout.help_sect
         binding.toolbar.setNavigationOnClickListener { dismiss() }
         setAccessibilityRoleForToolbarTitle(binding.toolbar)
 
-        val helpUrl =
-            if (Locale.getDefault().language == "en") HELP_FAQ_LINK + "-" + Locale.getDefault().language
-            else HELP_FAQ_LINK
+        val helpUrl = if (Locale.getDefault().language == "en") {
+            HELP_FAQ_LINK + "-" + Locale.getDefault().language
+        } else {
+            HELP_FAQ_LINK
+        }
         binding.webViewHelp.webViewClient = WebViewClient()
         binding.webViewHelp.loadUrl(helpUrl)
+    }
+
+    private fun handleWindowInsets() {
+        binding.appBarLayout.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.llcWebViewHelpSection.applySafeAllInsetsWithSides(left = true, right = true, bottom = true)
     }
 }

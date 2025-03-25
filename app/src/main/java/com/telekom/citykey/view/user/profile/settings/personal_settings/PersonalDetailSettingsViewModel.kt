@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -32,7 +32,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.telekom.citykey.domain.user.UserInteractor
 import com.telekom.citykey.domain.user.UserState
-import com.telekom.citykey.models.content.UserProfile
+import com.telekom.citykey.networkinterface.models.content.UserProfile
 import com.telekom.citykey.view.BaseViewModel
 
 class PersonalDetailSettingsViewModel(userInteractor: UserInteractor) : BaseViewModel() {

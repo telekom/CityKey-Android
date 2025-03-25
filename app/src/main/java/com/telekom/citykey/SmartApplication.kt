@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -33,14 +33,13 @@ import android.app.ActivityManager
 import android.app.Application
 import android.os.Build
 import android.os.Process
-import android.util.Log
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.distribute.Distribute
 import com.telekom.citykey.common.FileLoggingTree
-import com.telekom.citykey.di.remote_datasource_module
-import com.telekom.citykey.di.smart_app_modules
+import com.telekom.citykey.di.citykeyKoinModules
 import com.telekom.citykey.domain.notifications.TpnsManager
 import com.telekom.citykey.domain.track.AdjustManager
+import com.telekom.citykey.network.di.networkModule
 import com.telekom.citykey.utils.PreferencesHelper
 import org.koin.android.ext.android.inject
 import org.koin.android.ext.koin.androidContext
@@ -61,8 +60,6 @@ class SmartApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        logBugReportInfo()
-
         when {
             BuildConfig.FLAVOR != "production" -> Timber.plant(FileLoggingTree(this))
             BuildConfig.DEBUG -> Timber.plant(Timber.DebugTree())
@@ -75,16 +72,17 @@ class SmartApplication : Application() {
 
         startKoin {
             androidContext(this@SmartApplication)
-            modules(smart_app_modules + remote_datasource_module)
+            modules(citykeyKoinModules + networkModule)
         }
 
-        if (BuildConfig.APPCENTER_ID.isNotEmpty()) {
-            AppCenter.start(this, BuildConfig.APPCENTER_ID, Distribute::class.java)
-        }
+//        if (BuildConfig.APPCENTER_ID.isNotEmpty()) {
+//            AppCenter.start(this, BuildConfig.APPCENTER_ID, Distribute::class.java)
+//        }
 
         tpnsManager.initPushNotifications()
         adjustManager.initialiseMoEngage(this)
         preferencesHelper.togglePreviewMode(false)
+
     }
 
     private fun isAA2Process(): Boolean {
@@ -99,25 +97,5 @@ class SmartApplication : Application() {
             }
         }
         return false
-    }
-
-    /**
-     * A quick helper utility method to log the BugReport information for the Open Source developers, used in
-     * issue / bug reports
-     */
-    @SuppressLint("LogNotTimber")
-    private fun logBugReportInfo() {
-        Log.i(
-            "BugReport",
-            """
-        --- Bug Report Info ---
-        App Version: ${BuildConfig.APP_VERSION}
-        Device Model: ${Build.MODEL} (${Build.PRODUCT})
-        Manufacturer: ${Build.MANUFACTURER}
-        Android Version: ${Build.VERSION.RELEASE} (API Level ${Build.VERSION.SDK_INT})
-        Device Architecture: ${Build.SUPPORTED_ABIS.joinToString(", ")}
-        -----------------------
-    """.trimIndent()
-        )
     }
 }

@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -40,10 +40,14 @@ import android.location.LocationManager
 import android.os.Bundle
 import android.provider.Settings
 import android.view.View
+import android.view.ViewGroup.MarginLayoutParams
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.DrawableRes
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.location.LocationManagerCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
 import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -56,9 +60,10 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.FahrradparkenLocationSelectionBinding
 import com.telekom.citykey.domain.city.CityInteractor
-import com.telekom.citykey.models.fahrradparken.FahrradparkenReport
+import com.telekom.citykey.networkinterface.models.fahrradparken.FahrradparkenReport
 import com.telekom.citykey.utils.BitmapUtil
 import com.telekom.citykey.utils.DialogUtil
+import com.telekom.citykey.utils.extensions.applySafeAllInsetsWithSides
 import com.telekom.citykey.utils.extensions.dpToPixel
 import com.telekom.citykey.utils.extensions.getColor
 import com.telekom.citykey.utils.extensions.getDrawable
@@ -140,7 +145,24 @@ class FahrradparkenLocationSelection(
         setupToolbar()
         initMapView()
         initOtherViews()
+        handleWindowInsets()
         initSubscribers()
+    }
+
+    private fun handleWindowInsets() {
+        binding.appBarLayout.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.locationSelectionDescription.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.refreshReportsButton.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.saveLocationButton.applySafeAllInsetsWithSides(left = true, right = true, bottom = true)
+        ViewCompat.setOnApplyWindowInsetsListener(binding.userCurrentLocationButton) { _, insets ->
+            val safeInsetType = WindowInsetsCompat.Type.displayCutout() + WindowInsetsCompat.Type.systemBars()
+            val systemInsets = insets.getInsets(safeInsetType)
+            binding.userCurrentLocationButton.updateLayoutParams<MarginLayoutParams> {
+                rightMargin = systemInsets.right + 22.dpToPixel(context)
+                bottomMargin = systemInsets.bottom + 22.dpToPixel(context)
+            }
+            WindowInsetsCompat.CONSUMED
+        }
     }
 
     private fun setupToolbar() {

@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -32,15 +32,18 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.telekom.citykey.BuildConfig
 import com.telekom.citykey.R
-import com.telekom.citykey.common.GlideApp
 import com.telekom.citykey.databinding.FahrradparkenServiceDetailFragmentBinding
 import com.telekom.citykey.domain.city.CityInteractor
 import com.telekom.citykey.domain.track.AdjustManager
+import com.telekom.citykey.pictures.loadCenterCropped
 import com.telekom.citykey.utils.DialogUtil
+import com.telekom.citykey.utils.extensions.dispatchInsetsToChildViews
 import com.telekom.citykey.utils.extensions.dpToPixel
 import com.telekom.citykey.utils.extensions.loadBasicHtml
 import com.telekom.citykey.utils.extensions.viewBinding
@@ -61,6 +64,7 @@ class FahrradparkenServiceDetail : MainFragment(R.layout.fahrradparken_service_d
         super.onViewCreated(view, savedInstanceState)
         adjustManager.trackEvent(R.string.open_service_fahrradparken)
         initViews()
+        handleWindowInsets()
         initSubscribers()
     }
 
@@ -69,10 +73,7 @@ class FahrradparkenServiceDetail : MainFragment(R.layout.fahrradparken_service_d
             toolbarDefectReporter.title = args.service.service
             setupToolbar(toolbarDefectReporter)
 
-            GlideApp.with(this@FahrradparkenServiceDetail)
-                .load(BuildConfig.IMAGE_URL + args.service.image)
-                .centerCrop()
-                .into(binding.serviceDetailImageView)
+            binding.serviceDetailImageView.loadCenterCropped(args.service.image)
 
             detailsWebView.loadBasicHtml(args.service.description)
 
@@ -95,6 +96,26 @@ class FahrradparkenServiceDetail : MainFragment(R.layout.fahrradparken_service_d
                 }
             }
         }
+    }
+
+    override fun handleWindowInsets() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+
+            val safeInsetType = WindowInsetsCompat.Type.displayCutout() + WindowInsetsCompat.Type.systemBars()
+            val systemInsets = insets.getInsets(safeInsetType)
+
+            binding.fahrradParkenDetailsABL.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right
+            )
+
+            insets
+        }
+        binding.nsvFahrradParken.dispatchInsetsToChildViews(
+            binding.llcDefectReporterWebView,
+            binding.existingReportsButton,
+            binding.createNewReportButton
+        )
     }
 
     private fun updateButtonLayout(button: Button) {

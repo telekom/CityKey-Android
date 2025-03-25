@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -32,17 +32,20 @@ import android.os.Bundle
 import android.view.View
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.WasteExportOptionsBinding
-import com.telekom.citykey.models.waste_calendar.CalendarAccount
+import com.telekom.citykey.networkinterface.models.waste_calendar.CalendarAccount
+import com.telekom.citykey.utils.KoverIgnore
 import com.telekom.citykey.utils.extensions.getColor
 import com.telekom.citykey.utils.extensions.setAccessibilityRoleForToolbarTitle
 import com.telekom.citykey.utils.extensions.viewBinding
 import com.telekom.citykey.view.FullScreenBottomSheetDialogFragment
 
+@KoverIgnore
 class WasteExportSelectionDialog(
     private val calendarAcc: List<CalendarAccount>,
     private val selectedCalendar: CalendarAccount,
     val resultListener: (CalendarAccount) -> Unit
 ) : FullScreenBottomSheetDialogFragment(R.layout.waste_export_options) {
+
     private val binding by viewBinding(WasteExportOptionsBinding::bind)
     private var listAdapter: WasteExportSelectionAdapter? = null
 

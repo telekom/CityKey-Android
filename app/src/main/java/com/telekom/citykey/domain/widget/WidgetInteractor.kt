@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -31,15 +31,14 @@ package com.telekom.citykey.domain.widget
 import androidx.lifecycle.MutableLiveData
 import com.telekom.citykey.domain.city.news.NewsState
 import com.telekom.citykey.domain.repository.WidgetRepository
-import com.telekom.citykey.models.Pickups
-import com.telekom.citykey.models.WasteItems
-import com.telekom.citykey.models.content.CityContent
-import com.telekom.citykey.models.waste_calendar.WasteCalendarPickups
+import com.telekom.citykey.networkinterface.models.content.CityContent
+import com.telekom.citykey.networkinterface.models.waste_calendar.WasteCalendarPickups
+import com.telekom.citykey.networkinterface.models.waste_calendar.Pickups
+import com.telekom.citykey.networkinterface.models.waste_calendar.WasteItems
 import com.telekom.citykey.utils.extensions.isDayAfterTomorrow
 import com.telekom.citykey.utils.extensions.isToday
 import com.telekom.citykey.utils.extensions.isTomorrow
 import kotlinx.coroutines.runBlocking
-
 
 class WidgetInteractor(private val widgetRepository: WidgetRepository) {
     private var _newsList: MutableList<CityContent> = mutableListOf()
@@ -52,7 +51,12 @@ class WidgetInteractor(private val widgetRepository: WidgetRepository) {
     private var _tomorrowPickups: MutableList<WasteItems.WasteItem> = mutableListOf()
     private var _DATPickups: MutableList<WasteItems.WasteItem> = mutableListOf()
 
-    private var _pickups: Pickups = Pickups(_todaysPickups, _tomorrowPickups, _DATPickups)
+    private var _pickups: Pickups =
+        Pickups(
+            _todaysPickups,
+            _tomorrowPickups,
+            _DATPickups
+        )
     private var _pickupsMutableLiveData = MutableLiveData<Pickups>()
 
     val currentCityId get() = widgetRepository.currentCityId
@@ -131,7 +135,11 @@ class WidgetInteractor(private val widgetRepository: WidgetRepository) {
             } catch (e: Exception) {
                 errorType.postValue("exception")
             }
-            _pickups = Pickups(_todaysPickups, _tomorrowPickups, _DATPickups)
+            _pickups = Pickups(
+                _todaysPickups,
+                _tomorrowPickups,
+                _DATPickups
+            )
         }
         _pickupsMutableLiveData.postValue(_pickups)
     }

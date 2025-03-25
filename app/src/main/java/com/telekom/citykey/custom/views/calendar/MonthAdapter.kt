@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -35,7 +35,7 @@ import com.telekom.citykey.R
 import com.telekom.citykey.databinding.MonthItemBinding
 import com.telekom.citykey.utils.extensions.inflateChild
 import com.telekom.citykey.utils.extensions.isSameDayAs
-import java.util.*
+import java.util.Calendar
 
 class MonthAdapter(private val selectionListener: (DateSelection) -> Unit) :
     RecyclerView.Adapter<MonthAdapter.MonthViewHolder>() {
@@ -43,7 +43,8 @@ class MonthAdapter(private val selectionListener: (DateSelection) -> Unit) :
     private val currentDate = Calendar.getInstance()
     private val currMonth = currentDate.get(Calendar.MONTH)
     private val currYear = currentDate.get(Calendar.YEAR)
-    private var primaryColor = 0
+    var primaryColor = 0
+        private set
 
     private val selection = DateSelection(null, null, false)
 
@@ -76,16 +77,19 @@ class MonthAdapter(private val selectionListener: (DateSelection) -> Unit) :
                     selection.end = it
                     selection.single = true
                 }
+
                 selection.start.isSameDayAs(it) -> {
                     selection.start = null
                     selection.end = null
                     selection.single = false
                 }
+
                 selection.start != null && selection.end != null && !selection.single -> {
                     selection.end = it
                     selection.start = it
                     selection.single = true
                 }
+
                 else -> {
                     if (it.before(selection.start)) {
                         selection.end = selection.start

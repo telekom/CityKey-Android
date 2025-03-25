@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -37,22 +37,18 @@ import androidx.webkit.WebSettingsCompat
 import androidx.webkit.WebViewFeature
 import com.telekom.citykey.utils.isDarkMode
 
-@SuppressLint("SetJavaScriptEnabled")
-class OscaWebView : WebView {
-
-    constructor(context: Context) : super(context)
-    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
-    constructor(context: Context, attrs: AttributeSet, defStyle: Int)
-            : super(context, attrs, defStyle)
-
-    @Suppress("unused")
-    constructor(context: Context, attrs: AttributeSet, defStyle: Int, defRes: Int)
-            : super(context, attrs, defStyle, defRes)
+class OscaWebView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0,
+    defStyleRes: Int = 0
+) : WebView(context, attrs, defStyleAttr, defStyleRes) {
 
     init {
         if (isInEditMode.not()) initialise()
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     private fun initialise() {
         if (WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING) &&
             Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q
@@ -62,7 +58,11 @@ class OscaWebView : WebView {
             @Suppress("DEPRECATION")
             WebSettingsCompat.setForceDark(
                 settings,
-                if (resources.isDarkMode) WebSettingsCompat.FORCE_DARK_ON else WebSettingsCompat.FORCE_DARK_OFF
+                if (resources.isDarkMode) {
+                    WebSettingsCompat.FORCE_DARK_ON
+                } else {
+                    WebSettingsCompat.FORCE_DARK_OFF
+                }
             )
         }
         settings.javaScriptEnabled = true

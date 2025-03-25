@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -34,31 +34,35 @@ import android.webkit.URLUtil
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.telekom.citykey.BuildConfig
 import com.telekom.citykey.R
-import com.telekom.citykey.common.GlideApp
 import com.telekom.citykey.databinding.ServiceDetailsFragmentBinding
 import com.telekom.citykey.domain.track.AdjustManager
 import com.telekom.citykey.domain.track.AnalyticsParameterKey
-import com.telekom.citykey.models.content.ServiceAction
+import com.telekom.citykey.networkinterface.models.content.ServiceAction
+import com.telekom.citykey.pictures.loadCenterCropped
 import com.telekom.citykey.utils.DialogUtil
 import com.telekom.citykey.utils.extensions.attemptOpeningWebViewUri
-import com.telekom.citykey.utils.extensions.loadBasicHtml
+import com.telekom.citykey.utils.extensions.dispatchInsetsToChildViews
+import com.telekom.citykey.utils.extensions.dpToPixel
+import com.telekom.citykey.utils.extensions.linkifyAndLoadNonHtmlTaggedData
 import com.telekom.citykey.utils.extensions.openApp
 import com.telekom.citykey.utils.extensions.openLink
 import com.telekom.citykey.utils.extensions.setVisible
 import com.telekom.citykey.utils.extensions.viewBinding
 import com.telekom.citykey.view.MainFragment
 import com.telekom.citykey.view.main.MainActivity
-import com.telekom.citykey.view.services.DetailedServiceButtonsAdapter
 import com.telekom.citykey.view.services.ServicesFunctions
 import com.telekom.citykey.view.services.citizen_surveys.SurveysOverviewViewModel
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailedService : MainFragment(R.layout.service_details_fragment) {
+
     private val args: DetailedServiceArgs by navArgs()
     private val binding by viewBinding(ServiceDetailsFragmentBinding::bind)
     private val adjustManager: AdjustManager by inject()
@@ -76,6 +80,7 @@ class DetailedService : MainFragment(R.layout.service_details_fragment) {
         setupToolbar(binding.toolbarDetailedServices)
 
         setupViews()
+        handleWindowInsets()
 
         with(requireActivity() as MainActivity) {
             if (currentDeeplinkString == getString(R.string.deeplink_polls_list)) {
@@ -87,13 +92,13 @@ class DetailedService : MainFragment(R.layout.service_details_fragment) {
     }
 
     private fun setupViews() {
-        val imageUrl = BuildConfig.IMAGE_URL +
-                if (args.service.headerImage.isNullOrBlank().not()) args.service.headerImage else args.service.image
-        GlideApp.with(this)
-            .load(imageUrl)
-            .centerCrop()
-            .into(binding.image)
-
+        binding.image.loadCenterCropped(
+            imageReference = if (args.service.headerImage.isNullOrBlank().not()) {
+                args.service.headerImage
+            } else {
+                args.service.image
+            }
+        )
         if (!args.service.helpLinkTitle.isNullOrBlank()) {
             binding.helpActionContainer.apply {
                 setVisible(true)
@@ -168,7 +173,31 @@ class DetailedService : MainFragment(R.layout.service_details_fragment) {
                     return true
                 }
             }
-            loadBasicHtml(args.service.description)
+            linkifyAndLoadNonHtmlTaggedData(args.service.description)
+        }
+    }
+
+    override fun handleWindowInsets() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+
+            val safeInsetType = WindowInsetsCompat.Type.displayCutout() + WindowInsetsCompat.Type.systemBars()
+            val systemInsets = insets.getInsets(safeInsetType)
+
+            binding.serviceDetailsABL.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right
+            )
+
+            insets
+        }
+        binding.scrollView.dispatchInsetsToChildViews(
+            binding.llcServiceContent,
+            binding.actionsList
+        ) { displayCutoutInsets ->
+            binding.helpActionContainer.updatePadding(
+                left = displayCutoutInsets.left + 21.dpToPixel(context),
+                right = displayCutoutInsets.right + 21.dpToPixel(context)
+            )
         }
     }
 

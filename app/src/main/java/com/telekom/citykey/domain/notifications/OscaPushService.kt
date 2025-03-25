@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -45,6 +45,7 @@ import com.telekom.citykey.domain.global.GlobalData
 import com.telekom.citykey.utils.ForegroundUtil
 import com.telekom.citykey.view.main.MainActivity
 import org.koin.android.ext.android.inject
+import androidx.core.net.toUri
 
 class OscaPushService : FirebaseMessagingService() {
 
@@ -69,7 +70,14 @@ class OscaPushService : FirebaseMessagingService() {
 
     private val globalData: GlobalData by inject()
 
+    private val tpnsManager: TpnsManager by inject()
+
     private val isAppRunning get() = ForegroundUtil.isApRunning(applicationContext)
+
+    override fun onNewToken(token: String) {
+        super.onNewToken(token)
+        tpnsManager.onFCMTokenChanged()
+    }
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         super.onMessageReceived(remoteMessage)
@@ -155,15 +163,15 @@ class OscaPushService : FirebaseMessagingService() {
             )
             val isNoRefreshContentDeeplink = noRefreshContentDeeplinks.any { deepLinkUrl == getString(it) }
             if (isNoRefreshContentDeeplink || deepLinkUrl.contains(EVENT_DEEP_LINK_URI_IDENTIFIER)) {
-                this.data = Uri.parse(deepLinkUrl)
+                this.data = deepLinkUrl.toUri()
                 setClass(applicationContext, MainActivity::class.java)
             } else if (isAppRunning && deepLinkUrl.contains(INFOBOX_DEEP_LINK_URI_IDENTIFIER)) {
                 globalData.refreshContent().subscribe()
-                this.data = Uri.parse(deepLinkUrl)
+                this.data = deepLinkUrl.toUri()
                 setClass(applicationContext, MainActivity::class.java)
             } else {
                 globalData.refreshContent().subscribe()
-                this.data = Uri.parse(deepLinkUrl)
+                this.data = deepLinkUrl.toUri()
                 //this.action = Intent.ACTION_VIEW
                 //TODO: This fixes the issue of multiple app instances. Need to investigate
                 setClass(applicationContext, MainActivity::class.java)
@@ -195,5 +203,4 @@ class OscaPushService : FirebaseMessagingService() {
         }
         notificationManager.notify((System.currentTimeMillis() % 1000).toInt(), builder.build())
     }
-
 }

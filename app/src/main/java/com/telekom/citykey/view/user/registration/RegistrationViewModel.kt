@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -35,13 +35,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.telekom.citykey.R
 import com.telekom.citykey.common.ErrorCodes
-import com.telekom.citykey.common.NetworkException
+import com.telekom.citykey.networkinterface.models.error.NetworkException
 import com.telekom.citykey.custom.views.inputfields.FieldValidation
 import com.telekom.citykey.custom.views.passwordstrength.PasswordStrength
 import com.telekom.citykey.domain.repository.UserRepository
-import com.telekom.citykey.domain.repository.exceptions.NoConnectionException
-import com.telekom.citykey.models.OscaErrorResponse
-import com.telekom.citykey.models.api.requests.RegistrationRequest
+import com.telekom.citykey.data.exceptions.NoConnectionException
+import com.telekom.citykey.networkinterface.models.api.requests.RegistrationRequest
+import com.telekom.citykey.networkinterface.models.error.OscaErrorResponse
 import com.telekom.citykey.utils.DateUtil
 import com.telekom.citykey.utils.SingleLiveEvent
 import com.telekom.citykey.utils.Validation
@@ -108,9 +108,11 @@ class RegistrationViewModel(
             passwords.second.isNotEmpty() && passwords.second == passwords.first -> {
                 return RegFields.SEC_PASSWORD to FieldValidation(FieldValidation.OK, null)
             }
+
             passwords.first.startsWith(passwords.second) -> {
                 return RegFields.SEC_PASSWORD to FieldValidation(FieldValidation.IDLE, null)
             }
+
             else -> R.string.r_001_registration_error_password_no_match
         }
         return RegFields.SEC_PASSWORD to FieldValidation(FieldValidation.ERROR, null, errorMsg)
@@ -251,10 +253,13 @@ class RegistrationViewModel(
         return RegFields.PASSWORD to when {
             percentage == 0f ->
                 FieldValidation(FieldValidation.ERROR, null, R.string.r_001_registration_error_empty_field)
+
             passwordAwaitsValidation ->
                 FieldValidation(FieldValidation.ERROR, null, R.string.r_001_registration_error_password_email_same)
+
             percentage < 99f ->
                 FieldValidation(FieldValidation.ERROR, null, R.string.r_001_registration_error_password_too_weak)
+
             else ->
                 FieldValidation(FieldValidation.SUCCESS, "")
         }
@@ -269,17 +274,21 @@ class RegistrationViewModel(
                         ErrorCodes.REGISTRATION_USER_TOO_YOUNG ->
                             _inputValidation.value =
                                 RegFields.BIRTHDAY to FieldValidation(FieldValidation.ERROR, it.userMsg)
+
                         ErrorCodes.REGISTRATION_EMAIL_EXIST,
                         ErrorCodes.REGISTRATION_EMAIL_INVALID,
                         ErrorCodes.REGISTRATION_EMAIL_NOT_VERIFIED ->
                             _inputValidation.value =
                                 RegFields.EMAIL to FieldValidation(FieldValidation.ERROR, it.userMsg)
+
                         ErrorCodes.REGISTRATION_PASSWORD_INVALID ->
                             _inputValidation.value =
                                 RegFields.PASSWORD to FieldValidation(FieldValidation.ERROR, it.userMsg)
+
                         ErrorCodes.REGISTRATION_POSTALCODE_INVALID ->
                             _inputValidation.value =
                                 RegFields.POSTAL_CODE to FieldValidation(FieldValidation.ERROR, it.userMsg)
+
                         ErrorCodes.EMAIL_RESEND_SOON -> _resendTooSoon.postValue(it.userMsg)
                         else -> _technicalError.value = Unit
                     }
@@ -287,6 +296,7 @@ class RegistrationViewModel(
                 _validateOkFields.value = Unit
                 _stopLoading.value = Unit
             }
+
             is NoConnectionException -> _showRetryDialog.call()
             else -> {
                 _technicalError.value = Unit

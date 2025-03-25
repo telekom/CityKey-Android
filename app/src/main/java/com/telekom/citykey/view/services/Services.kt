@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -28,16 +28,21 @@
 
 package com.telekom.citykey.view.services
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.forEach
+import androidx.core.view.updateLayoutParams
+import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.appbar.AppBarLayout
 import com.telekom.citykey.R
 import com.telekom.citykey.custom.ItemDecorationBetweenOnly
 import com.telekom.citykey.custom.views.OscaAppBarLayout
@@ -45,14 +50,15 @@ import com.telekom.citykey.databinding.ServicesFragmentBinding
 import com.telekom.citykey.domain.services.main.ServicesStates
 import com.telekom.citykey.domain.track.AdjustManager
 import com.telekom.citykey.domain.track.AnalyticsParameterKey
-import com.telekom.citykey.models.content.CitizenService
-import com.telekom.citykey.models.content.ServicesData
+import com.telekom.citykey.networkinterface.models.content.CitizenService
+import com.telekom.citykey.networkinterface.models.content.ServicesData
 import com.telekom.citykey.utils.DialogUtil
 import com.telekom.citykey.utils.RegExUtils
 import com.telekom.citykey.utils.extensions.AccessibilityRole
+import com.telekom.citykey.utils.extensions.dpToPixel
 import com.telekom.citykey.utils.extensions.getColor
 import com.telekom.citykey.utils.extensions.getDrawable
-import com.telekom.citykey.utils.extensions.loadFromOSCA
+import com.telekom.citykey.pictures.loadFromOSCA
 import com.telekom.citykey.utils.extensions.openLink
 import com.telekom.citykey.utils.extensions.safeNavigate
 import com.telekom.citykey.utils.extensions.safeRun
@@ -97,6 +103,7 @@ class Services : Fragment(R.layout.services_fragment) {
         binding.labelCityServices.setAccessibilityRole(AccessibilityRole.Heading)
 
         setupToolbar(binding.appBarLayout)
+        handleWindowInsets()
         subscribeUi()
         adjustManager.trackOneTimeEvent(R.string.open_service)
     }
@@ -106,6 +113,28 @@ class Services : Fragment(R.layout.services_fragment) {
         viewModel.reloadServicesIfNeeded()
     }
 
+    private fun handleWindowInsets() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+
+            val safeInsetType = WindowInsetsCompat.Type.displayCutout() + WindowInsetsCompat.Type.systemBars()
+            val systemInsets = insets.getInsets(safeInsetType)
+
+            binding.containerCityServicesHeader.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                leftMargin = systemInsets.left + 18.dpToPixel(context)
+            }
+
+            binding.servicesToolbar.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right
+            )
+
+            ViewCompat.onApplyWindowInsets(binding.appBarLayout, insets)
+
+            insets
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
     private fun subscribeUi() {
         viewModel.cityData.observe(viewLifecycleOwner) {
             binding.toolbarTitle.text = it.cityName
@@ -204,15 +233,12 @@ class Services : Fragment(R.layout.services_fragment) {
             CitySelectionFragment()
                 .showDialog(requireActivity().supportFragmentManager)
         }
-        appBarLayout.addOnOffsetChangedListener(
-            AppBarLayout.OnOffsetChangedListener { _, i ->
-                if (!binding.swipeRefreshLayout.isRefreshing) {
-                    binding.swipeRefreshLayout.isEnabled = i == 0
-                }
+        appBarLayout.addOnOffsetChangedListener { _, i ->
+            if (!binding.swipeRefreshLayout.isRefreshing) {
+                binding.swipeRefreshLayout.isEnabled = i == 0
             }
-        )
+        }
         binding.servicesToolbar.setAndPerformAccessibilityFocusAction()
-
     }
 
     private fun navigateToService(service: CitizenService) {
@@ -291,12 +317,12 @@ class Services : Fragment(R.layout.services_fragment) {
                 )
             )
             if (service.templateId == 1) {
-                if (service.description.isNullOrBlank().not()) {
+                if (service.description.isBlank().not()) {
                     openLink(service.description)
                 }
             } else if (!service.function.isNullOrBlank() && RegExUtils.webUrl.matcher(service.function).matches()) {
                 try {
-                    requireActivity().openLink(service.function)
+                    requireActivity().openLink(service.function.orEmpty())
                 } catch (e: Exception) {
                     DialogUtil.showTechnicalError(requireContext())
                 }
