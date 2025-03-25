@@ -129,6 +129,19 @@ apply from: '../config/quality.gradle'
 apply from: '../config/dependencies.gradle'
 apply from: './kover.gradle'
 
+ktlint {
+    debug = true
+    verbose = true
+    android = true
+    reporters {
+        reporter "checkstyle"
+        reporter "plain"
+        reporter "plain_group_by_file"
+        reporter "sarif"
+        reporter "json"
+    }
+}
+
 dependencies {
 
     implementation(projects.networkinterface)
