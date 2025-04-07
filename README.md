@@ -11,6 +11,7 @@ SPDX-License-Identifier: CC0-1.0
 [![OpenSSF Scorecard Score](https://api.scorecard.dev/projects/github.com/telekom/CityKey-Android/badge)](https://scorecard.dev/viewer/?uri=github.com/telekom/CityKey-Android/badge) 
 [![REUSE status](https://api.reuse.software/badge/github.com/telekom/CityKey-android)](https://api.reuse.software/info/github.com/telekom/CityKey-android)
 [![ktlint](https://img.shields.io/badge/ktlint%20code--style-%E2%9D%A4-FF4081)](https://pinterest.github.io/ktlint/)
+[![Continuous Integration](https://github.com/telekom/CityKey-Android/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/telekom/CityKey-Android/actions/workflows/continuous-integration.yml)
 
 ## Overview
 
