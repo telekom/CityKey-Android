@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -39,19 +39,25 @@ import android.webkit.URLUtil
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.core.widget.TextViewCompat
 import androidx.navigation.fragment.navArgs
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.ArticleFragmentBinding
 import com.telekom.citykey.domain.city.CityInteractor
 import com.telekom.citykey.domain.track.AdjustManager
-import com.telekom.citykey.models.content.CityContent
+import com.telekom.citykey.networkinterface.models.content.CityContent
+import com.telekom.citykey.pictures.loadFromURLwithProgress
 import com.telekom.citykey.utils.DialogUtil
 import com.telekom.citykey.utils.NetworkConnection
 import com.telekom.citykey.utils.ShareUtils
 import com.telekom.citykey.utils.extensions.AccessibilityRole
 import com.telekom.citykey.utils.extensions.attemptOpeningWebViewUri
-import com.telekom.citykey.utils.extensions.loadFromURLwithProgress
+import com.telekom.citykey.utils.extensions.dispatchInsetsToChildViews
+import com.telekom.citykey.utils.extensions.dpToPixel
+import com.telekom.citykey.utils.extensions.linkifyAndLoadNonHtmlTaggedData
 import com.telekom.citykey.utils.extensions.openLink
 import com.telekom.citykey.utils.extensions.safeRun
 import com.telekom.citykey.utils.extensions.setAccessibilityRole
@@ -62,6 +68,7 @@ import com.telekom.citykey.view.MainFragment
 import org.koin.android.ext.android.inject
 
 class Article : MainFragment(R.layout.article_fragment) {
+
     private val binding by viewBinding(ArticleFragmentBinding::bind)
     private val args: ArticleArgs by navArgs()
     private val adjustManager: AdjustManager by inject()
@@ -72,6 +79,7 @@ class Article : MainFragment(R.layout.article_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupArticle(args.newsItem)
+        handleWindowInsets()
         adjustManager.trackEvent(R.string.open_news_detail_page)
     }
 
@@ -153,12 +161,42 @@ class Article : MainFragment(R.layout.article_fragment) {
                         return true
                     }
                 }
-                loadDataWithBaseURL(null, it, "text/html", "utf-8", null)
+                linkifyAndLoadNonHtmlTaggedData(it)
             }
         }
 
         setupToolbar(binding.toolbar)
         setAccessibilityRoles()
+    }
+
+    override fun handleWindowInsets() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+
+            val safeInsetType = WindowInsetsCompat.Type.displayCutout() + WindowInsetsCompat.Type.systemBars()
+            val systemInsets = insets.getInsets(safeInsetType)
+
+            binding.articleAppBarLayout.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right
+            )
+
+            insets
+        }
+        binding.scrollView.dispatchInsetsToChildViews(
+            binding.loading,
+            binding.errorLayout,
+            binding.headDetail,
+            binding.btnMore,
+            binding.divider,
+            binding.title,
+            binding.subtitle,
+            binding.llWebViewContainer
+        ) { displayCutoutInsets ->
+            binding.credits.updatePadding(
+                left = displayCutoutInsets.left + 6.dpToPixel(context),
+                right = displayCutoutInsets.right
+            )
+        }
     }
 
     private fun loadImage(cityContent: CityContent) {

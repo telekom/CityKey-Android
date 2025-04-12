@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -34,10 +34,12 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.PoiListFragmentBinding
+import com.telekom.citykey.utils.KoverIgnore
 import com.telekom.citykey.utils.extensions.viewBinding
 import com.telekom.citykey.view.services.poi.PoiGuideViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
+@KoverIgnore
 class PoiList : Fragment(R.layout.poi_list_fragment) {
 
     private val viewModel: PoiGuideViewModel by sharedViewModel()

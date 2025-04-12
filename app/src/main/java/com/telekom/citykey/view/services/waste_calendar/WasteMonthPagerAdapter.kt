@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -32,12 +32,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.WastecalendarMonthPageBinding
-import com.telekom.citykey.models.waste_calendar.WasteCalendarPickups
+import com.telekom.citykey.networkinterface.models.waste_calendar.WasteCalendarPickups
 import com.telekom.citykey.utils.extensions.inflateChild
-import java.util.*
+import java.util.Calendar
+import java.util.Date
 
-class WasteMonthPagerAdapter(private val dateClickListener: (Date) -> Unit) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class WasteMonthPagerAdapter(
+    private val dateClickListener: (Date) -> Unit
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val currentDate = Calendar.getInstance()
     private val currMonth = currentDate.get(Calendar.MONTH)

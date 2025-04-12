@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -36,6 +36,7 @@ import com.telekom.citykey.custom.views.inputfields.FieldValidation
 import com.telekom.citykey.databinding.FeedbackDialogBinding
 import com.telekom.citykey.utils.DialogUtil
 import com.telekom.citykey.utils.EmptyTextWatcher
+import com.telekom.citykey.utils.extensions.applySafeAllInsetsWithSides
 import com.telekom.citykey.utils.extensions.disable
 import com.telekom.citykey.utils.extensions.enable
 import com.telekom.citykey.utils.extensions.getColor
@@ -45,49 +46,26 @@ import com.telekom.citykey.view.FullScreenBottomSheetDialogFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class Feedback : FullScreenBottomSheetDialogFragment(R.layout.feedback_dialog) {
+
     private val binding: FeedbackDialogBinding by viewBinding(FeedbackDialogBinding::bind)
+
     private val viewModel: FeedbackViewModel by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
+        handleWindowInsets()
         subscribeUi()
     }
 
-    fun subscribeUi() {
-        viewModel.feedbackSubmitted.observe(viewLifecycleOwner) {
-            binding.feedbackForm.visibility = View.GONE
-            binding.feedbackSuccess.visibility = View.VISIBLE
-        }
-        viewModel.technicalError.observe(viewLifecycleOwner) {
-            binding.sendBtn.stopLoading()
-            DialogUtil.showTechnicalError(requireContext())
-        }
-        viewModel.showRetryDialog.observe(viewLifecycleOwner) {
-            binding.sendBtn.stopLoading()
-            DialogUtil.showRetryDialog(requireContext())
-        }
-
-        viewModel.inputValidation.observe(viewLifecycleOwner) {
-            if (it.second.stringRes != 0 && binding.contactEmailSwitch.isChecked) {
-                binding.contactEmailInput.validation = it.second
-            }
-            updateButtonStatus()
-        }
-
-        viewModel.profileContent.observe(viewLifecycleOwner) {
-            if (it.isNotEmpty())
-                binding.contactEmailInput.text = it
-        }
-    }
-
-    fun initViews() {
+    private fun initViews() {
         binding.sendBtn.disable()
         binding.toolbar.setNavigationIcon(R.drawable.ic_profile_close)
         binding.toolbar.setNavigationIconTint(getColor(R.color.onSurface))
         binding.toolbar.setNavigationContentDescription(R.string.accessibility_btn_close)
         binding.toolbar.setNavigationOnClickListener { dismiss() }
         setAccessibilityRoleForToolbarTitle(binding.toolbar)
+
         binding.sendBtn.setOnClickListener {
             binding.sendBtn.startLoading()
             val contactEmailId = if (binding.contactEmailSwitch.isChecked) binding.contactEmailInput.text else ""
@@ -117,6 +95,39 @@ class Feedback : FullScreenBottomSheetDialogFragment(R.layout.feedback_dialog) {
         }
 
         setBehaviorListeners()
+    }
+
+    private fun handleWindowInsets() {
+        binding.appBarLayout.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.nsvFeedback.applySafeAllInsetsWithSides(left = true, right = true, bottom = true)
+        binding.feedbackSuccess.applySafeAllInsetsWithSides(left = true, right = true, bottom = true)
+    }
+
+    private fun subscribeUi() {
+        viewModel.feedbackSubmitted.observe(viewLifecycleOwner) {
+            binding.feedbackForm.visibility = View.GONE
+            binding.feedbackSuccess.visibility = View.VISIBLE
+        }
+        viewModel.technicalError.observe(viewLifecycleOwner) {
+            binding.sendBtn.stopLoading()
+            DialogUtil.showTechnicalError(requireContext())
+        }
+        viewModel.showRetryDialog.observe(viewLifecycleOwner) {
+            binding.sendBtn.stopLoading()
+            DialogUtil.showRetryDialog(requireContext())
+        }
+
+        viewModel.inputValidation.observe(viewLifecycleOwner) {
+            if (it.second.stringRes != 0 && binding.contactEmailSwitch.isChecked) {
+                binding.contactEmailInput.validation = it.second
+            }
+            updateButtonStatus()
+        }
+
+        viewModel.profileContent.observe(viewLifecycleOwner) {
+            if (it.isNotEmpty())
+                binding.contactEmailInput.text = it
+        }
     }
 
     private fun setBehaviorListeners() {

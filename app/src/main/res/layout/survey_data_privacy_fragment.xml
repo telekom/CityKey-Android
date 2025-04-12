@@ -9,7 +9,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
- 
+
 In accordance with Sections 4 and 6 of the License, the following exclusions apply:
     1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
     2. Design Rights – Visual identities, UI/UX designs, and other graphical elements remain the property of their respective owners and are not licensed under the Apache License 2.0.
@@ -31,14 +31,12 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/auth_bottom_sheet_rounded"
-        android:fitsSystemWindows="true"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbarDataPrivacy"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:fitsSystemWindows="true"
             app:title="@string/data_privacy_survey_title"
             app:titleTextColor="@color/onSurface" />
 
@@ -68,6 +66,7 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
             android:textColor="@color/onSurface"
             android:textSize="@dimen/toolbar_message1_size"
             tools:text="@tools:sample/lorem/random" />
+
     </androidx.core.widget.NestedScrollView>
 
     <com.telekom.citykey.custom.views.ProgressButton
@@ -79,4 +78,5 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:text="@string/data_privacy_survey_button_text" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

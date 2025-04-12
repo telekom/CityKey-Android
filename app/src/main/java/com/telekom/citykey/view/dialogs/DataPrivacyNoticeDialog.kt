@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -43,31 +43,54 @@ import com.telekom.citykey.utils.extensions.*
 import com.telekom.citykey.view.FullScreenBottomSheetDialogFragment
 import org.koin.android.ext.android.inject
 
-class DataPrivacyNoticeDialog(private val isLaunchedFromSettings: Boolean = false) :
-    FullScreenBottomSheetDialogFragment(R.layout.data_privacy_notice_dialog) {
+class DataPrivacyNoticeDialog(
+    private val isLaunchedFromSettings: Boolean = false
+) : FullScreenBottomSheetDialogFragment(R.layout.data_privacy_notice_dialog) {
 
     private val binding: DataPrivacyNoticeDialogBinding by viewBinding(DataPrivacyNoticeDialogBinding::bind)
+
     private val legalData: LegalDataManager by inject()
 
-    @SuppressLint("SetTextI18n")
+    private val pageLinkHandlerWebViewClient by lazy {
+        object : WebViewClient() {
+            override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
+                attemptOpeningWebViewUri(request?.url)
+                return true
+            }
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViews()
+        handleWindowInsets()
+        subscribeUi()
+    }
 
-        binding.btnOpenSettings.setOnClickListener {
-            if (isLaunchedFromSettings) dismiss()
-            else DataPrivacySettingsDialog(isLaunchedFromNotice = true)
-                .showDialog(parentFragmentManager, "DataPrivacySettingsDialog")
-        }
-
-        binding.version.text = "App-Version: ${BuildConfig.VERSION_NAME}"
-
+    @SuppressLint("SetTextI18n")
+    private fun initViews() {
         binding.toolbar.setNavigationIcon(R.drawable.ic_profile_close)
         binding.toolbar.setNavigationIconTint(getColor(R.color.onSurface))
         binding.toolbar.setNavigationContentDescription(R.string.accessibility_btn_close)
         binding.toolbar.setNavigationOnClickListener { dismiss() }
         setAccessibilityRoleForToolbarTitle(binding.toolbar)
 
-        subscribeUi()
+        binding.btnOpenSettings.setOnClickListener {
+            if (isLaunchedFromSettings) {
+                dismiss()
+            } else {
+                DataPrivacySettingsDialog(
+                    isLaunchedFromNotice = true
+                ).showDialog(parentFragmentManager, "DataPrivacySettingsDialog")
+            }
+        }
+
+        binding.version.text = "App-Version: ${BuildConfig.VERSION_NAME}"
+    }
+
+    private fun handleWindowInsets() {
+        binding.appBarLayout.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.nsvDataPrivacyNotice.applySafeAllInsetsWithSides(left = true, right = true, bottom = true)
     }
 
     private fun subscribeUi() {
@@ -84,14 +107,4 @@ class DataPrivacyNoticeDialog(private val isLaunchedFromSettings: Boolean = fals
             }
         }
     }
-
-    private val pageLinkHandlerWebViewClient by lazy {
-        object : WebViewClient() {
-            override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
-                attemptOpeningWebViewUri(request?.url)
-                return true
-            }
-        }
-    }
-
 }

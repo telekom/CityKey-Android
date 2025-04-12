@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -29,15 +29,16 @@
 package com.telekom.citykey.view.dialogs
 
 import android.content.DialogInterface
-import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.view.View
+import androidx.core.view.ViewCompat
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.DataPrivacyFtuDialogBinding
 import com.telekom.citykey.domain.track.AdjustManager
+import com.telekom.citykey.utils.LinkAccessibilityHelper
 import com.telekom.citykey.utils.PreferencesHelper
 import com.telekom.citykey.utils.extensions.getColor
 import com.telekom.citykey.utils.extensions.setAccessibilityRoleForToolbarTitle
@@ -56,17 +57,11 @@ class FtuDataPrivacyDialog : FullScreenBottomSheetDialogFragment(R.layout.data_p
         isCancelable = false
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun setupUI() {
+
         setAccessibilityRoleForToolbarTitle(binding.toolbar)
+
         binding.btnChangeSettings.setupOutlineStyle()
-
-        binding.btnAcceptAll.setOnClickListener {
-            adjustManager.updateTrackingPermissions(true)
-            preferencesHelper.saveConfirmedTrackingTerms()
-            dismiss()
-        }
-
         binding.btnChangeSettings.setOnClickListener {
             DataPrivacySettingsDialog(
                 acceptedListener = {
@@ -75,6 +70,12 @@ class FtuDataPrivacyDialog : FullScreenBottomSheetDialogFragment(R.layout.data_p
                 }
             )
                 .showDialog(parentFragmentManager, "DataPrivacySettingsDialog")
+        }
+
+        binding.btnAcceptAll.setOnClickListener {
+            adjustManager.updateTrackingPermissions(true)
+            preferencesHelper.saveConfirmedTrackingTerms()
+            dismiss()
         }
 
         setupDescription()
@@ -116,6 +117,13 @@ class FtuDataPrivacyDialog : FullScreenBottomSheetDialogFragment(R.layout.data_p
             text = textSpan
             movementMethod = LinkMovementMethod.getInstance()
             setLinkTextColor(getColor(R.color.oscaColor))
+            ViewCompat.setAccessibilityDelegate(
+                this,
+                LinkAccessibilityHelper(
+                    linkTextView = this,
+                    linkAccessibilityId = "linkId"
+                )
+            )
         }
     }
 

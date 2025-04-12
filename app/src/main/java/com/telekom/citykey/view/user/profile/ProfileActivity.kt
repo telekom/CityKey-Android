@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -30,19 +30,19 @@ package com.telekom.citykey.view.user.profile
 
 import android.content.Intent
 import android.content.res.Configuration
-import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.WindowManager
+import androidx.activity.enableEdgeToEdge
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.ProfileActivityBinding
+import com.telekom.citykey.utils.extensions.applySafeAllInsetsWithSides
+import com.telekom.citykey.utils.extensions.disableRecentsScreenshot
+import com.telekom.citykey.utils.extensions.preventContentSharing
 import com.telekom.citykey.utils.extensions.setAccessibilityRoleForToolbarTitle
-import com.telekom.citykey.utils.extensions.shouldPreventContentSharing
 import com.telekom.citykey.utils.extensions.viewBinding
 import com.telekom.citykey.view.user.login.LoginActivity
 
@@ -57,26 +57,35 @@ class ProfileActivity : AppCompatActivity() {
         AnimatedVectorDrawableCompat.create(applicationContext, R.drawable.x_to_back)!!
     }
     private var isIndicatorCross = true
+
     var backAction = ProfileBackActions.LOGOUT
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            setRecentsScreenshotEnabled(false)
-        } else if (shouldPreventContentSharing) {
-            window.setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE)
-        }
-        setContentView(binding.root)
 
-        window.statusBarColor = ContextCompat.getColor(this, R.color.black5a)
-        setupToolbar()
+        disableRecentsScreenshot()
+        preventContentSharing()
+        enableEdgeToEdge()
+
+        setContentView(binding.root)
+        setupUI()
+        handleWindowInsets()
     }
 
-    private fun setupToolbar() {
+    private fun setupUI() {
+        initToolbar()
+    }
+
+    private fun initToolbar() {
         binding.toolbarProfile.setNavigationIcon(R.drawable.ic_profile_close)
         binding.toolbarProfile.setNavigationIconTint(getColor(R.color.onSurface))
         binding.toolbarProfile.setNavigationContentDescription(R.string.accessibility_btn_close)
         binding.toolbarProfile.setNavigationOnClickListener { onBackPressed() }
+    }
+
+    private fun handleWindowInsets() {
+        binding.containerAppBarLayout.applySafeAllInsetsWithSides(top = true, left = true, right = true)
+        binding.profileNavHost.applySafeAllInsetsWithSides(left = true, right = true, bottom = true)
     }
 
     fun adaptToolbarForClose() {

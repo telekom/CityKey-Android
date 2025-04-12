@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -35,8 +35,13 @@ import android.os.Bundle
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.View
+import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.forEach
+import androidx.core.view.updateLayoutParams
+import androidx.core.view.updatePadding
 import androidx.core.widget.TextViewCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -48,7 +53,18 @@ import com.telekom.citykey.custom.views.OscaAppBarLayout
 import com.telekom.citykey.databinding.HomeFragmentBinding
 import com.telekom.citykey.domain.city.weather.WeatherState
 import com.telekom.citykey.domain.track.AdjustManager
-import com.telekom.citykey.utils.extensions.*
+import com.telekom.citykey.pictures.loadFromOSCA
+import com.telekom.citykey.utils.extensions.AccessibilityRole
+import com.telekom.citykey.utils.extensions.dpToPixel
+import com.telekom.citykey.utils.extensions.getColor
+import com.telekom.citykey.utils.extensions.getDrawable
+import com.telekom.citykey.utils.extensions.setAccessibilityRole
+import com.telekom.citykey.utils.extensions.setAndPerformAccessibilityFocusAction
+import com.telekom.citykey.utils.extensions.setVisible
+import com.telekom.citykey.utils.extensions.showDialog
+import com.telekom.citykey.utils.extensions.startActivity
+import com.telekom.citykey.utils.extensions.updateNewsWidget
+import com.telekom.citykey.utils.extensions.viewBinding
 import com.telekom.citykey.view.city_selection.CitySelectionFragment
 import com.telekom.citykey.view.main.MainActivity
 import com.telekom.citykey.view.user.login.LoginActivity
@@ -71,15 +87,6 @@ class Home : Fragment(R.layout.home_fragment) {
     private var citySelectionTooltip: SimpleTooltip? = null
     private var onBackPressedCallback: OnBackPressedCallback? = null
 
-    override fun onResume() {
-        super.onResume()
-        trackOpenHomeEvent()
-    }
-
-    private fun trackOpenHomeEvent() {
-        if (viewModel.isFtuInteractionCompleted()) adjustManager.trackOneTimeEvent(R.string.open_home)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
@@ -92,8 +99,39 @@ class Home : Fragment(R.layout.home_fragment) {
         binding.homeToolbar.inflateMenu(R.menu.home_menu)
         binding.swipeRefreshLayout.setOnRefreshListener(viewModel::onRefresh)
         setupToolbar(binding.appBarLayout)
+        handleWindowInsets()
         subscribeUi()
         handleBackAction()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        trackOpenHomeEvent()
+    }
+
+    private fun trackOpenHomeEvent() {
+        if (viewModel.isFtuInteractionCompleted()) adjustManager.trackOneTimeEvent(R.string.open_home)
+    }
+
+    private fun handleWindowInsets() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+
+            val safeInsetType = WindowInsetsCompat.Type.displayCutout() + WindowInsetsCompat.Type.systemBars()
+            val systemInsets = insets.getInsets(safeInsetType)
+
+            binding.containerCityHeader.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                leftMargin = systemInsets.left + 18.dpToPixel(context)
+            }
+
+            binding.homeToolbar.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right
+            )
+
+            ViewCompat.onApplyWindowInsets(binding.appBarLayout, insets)
+
+            insets
+        }
     }
 
     @SuppressLint("SetTextI18n")

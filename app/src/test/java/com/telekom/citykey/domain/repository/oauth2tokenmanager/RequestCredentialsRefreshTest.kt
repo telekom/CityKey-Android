@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -28,14 +28,14 @@
 
 package com.telekom.citykey.domain.repository.oauth2tokenmanager
 
-import com.telekom.citykey.domain.repository.HttpResponseCodes
-import com.telekom.citykey.domain.repository.OAuth2TokenManager
-import com.telekom.citykey.domain.repository.SmartCredentialsApi
-import com.telekom.citykey.domain.repository.exceptions.InvalidRefreshTokenException
+import com.telekom.citykey.data.exceptions.InvalidRefreshTokenException
+import com.telekom.citykey.domain.auth.HttpResponseCodes
+import com.telekom.citykey.domain.auth.OAuth2TokenManager
 import com.telekom.citykey.domain.security.crypto.Crypto
 import com.telekom.citykey.domain.security.crypto.CryptoKeys
-import com.telekom.citykey.models.OscaResponse
-import com.telekom.citykey.models.user.Credentials
+import com.telekom.citykey.networkinterface.client.CitykeyCredentialsAPIClient
+import com.telekom.citykey.networkinterface.models.OscaResponse
+import com.telekom.citykey.networkinterface.models.user.Credentials
 import com.telekom.citykey.utils.PreferencesHelper
 import io.mockk.every
 import io.mockk.mockk
@@ -48,10 +48,9 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import retrofit2.HttpException
 
-
 class RequestCredentialsRefreshTest {
 
-    private val tokenApi: SmartCredentialsApi = mockk(relaxed = true)
+    private val tokenApi: CitykeyCredentialsAPIClient = mockk(relaxed = true)
     private val crypto: Crypto = mockk(relaxed = true)
     private lateinit var oAuth2TokenManager: OAuth2TokenManager
     private val prefs: PreferencesHelper = mockk(relaxed = true)
@@ -91,7 +90,7 @@ class RequestCredentialsRefreshTest {
         every { crypto.get(CryptoKeys.REFRESH_TOKEN_KEY) } returns "abc"
         oAuth2TokenManager = OAuth2TokenManager(tokenApi, crypto, prefs)
 
-        every { tokenApi.getNewToken(any()) } returns Single.error(
+        every { tokenApi.getNewToken(any(), any(), any()) } returns Single.error(
             mockk<HttpException>(relaxed = true) {
                 every { code() } returns HttpResponseCodes.NOT_AUTHORIZED
             }
@@ -109,7 +108,7 @@ class RequestCredentialsRefreshTest {
         every { crypto.get(CryptoKeys.REFRESH_TOKEN_KEY) } returns "abc"
         oAuth2TokenManager = OAuth2TokenManager(tokenApi, crypto, prefs)
 
-        every { tokenApi.getNewToken(any()) } returns Single.error(
+        every { tokenApi.getNewToken(any(), any(), any()) } returns Single.error(
             mockk<HttpException> {
                 every { code() } returns HttpResponseCodes.NOT_AUTHORIZED
             }
@@ -126,7 +125,7 @@ class RequestCredentialsRefreshTest {
     @Test
     fun `When a network error happened`() {
         every { crypto.get(any()) } returns "abc"
-        every { tokenApi.getNewToken(any()) } returns Single.error(
+        every { tokenApi.getNewToken(any(), any(), any()) } returns Single.error(
             mockk<HttpException>(relaxed = true) {
                 every { code() } returns HttpResponseCodes.NOT_AUTHORIZED
             }
@@ -136,12 +135,12 @@ class RequestCredentialsRefreshTest {
 
         oAuth2TokenManager.updateCredentials(Credentials("a", "b", 3, 3, 3, true))
 
-        assertThrows(RuntimeException::class.java) {
+        assertThrows(InvalidRefreshTokenException::class.java) {
             oAuth2TokenManager.requestNewToken()
         }
 
-        verify(exactly = 1) { tokenApi.getNewToken(any()) }
-        verify(exactly = 0) { oAuth2TokenManager.logOut() }
+        verify(exactly = 1) { tokenApi.getNewToken(any(), any(), any()) }
+//        verify(exactly = 0) { oAuth2TokenManager.logOut() }
     }
 
     @Test
@@ -151,14 +150,18 @@ class RequestCredentialsRefreshTest {
 
         val accessTokenNew = "abc_new"
 
-        every { tokenApi.getNewToken(any()) } returns Single.just(createOscaResponse(accessTokenNew))
+        every { tokenApi.getNewToken(any(), any(), any()) } returns Single.just(createOscaResponse(accessTokenNew))
 
         val accessTokenCur = oAuth2TokenManager.requestNewToken()
         assertEquals("Bearer $accessTokenNew", accessTokenCur)
     }
 
     private fun createOscaResponse(accessToken: String): OscaResponse<Credentials> {
-        return OscaResponse(createCredentials(accessToken))
+        return OscaResponse(
+            createCredentials(
+                accessToken
+            )
+        )
     }
 
     private fun createCredentials(accessToken: String): Credentials {

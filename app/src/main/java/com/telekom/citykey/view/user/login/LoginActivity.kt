@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -29,21 +29,22 @@
 package com.telekom.citykey.view.user.login
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.WindowManager
+import androidx.activity.enableEdgeToEdge
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.LoginActivityBinding
+import com.telekom.citykey.utils.extensions.applySafeAllInsets
+import com.telekom.citykey.utils.extensions.applySafeAllInsetsWithSides
+import com.telekom.citykey.utils.extensions.disableRecentsScreenshot
 import com.telekom.citykey.utils.extensions.fadeIn
 import com.telekom.citykey.utils.extensions.fadeOut
+import com.telekom.citykey.utils.extensions.preventContentSharing
 import com.telekom.citykey.utils.extensions.setAccessibilityRoleForToolbarTitle
-import com.telekom.citykey.utils.extensions.shouldPreventContentSharing
 import com.telekom.citykey.utils.extensions.viewBinding
 import com.telekom.citykey.view.user.profile.ProfileActivity
 import io.reactivex.disposables.Disposable
@@ -60,6 +61,7 @@ class LoginActivity : AppCompatActivity() {
     private var isCalledByProfile = false
     private var isCalledByInfobox = false
     private var topIconAnimator: Disposable? = null
+
     private val toX: AnimatedVectorDrawableCompat by lazy {
         AnimatedVectorDrawableCompat.create(applicationContext, R.drawable.back_to_x)!!
     }
@@ -72,26 +74,33 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            setRecentsScreenshotEnabled(false)
-        } else if (shouldPreventContentSharing) {
-            window.setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE)
-        }
+
+        disableRecentsScreenshot()
+        preventContentSharing()
+        enableEdgeToEdge()
+
         setContentView(binding.root)
+        setupUI()
+        handleWindowInsets()
+    }
+
+    private fun setupUI() {
         isCalledByProfile = intent.getBooleanExtra(LAUNCH_PROFILE, false)
         isCalledByInfobox = intent.getBooleanExtra(LAUNCH_INFOBOX, false)
-
         initToolbar()
     }
 
     private fun initToolbar() {
-
         binding.toolbarLogin.setNavigationIcon(R.drawable.ic_profile_close)
         binding.toolbarLogin.setNavigationIconTint(getColor(R.color.onSurface))
         binding.toolbarLogin.setNavigationContentDescription(R.string.accessibility_btn_close)
         binding.toolbarLogin.setNavigationOnClickListener { onBackPressed() }
         setAccessibilityRoleForToolbarTitle(binding.toolbarLogin)
-        window.statusBarColor = ContextCompat.getColor(this, R.color.black5a)
+    }
+
+    private fun handleWindowInsets() {
+        binding.loginAbl.applySafeAllInsetsWithSides(top = true, left = true, right = true)
+        binding.scrollView.applySafeAllInsets()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

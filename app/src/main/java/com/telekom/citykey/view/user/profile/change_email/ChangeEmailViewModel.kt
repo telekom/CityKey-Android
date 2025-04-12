@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -25,7 +25,7 @@
  * SPDX-License-Identifier: Apache-2.0 AND LicenseRef-Deutsche-Telekom-Brand
  * License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-Brand.txt
  */
- 
+
 package com.telekom.citykey.view.user.profile.change_email
 
 import androidx.lifecycle.LiveData
@@ -37,14 +37,14 @@ import com.telekom.citykey.common.ErrorCodes.EMAIL_EQUALS
 import com.telekom.citykey.common.ErrorCodes.EMAIL_INVALID
 import com.telekom.citykey.common.ErrorCodes.EMAIL_NO_EXIST
 import com.telekom.citykey.common.ErrorCodes.MULTIPLE_ERRORS
-import com.telekom.citykey.common.NetworkException
+import com.telekom.citykey.networkinterface.models.error.NetworkException
 import com.telekom.citykey.domain.global.GlobalData
 import com.telekom.citykey.domain.repository.UserRepository
-import com.telekom.citykey.domain.repository.exceptions.InvalidRefreshTokenException
-import com.telekom.citykey.domain.repository.exceptions.NoConnectionException
+import com.telekom.citykey.data.exceptions.InvalidRefreshTokenException
+import com.telekom.citykey.data.exceptions.NoConnectionException
 import com.telekom.citykey.domain.user.UserState
-import com.telekom.citykey.models.OscaErrorResponse
-import com.telekom.citykey.models.api.requests.EmailChangeRequest
+import com.telekom.citykey.networkinterface.models.api.requests.EmailChangeRequest
+import com.telekom.citykey.networkinterface.models.error.OscaErrorResponse
 import com.telekom.citykey.utils.SingleLiveEvent
 import com.telekom.citykey.utils.Validation
 import com.telekom.citykey.utils.extensions.retryOnError
@@ -109,18 +109,24 @@ class ChangeEmailViewModel(
                 globalData.logOutUser(throwable.reason)
                 _logUserOut.postValue(Unit)
             }
+
             is NoConnectionException -> {
                 _showRetryDialog.postValue(CHANGE_EMAIL_API_TAG)
             }
+
             is NetworkException -> {
                 (throwable.error as OscaErrorResponse).errors.forEach {
                     when (it.errorCode) {
                         MULTIPLE_ERRORS -> _generalErrors.postValue(R.string.p_003_profile_email_change_technical_error)
-                        EMAIL_ALREADY_USED, EMAIL_INVALID, EMAIL_EMPTY, EMAIL_EQUALS, EMAIL_NO_EXIST -> _onlineErrors.postValue(it.userMsg to null)
+                        EMAIL_ALREADY_USED, EMAIL_INVALID, EMAIL_EMPTY, EMAIL_EQUALS, EMAIL_NO_EXIST -> _onlineErrors.postValue(
+                            it.userMsg to null
+                        )
+
                         else -> _technicalError.value = Unit
                     }
                 }
             }
+
             else -> {
                 _technicalError.value = Unit
             }

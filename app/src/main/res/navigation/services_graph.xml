@@ -9,7 +9,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
- 
+
 In accordance with Sections 4 and 6 of the License, the following exclusions apply:
     1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
     2. Design Rights – Visual identities, UI/UX designs, and other graphical elements remain the property of their respective owners and are not licensed under the Apache License 2.0.
@@ -27,7 +27,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
 
     <fragment
         android:id="@+id/services"
-        android:name="com.telekom.citykey.view.services.Services">
+        android:name="com.telekom.citykey.view.services.Services"
+        tools:layout="@layout/services_fragment">
 
         <deepLink app:uri="citykey://services" />
         <deepLink app:uri="citykey://services/polls/list" />
@@ -87,7 +88,7 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
 
             <argument
                 android:name="service"
-                app:argType="com.telekom.citykey.models.content.CitizenService" />
+                app:argType="com.telekom.citykey.networkinterface.models.content.CitizenService" />
 
         </action>
 
@@ -97,10 +98,11 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
 
     <fragment
         android:id="@+id/detailedService"
-        android:name="com.telekom.citykey.view.services.detailed_service.DetailedService">
+        android:name="com.telekom.citykey.view.services.detailed_service.DetailedService"
+        tools:layout="@layout/service_details_fragment">
         <argument
             android:name="service"
-            app:argType="com.telekom.citykey.models.content.CitizenService" />
+            app:argType="com.telekom.citykey.networkinterface.models.content.CitizenService" />
         <action
             android:id="@+id/action_detailedService_to_authWebView2"
             app:destination="@id/authWebView2"
@@ -132,21 +134,23 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <fragment
         android:id="@+id/appointmentWeb"
         android:name="com.telekom.citykey.view.services.appointments.web.AppointmentWeb"
-        android:label="appointment">
+        android:label="appointment"
+        tools:layout="@layout/webview_fragment">
         <argument
             android:name="baseUrl"
             app:argType="string" />
         <argument
             android:name="service"
-            app:argType="com.telekom.citykey.models.content.CitizenService" />
+            app:argType="com.telekom.citykey.networkinterface.models.content.CitizenService" />
     </fragment>
     <fragment
         android:id="@+id/appointmentService"
         android:name="com.telekom.citykey.view.services.appointments.AppointmentService"
-        android:label="AppointmentService">
+        android:label="AppointmentService"
+        tools:layout="@layout/service_page_appointment_fragment">
         <argument
             android:name="service"
-            app:argType="com.telekom.citykey.models.content.CitizenService" />
+            app:argType="com.telekom.citykey.networkinterface.models.content.CitizenService" />
         <action
             android:id="@+id/action_appointmentService_to_appointmentWeb"
             app:destination="@id/appointmentWeb"
@@ -165,7 +169,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <fragment
         android:id="@+id/appointmentsOverview"
         android:name="com.telekom.citykey.view.services.appointments.appointments_overview.AppointmentsOverview"
-        android:label="AppointmentsOverview">
+        android:label="AppointmentsOverview"
+        tools:layout="@layout/appointments_overview_fragment">
         <deepLink app:uri="citykey://services/appointment/overview/.*" />
         <action
             android:id="@+id/action_appointmentsOverview_to_appointmentDetails"
@@ -192,10 +197,11 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <fragment
         android:id="@+id/appointmentDetails"
         android:name="com.telekom.citykey.view.services.appointments.details.AppointmentDetails"
-        android:label="AppointmentDetails">
+        android:label="AppointmentDetails"
+        tools:layout="@layout/appointments_details_fragment">
         <argument
             android:name="appointment"
-            app:argType="com.telekom.citykey.models.appointments.Appointment" />
+            app:argType="com.telekom.citykey.networkinterface.models.appointments.Appointment" />
 
         <action
             android:id="@+id/action_appointmentDetails_to_detailedMapGraph"
@@ -218,7 +224,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <fragment
         android:id="@+id/appointmentQR"
         android:name="com.telekom.citykey.view.services.appointments.qr.AppointmentQR"
-        android:label="AppointmentQR">
+        android:label="AppointmentQR"
+        tools:layout="@layout/appointments_qr_fragment">
         <argument
             android:name="waitingNo"
             app:argType="string" />
@@ -229,7 +236,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <fragment
         android:id="@+id/wasteCalendarDetails"
         android:name="com.telekom.citykey.view.services.waste_calendar.service_details.WasteCalendarDetails"
-        android:label="WasteCalendarDetails">
+        android:label="WasteCalendarDetails"
+        tools:layout="@layout/service_page_waste_calendar_fragment">
         <action
             android:id="@+id/action_wasteCalendarDetails_to_wasteCalendar"
             app:destination="@id/wasteCalendar"
@@ -254,7 +262,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <fragment
         android:id="@+id/wasteCalendar"
         android:name="com.telekom.citykey.view.services.waste_calendar.WasteCalendar"
-        android:label="WasteCalendar">
+        android:label="WasteCalendar"
+        tools:layout="@layout/wastecalendar_overview_fragment">
         <action
             android:id="@+id/action_wasteCalendar_to_wasteReminder"
             app:destination="@id/wasteReminder"
@@ -275,7 +284,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <fragment
         android:id="@+id/wasteReminder"
         android:name="com.telekom.citykey.view.services.waste_calendar.reminders.WasteReminder"
-        android:label="WasteReminder">
+        android:label="WasteReminder"
+        tools:layout="@layout/waste_calendar_set_reminder_fragment">
         <argument
             android:name="wasteTypeId"
             app:argType="integer" />
@@ -286,7 +296,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <fragment
         android:id="@+id/authWebView2"
         android:name="com.telekom.citykey.view.auth_webview.AuthWebView"
-        android:label="AuthWebView">
+        android:label="AuthWebView"
+        tools:layout="@layout/webview_fragment">
         <argument
             android:name="link"
             app:argType="string" />
@@ -302,7 +313,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <fragment
         android:id="@+id/surveyQuestions"
         android:name="com.telekom.citykey.view.services.citizen_surveys.survey.SurveyQuestions"
-        android:label="SurveyQuestions">
+        android:label="SurveyQuestions"
+        tools:layout="@layout/survey_questions_fragment">
         <argument
             android:name="surveyId"
             app:argType="integer" />
@@ -313,7 +325,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <fragment
         android:id="@+id/surveysOverview"
         android:name="com.telekom.citykey.view.services.citizen_surveys.SurveysOverview"
-        android:label="SurveysOverview">
+        android:label="SurveysOverview"
+        tools:layout="@layout/survey_overview_fragment">
         <action
             android:id="@+id/action_surveysOverview_to_surveyDetails"
             app:destination="@id/surveyDetails"
@@ -328,7 +341,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <fragment
         android:id="@+id/surveyDetails"
         android:name="com.telekom.citykey.view.services.citizen_surveys.survey_details.SurveyDetails"
-        android:label="SurveyDetails">
+        android:label="SurveyDetails"
+        tools:layout="@layout/survey_details_fragment">
         <action
             android:id="@+id/action_surveyDetails_to_surveyQuestions"
             app:destination="@id/surveyQuestions"
@@ -338,7 +352,7 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
             app:popExitAnim="@anim/fragment_level2_pop_exit" />
         <argument
             android:name="survey"
-            app:argType="com.telekom.citykey.models.citizen_survey.Survey" />
+            app:argType="com.telekom.citykey.networkinterface.models.citizen_survey.Survey" />
         <argument
             android:name="serviceImage"
             app:argType="string" />
@@ -346,7 +360,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <fragment
         android:id="@+id/pointsOfInterest"
         android:name="com.telekom.citykey.view.services.poi.PoiGuide"
-        android:label="PointsOfInterest">
+        android:label="PointsOfInterest"
+        tools:layout="@layout/poi_fragment">
         <action
             android:id="@+id/action_pointsOfInterest_to_poiGuideDetails"
             app:destination="@id/poiGuideDetails"
@@ -372,7 +387,7 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
             app:popExitAnim="@anim/fragment_level2_pop_exit" />
         <argument
             android:name="poiData"
-            app:argType="com.telekom.citykey.models.poi.PointOfInterest" />
+            app:argType="com.telekom.citykey.networkinterface.models.poi.PointOfInterest" />
         <argument
             android:name="categoryName"
             app:argType="string" />
@@ -380,7 +395,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <fragment
         android:id="@+id/EgovServiceDetails"
         android:name="com.telekom.citykey.view.services.egov.details.EgovServiceDetails"
-        android:label="EgovServiceDetails">
+        android:label="EgovServiceDetails"
+        tools:layout="@layout/egov_service_details">
         <action
             android:id="@+id/to_EgovServices"
             app:destination="@id/EgovServices"
@@ -390,7 +406,7 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
             app:popExitAnim="@anim/fragment_level2_pop_exit" />
         <argument
             android:name="service"
-            app:argType="com.telekom.citykey.models.content.CitizenService" />
+            app:argType="com.telekom.citykey.networkinterface.models.content.CitizenService" />
         <action
             android:id="@+id/to_egovInfo"
             app:destination="@id/serviceHelp"
@@ -412,7 +428,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <fragment
         android:id="@+id/EgovServices"
         android:name="com.telekom.citykey.view.services.egov.services.EgovServices"
-        android:label="EgovServices">
+        android:label="EgovServices"
+        tools:layout="@layout/egov_services_overview">
         <argument
             android:name="groupId"
             app:argType="integer" />
@@ -439,7 +456,7 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
         tools:layout="@layout/defect_category_selection_fragment">
         <argument
             android:name="service"
-            app:argType="com.telekom.citykey.models.content.CitizenService" />
+            app:argType="com.telekom.citykey.networkinterface.models.content.CitizenService" />
         <action
             android:id="@+id/to_defectReportForm2"
             app:destination="@id/defectReportForm2"
@@ -459,7 +476,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <fragment
         android:id="@+id/defectServiceDetail"
         android:name="com.telekom.citykey.view.services.defect_reporter.details.DefectServiceDetail"
-        android:label="DefectServiceDetail">
+        android:label="DefectServiceDetail"
+        tools:layout="@layout/defect_reporter_service_detail_fragment">
         <action
             android:id="@+id/to_defectCategorySelection"
             app:destination="@id/defectCategorySelection"
@@ -469,7 +487,7 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
             app:popExitAnim="@anim/fragment_level2_pop_exit" />
         <argument
             android:name="service"
-            app:argType="com.telekom.citykey.models.content.CitizenService" />
+            app:argType="com.telekom.citykey.networkinterface.models.content.CitizenService" />
         <action
             android:id="@+id/action_defectServiceDetail_to_egovInfo"
             app:destination="@id/serviceHelp" />
@@ -480,10 +498,11 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <fragment
         android:id="@+id/defectReportForm2"
         android:name="com.telekom.citykey.view.services.defect_reporter.report_form.DefectReportForm"
-        android:label="DefectReportForm">
+        android:label="DefectReportForm"
+        tools:layout="@layout/defect_report_form_fragment">
         <argument
             android:name="service"
-            app:argType="com.telekom.citykey.models.content.CitizenService" />
+            app:argType="com.telekom.citykey.networkinterface.models.content.CitizenService" />
 
         <argument
             android:name="location"
@@ -551,10 +570,11 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
         app:enterAnim="@anim/fragment_level2_enter"
         app:exitAnim="@anim/fragment_level2_exit"
         app:popEnterAnim="@anim/fragment_level2_pop_enter"
-        app:popExitAnim="@anim/fragment_level2_pop_exit">
+        app:popExitAnim="@anim/fragment_level2_pop_exit"
+        tools:layout="@layout/service_detail_help">
         <argument
             android:name="service"
-            app:argType="com.telekom.citykey.models.content.CitizenService" />
+            app:argType="com.telekom.citykey.networkinterface.models.content.CitizenService" />
     </fragment>
     <fragment
         android:id="@+id/defectSubcategorySelection"
@@ -563,11 +583,11 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
         tools:layout="@layout/defect_subcategory_selection_fragment">
         <argument
             android:name="service"
-            app:argType="com.telekom.citykey.models.content.CitizenService" />
+            app:argType="com.telekom.citykey.networkinterface.models.content.CitizenService" />
 
         <argument
             android:name="defectCategory"
-            app:argType="com.telekom.citykey.models.defect_reporter.DefectCategory" />
+            app:argType="com.telekom.citykey.networkinterface.models.defect_reporter.DefectCategory" />
         <action
             android:id="@+id/to_defectReportForm2"
             app:destination="@id/defectReportForm2"
@@ -579,7 +599,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <fragment
         android:id="@+id/egovSearch"
         android:name="com.telekom.citykey.view.services.egov.search.EgovSearch"
-        android:label="EgovSearch">
+        android:label="EgovSearch"
+        tools:layout="@layout/egov_search">
         <action
             android:id="@+id/to_authWebView2"
             app:destination="@id/authWebView2"
@@ -602,7 +623,7 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
         tools:layout="@layout/egov_desc_detail">
         <argument
             android:name="egovData"
-            app:argType="com.telekom.citykey.models.egov.EgovService" />
+            app:argType="com.telekom.citykey.networkinterface.models.egov.EgovService" />
         <action
             android:id="@+id/to_authWebView2"
             app:destination="@id/authWebView2"
@@ -614,7 +635,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <fragment
         android:id="@+id/webView"
         android:name="com.telekom.citykey.view.auth_webview.WebView"
-        android:label="WebView">
+        android:label="WebView"
+        tools:layout="@layout/webview_fragment">
         <argument
             android:name="link"
             app:argType="string" />

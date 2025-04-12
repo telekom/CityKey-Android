@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -34,7 +34,7 @@ import com.telekom.citykey.domain.city.available_cities.AvailableCitiesInteracto
 import com.telekom.citykey.domain.global.GlobalData
 import com.telekom.citykey.domain.user.UserInteractor
 import com.telekom.citykey.domain.user.UserState
-import com.telekom.citykey.models.content.UserProfile
+import com.telekom.citykey.networkinterface.models.content.UserProfile
 import com.telekom.citykey.utils.SingleLiveEvent
 import com.telekom.citykey.view.BaseViewModel
 import com.telekom.citykey.view.user.login.LogoutReason
@@ -67,10 +67,32 @@ class ProfileViewModel(
                     if (it is UserState.Present) {
                         _profileContent.value = it.profile
                     } else {
-                        _logOutUser.value = Unit
+                        refreshDataPostLogoutAndUpdateUI()
                     }
                 }
         }
+
+    private fun refreshDataPostLogoutAndUpdateUI() {
+        _refreshStarted.postValue(Unit)
+        launch {
+            availableCitiesInteractor.clearAvailableCities()
+            availableCitiesInteractor.availableCities
+                .map { availableCities ->
+                    val userSelectedCityId = userInteractor.selectedCityId
+                    if (userSelectedCityId == -1) {
+                        availableCities.first()
+                    } else {
+                        availableCities.firstOrNull { it.cityId == userSelectedCityId } ?: availableCities.first()
+                    }
+                }
+                .flatMap(globalData::loadCity)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                    { _logOutUser.value = Unit },
+                    { _logOutUser.value = Unit }
+                )
+        }
+    }
 
     fun onLogoutBtnClicked() {
         userInteractor.logOutUser(LogoutReason.ACTIVE_LOGOUT)

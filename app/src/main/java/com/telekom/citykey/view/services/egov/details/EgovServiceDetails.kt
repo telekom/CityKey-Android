@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -31,6 +31,9 @@ package com.telekom.citykey.view.services.egov.details
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.core.widget.TextViewCompat
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator
 import androidx.navigation.NavOptions
@@ -47,8 +50,9 @@ import com.telekom.citykey.domain.city.CityInteractor
 import com.telekom.citykey.domain.services.egov.EgovState
 import com.telekom.citykey.utils.DialogUtil
 import com.telekom.citykey.utils.extensions.AccessibilityRole
+import com.telekom.citykey.utils.extensions.dispatchInsetsToChildViews
 import com.telekom.citykey.utils.extensions.dpToPixel
-import com.telekom.citykey.utils.extensions.loadFromOSCA
+import com.telekom.citykey.pictures.loadFromOSCA
 import com.telekom.citykey.utils.extensions.safeRun
 import com.telekom.citykey.utils.extensions.setAccessibilityRole
 import com.telekom.citykey.utils.extensions.setVisible
@@ -132,6 +136,32 @@ class EgovServiceDetails : MainFragment(R.layout.egov_service_details) {
         subscribeUi()
         with(requireActivity() as MainActivity) {
             markLoadCompleteIfFromDeeplink(getString(R.string.deeplink_egov))
+        }
+    }
+
+    override fun handleWindowInsets() {
+        super.handleWindowInsets()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+
+            val safeInsetType = WindowInsetsCompat.Type.displayCutout() + WindowInsetsCompat.Type.systemBars()
+            val systemInsets = insets.getInsets(safeInsetType)
+
+            binding.toolbarDetailedServices.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right
+            )
+            insets
+        }
+        binding.scrollView.dispatchInsetsToChildViews(
+            binding.llcWebViewWrapper,
+            binding.searchBar,
+            binding.categoriesTitle,
+            binding.categoriesList
+        ) { insets ->
+            binding.infoBtn.updatePadding(
+                left = insets.left + 21.dpToPixel(context),
+                right = insets.right + 21.dpToPixel(context)
+            )
         }
     }
 

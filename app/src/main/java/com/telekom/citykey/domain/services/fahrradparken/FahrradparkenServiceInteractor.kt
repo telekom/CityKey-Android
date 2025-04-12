@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -32,9 +32,9 @@ import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import com.telekom.citykey.domain.global.GlobalData
 import com.telekom.citykey.domain.repository.ServicesRepository
-import com.telekom.citykey.models.api.requests.FahrradparkenRequest
-import com.telekom.citykey.models.defect_reporter.DefectCategory
-import com.telekom.citykey.models.defect_reporter.DefectSuccess
+import com.telekom.citykey.networkinterface.models.api.requests.FahrradparkenRequest
+import com.telekom.citykey.networkinterface.models.defect_reporter.DefectCategory
+import com.telekom.citykey.networkinterface.models.defect_reporter.DefectSuccess
 import io.reactivex.Completable
 import io.reactivex.Maybe
 import io.reactivex.Observable

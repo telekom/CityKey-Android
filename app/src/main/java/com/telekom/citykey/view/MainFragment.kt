@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -28,6 +28,8 @@
 
 package com.telekom.citykey.view
 
+import android.os.Bundle
+import android.view.View
 import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -41,14 +43,23 @@ import com.telekom.citykey.utils.extensions.setAccessibilityRole
 import com.telekom.citykey.utils.extensions.shouldPreventContentSharing
 import com.telekom.citykey.view.main.MainActivity
 
-abstract class MainFragment(layoutResId: Int, private val containsSensitiveInfo: Boolean = false) :
-    Fragment(layoutResId) {
+abstract class MainFragment(
+    layoutResId: Int,
+    private val containsSensitiveInfo: Boolean = false
+) : Fragment(layoutResId) {
+
+    protected open fun handleWindowInsets() = Unit
 
     protected fun setupToolbar(toolbar: Toolbar) {
         (activity as? MainActivity)?.setupActionBar(toolbar)
         val titleTextView = toolbar.children.firstOrNull { view -> view is TextView }
         titleTextView?.setAccessibilityRole(AccessibilityRole.Heading)
         setHasOptionsMenu(true)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        handleWindowInsets()
     }
 
     override fun onResume() {

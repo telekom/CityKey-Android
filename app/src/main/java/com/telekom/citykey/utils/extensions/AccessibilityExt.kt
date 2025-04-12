@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -40,9 +40,9 @@ import com.google.android.material.appbar.MaterialToolbar
 import com.telekom.citykey.R
 
 sealed class AccessibilityRole(val roleText: String) {
-    object Button : AccessibilityRole("Button")
-    object Link : AccessibilityRole("Link")
-    object Heading : AccessibilityRole("Heading")
+    data object Button : AccessibilityRole("Button")
+    data object Link : AccessibilityRole("Link")
+    data object Heading : AccessibilityRole("Heading")
 }
 
 fun View.setAccessibilityRole(accessibilityRole: AccessibilityRole, headingLevelDescription: String = "") {

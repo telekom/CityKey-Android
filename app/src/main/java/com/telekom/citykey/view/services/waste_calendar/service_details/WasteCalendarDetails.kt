@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -30,19 +30,24 @@ package com.telekom.citykey.view.services.waste_calendar.service_details
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.iammonk.htmlspanner.HtmlSpanner
-import com.telekom.citykey.BuildConfig
 import com.telekom.citykey.R
-import com.telekom.citykey.common.GlideApp
 import com.telekom.citykey.databinding.ServicePageWasteCalendarFragmentBinding
 import com.telekom.citykey.domain.city.CityInteractor
 import com.telekom.citykey.domain.track.AdjustManager
+import com.telekom.citykey.pictures.loadCenterCropped
 import com.telekom.citykey.utils.DialogUtil
+import com.telekom.citykey.utils.KoverIgnore
 import com.telekom.citykey.utils.extensions.AccessibilityRole
 import com.telekom.citykey.utils.extensions.autoLinkAll
+import com.telekom.citykey.utils.extensions.dispatchInsetsToChildViews
+import com.telekom.citykey.utils.extensions.dpToPixel
 import com.telekom.citykey.utils.extensions.setAccessibilityRole
 import com.telekom.citykey.utils.extensions.setVisible
 import com.telekom.citykey.utils.extensions.showDialog
@@ -56,6 +61,7 @@ import com.telekom.citykey.view.services.waste_calendar.filters.WasteFilters.Com
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
+@KoverIgnore
 class WasteCalendarDetails : MainFragment(R.layout.service_page_waste_calendar_fragment) {
 
     private val adjustManager: AdjustManager by inject()
@@ -68,6 +74,30 @@ class WasteCalendarDetails : MainFragment(R.layout.service_page_waste_calendar_f
         setupToolbar(binding.toolbarWasteCalendarServices)
         binding.showWasteCalendarButton.button.setBackgroundColor(CityInteractor.cityColorInt)
         subscribeUi()
+    }
+
+    override fun handleWindowInsets() {
+        super.handleWindowInsets()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+
+            val safeInsetType = WindowInsetsCompat.Type.displayCutout() + WindowInsetsCompat.Type.systemBars()
+            val systemInsets = insets.getInsets(safeInsetType)
+
+            binding.toolbarWasteCalendarServices.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right
+            )
+            insets
+        }
+        binding.nsvWasteCalendarContainer.dispatchInsetsToChildViews(
+            binding.fullDescription,
+            binding.showWasteCalendarButton
+        ) { insets ->
+            binding.wasteInfoButton.updatePadding(
+                left = insets.left + 21.dpToPixel(context),
+                right = insets.right + 21.dpToPixel(context)
+            )
+        }
     }
 
     private fun subscribeUi() {
@@ -157,10 +187,7 @@ class WasteCalendarDetails : MainFragment(R.layout.service_page_waste_calendar_f
                 binding.toolbarWasteCalendarServices.title = service.service
                 setupToolbar(binding.toolbarWasteCalendarServices)
                 binding.showWasteCalendarButton.text = service.serviceAction?.first()?.visibleText
-                GlideApp.with(this)
-                    .load(BuildConfig.IMAGE_URL + service.image)
-                    .centerCrop()
-                    .into(binding.image)
+                binding.image.loadCenterCropped(service.image)
                 binding.fullDescription.text = HtmlSpanner().fromHtml(service.description)
                 binding.fullDescription.autoLinkAll()
                 if (!service.helpLinkTitle.isNullOrBlank()) {

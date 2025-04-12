@@ -9,7 +9,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
- 
+
 In accordance with Sections 4 and 6 of the License, the following exclusions apply:
     1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
     2. Design Rights – Visual identities, UI/UX designs, and other graphical elements remain the property of their respective owners and are not licensed under the Apache License 2.0.
@@ -21,29 +21,29 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="false"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.telekom.citykey.view.home.events_list.category_filter.CategoryFilter">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/auth_bottom_sheet_rounded"
-        android:fitsSystemWindows="true">
+        android:background="@drawable/auth_bottom_sheet_rounded">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbarCategoryFilter"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:fitsSystemWindows="true"
             app:title="@string/e_004_events_filter_categories_title"
             app:titleTextColor="@color/onSurface" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsvEventsCategoryFilter"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/btnContainer"
@@ -61,6 +61,7 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
             app:chipSpacingHorizontal="9dp"
             app:chipSpacingVertical="0dp"
             app:itemSpacing="0dp" />
+
     </androidx.core.widget.NestedScrollView>
 
     <RelativeLayout
@@ -98,7 +99,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
         android:textAlignment="center"
         android:textColor="@color/onSurface"
         android:textSize="18sp"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        tools:visibility="visible" />
 
     <com.telekom.citykey.custom.views.OscaProgressBar
         android:id="@+id/progressCategories"
@@ -108,4 +110,5 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
         android:layout_gravity="center"
         android:indeterminateTint="@color/onSurface"
         android:progressTint="@color/onSurface" />
+
 </RelativeLayout>

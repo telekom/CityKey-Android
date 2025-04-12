@@ -9,7 +9,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
- 
+
 In accordance with Sections 4 and 6 of the License, the following exclusions apply:
     1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
     2. Design Rights – Visual identities, UI/UX designs, and other graphical elements remain the property of their respective owners and are not licensed under the Apache License 2.0.
@@ -21,12 +21,14 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
 -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/infobox_graph"
     app:startDestination="@id/infoBox">
 
     <fragment
         android:id="@+id/infoBox"
-        android:name="com.telekom.citykey.view.infobox.InfoBox">
+        android:name="com.telekom.citykey.view.infobox.InfoBox"
+        tools:layout="@layout/infobox_fragment">
 
         <deepLink app:uri="citykey://infobox?messageId={messageId}" />
         <deepLink app:uri="citykey://infobox/.*" />
@@ -56,17 +58,19 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
 
     <fragment
         android:id="@+id/detailedInfoBox"
-        android:name="com.telekom.citykey.view.infobox.detailed_infobox.DetailedInfoBox">
+        android:name="com.telekom.citykey.view.infobox.detailed_infobox.DetailedInfoBox"
+        tools:layout="@layout/infobox_detailed_fragment">
 
         <argument
             android:name="content"
-            app:argType="com.telekom.citykey.models.user.InfoBoxContent" />
+            app:argType="com.telekom.citykey.networkinterface.models.user.InfoBoxContent" />
 
     </fragment>
 
     <fragment
         android:id="@+id/citySelectionFragment"
         android:name="com.telekom.citykey.view.city_selection.CitySelectionFragment"
-        android:label="CitySelectionFragment" />
+        android:label="CitySelectionFragment"
+        tools:layout="@layout/city_selection_fragment" />
 
 </navigation>

@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -35,15 +35,17 @@ import androidx.core.content.ContextCompat.getColor
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.request.RequestOptions
-import com.telekom.citykey.BuildConfig
 import com.telekom.citykey.R
-import com.telekom.citykey.common.GlideApp
-import com.telekom.citykey.databinding.*
-import com.telekom.citykey.models.content.AvailableCity
+import com.telekom.citykey.databinding.CitiesCityItemBinding
+import com.telekom.citykey.databinding.CitiesContactLinkItemBinding
+import com.telekom.citykey.databinding.CitiesHeaderItemBinding
+import com.telekom.citykey.databinding.CitiesLocationServiceItemBinding
+import com.telekom.citykey.databinding.CitiesNearestLocationItemBinding
+import com.telekom.citykey.networkinterface.models.content.AvailableCity
+import com.telekom.citykey.pictures.loadCenterCroppedWithTransform
+import com.telekom.citykey.pictures.loadFromDrawable
 import com.telekom.citykey.utils.extensions.AccessibilityRole
 import com.telekom.citykey.utils.extensions.inflateChild
-import com.telekom.citykey.utils.extensions.loadFromDrawable
 import com.telekom.citykey.utils.extensions.setAccessibilityRole
 import com.telekom.citykey.utils.extensions.setVisible
 
@@ -152,11 +154,7 @@ class CitySelectionAdapter(
                 binding.loadCityProgress.setVisible(true)
             }
 
-            GlideApp.with(itemView.context)
-                .load(BuildConfig.IMAGE_URL + city.cityPreviewPicture)
-                .centerCrop()
-                .apply(RequestOptions.circleCropTransform())
-                .into(binding.thumbnailCity)
+            binding.thumbnailCity.loadCenterCroppedWithTransform(city.cityPreviewPicture)
             binding.thumbnailRing.setVisible(city.isSelected, View.INVISIBLE)
 
             if (city.isSelected) {
@@ -177,11 +175,7 @@ class CitySelectionAdapter(
                 binding.loadNearestCityProgress.setVisible(true)
             }
 
-            GlideApp.with(itemView.context)
-                .load(BuildConfig.IMAGE_URL + city.cityPreviewPicture)
-                .centerCrop()
-                .apply(RequestOptions.circleCropTransform())
-                .into(binding.thumbnailNearestCity)
+            binding.thumbnailNearestCity.loadCenterCroppedWithTransform(city.cityPreviewPicture)
         }
     }
 

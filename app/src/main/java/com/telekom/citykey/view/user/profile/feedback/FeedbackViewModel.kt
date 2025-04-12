@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -30,16 +30,17 @@ package com.telekom.citykey.view.user.profile.feedback
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.telekom.citykey.BuildConfig
 import com.telekom.citykey.R
-import com.telekom.citykey.common.NetworkException
+import com.telekom.citykey.networkinterface.models.error.NetworkException
 import com.telekom.citykey.custom.views.inputfields.FieldValidation
 import com.telekom.citykey.domain.city.CityInteractor
 import com.telekom.citykey.domain.repository.OscaRepository
-import com.telekom.citykey.domain.repository.exceptions.NoConnectionException
+import com.telekom.citykey.data.exceptions.NoConnectionException
 import com.telekom.citykey.domain.track.AdjustManager
 import com.telekom.citykey.domain.user.UserInteractor
 import com.telekom.citykey.domain.user.UserState
-import com.telekom.citykey.models.api.requests.FeedbackRequest
+import com.telekom.citykey.networkinterface.models.api.requests.FeedbackRequest
 import com.telekom.citykey.utils.SingleLiveEvent
 import com.telekom.citykey.utils.Validation
 import com.telekom.citykey.utils.extensions.retryOnError
@@ -85,7 +86,13 @@ class FeedbackViewModel(
     fun onSendClicked(feedBackBox: String, feedBackBox1: String, feedbackEmail: String) {
         launch {
             oscaRepository.sendFeedback(
-                FeedbackRequest(feedBackBox, feedBackBox1, cityInteractor.cityName, email = feedbackEmail)
+                FeedbackRequest(
+                    aboutApp = feedBackBox,
+                    improvementOnApp = feedBackBox1,
+                    currentCityName = cityInteractor.cityName,
+                    osInfo = "Android:${android.os.Build.VERSION.RELEASE}(${android.os.Build.VERSION.SDK_INT})-App-Version:${BuildConfig.VERSION_NAME}",
+                    email = feedbackEmail
+                )
             )
                 .retryOnError(
                     this::onError, retryDispatcher, pendingRetries, FEEDBACK_API_TAG
@@ -126,5 +133,4 @@ class FeedbackViewModel(
             )
         }
     }
-
 }

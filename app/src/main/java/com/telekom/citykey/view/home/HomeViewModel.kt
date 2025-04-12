@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -42,9 +42,9 @@ import com.telekom.citykey.domain.city.weather.WeatherInteractor
 import com.telekom.citykey.domain.city.weather.WeatherState
 import com.telekom.citykey.domain.global.GlobalData
 import com.telekom.citykey.domain.user.UserState
-import com.telekom.citykey.models.content.Event
-import com.telekom.citykey.models.live_data.HomeData
-import com.telekom.citykey.models.live_data.HomeData.Companion.fromCity
+import com.telekom.citykey.network.extensions.toHomeData
+import com.telekom.citykey.networkinterface.models.content.Event
+import com.telekom.citykey.networkinterface.models.live_data.HomeData
 import com.telekom.citykey.utils.PreferencesHelper
 import com.telekom.citykey.utils.SingleLiveEvent
 import com.telekom.citykey.view.BaseViewModel
@@ -95,7 +95,7 @@ class HomeViewModel(
         launch {
             globalData.city
                 .subscribeOn(Schedulers.io())
-                .map(::fromCity)
+                .map { it.toHomeData() }
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(_homeData::postValue)
         }

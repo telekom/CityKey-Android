@@ -9,7 +9,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
- 
+
 In accordance with Sections 4 and 6 of the License, the following exclusions apply:
     1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
     2. Design Rights – Visual identities, UI/UX designs, and other graphical elements remain the property of their respective owners and are not licensed under the Apache License 2.0.
@@ -26,13 +26,18 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
+    android:clipChildren="false"
+    android:clipToPadding="false"
     android:fitsSystemWindows="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="30dp"
+    tools:context="com.telekom.citykey.view.services.citizen_surveys.survey_details.SurveyDetails">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="?attr/colorSurface">
+        android:background="?attr/colorSurface"
+        android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbarSurveyDetails"
@@ -46,9 +51,12 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:fitsSystemWindows="true"
+        android:paddingBottom="30dp"
         app:layout_anchor="@+id/nestedScrollView"
-        app:layout_anchorGravity="center"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -65,6 +73,7 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
                 tools:src="@tools:sample/backgrounds/scenic" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSurveyTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -133,8 +142,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
                     app:layout_constraintTop_toTopOf="@id/surveyName"
                     app:srcCompat="@drawable/ic_survey_icon_finished"
                     tools:visibility="visible" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -142,6 +151,7 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
                 android:background="@color/separatorSecondary" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSurveyDuration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/global_content_margins"
@@ -260,10 +270,11 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/global_content_margins"
                 android:layout_marginTop="9dp"
-                android:hyphenationFrequency="full"
                 android:layout_marginEnd="@dimen/global_content_margins"
+                android:hyphenationFrequency="full"
                 android:textColor="@color/onSurface"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:text="@tools:sample/lorem" />
 
             <com.telekom.citykey.custom.views.ProgressButton
                 android:id="@+id/btnStartSurvey"
@@ -283,15 +294,18 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="22dp"
-                android:gravity="center"
-                android:visibility="invisible"
                 android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginTop="22dp"
                 android:layout_marginEnd="@dimen/global_content_margins"
+                android:gravity="center"
                 android:textColor="@color/onSurface"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:visibility="invisible"
+                tools:text="@string/cs_002_survey_completed_message"
+                tools:visibility="visible" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
+
     </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

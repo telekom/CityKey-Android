@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -42,13 +42,16 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.PoiMarkerOverlayBinding
 import com.telekom.citykey.domain.city.CityInteractor
-import com.telekom.citykey.models.poi.PointOfInterest
+import com.telekom.citykey.networkinterface.models.poi.PointOfInterest
+import com.telekom.citykey.network.extensions.categoryGroupIconId
 import com.telekom.citykey.utils.extensions.AccessibilityRole
+import com.telekom.citykey.utils.extensions.applySafeAllInsetsWithSides
 import com.telekom.citykey.utils.extensions.decodeHTML
 import com.telekom.citykey.utils.extensions.getColor
-import com.telekom.citykey.utils.extensions.loadFromDrawable
+import com.telekom.citykey.pictures.loadFromDrawable
 import com.telekom.citykey.utils.extensions.openMapApp
 import com.telekom.citykey.utils.extensions.setAccessibilityRole
+import com.telekom.citykey.utils.extensions.setAccessibilityRoleForToolbarTitle
 import com.telekom.citykey.utils.extensions.setVisible
 import com.telekom.citykey.utils.extensions.viewBinding
 
@@ -57,6 +60,7 @@ class PoiMarkerOverlay(
     private val categoryName: String,
     private val resultListener: (Boolean) -> Unit
 ) : BottomSheetDialogFragment() {
+
     private val binding by viewBinding(PoiMarkerOverlayBinding::bind)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,13 +79,14 @@ class PoiMarkerOverlay(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.toolbarPoiCategory.setNavigationIcon(R.drawable.ic_profile_close)
         binding.toolbarPoiCategory.setNavigationIconTint(getColor(R.color.onSurface))
         binding.toolbarPoiCategory.setNavigationContentDescription(R.string.accessibility_btn_close)
-        binding.toolbarPoiCategory.setNavigationOnClickListener {
-            dismiss()
-        }
+        binding.toolbarPoiCategory.setNavigationOnClickListener { dismiss() }
         binding.toolbarPoiCategory.title = categoryName
+        setAccessibilityRoleForToolbarTitle(binding.toolbarPoiCategory)
+
         binding.addressLabel.setVisible(poiData.address.isNotEmpty())
         binding.address.setVisible(poiData.address.isNotEmpty())
         binding.locationNavigation.setVisible(poiData.address.isNotEmpty())
@@ -108,6 +113,13 @@ class PoiMarkerOverlay(
         binding.locationNavigation.setOnClickListener {
             openMapApp(poiData.latitude, poiData.longitude)
         }
+
+        handleWindowInsets()
+    }
+
+    private fun handleWindowInsets() {
+        binding.PoiCategoryAppBar.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.containerPOIMarkerOverlay.applySafeAllInsetsWithSides(left = true, right = true, bottom = true)
     }
 
     private fun setFullHeight(dialogFragment: Dialog) {

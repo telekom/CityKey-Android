@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -28,10 +28,10 @@
 
 package com.telekom.citykey.domain.repository.oauth2tokenmanager
 
-import com.telekom.citykey.domain.repository.OAuth2TokenManager
-import com.telekom.citykey.domain.repository.SmartCredentialsApi
-import com.telekom.citykey.domain.repository.exceptions.InvalidRefreshTokenException
+import com.telekom.citykey.data.exceptions.InvalidRefreshTokenException
+import com.telekom.citykey.domain.auth.OAuth2TokenManager
 import com.telekom.citykey.domain.security.crypto.Crypto
+import com.telekom.citykey.networkinterface.client.CitykeyCredentialsAPIClient
 import com.telekom.citykey.utils.PreferencesHelper
 import io.mockk.every
 import io.mockk.mockk
@@ -44,7 +44,7 @@ import org.junit.jupiter.api.Test
 
 
 class GetAccessTokenBranchTest {
-    private val tokenApi: SmartCredentialsApi = mockk(relaxed = true)
+    private val tokenApi: CitykeyCredentialsAPIClient = mockk(relaxed = true)
     private val crypto: Crypto = mockk(relaxed = true)
     private lateinit var oAuth2TokenManager: OAuth2TokenManager
     private val prefs: PreferencesHelper = mockk(relaxed = true)

@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -36,15 +36,15 @@ import android.widget.RemoteViews
 import android.widget.RemoteViewsService
 import com.telekom.citykey.R
 import com.telekom.citykey.domain.widget.WidgetInteractor
-import com.telekom.citykey.models.Pickups
-import com.telekom.citykey.models.WasteItems
+import com.telekom.citykey.networkinterface.models.waste_calendar.Pickups
+import com.telekom.citykey.networkinterface.models.waste_calendar.WasteItems
 import com.telekom.citykey.utils.ColorUtils
 import com.telekom.citykey.utils.NetworkConnection
 import com.telekom.citykey.utils.extensions.isInCurrentMonth
 import com.telekom.citykey.utils.isDarkMode
 import com.telekom.citykey.view.widget.waste_calendar.WasteCalendarWidgetConstants
 import org.koin.android.ext.android.inject
-import java.util.*
+import java.util.Calendar
 
 class DATPickupsRemoteViewService : RemoteViewsService() {
 

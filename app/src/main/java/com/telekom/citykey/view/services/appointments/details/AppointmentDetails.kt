@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -43,8 +43,11 @@ import android.view.MenuItem
 import android.view.View
 import androidx.core.content.FileProvider
 import androidx.core.text.HtmlCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.forEach
 import androidx.core.view.isVisible
+import androidx.core.view.updatePadding
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -59,19 +62,21 @@ import com.telekom.citykey.DetailedMapGraphArgs
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.AppointmentsDetailsFragmentBinding
 import com.telekom.citykey.domain.city.CityInteractor
-import com.telekom.citykey.models.appointments.Appointment
-import com.telekom.citykey.models.appointments.Location
+import com.telekom.citykey.networkinterface.models.appointments.Appointment
+import com.telekom.citykey.networkinterface.models.appointments.Location
+import com.telekom.citykey.network.extensions.isCancellable
 import com.telekom.citykey.utils.BitmapUtil
 import com.telekom.citykey.utils.DialogUtil
 import com.telekom.citykey.utils.extensions.AccessibilityRole
 import com.telekom.citykey.utils.extensions.disable
+import com.telekom.citykey.utils.extensions.dispatchInsetsToChildViews
 import com.telekom.citykey.utils.extensions.getColor
 import com.telekom.citykey.utils.extensions.getHoursAndMins
 import com.telekom.citykey.utils.extensions.getLongWeekDay
 import com.telekom.citykey.utils.extensions.getShortMonthName
 import com.telekom.citykey.utils.extensions.getShortWeekDay
 import com.telekom.citykey.utils.extensions.isInPast
-import com.telekom.citykey.utils.extensions.loadFromOSCA
+import com.telekom.citykey.pictures.loadFromOSCA
 import com.telekom.citykey.utils.extensions.openMapApp
 import com.telekom.citykey.utils.extensions.setAccessibilityRole
 import com.telekom.citykey.utils.extensions.setVisible
@@ -89,9 +94,8 @@ import java.io.FileOutputStream
 import java.io.IOException
 import java.util.Calendar
 
-class AppointmentDetails :
-    MainFragment(R.layout.appointments_details_fragment),
-    OnMapReadyCallback {
+class AppointmentDetails : MainFragment(R.layout.appointments_details_fragment), OnMapReadyCallback {
+
     private val args: AppointmentDetailsArgs by navArgs()
     private val viewModel: AppointmentDetailsViewModel by viewModel()
     private val binding by viewBinding(AppointmentsDetailsFragmentBinding::bind)
@@ -103,6 +107,7 @@ class AppointmentDetails :
         super.onViewCreated(view, savedInstanceState)
         viewModel.onViewCreated(args.appointment)
         setupToolbar(binding.toolbarAppointmentsDetail)
+        handleWindowInsets()
         setupAddresses()
         setupDates()
         setupInfoBlock()
@@ -125,6 +130,29 @@ class AppointmentDetails :
         }
         initListeners()
         subscribeUi()
+    }
+
+    override fun handleWindowInsets() {
+        super.handleWindowInsets()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+
+            val safeInsetType = WindowInsetsCompat.Type.displayCutout() + WindowInsetsCompat.Type.systemBars()
+            val systemInsets = insets.getInsets(safeInsetType)
+
+            binding.toolbarAppointmentsDetail.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right
+            )
+            insets
+        }
+        binding.nsvApptDetails.dispatchInsetsToChildViews(
+            binding.appointmentCreationInfo,
+            binding.appointmentName,
+            binding.clApptInfo,
+            binding.clApptDetails,
+            binding.locationContainer,
+            binding.cancelButtonContainer
+        )
     }
 
     private fun initListeners() {

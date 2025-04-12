@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -43,7 +43,7 @@ import com.telekom.citykey.domain.city.events.EventsHomeData
 import com.telekom.citykey.domain.city.events.EventsState
 import com.telekom.citykey.domain.city.news.NewsState
 import com.telekom.citykey.domain.track.AdjustManager
-import com.telekom.citykey.models.content.Event
+import com.telekom.citykey.networkinterface.models.content.Event
 import com.telekom.citykey.utils.ColorUtils
 import com.telekom.citykey.utils.extensions.AccessibilityRole
 import com.telekom.citykey.utils.extensions.disable

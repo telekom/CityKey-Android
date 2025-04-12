@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -33,6 +33,9 @@ import android.os.Bundle
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.inputmethod.InputMethodManager
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.core.widget.doOnTextChanged
 import androidx.navigation.fragment.findNavController
 import androidx.transition.Transition
@@ -41,8 +44,9 @@ import androidx.transition.TransitionListenerAdapter
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.EgovSearchBinding
 import com.telekom.citykey.domain.track.AdjustManager
-import com.telekom.citykey.models.egov.EgovLinkTypes
+import com.telekom.citykey.networkinterface.models.egov.EgovLinkTypes
 import com.telekom.citykey.utils.DialogUtil
+import com.telekom.citykey.utils.extensions.dpToPixel
 import com.telekom.citykey.utils.extensions.openLink
 import com.telekom.citykey.utils.extensions.viewBinding
 import com.telekom.citykey.view.MainFragment
@@ -93,10 +97,12 @@ class EgovSearch : MainFragment(R.layout.egov_search) {
                                     ).setHasSensitiveInfo(true)
                                 )
                         }
+
                         EgovLinkTypes.PDF, EgovLinkTypes.WEB -> {
                             adjustManager.trackEvent(R.string.open_egov_external_url)
                             openLink(service.linksInfo[0].link)
                         }
+
                         else -> DialogUtil.showTechnicalError(requireContext())
                     }
                 }
@@ -119,6 +125,35 @@ class EgovSearch : MainFragment(R.layout.egov_search) {
         }
 
         subscribeUi()
+    }
+
+    override fun handleWindowInsets() {
+        super.handleWindowInsets()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+
+            val safeInsetType = WindowInsetsCompat.Type.displayCutout() + WindowInsetsCompat.Type.systemBars()
+            val systemInsets = insets.getInsets(safeInsetType)
+
+            binding.toolbarEgovSearch.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right
+            )
+
+            binding.searchBar.updatePadding(
+                left = systemInsets.left + 21.dpToPixel(context),
+                right = systemInsets.right + 21.dpToPixel(context)
+            )
+
+            binding.searchResults.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right,
+                bottom = systemInsets.bottom
+            )
+
+            ViewCompat.onApplyWindowInsets(binding.toolbar, insets)
+
+            insets
+        }
     }
 
     private fun subscribeUi() {

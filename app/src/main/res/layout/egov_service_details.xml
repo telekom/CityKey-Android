@@ -9,7 +9,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
- 
+
 In accordance with Sections 4 and 6 of the License, the following exclusions apply:
     1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
     2. Design Rights – Visual identities, UI/UX designs, and other graphical elements remain the property of their respective owners and are not licensed under the Apache License 2.0.
@@ -25,17 +25,22 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     android:id="@+id/LayoutPageDetailedService"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    tools:context="com.telekom.citykey.view.services.egov.details.EgovServiceDetails">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="?attr/colorSurface">
+        android:background="?attr/colorSurface"
+        android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbarDetailedServices"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/onSurface"
+            tools:title="Digital Administration" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.telekom.citykey.custom.views.OscaProgressBar
@@ -84,14 +89,14 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
         android:clipChildren="false"
         android:clipToPadding="false"
         android:paddingBottom="30dp"
         android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:visibility="visible">
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/containerContent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -104,15 +109,22 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
                 android:scaleType="centerCrop"
                 tools:src="@tools:sample/avatars" />
 
-            <com.telekom.citykey.custom.views.OscaWebView
-                android:id="@+id/fullDescription"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcWebViewWrapper"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/global_content_margins"
+                android:layout_marginHorizontal="@dimen/global_content_margins"
                 android:layout_marginTop="@dimen/global_content_margins"
-                android:layout_marginEnd="@dimen/global_content_margins"
                 android:layout_marginBottom="9dp"
-                android:scrollbars="none" />
+                android:orientation="vertical">
+
+                <com.telekom.citykey.custom.views.OscaWebView
+                    android:id="@+id/fullDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/infoBtn"
@@ -123,22 +135,21 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
                 android:background="@drawable/eid_vertical_borders"
                 android:drawableEnd="@drawable/ic_more_arrow2"
                 android:foreground="@drawable/simple_ripple"
-                android:paddingStart="@dimen/global_content_margins"
                 android:paddingTop="13dp"
-                android:paddingEnd="@dimen/global_content_margins"
                 android:paddingBottom="13dp"
                 android:textColor="@color/onSurface"
                 android:textSize="15sp"
-                app:drawableTint="@color/onSurfaceSecondary" />
+                app:drawableTint="@color/onSurfaceSecondary"
+                tools:paddingHorizontal="@dimen/global_content_margins"
+                tools:text="@string/egovs_001_details_info_btn" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/searchBar"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="76dp"
-                android:paddingStart="@dimen/global_content_margins"
+                android:layout_marginHorizontal="@dimen/global_content_margins"
                 android:paddingTop="16dp"
-                android:paddingEnd="@dimen/global_content_margins"
                 android:paddingBottom="16dp"
                 android:transitionName="search_box"
                 app:boxCornerRadiusBottomEnd="20dp"
@@ -163,7 +174,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
                     android:hint="@string/egov_search_hint"
                     android:includeFontPadding="false"
                     android:textColor="@color/onSurface"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    tools:ignore="KeyboardInaccessibleWidget" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -181,17 +193,17 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
                 android:id="@+id/categoriesList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/global_content_margins"
                 android:layout_marginTop="@dimen/global_content_margins"
                 android:clipChildren="false"
                 android:clipToPadding="false"
                 android:orientation="vertical"
-                android:paddingStart="@dimen/global_content_margins"
-                android:paddingEnd="@dimen/global_content_margins"
                 android:paddingBottom="10dp"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="2"
                 tools:listitem="@layout/egov_service_details_category" />
-        </LinearLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.core.widget.NestedScrollView>
 

@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -28,54 +28,68 @@
 
 package com.telekom.citykey.domain.repository
 
+import com.telekom.citykey.BuildConfig
 import com.telekom.citykey.common.ErrorCodes
-import com.telekom.citykey.domain.repository.exceptions.UnsupportedVersionException
-import com.telekom.citykey.models.api.requests.FeedbackRequest
+import com.telekom.citykey.data.exceptions.UnsupportedVersionException
+import com.telekom.citykey.networkinterface.client.CitykeyAPIClient
+import com.telekom.citykey.networkinterface.client.CitykeyAuthAPIClient
+import com.telekom.citykey.networkinterface.models.api.requests.FeedbackRequest
+import com.telekom.citykey.networkinterface.models.content.Terms
+import com.telekom.citykey.networkinterface.models.user.InfoBoxContent
 import io.reactivex.Completable
+import io.reactivex.Maybe
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 class OscaRepository(
-    private val api: SmartCityApi,
-    private val authApi: SmartCityAuthApi
+    private val api: CitykeyAPIClient,
+    private val authApi: CitykeyAuthAPIClient,
 ) {
 
-    fun setMailRead(msgId: Int, markRead: Boolean) = authApi.setInformationRead(msgId, markRead)
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
+    fun setMailRead(msgId: Int, markRead: Boolean): Completable = authApi.setInformationRead(
+        msgId = msgId,
+        markRead = markRead,
+        cityId = BuildConfig.CITY_ID
+    ).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
 
-    fun getLegalData() = api.getLegalData()
+    fun getLegalData(): Maybe<Terms> = api.getLegalData(cityId = BuildConfig.CITY_ID)
         .subscribeOn(Schedulers.io())
         .map { it.content[0] }
         .observeOn(AndroidSchedulers.mainThread())
 
-    fun getMailBox() = authApi.getInfoBox()
+    fun getMailBox(): Maybe<MutableList<InfoBoxContent>> = authApi.getInfoBox(cityId = BuildConfig.CITY_ID)
         .subscribeOn(Schedulers.io())
         .map { it.content }
 
-    fun deleteMail(msgId: Int, delete: Boolean) = authApi.deleteInfoBoxMessage(msgId, delete)
+    fun deleteMail(msgId: Int, delete: Boolean): Completable = authApi.deleteInfoBoxMessage(
+        msgId = msgId,
+        delete = delete,
+        cityId = BuildConfig.CITY_ID
+    ).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+
+    fun acceptDataSecurityChanges(
+        dpnAccepted: Boolean
+    ): Completable = authApi.acceptDataSecurityChanges(dpnAccepted = dpnAccepted, cityId = BuildConfig.CITY_ID)
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
 
-    fun acceptDataSecurityChanges(dpnAccepted: Boolean) = authApi.acceptDataSecurityChanges(dpnAccepted)
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
+    fun sendFeedback(feedbackRequest: FeedbackRequest): Completable =
+        api.sendFeedback(feedbackRequest, cityId = BuildConfig.CITY_ID)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
 
-    fun sendFeedback(feedbackRequest: FeedbackRequest) = api.sendFeedback(feedbackRequest)
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-
-    fun checkAppVersion() = api.checkAppVersion()
-        .subscribeOn(Schedulers.io())
-        .flatMapCompletable { response ->
-            if (response.content.any { it.errorCode == ErrorCodes.VERSION_NOT_SUPPORTED })
-                Completable.error(UnsupportedVersionException())
-            else
-                Completable.complete()
-        }
-        .onErrorResumeNext { error ->
-            if (error is UnsupportedVersionException) Completable.error(error)
-            else Completable.complete()
-        }
-        .observeOn(AndroidSchedulers.mainThread())
+    fun checkAppVersion(): Completable =
+        api.checkAppVersion(version = BuildConfig.APP_VERSION, cityId = BuildConfig.CITY_ID)
+            .subscribeOn(Schedulers.io())
+            .flatMapCompletable { response ->
+                if (response.content.any { it.errorCode == ErrorCodes.VERSION_NOT_SUPPORTED })
+                    Completable.error(UnsupportedVersionException())
+                else
+                    Completable.complete()
+            }
+            .onErrorResumeNext { error ->
+                if (error is UnsupportedVersionException) Completable.error(error)
+                else Completable.complete()
+            }
+            .observeOn(AndroidSchedulers.mainThread())
 }

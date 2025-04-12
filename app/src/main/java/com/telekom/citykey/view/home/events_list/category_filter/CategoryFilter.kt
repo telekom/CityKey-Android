@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -41,8 +41,10 @@ import com.google.android.material.chip.Chip
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.EventsCategoryFilterBinding
 import com.telekom.citykey.domain.city.CityInteractor
-import com.telekom.citykey.models.content.EventCategory
+import com.telekom.citykey.networkinterface.models.content.EventCategory
 import com.telekom.citykey.utils.DialogUtil
+import com.telekom.citykey.utils.extensions.applySafeAllInsets
+import com.telekom.citykey.utils.extensions.applySafeAllInsetsWithSides
 import com.telekom.citykey.utils.extensions.dpToPixel
 import com.telekom.citykey.utils.extensions.getColor
 import com.telekom.citykey.utils.extensions.setAccessibilityBasedOnViewStateSelection
@@ -53,6 +55,7 @@ import com.telekom.citykey.view.FullScreenBottomSheetDialogFragment
 import org.koin.android.ext.android.inject
 
 class CategoryFilter : FullScreenBottomSheetDialogFragment(R.layout.events_category_filter) {
+
     private val viewModel: CategoryFilterViewModel by inject()
     private val binding by viewBinding(EventsCategoryFilterBinding::bind)
 
@@ -64,6 +67,7 @@ class CategoryFilter : FullScreenBottomSheetDialogFragment(R.layout.events_categ
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
+        handleWindowInsets()
         subscribeUi()
     }
 
@@ -92,6 +96,14 @@ class CategoryFilter : FullScreenBottomSheetDialogFragment(R.layout.events_categ
         clearAllMenuItem.title = spannableString
 
         binding.applyFilterBtn.button.setBackgroundColor(CityInteractor.cityColorInt)
+    }
+
+    private fun handleWindowInsets() {
+        binding.appBarLayout.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.nsvEventsCategoryFilter.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.applyFilterBtn.applySafeAllInsetsWithSides(left = true, right = true, bottom = true)
+        binding.categoriesErrorHint.applySafeAllInsets()
+        binding.progressCategories.applySafeAllInsets()
     }
 
     private fun clearFilter() {

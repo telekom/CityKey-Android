@@ -9,7 +9,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
- 
+
 In accordance with Sections 4 and 6 of the License, the following exclusions apply:
     1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
     2. Design Rights – Visual identities, UI/UX designs, and other graphical elements remain the property of their respective owners and are not licensed under the Apache License 2.0.
@@ -25,17 +25,25 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     android:id="@+id/LayoutPageDetailedService"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:paddingBottom="30dp"
+    tools:context="com.telekom.citykey.view.services.detailed_service.DetailedService">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/serviceDetailsABL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="?attr/colorSurface">
+        android:backgroundTint="?attr/colorSurface"
+        android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbarDetailedServices"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
+            android:layout_height="?attr/actionBarSize"
+            tools:title="Destinations" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -43,10 +51,11 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
         android:clipChildren="false"
         android:clipToPadding="false"
-        android:paddingBottom="30dp">
+        android:fitsSystemWindows="true"
+        android:paddingBottom="30dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/containerContent"
@@ -61,13 +70,20 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
                 android:scaleType="centerCrop"
                 tools:src="@tools:sample/avatars" />
 
-            <com.telekom.citykey.custom.views.OscaWebView
-                android:id="@+id/serviceContentWebView"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcServiceContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/global_content_margins"
                 android:layout_marginTop="@dimen/global_content_margins"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="8dp">
+
+                <com.telekom.citykey.custom.views.OscaWebView
+                    android:id="@+id/serviceContentWebView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/helpActionContainer"
@@ -78,8 +94,9 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackground"
-                android:paddingHorizontal="@dimen/global_content_margins"
-                android:visibility="gone">
+                android:visibility="gone"
+                tools:paddingHorizontal="@dimen/global_content_margins"
+                tools:visibility="visible">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/helpActionArrowImageView"
@@ -99,7 +116,8 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/helpActionArrowImageView"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Sportkarte Service" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -29,62 +29,112 @@
 package com.telekom.citykey.domain.repository
 
 import com.google.android.gms.maps.model.LatLng
+import com.telekom.citykey.BuildConfig
 import com.telekom.citykey.domain.city.news.NewsState
 import com.telekom.citykey.domain.city.weather.WeatherState
-import com.telekom.citykey.models.content.AvailableCity
-import com.telekom.citykey.models.content.City
-import com.telekom.citykey.models.content.CityConfig
+import com.telekom.citykey.networkinterface.client.CitykeyAPIClient
+import com.telekom.citykey.networkinterface.client.CitykeyAuthAPIClient
+import com.telekom.citykey.networkinterface.models.OscaResponse
+import com.telekom.citykey.networkinterface.models.content.AvailableCity
+import com.telekom.citykey.networkinterface.models.content.City
+import com.telekom.citykey.networkinterface.models.content.CityConfig
+import com.telekom.citykey.networkinterface.models.content.CityWeather
+import com.telekom.citykey.networkinterface.models.content.Event
+import com.telekom.citykey.networkinterface.models.content.EventCategory
+import com.telekom.citykey.networkinterface.models.content.NearestCity
+import com.telekom.citykey.networkinterface.models.content.ServicesResponse
+import com.telekom.citykey.utils.PreferencesHelper
 import io.reactivex.Completable
+import io.reactivex.Maybe
 import io.reactivex.Observable
+import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import java.util.Calendar
 import java.util.Date
 
 class CityRepository(
-    private val api: SmartCityApi,
-    private val authApi: SmartCityAuthApi
+    private val apiClient: CitykeyAPIClient,
+    private val authApiClient: CitykeyAuthAPIClient,
+    private val preferencesHelper: PreferencesHelper
 ) {
 
-    fun getWeather(city: City): Observable<WeatherState> = api.getCityWeather(city.cityId)
+    fun getWeather(city: City): Observable<WeatherState> = apiClient.getCityWeather(city.cityId)
         .subscribeOn(Schedulers.io())
         .map<WeatherState> { response ->
-            val currentDate = Date()
-            val cityNightPicturePresent = city.cityNightPicture.isNullOrEmpty().not()
-            val timeIsBeforeSunrise = response.content[0].sunrise?.let { currentDate <= it } ?: false
-            val timeIsAfterSunset = response.content[0].sunset?.let { currentDate >= it } ?: false
-            val image =
-                if (cityNightPicturePresent && (timeIsBeforeSunrise || timeIsAfterSunset))
-                    city.cityNightPicture
-                else
-                    city.cityPicture
+
+            val image = if (preferencesHelper.isPreviewMode) {
+                getCityImageByDeviceTimings(city)
+            } else {
+                getCityImageBySunriseSunsetTimings(city, response)
+            }
+
             WeatherState.Success(response.content[0], image.toString())
         }
-        .onErrorReturn { WeatherState.Error(city.cityPicture ?: "") }
+        .onErrorReturn {
+
+            val image = if (preferencesHelper.isPreviewMode) {
+                getCityImageByDeviceTimings(city)
+            } else {
+                city.cityPicture
+            }
+
+            WeatherState.Error(image ?: "")
+        }
         .toObservable()
         .observeOn(AndroidSchedulers.mainThread())
 
-    fun getCity(cityId: Int, availableCity: AvailableCity? = null) = api.getCityById(cityId)
+    /**
+     * Gets the City's picture to display based on the Sunrise & Sunset timings received from Weather API
+     */
+    private fun getCityImageBySunriseSunsetTimings(
+        city: City,
+        response: OscaResponse<List<CityWeather>>
+    ): String? {
+        val currentDate = Date()
+        val cityNightPicturePresent = city.cityNightPicture.isNullOrEmpty().not()
+        val timeIsBeforeSunrise = response.content[0].sunrise?.let { currentDate <= it } ?: false
+        val timeIsAfterSunset = response.content[0].sunset?.let { currentDate >= it } ?: false
+        return if (cityNightPicturePresent && (timeIsBeforeSunrise || timeIsAfterSunset)) {
+            city.cityNightPicture
+        } else {
+            city.cityPicture
+        }
+    }
+
+    /**
+     * Gets the City's picture to display based on device's timing, precisely between 6 PM & 6 AM, a night image
+     */
+    private fun getCityImageByDeviceTimings(city: City): String? {
+        val currentHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
+        val isNightTime = currentHour >= 18 || currentHour < 6
+        return if (isNightTime) city.cityNightPicture else city.cityPicture
+    }
+
+    fun getCity(cityId: Int, availableCity: AvailableCity? = null): Maybe<City> = apiClient.getCityById(cityId)
         .subscribeOn(Schedulers.io())
         .map { it.content.firstOrNull() ?: getEmptyCityObject(availableCity) }
         .observeOn(AndroidSchedulers.mainThread())
 
-    fun getNews(cityId: Int) = api.getCityContent(cityId)
+    fun getNews(cityId: Int): Maybe<NewsState.Success> = apiClient.getCityContent(cityId)
         .subscribeOn(Schedulers.io())
         .map { response -> response.content.sortedByDescending { it.contentCreationDate } }
         .map { NewsState.Success(it) }
         .observeOn(AndroidSchedulers.mainThread())
 
-    fun getAllCities() = api.getAllCities()
+    fun getAllCities(): Maybe<List<AvailableCity>> = apiClient.getAllCities(BuildConfig.CITY_ID)
         .subscribeOn(Schedulers.io())
         .map { it.content.sortedBy { city -> city.cityName } }
 
-    fun getServices(city: City) = api.getCityServices(city.cityId)
+    fun getServices(city: City): Maybe<Pair<List<ServicesResponse>, City>> = apiClient.getCityServices(city.cityId)
         .subscribeOn(Schedulers.io())
         .map { response -> response.content to city }
 
-    fun getNearestCity(latLng: LatLng) = api.getNearestCity(latLng.longitude.toString(), latLng.latitude.toString())
-        .subscribeOn(Schedulers.io())
-        .map { it.content[0] }
+    fun getNearestCity(latLng: LatLng): Maybe<NearestCity> = apiClient.getNearestCity(
+        longitude = latLng.longitude.toString(),
+        latitude = latLng.latitude.toString(),
+        cityId = BuildConfig.CITY_ID
+    ).subscribeOn(Schedulers.io()).map { it.content[0] }
 
     fun getEvents(
         cityId: Int,
@@ -93,27 +143,35 @@ class CityRepository(
         pageNo: Int? = null,
         pageSize: Int? = null,
         categories: ArrayList<Int>? = null,
-        eventId: String? = "0",
-    ) =
-        api.getCityEvents(cityId, start, end, pageNo, pageSize, categories, eventId)
-            .subscribeOn(Schedulers.io())
-            .map { it.content }
+        eventId: String? = "0"
+    ): Single<List<Event>> = apiClient.getCityEvents(
+        cityId = cityId,
+        start = start,
+        end = end,
+        pageNo = pageNo,
+        pageSize = pageSize,
+        categories = categories,
+        eventId = eventId
+    ).subscribeOn(Schedulers.io()).map { it.content }
 
-    fun getEventsCount(cityId: Int, start: String?, end: String?, categories: ArrayList<Int>?) =
-        api.getCityEventsCount(cityId, start, end, categories)
-            .subscribeOn(Schedulers.io())
-            .map { it.content }
+    fun getEventsCount(
+        cityId: Int,
+        start: String?,
+        end: String?,
+        categories: ArrayList<Int>?
+    ): Maybe<Int> =
+        apiClient.getCityEventsCount(cityId, start, end, categories).subscribeOn(Schedulers.io()).map { it.content }
 
-    fun getAllEventCategories(cityId: Int) = api.getAllEventCategories(cityId)
+    fun getAllEventCategories(cityId: Int): Maybe<List<EventCategory>> = apiClient.getAllEventCategories(cityId)
         .subscribeOn(Schedulers.io())
         .map { it.content }
         .observeOn(AndroidSchedulers.mainThread())
 
     fun setEventFavored(markFavorite: Boolean, eventId: Long, cityId: Int): Completable =
-        authApi.setEventFavored(markFavorite, eventId, cityId)
+        authApiClient.setEventFavored(markFavorite, eventId, cityId)
             .subscribeOn(Schedulers.io())
 
-    fun getFavoredEvents(cityId: Int) = authApi.getFavoredEvents(cityId)
+    fun getFavoredEvents(cityId: Int): Maybe<List<Event>> = authApiClient.getFavoredEvents(cityId)
         .subscribeOn(Schedulers.io())
         .map { it.content }
 

@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -30,14 +30,18 @@ package com.telekom.citykey.view.services.defect_reporter.details
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.telekom.citykey.BuildConfig
 import com.telekom.citykey.R
-import com.telekom.citykey.common.GlideApp
 import com.telekom.citykey.databinding.DefectReporterServiceDetailFragmentBinding
 import com.telekom.citykey.domain.city.CityInteractor
+import com.telekom.citykey.pictures.loadCenterCropped
 import com.telekom.citykey.utils.DialogUtil
+import com.telekom.citykey.utils.extensions.dispatchInsetsToChildViews
+import com.telekom.citykey.utils.extensions.dpToPixel
 import com.telekom.citykey.utils.extensions.setVisible
 import com.telekom.citykey.utils.extensions.viewBinding
 import com.telekom.citykey.view.MainFragment
@@ -53,6 +57,7 @@ class DefectServiceDetail : MainFragment(R.layout.defect_reporter_service_detail
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpViews()
+        handleWindowInsets()
         subscribeUi()
         (activity as? MainActivity)?.markLoadCompleteIfFromDeeplink(getString(R.string.deeplink_defect_reporter))
     }
@@ -66,11 +71,7 @@ class DefectServiceDetail : MainFragment(R.layout.defect_reporter_service_detail
 
         // https://jira.telekom.de/browse/SMARTC-37299
         val imageToLoad = args.service.headerImage.takeUnless { it.isNullOrBlank() } ?: args.service.image
-
-        GlideApp.with(this)
-            .load(BuildConfig.IMAGE_URL + imageToLoad)
-            .centerCrop()
-            .into(binding.image)
+        binding.image.loadCenterCropped(imageToLoad)
 
         binding.reportDefectBtn.text = args.service.serviceAction?.first()?.visibleText
         binding.fullDescription.loadData(args.service.description, "text/html", "UTF-8")
@@ -91,6 +92,29 @@ class DefectServiceDetail : MainFragment(R.layout.defect_reporter_service_detail
         }
     }
 
+    override fun handleWindowInsets() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+
+            val safeInsetType = WindowInsetsCompat.Type.displayCutout() + WindowInsetsCompat.Type.systemBars()
+            val systemInsets = insets.getInsets(safeInsetType)
+
+            binding.toolbarDefectReporter.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right
+            )
+            insets
+        }
+        binding.nsvDefectReporter.dispatchInsetsToChildViews(
+            binding.llcDefectReporterWebView,
+            binding.reportDefectBtn
+        ) { displayCutoutInsets ->
+            binding.defectInfoButton.updatePadding(
+                left = displayCutoutInsets.left + 21.dpToPixel(context),
+                right = displayCutoutInsets.right + 21.dpToPixel(context)
+            )
+        }
+    }
+
     fun subscribeUi() {
         viewModel.defectCategoryAvailable.observe(viewLifecycleOwner) {
             binding.reportDefectBtn.stopLoading()
@@ -107,6 +131,26 @@ class DefectServiceDetail : MainFragment(R.layout.defect_reporter_service_detail
         viewModel.technicalError.observe(viewLifecycleOwner) {
             binding.reportDefectBtn.stopLoading()
             context?.let { DialogUtil.showTechnicalError(it) }
+        }
+        viewModel.serviceError.observe(viewLifecycleOwner) {
+            binding.reportDefectBtn.stopLoading()
+            context?.let {
+                DialogUtil.showInfoDialog(
+                    context = it,
+                    title = R.string.service_error_title,
+                    message = R.string.service_error_description
+                )
+            }
+        }
+        viewModel.serviceUnavailable.observe(viewLifecycleOwner) {
+            binding.reportDefectBtn.stopLoading()
+            context?.let {
+                DialogUtil.showInfoDialog(
+                    context = it,
+                    title = R.string.service_unavailable_title,
+                    message = R.string.service_unavailable_description
+                )
+            }
         }
     }
 }

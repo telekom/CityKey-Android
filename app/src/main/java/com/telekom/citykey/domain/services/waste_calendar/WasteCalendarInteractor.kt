@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -36,10 +36,15 @@ import com.telekom.citykey.domain.global.GlobalData
 import com.telekom.citykey.domain.global_messager.GlobalMessages
 import com.telekom.citykey.domain.repository.ServicesRepository
 import com.telekom.citykey.domain.user.UserState
-import com.telekom.citykey.models.WasteItems
-import com.telekom.citykey.models.api.requests.WasteCalendarRequest
-import com.telekom.citykey.models.live_data.WasteCalendarData
-import com.telekom.citykey.models.waste_calendar.*
+import com.telekom.citykey.networkinterface.models.api.requests.WasteCalendarRequest
+import com.telekom.citykey.networkinterface.models.live_data.WasteCalendarData
+import com.telekom.citykey.networkinterface.models.waste_calendar.Address
+import com.telekom.citykey.networkinterface.models.waste_calendar.CalendarAccount
+import com.telekom.citykey.networkinterface.models.waste_calendar.GetWasteTypeResponse
+import com.telekom.citykey.networkinterface.models.waste_calendar.SaveSelectedWastePickupRequest
+import com.telekom.citykey.networkinterface.models.waste_calendar.WasteCalendarPickups
+import com.telekom.citykey.networkinterface.models.waste_calendar.WasteCalendarReminder
+import com.telekom.citykey.networkinterface.models.waste_calendar.WasteItems
 import com.telekom.citykey.utils.extensions.isInPast
 import com.telekom.citykey.utils.extensions.isToday
 import com.telekom.citykey.utils.extensions.toCalendar
@@ -52,7 +57,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.PublishSubject
-import java.util.*
+import java.util.Calendar
 import java.util.concurrent.TimeUnit
 
 class WasteCalendarInteractor(

@@ -9,7 +9,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
- 
+
 In accordance with Sections 4 and 6 of the License, the following exclusions apply:
     1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
     2. Design Rights – Visual identities, UI/UX designs, and other graphical elements remain the property of their respective owners and are not licensed under the Apache License 2.0.
@@ -19,165 +19,180 @@ SPDX-FileCopyrightText: 2025 Deutsche Telekom AG
 SPDX-License-Identifier: Apache-2.0 AND LicenseRef-Deutsche-Telekom-Brand
 License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-Brand.txt
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/auth_bottom_sheet_rounded"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    tools:context=".view.services.poi.details.PoiGuideDetails">
+    tools:context="com.telekom.citykey.view.services.poi.map.PoiMarkerOverlay">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/PoiCategoryAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/auth_bottom_sheet_rounded">
+        android:background="@drawable/auth_bottom_sheet_rounded"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbarPoiCategory"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:elevation="2dp"
-            android:fitsSystemWindows="true" />
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/onSurface"
+            tools:title="Educational facilities" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/categoryContainer"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/containerPOIMarkerOverlay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:importantForAccessibility="yes">
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintTop_toBottomOf="@id/PoiCategoryAppBar">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/categoryGroupIcon"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="22dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_poi_cat_smile" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/categoryTitle"
-            style="@style/RobotoBold"
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/categoryContainer"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="6dp"
-            android:importantForAccessibility="no"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@id/categorySubTitle"
-            app:layout_constraintEnd_toStartOf="@id/imgIconListItem"
-            app:layout_constraintStart_toEndOf="@id/categoryGroupIcon"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginTop="12dp"
+            android:importantForAccessibility="yes">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/categorySubTitle"
-            style="@style/RobotoRegular"
-            android:layout_width="0dp"
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/categoryGroupIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="22dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_poi_cat_smile" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/categoryTitle"
+                style="@style/RobotoBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="6dp"
+                android:importantForAccessibility="no"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/categorySubTitle"
+                app:layout_constraintEnd_toStartOf="@id/imgIconListItem"
+                app:layout_constraintStart_toEndOf="@id/categoryGroupIcon"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Universität Paderborn" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/categorySubTitle"
+                style="@style/RobotoRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="6dp"
+                android:importantForAccessibility="no"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@id/imgIconListItem"
+                app:layout_constraintStart_toStartOf="@id/categoryTitle"
+                app:layout_constraintTop_toBottomOf="@id/categoryTitle"
+                tools:text="@tools:sample/lorem"
+                tools:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgIconListItem"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginEnd="18dp"
+                android:src="@drawable/ic_more_arrow"
+                app:layout_constraintBottom_toBottomOf="@id/categoryGroupIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/categoryGroupIcon"
+                app:tint="@color/onSurfaceSecondary" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="6dp"
-            android:importantForAccessibility="no"
-            android:textSize="14sp"
-            android:visibility="gone"
-            app:layout_constraintEnd_toStartOf="@id/imgIconListItem"
-            app:layout_constraintStart_toStartOf="@id/categoryTitle"
-            app:layout_constraintTop_toBottomOf="@id/categoryTitle" />
+            android:layout_marginTop="22dp">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imgIconListItem"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_marginEnd="18dp"
-            android:src="@drawable/ic_more_arrow"
-            app:layout_constraintBottom_toBottomOf="@id/categoryGroupIcon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/categoryGroupIcon"
-            app:tint="@color/onSurfaceSecondary" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/addressLabel"
+                style="@style/RobotoBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="22dp"
+                android:text="@string/poi_001_address_label"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/address"
+                app:layout_constraintEnd_toStartOf="@+id/locationNavigation"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Addresse" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp">
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/address"
+                style="@style/RobotoRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="3dp"
+                android:hyphenationFrequency="full"
+                android:textIsSelectable="true"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/locationNavigation"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addressLabel"
+                tools:text="Warburger Straße 100" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/locationNavigation"
+                style="@style/RobotoRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:gravity="end"
+                android:hyphenationFrequency="full"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/e_006_event_route"
+                android:textColor="@color/onSurface"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:textColor="@color/blue" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/addressLabel"
+            android:id="@+id/openingHoursLabel"
             style="@style/RobotoBold"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="22dp"
             android:layout_marginTop="22dp"
-            android:text="@string/poi_001_address_label"
+            android:text="@string/poi_001_opening_hours_label"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@id/address"
-            app:layout_constraintEnd_toStartOf="@+id/locationNavigation"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Addresse" />
+            tools:text="Öffnungszeiten" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/address"
-            style="@style/RobotoRegular"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="3dp"
-            android:hyphenationFrequency="full"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/locationNavigation"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addressLabel"
-            tools:text="12345@@@" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/locationNavigation"
+            android:id="@+id/openingHours"
             style="@style/RobotoRegular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="4dp"
-            android:gravity="end"
-            android:hyphenationFrequency="full"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:text="@string/e_006_event_route"
-            android:textColor="@color/onSurface"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="3dp"
+            android:autoLink="all"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            tools:text="Mai – Oktober" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/openingHoursLabel"
-        style="@style/RobotoBold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="22dp"
-        android:text="@string/poi_001_opening_hours_label"
-        android:textSize="16sp"
-        tools:text="Öffnungszeiten" />
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/openingHours"
-        style="@style/RobotoRegular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="3dp"
-        android:autoLink="all"
-        android:textSize="14sp"
-        tools:text="Mai – Oktober" />
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
