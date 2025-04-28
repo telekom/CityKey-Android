@@ -71,7 +71,6 @@ internal class AssetResponseMocker(
     inline fun <reified T> getOscaResponseListOf(
         fileName: String
     ): OscaResponse<List<T>> {
-
         val fileNameWithExtension = "$fileName.json"
 
         val listType = TypeToken.getParameterized(List::class.java, T::class.java)
