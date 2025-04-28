@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -45,6 +45,8 @@ import com.telekom.citykey.domain.track.AdjustManager
 import com.telekom.citykey.utils.DialogUtil
 import com.telekom.citykey.utils.NetworkConnection
 import com.telekom.citykey.utils.extensions.AccessibilityRole
+import com.telekom.citykey.utils.extensions.applySafeAllInsets
+import com.telekom.citykey.utils.extensions.applySafeAllInsetsWithSides
 import com.telekom.citykey.utils.extensions.getColor
 import com.telekom.citykey.utils.extensions.setAccessibilityRole
 import com.telekom.citykey.utils.extensions.setAndPerformAccessibilityFocusAction
@@ -85,17 +87,13 @@ class InfoBox : Fragment(R.layout.infobox_fragment) {
         setupToolbar()
         setupInfoBox()
         setupWelcomeScreen()
-        if (viewModel.loggedInState.value == true) {
-            binding.toolbarInfoBox.setAndPerformAccessibilityFocusAction()
-        } else {
-            binding.welcomeView.descHeading.setAndPerformAccessibilityFocusAction()
-        }
+        handleWindowInsets()
         binding.tabLayoutInfoBox.setSelectedTabIndicatorColor(CityInteractor.cityColorInt)
 
         binding.welcomeView.welcomeBox.visibility = View.GONE
         binding.infoBox.visibility = View.GONE
 
-        subscribeUi()
+        subscribeVM()
         if (args.messageId == 0) {
             with(requireActivity() as MainActivity) {
                 markLoadCompleteIfFromDeeplink(getString(R.string.deeplink_infobox))
@@ -159,7 +157,13 @@ class InfoBox : Fragment(R.layout.infobox_fragment) {
         }
     }
 
-    private fun subscribeUi() {
+    private fun handleWindowInsets() {
+        binding.infoboxAbl.applySafeAllInsetsWithSides(top = true, left = true, right = true)
+        binding.welcomeView.root.applySafeAllInsets()
+        binding.swipeRefreshLayout.applySafeAllInsetsWithSides(left = true, top = false, right = true, bottom = true)
+    }
+
+    private fun subscribeVM() {
         findNavController().currentBackStackEntry
             ?.savedStateHandle
             ?.getLiveData<Boolean>("MailDeletionSuccessful")

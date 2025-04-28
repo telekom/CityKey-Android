@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -37,8 +37,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.WastecalendarDateItemBinding
 import com.telekom.citykey.databinding.WastecalendarWasteItemBinding
-import com.telekom.citykey.models.WasteItems
+import com.telekom.citykey.networkinterface.models.waste_calendar.WasteItems
 import com.telekom.citykey.utils.ColorUtils
+import com.telekom.citykey.utils.KoverIgnore
 import com.telekom.citykey.utils.extensions.AccessibilityRole
 import com.telekom.citykey.utils.extensions.inflateChild
 import com.telekom.citykey.utils.extensions.isToday
@@ -46,12 +47,14 @@ import com.telekom.citykey.utils.extensions.isTomorrow
 import com.telekom.citykey.utils.extensions.setAccessibilityRole
 import com.telekom.citykey.utils.extensions.setVisible
 import com.telekom.citykey.utils.isDarkMode
-import java.util.*
+import java.util.Calendar
+import java.util.Locale
 
 class WasteAdapter : ListAdapter<WasteItems, RecyclerView.ViewHolder>(diffCallback) {
 
+    @KoverIgnore
     companion object {
-        private val diffCallback = object : DiffUtil.ItemCallback<WasteItems>() {
+        private val diffCallback = @KoverIgnore object : DiffUtil.ItemCallback<WasteItems>() {
             override fun areItemsTheSame(oldItem: WasteItems, newItem: WasteItems): Boolean =
                 oldItem == newItem
 

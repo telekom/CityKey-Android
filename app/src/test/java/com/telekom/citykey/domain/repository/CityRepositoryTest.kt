@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -30,10 +30,13 @@ package com.telekom.citykey.domain.repository
 
 import com.telekom.citykey.InstantTaskExecutorExtension
 import com.telekom.citykey.RxImmediateSchedulerExtension
-import com.telekom.citykey.common.NetworkException
 import com.telekom.citykey.domain.city.news.NewsState
-import com.telekom.citykey.models.OscaResponse
-import com.telekom.citykey.models.content.CityContent
+import com.telekom.citykey.networkinterface.client.CitykeyAPIClient
+import com.telekom.citykey.networkinterface.client.CitykeyAuthAPIClient
+import com.telekom.citykey.networkinterface.models.OscaResponse
+import com.telekom.citykey.networkinterface.models.content.CityContent
+import com.telekom.citykey.networkinterface.models.error.NetworkException
+import com.telekom.citykey.utils.PreferencesHelper
 import io.mockk.clearAllMocks
 import io.mockk.every
 import io.mockk.mockk
@@ -51,15 +54,18 @@ import java.util.Date
 @ExtendWith(RxImmediateSchedulerExtension::class)
 @ExtendWith(InstantTaskExecutorExtension::class)
 class CityRepositoryTest {
-    val api: SmartCityApi = mockk(relaxed = true)
-    private val authApi: SmartCityAuthApi = mockk(relaxed = true)
+
+    val api: CitykeyAPIClient = mockk(relaxed = true)
+    private val authApi: CitykeyAuthAPIClient = mockk(relaxed = true)
     private lateinit var cityRepository: CityRepository
     private lateinit var testScheduler: TestScheduler
     private val cityId = 123
 
+    private val prefs: PreferencesHelper = mockk(relaxed = true)
+
     @BeforeEach
     fun setup() {
-        cityRepository = CityRepository(api, authApi)
+        cityRepository = CityRepository(api, authApi, prefs)
         testScheduler = TestScheduler()
 
     }

@@ -1,0 +1,234 @@
+#SPDX-FileCopyrightText: 2025 Deutsche Telekom AG
+#SPDX-License-Identifier: Apache-2.0
+#License-Filename: LICENSES/Apache-2.0.txt
+
+[versions]
+
+# Gradle
+agp = "8.6.1"
+androidTools = "31.7.3"
+
+# Android reference integers
+android-compileSdk = "35"
+android-minSdk = "24"
+android-targetSdk = "35"
+
+# Kotlin
+kotlin = "1.7.10"
+kover = "0.9.0"
+
+# Google
+googleServices = "4.3.15"
+material = "1.9.0"
+playServicesAuth = "20.6.0"
+playServicesAdsIdentifier = "18.0.1"
+playServicesMaps = "18.1.0"
+playServicesLocation = "21.0.1"
+zxing = "3.3.0"
+
+# Firebase
+firebaseMessagingKtx = "23.2.0"
+
+# Core & Lifecycle
+androidxActivity = "1.9.0"
+androidxAppCompat = "1.6.1"
+androidx-core-ktx = "1.13.1"
+androidx-lifecycle = "2.8.0"
+
+# UI
+cardview = "1.0.0"
+recyclerview = "1.3.1"
+constraintlayout = "2.1.4"
+coordinatorlayout = "1.2.0"
+swiperefreshlayout = "1.1.0"
+photoview = "2.3.0"
+androidSimpleTooltip = "1.1.0"
+htmlspanner = "0.5.1"
+lottie = "5.2.0"
+
+# Glide
+glide = "4.14.2"
+glide-okhttp3 = "4.12.0"
+
+# Paging
+pagingRuntimeKtx = "3.2.0"
+
+# Lifecycle
+lifecycleExtensions = "2.2.0"
+lifecycleViewmodelKtx = "2.6.1"
+
+# ReactiveX
+rxKotlin = "2.3.0"
+rxAndroid = "2.1.0"
+
+# Android Navigation
+navigation = "2.8.5"
+
+# Networking
+retrofit = "2.9.0"
+
+# Logging
+timber = "5.0.1"
+okhttp-logging-interceptor = "4.12.0"
+
+# Koin
+koin = "3.1.2"
+
+# SonarQube
+sonarqube = "3.3"
+
+# Code Quality
+detekt = "1.19.0"
+
+# SDKs
+ausweisapp = "1.26.5"
+adjust = "5.0.0"
+installreferrer = "2.2"
+moengage = "13.05.00"
+moengageInapp = "8.6.0"
+
+# Testing
+junitJupiterApi = "5.10.0"
+mockk = "1.13.14"
+androidxCoreTesting = "2.2.0"
+assertjCore = "3.24.2"
+runner = "1.6.1"
+androidx-espresso-core = "3.6.1"
+
+# Distribution
+appcenterDistribute = "4.2.0"
+
+# Others
+rootbeerLib = "0.1.0"
+securityCrypto = "1.0.0"
+legacySupportV4 = "1.0.0"
+fragmentKtx = "1.6.1"
+browser = "1.5.0"
+webkit = "1.7.0"
+preferenceKtx = "1.2.0"
+
+[libraries]
+
+# Gradle
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+
+# Kotlin
+kotlin-android-extensions = { module = "org.jetbrains.kotlin:kotlin-android-extensions", version.ref = "kotlin" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+
+# Activity
+androidx-activity = { group = "androidx.activity", name = "activity-ktx", version.ref = "androidxActivity" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppCompat" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
+
+# Google
+google-services = { module = "com.google.gms:google-services", version.ref = "googleServices" }
+google-material = { module = "com.google.android.material:material", version.ref = "material" }
+google-play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
+google-play-services-ads-identifier = { module = "com.google.android.gms:play-services-ads-identifier", version.ref = "playServicesAdsIdentifier" }
+google-play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
+google-play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
+google-zxing = { module = "com.google.zxing:core", version.ref = "zxing" }
+
+# Firebase
+firebase-messaging-ktx = { module = "com.google.firebase:firebase-messaging-ktx", version.ref = "firebaseMessagingKtx" }
+
+# UI
+androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+androidx-coordinatorlayout = { module = "androidx.coordinatorlayout:coordinatorlayout", version.ref = "coordinatorlayout" }
+androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
+photoview = { module = "com.github.chrisbanes:PhotoView", version.ref = "photoview" }
+android-simple-tooltip = { module = "com.github.douglasjunior:android-simple-tooltip", version.ref = "androidSimpleTooltip" }
+htmlspanner = { module = "com.github.iAmMONK:HtmlSpanner", version.ref = "htmlspanner" }
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
+
+# Glide
+glide-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+glide-okhttp3 = { module = "com.github.bumptech.glide:okhttp3-integration", version.ref = "glide-okhttp3" }
+
+# Paging
+androidx-paging-runtime-ktx = { module = "androidx.paging:paging-runtime-ktx", version.ref = "pagingRuntimeKtx" }
+androidx-paging-rxjava2-ktx = { module = "androidx.paging:paging-rxjava2-ktx", version.ref = "pagingRuntimeKtx" }
+
+# Lifecycle
+androidx-lifecycle-common-java8 = { module = "androidx.lifecycle:lifecycle-common-java8", version.ref = "lifecycleViewmodelKtx" }
+androidx-lifecycle-extensions = { module = "androidx.lifecycle:lifecycle-extensions", version.ref = "lifecycleExtensions" }
+androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycleViewmodelKtx" }
+androidx-lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "lifecycleViewmodelKtx" }
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleViewmodelKtx" }
+androidx-lifecycle-reactivestreams-ktx = { module = "androidx.lifecycle:lifecycle-reactivestreams-ktx", version.ref = "lifecycleViewmodelKtx" }
+androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+
+# ReactiveX
+rx-kotlin = { group = "io.reactivex.rxjava2", name = "rxkotlin", version.ref = "rxKotlin" }
+rx-android = { group = "io.reactivex.rxjava2", name = "rxandroid", version.ref = "rxAndroid" }
+
+# Networking
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-adapter-rxjava2 = { group = "com.squareup.retrofit2", name = "adapter-rxjava2", version.ref = "retrofit" }
+retrofit-gson-converter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+
+# Logging
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp-logging-interceptor" }
+
+# Koin
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+
+# Navigation
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+androidx-navigation-safe-args = { group = "androidx.navigation", name = "navigation-safe-args-gradle-plugin", version.ref = "navigation" }
+
+# SDKs
+ausweisapp = { module = "com.governikus:ausweisapp", version.ref = "ausweisapp" }
+adjust = { module = "com.adjust.sdk:adjust-android", version.ref = "adjust" }
+installreferrer = { module = "com.android.installreferrer:installreferrer", version.ref = "installreferrer" }
+moengage-sdk = { module = "com.moengage:moe-android-sdk", version.ref = "moengage" }
+moengage-inapp = { module = "com.moengage:inapp", version.ref = "moengageInapp" }
+
+# Code Quality
+detekt = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
+
+# Testing
+junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junitJupiterApi" }
+junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junitJupiterApi" }
+junit-jupiter-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junitJupiterApi" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+androidx-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "androidxCoreTesting" }
+androidx-runner = { module = "androidx.test:runner", version.ref = "runner" }
+assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertjCore" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidx-espresso-core" }
+
+# Distribution
+appcenter-distribute = { module = "com.microsoft.appcenter:appcenter-distribute", version.ref = "appcenterDistribute" }
+appcenter-distribute-play = { module = "com.microsoft.appcenter:appcenter-distribute-play", version.ref = "appcenterDistribute" }
+
+# Others
+rootbeer-lib = { module = "com.scottyab:rootbeer-lib", version.ref = "rootbeerLib" }
+androidx-security-crypto = { module = "androidx.security:security-crypto", version.ref = "securityCrypto" }
+androidx-legacy-support-v4 = { module = "androidx.legacy:legacy-support-v4", version.ref = "legacySupportV4" }
+androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
+androidx-browser = { module = "androidx.browser:browser", version.ref = "browser" }
+androidx-webkit = { module = "androidx.webkit:webkit", version.ref = "webkit" }
+androidx-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preferenceKtx" }
+
+[plugins]
+
+# Android
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+android-test = { id = "com.android.test", version.ref = "agp" }
+
+# Kotlin
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
+
+# Google Services
+google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }
+
+# SonarQube
+sonarqube = { id = "org.sonarqube", version.ref = "sonarqube" }

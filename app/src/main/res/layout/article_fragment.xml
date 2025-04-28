@@ -9,7 +9,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
- 
+
 In accordance with Sections 4 and 6 of the License, the following exclusions apply:
     1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
     2. Design Rights – Visual identities, UI/UX designs, and other graphical elements remain the property of their respective owners and are not licensed under the Apache License 2.0.
@@ -26,18 +26,20 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.telekom.citykey.view.home.news.article.Article">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/articleAppBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="?attr/colorSurface">
+        android:backgroundTint="?attr/colorSurface"
+        android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:minHeight="?attr/actionBarSize"
             app:title="@string/h_003_home_articles_info_news_headline" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -46,18 +48,24 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize">
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:fitsSystemWindows="true"
+        android:paddingBottom="30dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="30dp">
 
             <FrameLayout
                 android:id="@+id/topLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone">
+                android:visibility="gone"
+                tools:visibility="visible">
 
                 <com.telekom.citykey.custom.views.VerticallyCroppedImageView
                     android:id="@+id/image"
@@ -131,6 +139,7 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
             </FrameLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clHeadDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -200,15 +209,23 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
                 android:textColor="@color/onSurface"
                 android:textSize="@dimen/article_content_size"
                 android:visibility="gone"
-                tools:text="subtitle" />
+                tools:text="subtitle"
+                tools:visibility="visible" />
 
-            <com.telekom.citykey.custom.views.OscaWebView
-                android:id="@+id/contentWebView"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llWebViewContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/article_horizontal_margin"
-                android:paddingBottom="28dp"
-                android:layout_marginTop="12dp" />
+                android:layout_marginTop="12dp">
+
+                <com.telekom.citykey.custom.views.OscaWebView
+                    android:id="@+id/contentWebView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="30dp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

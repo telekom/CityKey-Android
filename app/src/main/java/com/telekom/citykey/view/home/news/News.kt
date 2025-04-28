@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -30,16 +30,22 @@ package com.telekom.citykey.view.home.news
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.HomeNewsFragmentBinding
+import com.telekom.citykey.utils.extensions.applySafeAllInsetsWithSides
 import com.telekom.citykey.utils.extensions.viewBinding
 import com.telekom.citykey.view.MainFragment
 import org.koin.android.ext.android.inject
 
 class News : MainFragment(R.layout.home_news_fragment) {
+
     private val viewModel: NewsViewModel by inject()
+
     private val binding by viewBinding(HomeNewsFragmentBinding::bind)
 
     private var newsAdapter: NewsAdapter? = null
@@ -55,7 +61,28 @@ class News : MainFragment(R.layout.home_news_fragment) {
             adapter = newsAdapter
         }
         setupToolbar(binding.toolbarNews)
+        handleWindowInsets()
         subscribeUi()
+    }
+
+    override fun handleWindowInsets() {
+        binding.newsList.applySafeAllInsetsWithSides(
+            left = true,
+            right = true,
+            bottom = true
+        )
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+
+            val safeInsetType = WindowInsetsCompat.Type.displayCutout() + WindowInsetsCompat.Type.systemBars()
+            val systemInsets = insets.getInsets(safeInsetType)
+
+            binding.newsAppBarLayout.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right
+            )
+
+            insets
+        }
     }
 
     private fun subscribeUi() {

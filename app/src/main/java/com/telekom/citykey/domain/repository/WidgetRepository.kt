@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -29,9 +29,9 @@
 package com.telekom.citykey.domain.repository
 
 import com.telekom.citykey.domain.city.news.NewsState
-import com.telekom.citykey.models.api.contracts.CitykeyWidgetApi
-import com.telekom.citykey.models.api.contracts.CitykeyWidgetAuthApi
-import com.telekom.citykey.models.api.requests.WasteCalendarRequest
+import com.telekom.citykey.networkinterface.client.CitykeyWidgetAPIClient
+import com.telekom.citykey.networkinterface.client.CitykeyWidgetAuthAPIClient
+import com.telekom.citykey.networkinterface.models.api.requests.WasteCalendarRequest
 import com.telekom.citykey.utils.PreferencesHelper
 import com.telekom.citykey.utils.extensions.isInPast
 import com.telekom.citykey.utils.extensions.isToday
@@ -39,8 +39,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class WidgetRepository(
-    private val citykeyWidgetApi: CitykeyWidgetApi,
-    private val citykeyWidgetAuthApi: CitykeyWidgetAuthApi,
+    private val widgetApiClient: CitykeyWidgetAPIClient,
+    private val widgetAuthApiClient: CitykeyWidgetAuthAPIClient,
     private val preferencesHelper: PreferencesHelper
 ) {
 
@@ -48,7 +48,7 @@ class WidgetRepository(
 
     suspend fun getNewsForCurrentCity(count: Int): NewsState = withContext(Dispatchers.IO) {
         try {
-            val oscaResponse = citykeyWidgetApi.getNewsForCityContent(currentCityId)
+            val oscaResponse = widgetApiClient.getNewsForCityContent(currentCityId)
             val filteredList =
                 if (oscaResponse.content.size > count) oscaResponse.content.take(count) else oscaResponse.content
             NewsState.Success(filteredList)
@@ -59,7 +59,7 @@ class WidgetRepository(
 
     suspend fun getSelectedWastePickupIds() = withContext(Dispatchers.IO) {
         try {
-            val oscaResponse = citykeyWidgetAuthApi.getWasteCalendarPickupIds(currentCityId)
+            val oscaResponse = widgetAuthApiClient.getWasteCalendarPickupIds(currentCityId)
             oscaResponse.content.wasteTypeIds
             //   NewsState.Success()
         } catch (e: Exception) {
@@ -69,7 +69,7 @@ class WidgetRepository(
 
     suspend fun getWasteCalendarData() = withContext(Dispatchers.IO) {
         try {
-            val oscaResponse = citykeyWidgetAuthApi.getSelectedWastePickupsData(
+            val oscaResponse = widgetAuthApiClient.getSelectedWastePickupsData(
                 WasteCalendarRequest("", ""),
                 currentCityId
             )

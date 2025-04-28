@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -32,26 +32,27 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.WelcomeGuideFragmentBinding
-import com.telekom.citykey.models.welcome.WelcomePageItem
+import com.telekom.citykey.networkinterface.models.welcome.WelcomePageItem
 import com.telekom.citykey.utils.extensions.inflateChild
 
 class WelcomePagerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
     private val pagesData: List<WelcomePageItem> = arrayListOf(
         WelcomePageItem(
-            R.drawable.bg_signin_01,
-            R.string.x_001_welcome_info_01,
-            R.string.x_001_welcome_info_title_01
+            imgRes = R.drawable.onboarding1,
+            description = R.string.x_001_welcome_info_01,
+            title = R.string.x_001_welcome_info_title_01
         ),
         WelcomePageItem(
-            R.drawable.bg_signin_02,
-            R.string.x_001_welcome_info_02,
-            R.string.x_001_welcome_info_title_02
+            imgRes = R.drawable.onboarding2,
+            description = R.string.x_001_welcome_info_02,
+            title = R.string.x_001_welcome_info_title_02
         ),
         WelcomePageItem(
-            R.drawable.bg_signin_03,
-            R.string.x_001_welcome_info_03,
-            R.string.x_001_welcome_info_title_03
-        ),
+            imgRes = R.drawable.onboarding3,
+            description = R.string.x_001_welcome_info_03,
+            title = R.string.x_001_welcome_info_title_03
+        )
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
@@ -63,8 +64,10 @@ class WelcomePagerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun getItemCount(): Int = pagesData.size
 
-    private inner class WelcomePageViewHolder(val binding: WelcomeGuideFragmentBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    private inner class WelcomePageViewHolder(
+        val binding: WelcomeGuideFragmentBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
+
         fun setPageData(pageData: WelcomePageItem) {
             binding.welcomeImage.setImageResource(pageData.imgRes)
             binding.descHeading.setText(pageData.title)

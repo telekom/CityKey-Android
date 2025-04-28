@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -32,9 +32,10 @@ import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import com.telekom.citykey.domain.global.GlobalData
 import com.telekom.citykey.domain.repository.ServicesRepository
-import com.telekom.citykey.models.api.requests.DefectRequest
-import com.telekom.citykey.models.defect_reporter.DefectCategory
-import com.telekom.citykey.models.defect_reporter.DefectSuccess
+import com.telekom.citykey.data.exceptions.ServiceNotOnboardedException
+import com.telekom.citykey.networkinterface.models.api.requests.DefectRequest
+import com.telekom.citykey.networkinterface.models.defect_reporter.DefectCategory
+import com.telekom.citykey.networkinterface.models.defect_reporter.DefectSuccess
 import io.reactivex.Completable
 import io.reactivex.Maybe
 import io.reactivex.Observable
@@ -59,18 +60,20 @@ class DefectReporterInteractor(private val servicesRepository: ServicesRepositor
             }
     }
 
-    fun loadCategories(): Completable =
-        if (defectCategoriesSubject.value?.isEmpty() == false)
-            Completable.complete()
-        else
-            servicesRepository.getDefectCategories(globalData.currentCityId)
-                .doOnSuccess(defectCategoriesSubject::onNext)
-                .flatMapCompletable {
-                    if (it.isEmpty()) {
-                        Completable.error(Exception("Retrieved no Defect Categories"))
-                    } else Completable.complete()
+    fun loadCategories(): Completable = if (defectCategoriesSubject.value?.isEmpty() == false) {
+        Completable.complete()
+    } else {
+        servicesRepository.getDefectCategories(globalData.currentCityId)
+            .doOnSuccess(defectCategoriesSubject::onNext)
+            .flatMapCompletable {
+                if (it.isEmpty()) {
+                    Completable.error(ServiceNotOnboardedException())
+                } else {
+                    Completable.complete()
                 }
-                .observeOn(AndroidSchedulers.mainThread())
+            }
+            .observeOn(AndroidSchedulers.mainThread())
+    }
 
     fun sendDefectRequest(defectRequest: DefectRequest, image: Bitmap?): Maybe<DefectSuccess> {
         return if (image != null) {

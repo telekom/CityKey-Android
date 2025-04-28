@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -166,15 +166,17 @@ class Profile : Fragment(R.layout.profile_fragment) {
             binding.userEmail.text = it.email
             binding.containerMail.contentDescription =
                 getString(R.string.p_001_profile_label_email) + "," + it.email
-            if (it.dateOfBirth != null) {
-                binding.profileBirthday.text = it.dateOfBirth.toDateString()
+
+            it.dateOfBirth?.run {
+                binding.profileBirthday.text = this.toDateString()
                 binding.containerBirthday.contentDescription =
-                    getString(R.string.p_001_profile_label_birthday) + it.dateOfBirth.toDateString()
-            } else {
+                    getString(R.string.p_001_profile_label_birthday) + this.toDateString()
+            } ?: run {
                 binding.profileBirthday.setText(R.string.p_001_profile_no_date_of_birth_added)
                 binding.containerBirthday.contentDescription =
                     getString(R.string.p_001_profile_label_birthday) + getString(R.string.p_001_profile_no_date_of_birth_added)
             }
+
             binding.profileAddress.text = "${it.postalCode} ${it.cityName}"
             binding.containerResidence.contentDescription =
                 getString(R.string.p_001_profile_label_residence) + "${it.postalCode} ${it.cityName}"

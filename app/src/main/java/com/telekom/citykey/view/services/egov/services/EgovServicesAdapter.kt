@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -34,16 +34,17 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.EgovServicesItemBinding
-import com.telekom.citykey.models.egov.EgovLinkTypes
-import com.telekom.citykey.models.egov.EgovService
+import com.telekom.citykey.networkinterface.models.egov.EgovLinkTypes
+import com.telekom.citykey.networkinterface.models.egov.EgovService
+import com.telekom.citykey.pictures.loadFromDrawable
 import com.telekom.citykey.utils.extensions.AccessibilityRole
 import com.telekom.citykey.utils.extensions.inflateChild
-import com.telekom.citykey.utils.extensions.loadFromDrawable
 import com.telekom.citykey.utils.extensions.setAccessibilityRole
 import com.telekom.citykey.utils.extensions.setVisible
 
-class EgovServicesAdapter(private val clickListener: (EgovService) -> Unit) :
-    ListAdapter<EgovService, EgovServicesAdapter.EgovServiceViewHolder>(diffCallback) {
+class EgovServicesAdapter(
+    private val clickListener: (EgovService) -> Unit
+) : ListAdapter<EgovService, EgovServicesAdapter.EgovServiceViewHolder>(diffCallback) {
 
     companion object {
         private val diffCallback = object : DiffUtil.ItemCallback<EgovService>() {

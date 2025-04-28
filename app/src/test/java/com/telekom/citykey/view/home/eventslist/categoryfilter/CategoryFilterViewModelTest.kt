@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -33,8 +33,8 @@ import com.telekom.citykey.RxImmediateSchedulerExtension
 import com.telekom.citykey.domain.city.events.EventsInteractor
 import com.telekom.citykey.domain.global.GlobalData
 import com.telekom.citykey.domain.repository.CityRepository
-import com.telekom.citykey.models.content.City
-import com.telekom.citykey.models.content.EventCategory
+import com.telekom.citykey.networkinterface.models.content.City
+import com.telekom.citykey.networkinterface.models.content.EventCategory
 import com.telekom.citykey.view.home.events_list.category_filter.CategoryFilterViewModel
 import io.mockk.every
 import io.mockk.mockk

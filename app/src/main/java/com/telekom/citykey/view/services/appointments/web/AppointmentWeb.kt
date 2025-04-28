@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -35,12 +35,16 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.OnBackPressedCallback
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.WebviewFragmentBinding
 import com.telekom.citykey.domain.track.AdjustManager
 import com.telekom.citykey.utils.DialogUtil
+import com.telekom.citykey.utils.extensions.applySafeAllInsetsWithSides
 import com.telekom.citykey.utils.extensions.getColor
 import com.telekom.citykey.utils.extensions.viewBinding
 import com.telekom.citykey.view.MainFragment
@@ -62,6 +66,22 @@ class AppointmentWeb : MainFragment(R.layout.webview_fragment, true) {
         setupWebView()
         subscribeUi()
         askForPermission()
+    }
+
+    override fun handleWindowInsets() {
+        super.handleWindowInsets()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+
+            val safeInsetType = WindowInsetsCompat.Type.displayCutout() + WindowInsetsCompat.Type.systemBars()
+            val systemInsets = insets.getInsets(safeInsetType)
+
+            binding.webviewToolbar.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right
+            )
+            insets
+        }
+        binding.llcWebViewWrapper.applySafeAllInsetsWithSides(left = true, right = true, bottom = true)
     }
 
     private fun setupWebView() {
@@ -154,6 +174,7 @@ class AppointmentWeb : MainFragment(R.layout.webview_fragment, true) {
                 onProcessCancel()
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
     }

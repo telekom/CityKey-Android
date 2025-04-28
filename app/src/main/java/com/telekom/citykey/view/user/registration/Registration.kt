@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -47,6 +47,7 @@ import com.telekom.citykey.custom.views.inputfields.OscaInputLayout
 import com.telekom.citykey.databinding.RegistrationFragmentBinding
 import com.telekom.citykey.utils.DialogUtil
 import com.telekom.citykey.utils.EmptyTextWatcher
+import com.telekom.citykey.utils.KoverIgnore
 import com.telekom.citykey.utils.extensions.disable
 import com.telekom.citykey.utils.extensions.enable
 import com.telekom.citykey.utils.extensions.getColor
@@ -61,6 +62,7 @@ import com.telekom.citykey.view.user.pin_verification.success.VerificationSucces
 import kotlinx.coroutines.delay
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
+@KoverIgnore
 class Registration : Fragment(R.layout.registration_fragment) {
     private val viewModel: RegistrationViewModel by viewModel()
     private val binding by viewBinding(RegistrationFragmentBinding::bind)

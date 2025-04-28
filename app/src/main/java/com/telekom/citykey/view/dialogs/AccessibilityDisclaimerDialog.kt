@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -35,6 +35,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.InformationDialogBinding
+import com.telekom.citykey.utils.extensions.applySafeAllInsetsWithSides
 import com.telekom.citykey.utils.extensions.attemptOpeningWebViewUri
 import com.telekom.citykey.utils.extensions.getColor
 import com.telekom.citykey.utils.extensions.setAccessibilityRoleForToolbarTitle
@@ -48,18 +49,29 @@ class AccessibilityDisclaimerDialog : FullScreenBottomSheetDialogFragment(R.layo
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViews()
+        handleWindowInsets()
+        loadAccessibilityStmt()
+    }
+
+    private fun initViews() {
         binding.toolbar.setNavigationIcon(R.drawable.ic_profile_close)
         binding.toolbar.setNavigationIconTint(getColor(R.color.onSurface))
         binding.toolbar.setNavigationContentDescription(R.string.accessibility_btn_close)
         binding.toolbar.setNavigationOnClickListener { dismiss() }
         setAccessibilityRoleForToolbarTitle(binding.toolbar)
-        loadAccessibilityStmt()
+    }
+
+    private fun handleWindowInsets() {
+        binding.appBarLayout.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.llcInfoDialogWebView.applySafeAllInsetsWithSides(left = true, right = true, bottom = true)
     }
 
     private fun loadAccessibilityStmt() {
+
         val inputStream = try {
             resources.assets.open("accessibility_stmt-${Locale.getDefault().language}.html")
-        } catch (exception: Exception) {
+        } catch (_: Exception) {
             resources.assets.open("accessibility_stmt-en.html")
         }
 
@@ -72,5 +84,4 @@ class AccessibilityDisclaimerDialog : FullScreenBottomSheetDialogFragment(R.layo
         }
         binding.webView.loadDataWithBaseURL(null, inputAsString, "text/html", "utf-8", null)
     }
-
 }

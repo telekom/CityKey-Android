@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -35,6 +35,7 @@ import com.telekom.citykey.R
 import com.telekom.citykey.databinding.DataPrivacySettingsDialogBinding
 import com.telekom.citykey.domain.track.AdjustManager
 import com.telekom.citykey.utils.extensions.AccessibilityRole
+import com.telekom.citykey.utils.extensions.applySafeAllInsetsWithSides
 import com.telekom.citykey.utils.extensions.getColor
 import com.telekom.citykey.utils.extensions.setAccessibilityRole
 import com.telekom.citykey.utils.extensions.setAccessibilityRoleForToolbarTitle
@@ -49,57 +50,87 @@ class DataPrivacySettingsDialog(
 ) : FullScreenBottomSheetDialogFragment(R.layout.data_privacy_settings_dialog) {
 
     private val adjustManager: AdjustManager by inject()
+
     private val binding: DataPrivacySettingsDialogBinding by viewBinding(DataPrivacySettingsDialogBinding::bind)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViews()
+        handleWindowInsets()
+    }
 
-        binding.scrollView.layoutTransition.enableTransitionType(LayoutTransition.CHANGING)
-        binding.root.layoutTransition.enableTransitionType(LayoutTransition.CHANGING)
-        binding.requiredToolsBlock.layoutTransition.enableTransitionType(LayoutTransition.CHANGING)
-        binding.optionalToolsBlock.layoutTransition.enableTransitionType(LayoutTransition.CHANGING)
+    private fun initViews() {
 
-        binding.btnChangeSettings.setupOutlineStyle()
-        binding.optionalToolsToggle.isChecked = adjustManager.isAnalyticsEventTrackingAllowed
-
-        binding.dataSecurityNoticeLink.setOnClickListener {
-            if (isLaunchedFromNotice) dismiss()
-            else DataPrivacyNoticeDialog(isLaunchedFromSettings = true)
-                .showDialog(parentFragmentManager, "DataPrivacyNoticeDialog")
-        }
-
+        // Toolbar
         binding.toolbar.setNavigationIcon(R.drawable.ic_profile_close)
         binding.toolbar.setNavigationIconTint(getColor(R.color.onSurface))
         binding.toolbar.setNavigationContentDescription(R.string.accessibility_btn_close)
         binding.toolbar.setNavigationOnClickListener { dismiss() }
         setAccessibilityRoleForToolbarTitle(binding.toolbar)
+
+        // A11y
         setAccessibilityRoles()
+
+        // Transitions
+        binding.scrollView.layoutTransition.enableTransitionType(LayoutTransition.CHANGING)
+        binding.root.layoutTransition.enableTransitionType(LayoutTransition.CHANGING)
+        binding.requiredToolsBlock.layoutTransition.enableTransitionType(LayoutTransition.CHANGING)
+        binding.optionalToolsBlock.layoutTransition.enableTransitionType(LayoutTransition.CHANGING)
+
+        // Toggle
+        binding.optionalToolsToggle.isChecked = adjustManager.isAnalyticsEventTrackingAllowed
+
+        // Link click
+        binding.dataSecurityNoticeLink.setOnClickListener {
+            if (isLaunchedFromNotice) {
+                dismiss()
+            } else {
+                DataPrivacyNoticeDialog(
+                    isLaunchedFromSettings = true
+                ).showDialog(parentFragmentManager, "DataPrivacyNoticeDialog")
+            }
+        }
+
+        // Buttons
         binding.btnAcceptAll.setOnClickListener {
             adjustManager.updateTrackingPermissions(true)
             acceptedListener?.invoke()
             dismiss()
         }
 
+        binding.btnChangeSettings.setupOutlineStyle()
         binding.btnChangeSettings.setOnClickListener {
             adjustManager.updateTrackingPermissions(binding.optionalToolsToggle.isChecked)
             acceptedListener?.invoke()
             dismiss()
         }
+
         binding.requiredToolsShowMore.setOnClickListener {
             binding.requiredToolsDescription.updateState()
             binding.requiredToolsShowMore.setText(
-                if (binding.requiredToolsDescription.isCollapsed) R.string.dialog_dpn_settings_show_more_btn
-                else R.string.dialog_dpn_settings_show_less_btn
+                if (binding.requiredToolsDescription.isCollapsed) {
+                    R.string.dialog_dpn_settings_show_more_btn
+                } else {
+                    R.string.dialog_dpn_settings_show_less_btn
+                }
             )
         }
 
         binding.optionalToolsShowMore.setOnClickListener {
             binding.optionalToolsDescription.updateState()
             binding.optionalToolsShowMore.setText(
-                if (binding.optionalToolsDescription.isCollapsed) R.string.dialog_dpn_settings_show_more_btn
-                else R.string.dialog_dpn_settings_show_less_btn
+                if (binding.optionalToolsDescription.isCollapsed) {
+                    R.string.dialog_dpn_settings_show_more_btn
+                } else {
+                    R.string.dialog_dpn_settings_show_less_btn
+                }
             )
         }
+    }
+
+    private fun handleWindowInsets() {
+        binding.appBarLayout.applySafeAllInsetsWithSides(left = true, right = true)
+        binding.scrollView.applySafeAllInsetsWithSides(left = true, right = true, bottom = true)
     }
 
     private fun setAccessibilityRoles() {

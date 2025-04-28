@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -37,10 +37,12 @@ import com.telekom.citykey.R
 import com.telekom.citykey.databinding.PoiCategoryGroupItemBinding
 import com.telekom.citykey.databinding.PoiCategoryItemBinding
 import com.telekom.citykey.domain.city.CityInteractor
-import com.telekom.citykey.models.poi.PoiCategory
+import com.telekom.citykey.network.extensions.categoryGroupIconId
+import com.telekom.citykey.networkinterface.models.poi.PoiCategory
+import com.telekom.citykey.pictures.loadFromDrawable
+import com.telekom.citykey.utils.KoverIgnore
 import com.telekom.citykey.utils.extensions.AccessibilityRole
 import com.telekom.citykey.utils.extensions.inflateChild
-import com.telekom.citykey.utils.extensions.loadFromDrawable
 import com.telekom.citykey.utils.extensions.setAccessibilityRole
 import com.telekom.citykey.utils.extensions.setVisible
 
@@ -48,8 +50,10 @@ class PoiCategorySelectionAdapter(
     private val clickListener: (category: PoiCategory) -> Unit,
     private val category: PoiCategory?,
 ) : ListAdapter<PoiCategoryListItem, RecyclerView.ViewHolder>(diffCallback) {
+
+    @KoverIgnore
     companion object {
-        private val diffCallback = object : DiffUtil.ItemCallback<PoiCategoryListItem>() {
+        private val diffCallback = @KoverIgnore object : DiffUtil.ItemCallback<PoiCategoryListItem>() {
             override fun areItemsTheSame(oldItem: PoiCategoryListItem, newItem: PoiCategoryListItem): Boolean =
                 oldItem == newItem
 

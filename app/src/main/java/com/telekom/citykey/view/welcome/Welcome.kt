@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -46,6 +46,7 @@ import com.telekom.citykey.view.user.login.LoginActivity
 import com.telekom.citykey.view.user.registration.RegistrationActivity
 
 class Welcome : Fragment(R.layout.welcome_page_fragment) {
+
     private val binding by viewBinding(WelcomePageFragmentBinding::bind)
 
     companion object {
@@ -53,34 +54,36 @@ class Welcome : Fragment(R.layout.welcome_page_fragment) {
         const val RESULT_CODE_REGISTRATION_TO_LOGIN = 104
     }
 
-    private val loginARL: ActivityResultLauncher<Intent> =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-            when (it.resultCode) {
-                RESULT_CODE_LOGIN_TO_REGISTRATION -> {
-                    registerARL.launch(
-                        Intent(activity, RegistrationActivity::class.java).apply {
-                            putExtra("isFirstTime", true)
-                            putExtra("isLaunchedByLogin", true)
-                        }
-                    )
-                }
-
-                Activity.RESULT_OK -> {
-                    requireActivity().finish()
-                    startActivity<MainActivity>()
-                }
-            }
-        }
-
-    private val registerARL: ActivityResultLauncher<Intent> =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-            if (it.resultCode == RESULT_CODE_REGISTRATION_TO_LOGIN)
-                loginARL.launch(
-                    Intent(activity, LoginActivity::class.java).apply {
+    private val loginARL: ActivityResultLauncher<Intent> = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) {
+        when (it.resultCode) {
+            RESULT_CODE_LOGIN_TO_REGISTRATION -> {
+                registerARL.launch(
+                    Intent(activity, RegistrationActivity::class.java).apply {
                         putExtra("isFirstTime", true)
+                        putExtra("isLaunchedByLogin", true)
                     }
                 )
+            }
+
+            Activity.RESULT_OK -> {
+                requireActivity().finish()
+                startActivity<MainActivity>()
+            }
         }
+    }
+
+    private val registerARL: ActivityResultLauncher<Intent> = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) {
+        if (it.resultCode == RESULT_CODE_REGISTRATION_TO_LOGIN)
+            loginARL.launch(
+                Intent(activity, LoginActivity::class.java).apply {
+                    putExtra("isFirstTime", true)
+                }
+            )
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -88,8 +91,10 @@ class Welcome : Fragment(R.layout.welcome_page_fragment) {
     }
 
     fun initViews() {
-        binding.loginLink.setAccessibilityRole(AccessibilityRole.Button)
+
         binding.descHeading.setAccessibilityRole(AccessibilityRole.Heading)
+
+        binding.loginLink.setAccessibilityRole(AccessibilityRole.Button)
         binding.loginLink.setOnClickListener {
             loginARL.launch(
                 Intent(activity, LoginActivity::class.java).apply {

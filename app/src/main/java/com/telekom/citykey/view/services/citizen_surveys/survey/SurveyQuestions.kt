@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -35,6 +35,9 @@ import android.view.MenuItem
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.activity.OnBackPressedCallback
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
@@ -43,6 +46,7 @@ import com.telekom.citykey.R
 import com.telekom.citykey.databinding.SurveyQuestionsFragmentBinding
 import com.telekom.citykey.domain.services.surveys.SurveysState
 import com.telekom.citykey.utils.DialogUtil
+import com.telekom.citykey.utils.extensions.applySafeAllInsetsWithSides
 import com.telekom.citykey.utils.extensions.viewBinding
 import com.telekom.citykey.view.MainFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -107,6 +111,22 @@ class SurveyQuestions : MainFragment(R.layout.survey_questions_fragment) {
             }
         )
         subscribeUi()
+    }
+
+    override fun handleWindowInsets() {
+        super.handleWindowInsets()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+
+            val safeInsetType = WindowInsetsCompat.Type.displayCutout() + WindowInsetsCompat.Type.systemBars()
+            val systemInsets = insets.getInsets(safeInsetType)
+
+            binding.toolbarSurvey.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right
+            )
+            insets
+        }
+        binding.pager.applySafeAllInsetsWithSides(left = true, right = true, bottom = true)
     }
 
     private fun subscribeUi() {

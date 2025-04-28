@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -33,6 +33,9 @@ import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
 import android.view.accessibility.AccessibilityManager
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.core.widget.TextViewCompat
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
@@ -42,7 +45,11 @@ import com.telekom.citykey.databinding.AppointmentsOverviewFragmentBinding
 import com.telekom.citykey.domain.city.CityInteractor
 import com.telekom.citykey.domain.services.appointments.AppointmentsState
 import com.telekom.citykey.utils.DialogUtil
-import com.telekom.citykey.utils.extensions.*
+import com.telekom.citykey.utils.extensions.applySafeAllInsets
+import com.telekom.citykey.utils.extensions.setVisible
+import com.telekom.citykey.utils.extensions.showActionSnackbar
+import com.telekom.citykey.utils.extensions.showInfoSnackBar
+import com.telekom.citykey.utils.extensions.viewBinding
 import com.telekom.citykey.view.MainFragment
 import com.telekom.citykey.view.main.MainActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -58,6 +65,22 @@ class AppointmentsOverview : MainFragment(R.layout.appointments_overview_fragmen
         super.onViewCreated(view, savedInstanceState)
         initViews()
         subscribeUi()
+    }
+
+    override fun handleWindowInsets() {
+        super.handleWindowInsets()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+
+            val safeInsetType = WindowInsetsCompat.Type.displayCutout() + WindowInsetsCompat.Type.systemBars()
+            val systemInsets = insets.getInsets(safeInsetType)
+
+            binding.toolbarAppointments.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right
+            )
+            insets
+        }
+        binding.swipeRefreshLayout.applySafeAllInsets()
     }
 
     private fun initViews() {

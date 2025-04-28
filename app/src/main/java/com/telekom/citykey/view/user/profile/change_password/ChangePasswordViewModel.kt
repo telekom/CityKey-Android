@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -37,16 +37,16 @@ import com.telekom.citykey.R
 import com.telekom.citykey.common.ErrorCodes.CHANGE_PASSWORD_OLD_PASSWORD_WRONG
 import com.telekom.citykey.common.ErrorCodes.CHANGE_PASSWORD_SAME_EMAIL
 import com.telekom.citykey.common.ErrorCodes.PASSWORD_FORMAT_ERROR
-import com.telekom.citykey.common.NetworkException
+import com.telekom.citykey.networkinterface.models.error.NetworkException
 import com.telekom.citykey.custom.views.inputfields.FieldValidation
 import com.telekom.citykey.custom.views.passwordstrength.PasswordStrength
 import com.telekom.citykey.domain.global.GlobalData
 import com.telekom.citykey.domain.repository.UserRepository
-import com.telekom.citykey.domain.repository.exceptions.InvalidRefreshTokenException
-import com.telekom.citykey.domain.repository.exceptions.NoConnectionException
+import com.telekom.citykey.data.exceptions.InvalidRefreshTokenException
+import com.telekom.citykey.data.exceptions.NoConnectionException
 import com.telekom.citykey.domain.user.UserState
-import com.telekom.citykey.models.OscaErrorResponse
-import com.telekom.citykey.models.api.requests.PasswordChangeRequest
+import com.telekom.citykey.networkinterface.models.api.requests.PasswordChangeRequest
+import com.telekom.citykey.networkinterface.models.error.OscaErrorResponse
 import com.telekom.citykey.utils.SingleLiveEvent
 import com.telekom.citykey.utils.Validation
 import com.telekom.citykey.utils.extensions.retryOnError
@@ -168,10 +168,13 @@ class ChangePasswordViewModel(
         return ChangePassField.PASSWORD to when {
             percentage == 0f ->
                 FieldValidation(FieldValidation.ERROR, null, R.string.r_001_registration_error_empty_field)
+
             passwordAwaitsValidation ->
                 FieldValidation(FieldValidation.ERROR, null, R.string.r_001_registration_error_password_email_same)
+
             percentage < 99f ->
                 FieldValidation(FieldValidation.ERROR, null, R.string.r_001_registration_error_password_too_weak)
+
             else ->
                 FieldValidation(FieldValidation.SUCCESS, "")
         }
@@ -185,9 +188,11 @@ class ChangePasswordViewModel(
             passwords.second.isNotEmpty() && passwords.second == passwords.first -> {
                 return RegFields.SEC_PASSWORD to FieldValidation(FieldValidation.OK, null)
             }
+
             passwords.first.startsWith(passwords.second) -> {
                 return RegFields.SEC_PASSWORD to FieldValidation(FieldValidation.IDLE, null)
             }
+
             else -> R.string.r_001_registration_error_password_no_match
         }
         return ChangePassField.SEC_PASSWORD to FieldValidation(FieldValidation.ERROR, null, errorMsg)
@@ -233,9 +238,11 @@ class ChangePasswordViewModel(
                 CHANGE_PASSWORD_OLD_PASSWORD_WRONG ->
                     _inputValidation.value =
                         ChangePassField.CURRENT_PASSWORD to FieldValidation(FieldValidation.ERROR, it.userMsg)
+
                 CHANGE_PASSWORD_SAME_EMAIL, PASSWORD_FORMAT_ERROR ->
                     _inputValidation.value =
                         ChangePassField.PASSWORD to FieldValidation(FieldValidation.ERROR, it.userMsg)
+
                 else -> _technicalError.postValue(Unit)
             }
         }

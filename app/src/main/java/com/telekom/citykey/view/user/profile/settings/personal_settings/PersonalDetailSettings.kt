@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -42,7 +42,7 @@ import com.telekom.citykey.utils.extensions.viewBinding
 import com.telekom.citykey.view.user.profile.ProfileActivity
 import com.telekom.citykey.view.user.profile.ProfileBackActions
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import java.util.*
+import java.util.Date
 
 class PersonalDetailSettings : Fragment(R.layout.personal_detail_settings_fragment) {
 
@@ -78,10 +78,12 @@ class PersonalDetailSettings : Fragment(R.layout.personal_detail_settings_fragme
     @SuppressLint("SetTextI18n")
     fun subscribeUi() {
         viewModel.userPersonal.observe(viewLifecycleOwner) {
-            if (it.dateOfBirth != null)
-                binding.birthDateText.text = it.dateOfBirth.toDateString()
-            else
+
+            it.dateOfBirth?.let { dob ->
+                binding.birthDateText.text = dob.toDateString()
+            } ?: {
                 binding.birthDateText.setText(R.string.p_001_profile_no_date_of_birth_added)
+            }
 
             binding.txtResidence.text = "${it.postalCode} ${it.cityName}".trim()
             postalCode = it.postalCode

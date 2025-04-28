@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -39,19 +39,18 @@ import com.telekom.citykey.databinding.EgovSearchHeaderItemBinding
 import com.telekom.citykey.databinding.EgovSearchHistoryItemBinding
 import com.telekom.citykey.databinding.EgovServicesItemBinding
 import com.telekom.citykey.domain.services.egov.EgovSearchItems
-import com.telekom.citykey.models.egov.EgovLinkTypes
-import com.telekom.citykey.models.egov.EgovService
+import com.telekom.citykey.networkinterface.models.egov.EgovLinkTypes
+import com.telekom.citykey.networkinterface.models.egov.EgovService
+import com.telekom.citykey.pictures.loadFromDrawable
 import com.telekom.citykey.utils.extensions.AccessibilityRole
 import com.telekom.citykey.utils.extensions.inflateChild
-import com.telekom.citykey.utils.extensions.loadFromDrawable
 import com.telekom.citykey.utils.extensions.setAccessibilityRole
 import com.telekom.citykey.utils.extensions.setVisible
 
 class EgovServicesResultsAdapter(
     private val onServiceSelected: (EgovService) -> Unit,
     private val onHistorySelected: (String) -> Unit
-) :
-    ListAdapter<EgovSearchItems, RecyclerView.ViewHolder>(diffCallback) {
+) : ListAdapter<EgovSearchItems, RecyclerView.ViewHolder>(diffCallback) {
 
     companion object {
         private val diffCallback = object : DiffUtil.ItemCallback<EgovSearchItems>() {
@@ -73,10 +72,13 @@ class EgovServicesResultsAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder = when (viewType) {
         R.layout.egov_search_history_item ->
             EgovSearchHistoryVH(EgovSearchHistoryItemBinding.bind(parent.inflateChild(viewType)))
+
         R.layout.egov_search_header_item ->
             EgovSearchHeaderVH(EgovSearchHeaderItemBinding.bind(parent.inflateChild(viewType)))
+
         R.layout.egov_search_full_message ->
             EgovSearchFullMessageVH(EgovSearchFullMessageBinding.bind(parent.inflateChild(viewType)))
+
         else ->
             EgovSearchResultVH(EgovServicesItemBinding.bind(parent.inflateChild(viewType)))
     }

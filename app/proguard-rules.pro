@@ -37,7 +37,7 @@
     boolean isLimitAdTrackingEnabled();
 }
 -keep public class com.android.installreferrer.** { *; }
--keep class com.telekom.citykey.models.** {*;}
+-keep class com.telekom.citykey.networkinterface.** {*;}
 -keep class com.telekom.citykey.domain.ausweiss_app.models.** { *; }
 
 # ==============================

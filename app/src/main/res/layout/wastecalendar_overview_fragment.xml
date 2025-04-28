@@ -9,7 +9,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
- 
+
 In accordance with Sections 4 and 6 of the License, the following exclusions apply:
     1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
     2. Design Rights – Visual identities, UI/UX designs, and other graphical elements remain the property of their respective owners and are not licensed under the Apache License 2.0.
@@ -26,33 +26,35 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:orientation="vertical">
+    tools:context="com.telekom.citykey.view.services.waste_calendar.WasteCalendar">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="?attr/colorSurface">
+        android:background="?attr/colorSurface"
+        android:fitsSystemWindows="true"
+        android:windowDrawsSystemBarBackgrounds="true">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/containerToolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="?attr/colorSurface"
             android:fitsSystemWindows="true"
             android:minHeight="?attr/actionBarSize"
-            app:contentScrim="?attr/colorSurface"
+            app:contentScrim="@color/background"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:scrimAnimationDuration="200"
-            app:scrimVisibleHeightTrigger="100dp"
+            app:statusBarScrim="@color/background"
             app:titleEnabled="false"
             app:toolbarId="@id/toolbarWasteCalendar">
 
             <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcAddressFilterContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="?attr/actionBarSize"
                 android:background="@drawable/bottom_line_cool_grey"
+                android:fitsSystemWindows="false"
                 android:orientation="vertical"
                 app:layout_collapseMode="parallax">
 
@@ -233,7 +235,7 @@ License-Filename: LICENSES/Apache-2.0.txt LICENSES/LicenseRef-Deutsche-Telekom-B
                 android:id="@+id/toolbarWasteCalendar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:fitsSystemWindows="true"
+                android:fitsSystemWindows="false"
                 app:layout_collapseMode="pin"
                 app:title="@string/wc_004_page_title"
                 app:titleTextColor="@color/onSurface" />

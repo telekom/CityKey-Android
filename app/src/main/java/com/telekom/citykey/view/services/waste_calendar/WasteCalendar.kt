@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -31,7 +31,6 @@ package com.telekom.citykey.view.services.waste_calendar
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.res.Configuration
-import android.content.res.Resources
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -40,8 +39,11 @@ import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.get
 import androidx.core.view.isVisible
+import androidx.core.view.updatePadding
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearSmoothScroller
@@ -50,8 +52,9 @@ import androidx.viewpager2.widget.ViewPager2
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.WastecalendarOverviewFragmentBinding
 import com.telekom.citykey.databinding.WeekRowWasteCalendarBinding
-import com.telekom.citykey.models.WasteItems
+import com.telekom.citykey.networkinterface.models.waste_calendar.WasteItems
 import com.telekom.citykey.utils.DialogUtil
+import com.telekom.citykey.utils.KoverIgnore
 import com.telekom.citykey.utils.extensions.AccessibilityRole
 import com.telekom.citykey.utils.extensions.disable
 import com.telekom.citykey.utils.extensions.enable
@@ -74,6 +77,7 @@ import java.text.DateFormatSymbols
 import java.util.Calendar
 import java.util.Locale
 
+@KoverIgnore
 class WasteCalendar : MainFragment(R.layout.wastecalendar_overview_fragment) {
 
     private val viewModel: WasteCalendarViewModel by viewModel()
@@ -197,6 +201,33 @@ class WasteCalendar : MainFragment(R.layout.wastecalendar_overview_fragment) {
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         adjustLayoutByOrientation()
+    }
+
+    override fun handleWindowInsets() {
+        super.handleWindowInsets()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+
+            val safeInsetType = WindowInsetsCompat.Type.displayCutout() + WindowInsetsCompat.Type.systemBars()
+            val systemInsets = insets.getInsets(safeInsetType)
+
+            binding.toolbarWasteCalendar.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right
+            )
+            binding.llcAddressFilterContainer.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right,
+                top = systemInsets.top
+            )
+            binding.contentLayout.updatePadding(
+                left = systemInsets.left,
+                right = systemInsets.right
+            )
+
+            ViewCompat.onApplyWindowInsets(binding.appBarLayout, insets)
+
+            WindowInsetsCompat.CONSUMED
+        }
     }
 
     private fun subscribeUi() {
@@ -323,8 +354,6 @@ class WasteCalendar : MainFragment(R.layout.wastecalendar_overview_fragment) {
         }.showDialog(childFragmentManager, FRAGMENT_TAG_FILTERS)
     }
 
-    val Int.px get() = (this * Resources.getSystem().displayMetrics.density).toInt()
-
     /**
      * Since we cannot load a new layout or perform a context change by ourselves, we change the fields' constraints
      * in the existing ConstraintLayout to match the portrait mode
@@ -346,6 +375,12 @@ class WasteCalendar : MainFragment(R.layout.wastecalendar_overview_fragment) {
         set.connect(binding.wasteList.id, ConstraintSet.END, ConstraintSet.PARENT_ID, ConstraintSet.END)
         set.connect(binding.wasteList.id, ConstraintSet.TOP, binding.svCalendar.id, ConstraintSet.BOTTOM)
         set.connect(binding.wasteList.id, ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM)
+
+        // Empty state text
+        set.connect(binding.filterSelectionText.id, ConstraintSet.START, ConstraintSet.PARENT_ID, ConstraintSet.START)
+        set.connect(binding.filterSelectionText.id, ConstraintSet.END, ConstraintSet.PARENT_ID, ConstraintSet.END)
+        set.connect(binding.filterSelectionText.id, ConstraintSet.TOP, binding.svCalendar.id, ConstraintSet.BOTTOM)
+        set.connect(binding.filterSelectionText.id, ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM)
 
         set.applyTo(constraintLayout)
 
@@ -376,6 +411,13 @@ class WasteCalendar : MainFragment(R.layout.wastecalendar_overview_fragment) {
         set.connect(binding.wasteList.id, ConstraintSet.TOP, ConstraintSet.PARENT_ID, ConstraintSet.TOP)
         set.connect(binding.wasteList.id, ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM)
         set.setHorizontalWeight(binding.wasteList.id, 1f)
+
+        // Empty state text
+        set.connect(binding.filterSelectionText.id, ConstraintSet.START, binding.svCalendar.id, ConstraintSet.END)
+        set.connect(binding.filterSelectionText.id, ConstraintSet.END, ConstraintSet.PARENT_ID, ConstraintSet.END)
+        set.connect(binding.filterSelectionText.id, ConstraintSet.TOP, ConstraintSet.PARENT_ID, ConstraintSet.TOP)
+        set.connect(binding.filterSelectionText.id, ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM)
+        set.setHorizontalWeight(binding.filterSelectionText.id, 1f)
 
         set.applyTo(constraintLayout)
 

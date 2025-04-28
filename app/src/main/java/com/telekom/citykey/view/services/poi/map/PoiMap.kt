@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -32,7 +32,11 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import android.graphics.*
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import android.location.LocationManager
 import android.os.Bundle
 import android.provider.Settings
@@ -47,11 +51,19 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.gms.maps.CameraUpdate
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.model.*
+import com.google.android.gms.maps.model.BitmapDescriptor
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.LatLngBounds
+import com.google.android.gms.maps.model.Marker
+import com.google.android.gms.maps.model.MarkerOptions
 import com.telekom.citykey.R
 import com.telekom.citykey.databinding.PoiMapFragmentBinding
 import com.telekom.citykey.domain.city.CityInteractor
+import com.telekom.citykey.network.extensions.categoryGroupIconId
+import com.telekom.citykey.network.extensions.mapMarker
 import com.telekom.citykey.utils.DialogUtil
+import com.telekom.citykey.utils.KoverIgnore
 import com.telekom.citykey.utils.extensions.getDrawable
 import com.telekom.citykey.utils.extensions.hasPermission
 import com.telekom.citykey.utils.extensions.showDialog
@@ -63,6 +75,7 @@ import com.telekom.citykey.view.services.poi.PoiGuideViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import timber.log.Timber
 
+@KoverIgnore
 class PoiMap : Fragment(R.layout.poi_map_fragment), GoogleMap.OnMarkerClickListener {
 
     private val binding by viewBinding(PoiMapFragmentBinding::bind)
@@ -162,11 +175,9 @@ class PoiMap : Fragment(R.layout.poi_map_fragment), GoogleMap.OnMarkerClickListe
             pendingMarkers.addAll(it.items.map { poi -> poi.mapMarker })
             showPendingMarkers()
             zoomLevel = it.zoomLevel
-            defaultCameraUpdate = if (it.bounds == null) {
-                CameraUpdateFactory.newLatLngZoom(it.cityLocation, zoomLevel)
-            } else {
-                CameraUpdateFactory.newLatLngBounds(it.bounds, 100)
-            }
+            defaultCameraUpdate = it.bounds?.let { bounds ->
+                CameraUpdateFactory.newLatLngBounds(bounds, 100)
+            } ?: CameraUpdateFactory.newLatLngZoom(it.cityLocation, zoomLevel)
             moveCamera()
         }
         viewModel.userLocation.observe(viewLifecycleOwner) { location ->

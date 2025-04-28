@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -41,9 +41,9 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AnimationUtils
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -58,9 +58,11 @@ import com.telekom.citykey.databinding.MainActivityBinding
 import com.telekom.citykey.domain.city.CityInteractor
 import com.telekom.citykey.domain.notifications.OscaPushService
 import com.telekom.citykey.domain.track.AdjustManager
-import com.telekom.citykey.models.content.City
-import com.telekom.citykey.models.content.CityContent
+import com.telekom.citykey.networkinterface.models.content.City
+import com.telekom.citykey.networkinterface.models.content.CityContent
+import com.telekom.citykey.network.extensions.cityColorInt
 import com.telekom.citykey.utils.DialogUtil
+import com.telekom.citykey.utils.extensions.disableRecentsScreenshot
 import com.telekom.citykey.utils.extensions.listen
 import com.telekom.citykey.utils.extensions.setItemsColor
 import com.telekom.citykey.utils.extensions.setVisible
@@ -106,26 +108,29 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            setRecentsScreenshotEnabled(false)
-        }
+
+        disableRecentsScreenshot()
+        enableEdgeToEdge()
         setContentView(binding.root)
+
         nfcIntentDispatcher = NfcIntentDispatcher(this)
 
-        initStatusBar()
         binding.btnRetry.setOnClickListener {
             it.setVisible(false)
             binding.splashLAV.setVisible(true)
             viewModel.onRetryClicked()
         }
 
+        handleWindowInsets()
+        subscribeVM()
+        showSplashViewIfRequired()
+    }
+
+    private fun handleWindowInsets() {
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
             binding.navigationBottom.setVisible(!insets.isVisible(WindowInsetsCompat.Type.ime()))
             insets
         }
-
-        subscribeUi()
-        showSplashViewIfRequired()
     }
 
     override fun onStart() {
@@ -183,7 +188,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun subscribeUi() {
+    private fun subscribeVM() {
         viewModel.promptLogin.observe(this) {
             startActivity<LoginActivity>()
         }
@@ -458,10 +463,6 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    private fun initStatusBar() {
-        window.statusBarColor = ContextCompat.getColor(this, R.color.black5a)
-    }
-
     fun hideSplashScreen() {
         if (binding.splash.visibility == View.VISIBLE) {
             binding.splash.startAnimation(
@@ -618,5 +619,4 @@ class MainActivity : AppCompatActivity() {
             loginDialogInterface = null
         }
     }
-
 }

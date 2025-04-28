@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -41,10 +41,12 @@ import android.location.LocationManager
 import android.os.Bundle
 import android.provider.Settings
 import android.view.View
+import android.view.ViewGroup.MarginLayoutParams
 import android.widget.RelativeLayout
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.location.LocationManagerCompat
+import androidx.core.view.updateLayoutParams
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -56,6 +58,8 @@ import com.telekom.citykey.R
 import com.telekom.citykey.databinding.DefectLocationSelectionBinding
 import com.telekom.citykey.domain.city.CityInteractor
 import com.telekom.citykey.utils.DialogUtil
+import com.telekom.citykey.utils.extensions.dispatchInsetsToChildViews
+import com.telekom.citykey.utils.extensions.dpToPixel
 import com.telekom.citykey.utils.extensions.getColor
 import com.telekom.citykey.utils.extensions.getDrawable
 import com.telekom.citykey.utils.extensions.hasPermission
@@ -69,8 +73,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class DefectLocationSelection(
     private val prevDefectLocation: LatLng? = null,
     private val locationResultListener: (LatLng) -> Unit
-) : FullScreenBottomSheetDialogFragment(R.layout.defect_location_selection),
-    OnMapReadyCallback {
+) : FullScreenBottomSheetDialogFragment(R.layout.defect_location_selection), OnMapReadyCallback {
+
     private val binding by viewBinding(DefectLocationSelectionBinding::bind)
     private var gMap: GoogleMap? = null
     private val viewModel: DefectLocationSelectionViewModel by viewModel()
@@ -93,6 +97,7 @@ class DefectLocationSelection(
                 }
             }
         }
+
     private val locationDialogLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (!LocationManagerCompat.isLocationEnabled(locationManager)) {
@@ -107,12 +112,23 @@ class DefectLocationSelection(
         binding.toolbarLocation.setNavigationIcon(R.drawable.ic_profile_close)
         binding.toolbarLocation.setNavigationIconTint(getColor(R.color.onSurface))
         binding.toolbarLocation.setNavigationOnClickListener { dismiss() }
-        binding.toolbarLocation.navigationContentDescription =
-            getString(R.string.accessibility_btn_close)
+        binding.toolbarLocation.navigationContentDescription = getString(R.string.accessibility_btn_close)
         setAccessibilityRoleForToolbarTitle(binding.toolbarLocation)
         initMap()
         initViews()
+        handleWindowInsets()
         subscribeUi()
+    }
+
+    private fun handleWindowInsets() = binding.root.dispatchInsetsToChildViews(
+        binding.appBarLayout,
+        binding.locationLabel,
+        binding.progressBtnLocation
+    ) { displayCutoutInsets ->
+        binding.locateMe.updateLayoutParams<MarginLayoutParams> {
+            rightMargin = displayCutoutInsets.right + 22.dpToPixel(context)
+            leftMargin = displayCutoutInsets.left + 22.dpToPixel(context)
+        }
     }
 
     fun subscribeUi() {
@@ -260,5 +276,4 @@ class DefectLocationSelection(
         gMap = null
         super.onDestroyView()
     }
-
 }

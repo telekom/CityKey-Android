@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * In accordance with Sections 4 and 6 of the License, the following exclusions apply:
  *
  *  1. Trademarks & Logos – The names, logos, and trademarks of the Licensor are not covered by this License and may not be used without separate permission.
@@ -31,14 +31,14 @@ package com.telekom.citykey.view.profile.changeresidence
 import com.telekom.citykey.InstantTaskExecutorExtension
 import com.telekom.citykey.R
 import com.telekom.citykey.RxImmediateSchedulerExtension
-import com.telekom.citykey.common.NetworkException
+import com.telekom.citykey.networkinterface.models.error.NetworkException
 import com.telekom.citykey.domain.global.GlobalData
 import com.telekom.citykey.domain.repository.UserRepository
-import com.telekom.citykey.domain.repository.exceptions.InvalidRefreshTokenException
-import com.telekom.citykey.domain.repository.exceptions.NoConnectionException
+import com.telekom.citykey.data.exceptions.InvalidRefreshTokenException
+import com.telekom.citykey.data.exceptions.NoConnectionException
 import com.telekom.citykey.domain.user.UserInteractor
-import com.telekom.citykey.models.OscaErrorResponse
-import com.telekom.citykey.models.user.ResidenceValidationResponse
+import com.telekom.citykey.networkinterface.models.user.ResidenceValidationResponse
+import com.telekom.citykey.networkinterface.models.error.OscaErrorResponse
 import com.telekom.citykey.view.user.login.LogoutReason
 import com.telekom.citykey.view.user.profile.change_residence.ChangeResidenceViewModel
 import io.mockk.every
