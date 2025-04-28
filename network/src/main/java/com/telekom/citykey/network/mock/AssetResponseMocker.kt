@@ -69,7 +69,7 @@ internal class AssetResponseMocker(
      * @return the data of type [List] of [T], parsed from Assets JSON file with name "[fileName].json", wrapped in [OscaResponse]
      */
     inline fun <reified T> getOscaResponseListOf(
-        fileName: String,
+        fileName: String
     ): OscaResponse<List<T>> {
 
         val fileNameWithExtension = "$fileName.json"
