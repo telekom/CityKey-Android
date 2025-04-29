@@ -51,7 +51,6 @@ class DATPickupsRemoteViewService : RemoteViewsService() {
     private val widgetInteractor: WidgetInteractor by inject()
 
     override fun onGetViewFactory(intent: Intent?): RemoteViewsFactory {
-
         return WasteMediumItemViewsFactory(applicationContext, widgetInteractor.pickups)
     }
 
