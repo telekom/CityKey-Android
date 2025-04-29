@@ -97,9 +97,11 @@ class DATPickupsRemoteViewService : RemoteViewsService() {
 
         private fun populateWastePickupData(view: RemoteViews, pickup: WasteItems.WasteItem) {
             view.setImageViewResource(R.id.pickupIcon, R.drawable.ic_waste_trash_icon)
+            
             val wasteIconColorInt = if (resources.isDarkMode) {
                 ColorUtils.invertIfDark(pickup.wasteIconColorInt)
             } else pickup.wasteIconColorInt
+            
             view.setInt(
                 R.id.pickupIcon, "setColorFilter",
                 wasteIconColorInt
