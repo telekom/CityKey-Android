@@ -105,7 +105,8 @@ class DATPickupsRemoteViewService : RemoteViewsService() {
             }
             
             view.setInt(
-                R.id.pickupIcon, "setColorFilter",
+                R.id.pickupIcon,
+                "setColorFilter",
                 wasteIconColorInt
             )
             view.setInt(
