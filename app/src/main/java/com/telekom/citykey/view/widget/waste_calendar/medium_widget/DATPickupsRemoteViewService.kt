@@ -100,7 +100,9 @@ class DATPickupsRemoteViewService : RemoteViewsService() {
             
             val wasteIconColorInt = if (resources.isDarkMode) {
                 ColorUtils.invertIfDark(pickup.wasteIconColorInt)
-            } else pickup.wasteIconColorInt
+            } else {
+                pickup.wasteIconColorInt
+            }
             
             view.setInt(
                 R.id.pickupIcon, "setColorFilter",
