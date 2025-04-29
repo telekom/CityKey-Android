@@ -34,14 +34,14 @@ import android.net.Uri
 import android.view.View
 import android.widget.RemoteViews
 import android.widget.RemoteViewsService
+import com.telekom.citykey.R
 import com.telekom.citykey.domain.widget.WidgetInteractor
 import com.telekom.citykey.networkinterface.models.waste_calendar.Pickups
 import com.telekom.citykey.networkinterface.models.waste_calendar.WasteItems
-import com.telekom.citykey.R
 import com.telekom.citykey.utils.ColorUtils
+import com.telekom.citykey.utils.NetworkConnection
 import com.telekom.citykey.utils.extensions.isInCurrentMonth
 import com.telekom.citykey.utils.isDarkMode
-import com.telekom.citykey.utils.NetworkConnection
 import com.telekom.citykey.view.widget.waste_calendar.WasteCalendarWidgetConstants
 import java.util.Calendar
 import org.koin.android.ext.android.inject
