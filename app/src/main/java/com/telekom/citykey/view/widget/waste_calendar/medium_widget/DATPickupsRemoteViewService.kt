@@ -43,15 +43,14 @@ import com.telekom.citykey.utils.NetworkConnection
 import com.telekom.citykey.utils.extensions.isInCurrentMonth
 import com.telekom.citykey.utils.isDarkMode
 import com.telekom.citykey.view.widget.waste_calendar.WasteCalendarWidgetConstants
-import org.koin.android.ext.android.inject
 import java.util.Calendar
+import org.koin.android.ext.android.inject
 
 class DATPickupsRemoteViewService : RemoteViewsService() {
 
     private val widgetInteractor: WidgetInteractor by inject()
 
     override fun onGetViewFactory(intent: Intent?): RemoteViewsFactory {
-
         return WasteMediumItemViewsFactory(applicationContext, widgetInteractor.pickups)
     }
 
@@ -98,11 +97,16 @@ class DATPickupsRemoteViewService : RemoteViewsService() {
 
         private fun populateWastePickupData(view: RemoteViews, pickup: WasteItems.WasteItem) {
             view.setImageViewResource(R.id.pickupIcon, R.drawable.ic_waste_trash_icon)
+
             val wasteIconColorInt = if (resources.isDarkMode) {
                 ColorUtils.invertIfDark(pickup.wasteIconColorInt)
-            } else pickup.wasteIconColorInt
+            } else {
+                pickup.wasteIconColorInt
+            }
+
             view.setInt(
-                R.id.pickupIcon, "setColorFilter",
+                R.id.pickupIcon,
+                "setColorFilter",
                 wasteIconColorInt
             )
             view.setInt(
