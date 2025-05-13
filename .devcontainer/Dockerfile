@@ -4,7 +4,9 @@
 # SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
 # SPDX-License-Identifier: CC0-1.0
 
-ARG VARIANT="8.0-noble"
+# Pinning the image digest ensures reproducibility and security by preventing unintentional updates.
+# The digest corresponds to the .NET 8.0-noble version at the time of writing.
+ARG VARIANT="8.0-noble@sha256:78e4d6aa58fbc816a2a656768b0bda653780710c0dadab1b2c9e53e1c747aaf3"
 FROM mcr.microsoft.com/devcontainers/dotnet:${VARIANT}
 
 # Set up machine requirements to build the repo
